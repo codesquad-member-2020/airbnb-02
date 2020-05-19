@@ -9,7 +9,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     enum TabBarSymbol {
         static let search = UIImage(systemName: "square.and.arrow.up")
     }
@@ -26,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let tabBarController = UITabBarController()
-        let viewController = ViewController()
+        let viewController = SearchViewController()
         viewController.tabBarItem = UITabBarItem(
             title: TabBarTitle.bnb,
             image: TabBarSymbol.search,
@@ -34,8 +33,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         tabBarController.setViewControllers([viewController], animated: true)
         window?.rootViewController = tabBarController
-    
     }
-    
 }
-

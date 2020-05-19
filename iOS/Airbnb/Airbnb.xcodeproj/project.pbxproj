@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52572473A1A80055A478 /* AppDelegate.swift */; };
 		C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52592473A1A80055A478 /* SceneDelegate.swift */; };
-		C22A525C2473A1A80055A478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A525B2473A1A80055A478 /* ViewController.swift */; };
+		C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A525B2473A1A80055A478 /* SearchViewController.swift */; };
 		C22A525F2473A1A80055A478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A525D2473A1A80055A478 /* Main.storyboard */; };
 		C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22A52602473A1AB0055A478 /* Assets.xcassets */; };
 		C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */; };
@@ -30,7 +30,7 @@
 		C22A52542473A1A80055A478 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22A52572473A1A80055A478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22A52592473A1A80055A478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C22A525B2473A1A80055A478 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C22A525B2473A1A80055A478 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C22A525E2473A1A80055A478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C22A52602473A1AB0055A478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C22A52632473A1AB0055A478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				C22A527E2473A26F0055A478 /* Networking */,
 				C22A52572473A1A80055A478 /* AppDelegate.swift */,
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
-				C22A525B2473A1A80055A478 /* ViewController.swift */,
+				C22A525B2473A1A80055A478 /* SearchViewController.swift */,
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
@@ -248,7 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22A525C2473A1A80055A478 /* ViewController.swift in Sources */,
+				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
 			);
