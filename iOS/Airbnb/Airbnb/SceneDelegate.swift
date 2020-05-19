@@ -12,11 +12,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     enum TabBarSymbol {
         static let search = UIImage(systemName: "magnifyingglass")
         static let heart = UIImage(systemName: "heart.fill")
+        static let person = UIImage(systemName: "person.fill")
     }
     
     enum TabBarTitle {
         static let bnb = "숙소"
         static let bookmark = "즐겨찾기"
+        static let reservation = "예약"
     }
     
     var window: UIWindow?
@@ -43,6 +45,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private var reservationViewController: ReservationViewController {
         let reservationViewController = ReservationViewController()
+        reservationViewController.tabBarItem = UITabBarItem(
+            title: TabBarTitle.reservation,
+            image: TabBarSymbol.person,
+            tag: 2
+        )
         return reservationViewController
     }
     
