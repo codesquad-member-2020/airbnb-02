@@ -10,11 +10,13 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     enum TabBarSymbol {
-        static let search = UIImage(systemName: "square.and.arrow.up")
+        static let search = UIImage(systemName: "magnifyingglass")
+        static let heart = UIImage(systemName: "heart.fill")
     }
     
     enum TabBarTitle {
         static let bnb = "숙소"
+        static let bookmark = "즐겨찾기"
     }
     
     var window: UIWindow?
@@ -32,6 +34,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             tag: 0
         )
         let bookmarkViewController = BookmarkViewController()
+        bookmarkViewController.tabBarItem = UITabBarItem(
+            title: TabBarTitle.bookmark,
+            image: TabBarSymbol.heart,
+            tag: 1)
         tabBarController.setViewControllers([searchViewController, bookmarkViewController], animated: true)
         window?.rootViewController = tabBarController
     }
