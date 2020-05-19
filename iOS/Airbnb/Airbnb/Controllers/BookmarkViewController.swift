@@ -25,15 +25,15 @@ final class BookmarkViewController: UIViewController {
 }
 
 extension BookmarkViewController: TabbedViewController {
-    var tagTitle: String? {
+    var tabTitle: String? {
         return "즐겨찾기 "
     }
     
-    var image: UIImage? {
+    var tabImage: UIImage? {
         return UIImage(systemName: "heart.fill")
     }
     
-    var tag: Int {
+    var tabTag: Int {
         return 1
     }
 }

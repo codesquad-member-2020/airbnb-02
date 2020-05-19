@@ -25,15 +25,15 @@ final class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: TabbedViewController {
-    var tagTitle: String? {
+    var tabTitle: String? {
         return "숙소"
     }
     
-    var image: UIImage? {
+    var tabImage: UIImage? {
         return UIImage(systemName: "magnifyingglass")
     }
     
-    var tag: Int {
+    var tabTag: Int {
         return 0
     }
 }

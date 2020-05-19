@@ -9,15 +9,15 @@
 import UIKit
 
 protocol TabbedViewController where Self: UIViewController {
-    var tagTitle: String? { get }
+    var tabTitle: String? { get }
     
-    var image: UIImage? { get }
+    var tabImage: UIImage? { get }
     
-    var tag: Int { get }
+    var tabTag: Int { get }
 }
 
 extension TabbedViewController {
     func configureTabBarItem() {
-        tabBarItem = UITabBarItem(title: tagTitle, image: image, tag: tag)
+        tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
     }
 }

@@ -25,15 +25,15 @@ final class ReservationViewController: UIViewController {
 }
 
 extension ReservationViewController: TabbedViewController {
-    var tagTitle: String? {
+    var tabTitle: String? {
         return "예약"
     }
     
-    var image: UIImage? {
+    var tabImage: UIImage? {
         return UIImage(systemName: "person.fill")
     }
     
-    var tag: Int {
+    var tabTag: Int {
         return 2
     }
 }
