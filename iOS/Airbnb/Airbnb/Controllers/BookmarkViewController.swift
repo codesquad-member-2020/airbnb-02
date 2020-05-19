@@ -26,7 +26,7 @@ final class BookmarkViewController: UIViewController {
 
 extension BookmarkViewController: TabbedViewController {
     var tabTitle: String? {
-        return "즐겨찾기 "
+        return "즐겨찾기"
     }
     
     var tabImage: UIImage? {

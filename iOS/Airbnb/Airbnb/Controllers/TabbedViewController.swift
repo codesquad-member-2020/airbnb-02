@@ -10,9 +10,7 @@ import UIKit
 
 protocol TabbedViewController where Self: UIViewController {
     var tabTitle: String? { get }
-    
     var tabImage: UIImage? { get }
-    
     var tabTag: Int { get }
 }
 
