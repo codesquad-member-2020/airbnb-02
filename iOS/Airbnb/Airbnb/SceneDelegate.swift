@@ -25,13 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let tabBarController = UITabBarController()
-        let viewController = SearchViewController()
-        viewController.tabBarItem = UITabBarItem(
+        let searchViewController = SearchViewController()
+        searchViewController.tabBarItem = UITabBarItem(
             title: TabBarTitle.bnb,
             image: TabBarSymbol.search,
             tag: 0
         )
-        tabBarController.setViewControllers([viewController], animated: true)
+        let bookmarkViewController = BookmarkViewController()
+        tabBarController.setViewControllers([searchViewController, bookmarkViewController], animated: true)
         window?.rootViewController = tabBarController
     }
 }

@@ -14,6 +14,7 @@
 		C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22A52602473A1AB0055A478 /* Assets.xcassets */; };
 		C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */; };
 		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
+		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C22A526A2473A1AB0055A478 /* AirbnbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22A526E2473A1AB0055A478 /* AirbnbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTests.swift; sourceTree = "<group>"; };
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,6 @@
 				C22A527E2473A26F0055A478 /* Networking */,
 				C22A52572473A1A80055A478 /* AppDelegate.swift */,
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
-				C22A525B2473A1A80055A478 /* SearchViewController.swift */,
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
@@ -136,6 +137,8 @@
 		C22A527D2473A2620055A478 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C22A525B2473A1A80055A478 /* SearchViewController.swift */,
+				C22A527F2473AAB10055A478 /* BookmarkViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
