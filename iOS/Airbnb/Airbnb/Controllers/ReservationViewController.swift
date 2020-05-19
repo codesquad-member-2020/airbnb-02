@@ -9,7 +9,31 @@
 import UIKit
 
 final class ReservationViewController: UIViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        configureTabBarItem()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureTabBarItem()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension ReservationViewController: TabbedViewController {
+    var tagTitle: String? {
+        return "예약"
+    }
+    
+    var image: UIImage? {
+        return UIImage(systemName: "person.fill")
+    }
+    
+    var tag: Int {
+        return 2
     }
 }

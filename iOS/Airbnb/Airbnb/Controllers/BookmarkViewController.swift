@@ -9,7 +9,31 @@
 import UIKit
 
 final class BookmarkViewController: UIViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        configureTabBarItem()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureTabBarItem()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension BookmarkViewController: TabbedViewController {
+    var tagTitle: String? {
+        return "즐겨찾기 "
+    }
+    
+    var image: UIImage? {
+        return UIImage(systemName: "heart.fill")
+    }
+    
+    var tag: Int {
+        return 1
     }
 }
