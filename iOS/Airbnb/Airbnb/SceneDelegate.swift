@@ -20,6 +20,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     var window: UIWindow?
+    
+    private var searchViewController: SearchViewController {
+        let searchViewController = SearchViewController()
+        searchViewController.tabBarItem = UITabBarItem(
+            title: TabBarTitle.bnb,
+            image: TabBarSymbol.search,
+            tag: 0
+        )
+        return searchViewController
+    }
+    
+    private var bookmarkViewController: BookmarkViewController {
+        let bookmarkViewController = BookmarkViewController()
+        bookmarkViewController.tabBarItem = UITabBarItem(
+            title: TabBarTitle.bookmark,
+            image: TabBarSymbol.heart,
+            tag: 1
+        )
+        return bookmarkViewController
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
@@ -27,17 +47,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let tabBarController = UITabBarController()
-        let searchViewController = SearchViewController()
-        searchViewController.tabBarItem = UITabBarItem(
-            title: TabBarTitle.bnb,
-            image: TabBarSymbol.search,
-            tag: 0
-        )
-        let bookmarkViewController = BookmarkViewController()
-        bookmarkViewController.tabBarItem = UITabBarItem(
-            title: TabBarTitle.bookmark,
-            image: TabBarSymbol.heart,
-            tag: 1)
         tabBarController.setViewControllers([searchViewController, bookmarkViewController], animated: true)
         window?.rootViewController = tabBarController
     }
