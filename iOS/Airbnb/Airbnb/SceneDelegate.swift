@@ -9,9 +9,16 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    enum TabBarSymbol {
+        static let search = UIImage(systemName: "square.and.arrow.up")
+    }
+    
+    enum TabBarTitle {
+        static let bnb = "숙소"
+    }
+    
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
@@ -20,8 +27,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         let viewController = ViewController()
+        viewController.tabBarItem = UITabBarItem(
+            title: TabBarTitle.bnb,
+            image: TabBarSymbol.search,
+            tag: 0
+        )
         tabBarController.setViewControllers([viewController], animated: true)
         window?.rootViewController = tabBarController
+    
     }
+    
 }
 
