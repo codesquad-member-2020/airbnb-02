@@ -9,16 +9,6 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configureTabBarItem()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        configureTabBarItem()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
