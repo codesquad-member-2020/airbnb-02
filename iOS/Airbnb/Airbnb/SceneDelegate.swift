@@ -40,14 +40,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         return bookmarkViewController
     }
-
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
+    private var reservationViewController: ReservationViewController {
+        let reservationViewController = ReservationViewController()
+        return reservationViewController
+    }
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([searchViewController, bookmarkViewController], animated: true)
+        tabBarController.setViewControllers(
+            [searchViewController, bookmarkViewController, reservationViewController],
+            animated: true)
         window?.rootViewController = tabBarController
     }
 }

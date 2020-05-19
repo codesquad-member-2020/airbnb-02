@@ -1,14 +1,14 @@
 //
-//  SearchViewController.swift
+//  ReservationViewController.swift
 //  Airbnb
 //
-//  Created by Chaewan Park on 2020/05/19.
+//  Created by kimdo2297 on 2020/05/19.
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class ReservationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
