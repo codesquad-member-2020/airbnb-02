@@ -12,25 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let scene = (scene as? UIWindowScene) else { return }
-        
-        window = UIWindow(windowScene: scene)
-        window?.rootViewController = tabBarController()
-    }
-    
-    private func tabBarController() -> UITabBarController {
-        let tabBarController = UITabBarController()
-        tabBarController.setTabbedViewControllers(
-            [SearchViewController(), BookmarkViewController(), ReservationViewController()],
-            animated: true
-        )
-        return tabBarController
-    }
-}
-
-extension UITabBarController {
-    func setTabbedViewControllers(_ tabbedBarViewControllers: [TabbedViewController], animated: Bool) {
-        tabbedBarViewControllers.forEach { $0.configureTabBarItem() }
-        setViewControllers(tabbedBarViewControllers, animated: animated)
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 }
