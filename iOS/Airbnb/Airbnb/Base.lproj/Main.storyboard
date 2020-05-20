@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--숙소-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gmx-4Z-4sl"/>
+                    <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" id="gmx-4Z-4sl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="1384" y="-639"/>
         </scene>
-        <!--Item-->
+        <!--즐겨찾기-->
         <scene sceneID="ncY-Eb-35m">
             <objects>
                 <viewController id="52j-Ly-404" customClass="BookmarkViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,13 +53,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="vNE-r2-hNb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="00F-Fi-CF5"/>
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="heart.fill" catalog="system" id="00F-Fi-CF5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U79-vc-H2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383" y="139"/>
         </scene>
-        <!--Item-->
+        <!--예약-->
         <scene sceneID="Vc3-9H-MNd">
             <objects>
                 <viewController id="47e-bd-QWb" customClass="ReservationViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,11 +69,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="x6n-UH-9NE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ig4-ou-DEc"/>
+                    <tabBarItem key="tabBarItem" title="예약" image="person.fill" catalog="system" id="ig4-ou-DEc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHY-HP-pCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2152" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
 </document>
