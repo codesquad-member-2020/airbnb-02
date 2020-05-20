@@ -2,7 +2,7 @@
 name: "Back-end 페어 프로그래밍 피쳐 개발 이슈 템플릿"
 about: Back-end 페어 프로그래밍 피쳐 개발 이슈 템플릿
 title: '[BE] Title'
-labels: 'BE', 'BE-페어'
+labels: 'BE, BE-페어'
 
 ---
 
