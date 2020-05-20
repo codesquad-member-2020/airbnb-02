@@ -11,15 +11,22 @@ import UIKit
 final class BadgeLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
         configureText()
+        configureFont()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureText()
+        configureFont()
     }
     
     private func configureText() {
         text = BadgeViewModel.text
+    }
+    
+    private func configureFont() {
+        font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
 }
