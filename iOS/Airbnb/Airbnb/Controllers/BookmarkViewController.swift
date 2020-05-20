@@ -13,3 +13,17 @@ final class BookmarkViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+extension BookmarkViewController: TabbedViewController {
+    var tabTitle: String? {
+        return "즐겨찾기"
+    }
+    
+    var tabImage: UIImage? {
+        return UIImage(systemName: "heart.fill")
+    }
+    
+    var tabTag: Int {
+        return 1
+    }
+}
