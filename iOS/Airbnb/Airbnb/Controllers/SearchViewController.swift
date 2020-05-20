@@ -13,17 +13,3 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
-extension SearchViewController: TabbedViewController {
-    var tabTitle: String? {
-        return "숙소"
-    }
-    
-    var tabImage: UIImage? {
-        return UIImage(systemName: "magnifyingglass")
-    }
-    
-    var tabTag: Int {
-        return 0
-    }
-}

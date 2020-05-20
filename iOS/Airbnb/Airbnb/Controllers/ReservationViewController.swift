@@ -13,17 +13,3 @@ final class ReservationViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
-extension ReservationViewController: TabbedViewController {
-    var tabTitle: String? {
-        return "예약"
-    }
-    
-    var tabImage: UIImage? {
-        return UIImage(systemName: "person.fill")
-    }
-    
-    var tabTag: Int {
-        return 2
-    }
-}
