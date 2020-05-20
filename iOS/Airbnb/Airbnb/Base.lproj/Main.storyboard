@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-DY-q2z" customClass="BadgeLabel" customModule="Airbnb" customModuleProvider="target">
-                                <rect key="frame" x="95" y="200" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-DY-q2z" customClass="BadgeLabel" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="95" y="200" width="9" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,6 +26,7 @@
                         <constraints>
                             <constraint firstItem="NQg-DY-q2z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="156" id="9f9-jq-1ob"/>
                             <constraint firstItem="NQg-DY-q2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="UVU-iZ-qJZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NQg-DY-q2z" secondAttribute="trailing" symbolic="YES" id="omZ-9k-e1f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

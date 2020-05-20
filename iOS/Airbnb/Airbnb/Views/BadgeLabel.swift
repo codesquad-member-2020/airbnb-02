@@ -14,12 +14,14 @@ final class BadgeLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         configureText()
         configureFont()
+        configureBorder()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureText()
         configureFont()
+        configureBorder()
     }
     
     private func configureText() {
@@ -28,5 +30,10 @@ final class BadgeLabel: UILabel {
     
     private func configureFont() {
         font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+    }
+    
+    private func configureBorder() {
+        layer.borderWidth = 1
+        layer.cornerRadius = 4
     }
 }
