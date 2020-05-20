@@ -11,9 +11,15 @@ import UIKit
 final class BadgeLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureText()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        configureText()
+    }
+    
+    private func configureText() {
+        text = BadgeViewModel.text
     }
 }
