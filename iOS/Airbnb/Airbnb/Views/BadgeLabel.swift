@@ -36,4 +36,28 @@ final class BadgeLabel: UILabel {
         layer.borderWidth = 1
         layer.cornerRadius = 4
     }
+    
+    private enum Padding {
+        static let left: CGFloat = 6
+        static let right: CGFloat = 6
+        static let top: CGFloat = 2
+        static let bottom: CGFloat = 2
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let `super` = super.intrinsicContentSize
+        return CGSize(
+            width: `super`.width + Padding.left + Padding.right,
+            height: `super`.height + Padding.top + Padding.bottom
+        )
+    }
+    
+    override func drawText(in rect: CGRect) {
+        let inset = UIEdgeInsets(
+            top: Padding.top,
+            left: Padding.left,
+            bottom: Padding.bottom,
+            right: Padding.right)
+        super.drawText(in: rect.inset(by: inset))
+    }
 }
