@@ -16,6 +16,12 @@ final class SearchBar: UITextField {
     
     private let convexLayer: CALayer = {
         let layer = CALayer()
+        layer.cornerRadius = 5
+        layer.backgroundColor = UIColor.white.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 6
+        layer.shadowOpacity = 0.2
         return layer
     }()
     
