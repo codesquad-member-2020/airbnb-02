@@ -29,8 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension UITabBarController {
-    func setTabbedViewControllers(_ tabedBarViewControllers: [TabbedViewController], animated: Bool) {
-        tabedBarViewControllers.forEach { $0.configureTabBarItem() }
-        setViewControllers(tabedBarViewControllers, animated: animated)
+    func setTabbedViewControllers(_ tabbedBarViewControllers: [TabbedViewController], animated: Bool) {
+        tabbedBarViewControllers.forEach { $0.configureTabBarItem() }
+        setViewControllers(tabbedBarViewControllers, animated: animated)
     }
 }
