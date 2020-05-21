@@ -10,6 +10,7 @@
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B324755C30001FC509 /* BadgeLabel.swift */; };
 		5A8DB2B624755D3A001FC509 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B524755D3A001FC509 /* BadgeViewModel.swift */; };
+		5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2BB24757859001FC509 /* SearchTextField.swift */; };
 		C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52572473A1A80055A478 /* AppDelegate.swift */; };
 		C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52592473A1A80055A478 /* SceneDelegate.swift */; };
 		C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A525B2473A1A80055A478 /* SearchViewController.swift */; };
@@ -34,6 +35,7 @@
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A8DB2B324755C30001FC509 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeLabel.swift; path = Airbnb/Views/BadgeLabel.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2B524755D3A001FC509 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeViewModel.swift; path = Airbnb/Controllers/BadgeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5A8DB2BB24757859001FC509 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		C22A52542473A1A80055A478 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22A52572473A1A80055A478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22A52592473A1A80055A478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
+				5A8DB2BB24757859001FC509 /* SearchTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				5A8DB2B624755D3A001FC509 /* BadgeViewModel.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
+				5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
 			);
