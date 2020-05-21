@@ -9,8 +9,6 @@
 import UIKit
 
 final class ImageScrollView: UIScrollView {
-    private let horizontalStackView = UIStackView()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
