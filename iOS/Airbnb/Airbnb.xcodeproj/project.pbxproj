@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		5A33640B2476918300324367 /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640A2476918300324367 /* ImagePagingView.swift */; };
 		5A33640B2476918300324367 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640A2476918300324367 /* ImageScrollView.swift */; };
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> acda548... [#5] refactor: 코드로 작성하려고 했던 뷰인데 xib로 할거라 삭제
 		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
 		5A3364112476A47800324367 /* WithXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364102476A47800324367 /* WithXib.swift */; };
 		5A840974247649DD00D84413 /* GuideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840973247649DD00D84413 /* GuideLabel.swift */; };
@@ -46,10 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		5A33640A2476918300324367 /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingView.swift; sourceTree = "<group>"; };
 		5A33640A2476918300324367 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> acda548... [#5] refactor: 코드로 작성하려고 했던 뷰인데 xib로 할거라 삭제
 		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
 		5A3364102476A47800324367 /* WithXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithXib.swift; sourceTree = "<group>"; };
 		5A840973247649DD00D84413 /* GuideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLabel.swift; sourceTree = "<group>"; };
@@ -158,7 +164,6 @@
 				C2DB830C24766892007034AC /* FilterButtons */,
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
 				5A8DB2BB24757859001FC509 /* SearchTextField.swift */,
-				5A33640A2476918300324367 /* ImageScrollView.swift */,
 				5A33640E2476A39600324367 /* IdentifiableView.swift */,
 				5A3364102476A47800324367 /* WithXib.swift */,
 			);
@@ -324,8 +329,12 @@
 				5A3364112476A47800324367 /* WithXib.swift in Sources */,
 				C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */,
 				5A84097624764AD700D84413 /* GuideLabelViewModel.swift in Sources */,
+<<<<<<< HEAD
 >>>>>>> 1846757... [#5] feat: xib view를 추가(addSubView)하는 메소드를 프로토콜로 구현함
 				5A33640B2476918300324367 /* ImageScrollView.swift in Sources */,
+=======
+				5A840974247649DD00D84413 /* GuideLabel.swift in Sources */,
+>>>>>>> acda548... [#5] refactor: 코드로 작성하려고 했던 뷰인데 xib로 할거라 삭제
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
