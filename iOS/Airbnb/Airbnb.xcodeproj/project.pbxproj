@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A840974247649DD00D84413 /* GuideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840973247649DD00D84413 /* GuideLabel.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B324755C30001FC509 /* BadgeLabel.swift */; };
 		5A8DB2B624755D3A001FC509 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B524755D3A001FC509 /* BadgeViewModel.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A840973247649DD00D84413 /* GuideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLabel.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A8DB2B324755C30001FC509 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeLabel.swift; path = Airbnb/Views/BadgeLabel.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2B524755D3A001FC509 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeViewModel.swift; path = Airbnb/Controllers/BadgeViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
+				5A840973247649DD00D84413 /* GuideLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
+				5A840974247649DD00D84413 /* GuideLabel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				5A8DB2B624755D3A001FC509 /* BadgeViewModel.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
