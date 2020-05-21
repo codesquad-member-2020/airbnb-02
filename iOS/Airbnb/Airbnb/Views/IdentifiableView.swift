@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol IdentifierView where Self: UIView {
+protocol IdentifiableView where Self: UIView {
     static var identifier: String { get }
 }
 
-extension IdentifierView {
+extension IdentifiableView {
     static var identifier: String {
         return String(describing: self)
     }

@@ -12,6 +12,7 @@
 <<<<<<< HEAD
 =======
 		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
+		5A3364112476A47800324367 /* WithXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364102476A47800324367 /* WithXib.swift */; };
 		5A840974247649DD00D84413 /* GuideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840973247649DD00D84413 /* GuideLabel.swift */; };
 		5A84097624764AD700D84413 /* GuideLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84097524764AD700D84413 /* GuideLabelViewModel.swift */; };
 >>>>>>> a09a297... [#5] feat: identifier 를 프로퍼티로 가질 수 있도록 IdentifierView를 구현함
@@ -50,6 +51,7 @@
 <<<<<<< HEAD
 =======
 		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
+		5A3364102476A47800324367 /* WithXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithXib.swift; sourceTree = "<group>"; };
 		5A840973247649DD00D84413 /* GuideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLabel.swift; sourceTree = "<group>"; };
 		5A84097524764AD700D84413 /* GuideLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideLabelViewModel.swift; path = Airbnb/Views/GuideLabelViewModel.swift; sourceTree = SOURCE_ROOT; };
 >>>>>>> a09a297... [#5] feat: identifier 를 프로퍼티로 가질 수 있도록 IdentifierView를 구현함
@@ -158,6 +160,7 @@
 				5A8DB2BB24757859001FC509 /* SearchTextField.swift */,
 				5A33640A2476918300324367 /* ImageScrollView.swift */,
 				5A33640E2476A39600324367 /* IdentifiableView.swift */,
+				5A3364102476A47800324367 /* WithXib.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,7 +318,13 @@
 				5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
+<<<<<<< HEAD
 				5A33640B2476918300324367 /* ImagePagingView.swift in Sources */,
+=======
+				5A3364112476A47800324367 /* WithXib.swift in Sources */,
+				C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */,
+				5A84097624764AD700D84413 /* GuideLabelViewModel.swift in Sources */,
+>>>>>>> 1846757... [#5] feat: xib view를 추가(addSubView)하는 메소드를 프로토콜로 구현함
 				5A33640B2476918300324367 /* ImageScrollView.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
