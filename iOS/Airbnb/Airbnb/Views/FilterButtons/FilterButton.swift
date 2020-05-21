@@ -14,7 +14,7 @@ class FilterButton: UIButton {
         didSet { configureInsets() }
     }
     
-    @IBInspectable var verticalInset: CGFloat = 20 {
+    @IBInspectable var verticalInset: CGFloat = 10 {
         didSet { configureInsets() }
     }
     
@@ -26,7 +26,7 @@ class FilterButton: UIButton {
         didSet { layer.borderWidth = borderWidth }
     }
 
-    @IBInspectable var cornerRadius: CGFloat = 20 {
+    @IBInspectable var cornerRadius: CGFloat = 19 {
         didSet { layer.cornerRadius = cornerRadius }
     }
     
