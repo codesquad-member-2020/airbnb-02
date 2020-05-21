@@ -1,6 +1,9 @@
 package dev.codesquad.airbnb02.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import java.util.List;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -25,6 +28,10 @@ public class Host {
 
     @NotNull
     private String email;
+
+    @OneToMany(mappedBy = "host")
+    @JsonIgnore
+    private List<Room> rooms;
 
     @NotNull
     @ColumnDefault("0")

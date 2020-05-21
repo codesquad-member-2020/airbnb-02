@@ -1,6 +1,10 @@
 package dev.codesquad.airbnb02.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,51 +19,55 @@ import javax.persistence.Id;
 @Setter
 @ToString
 public class Room {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @NotNull
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @NotNull
-    private Integer type;
+  @NotNull
+  private String name;
 
-    @NotNull
-    private Integer price;
+  @NotNull
+  private Integer type;
 
-    @NotNull
-    private Integer maximumGuest;
+  @NotNull
+  private Integer price;
 
-    @NotNull
-    private Integer bedroom;
+  @NotNull
+  private Integer maximumGuest;
 
-    @NotNull
-    private Integer bed;
+  @NotNull
+  private Integer bedroom;
 
-    @NotNull
-    private Integer bath;
+  @NotNull
+  private Integer bed;
 
-    @NotNull
-    private Double reviewRating;
+  @NotNull
+  private Integer bath;
 
-    @NotNull
-    private Integer reviewCount;
+  @NotNull
+  private Double reviewRating;
 
-    @NotNull
-    private String location;
+  @NotNull
+  private Integer reviewCount;
 
-    @NotNull
-    private Double latitude;
+  @NotNull
+  private String location;
 
-    @NotNull
-    private Double longitude;
+  @NotNull
+  private Double latitude;
 
-    @NotNull
-    private String address;
+  @NotNull
+  private Double longitude;
 
-    @NotNull
-    private Long hostId;
+  @NotNull
+  private String address;
 
-    public Room() {}
+  @ManyToOne
+  @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
+  @NotNull
+  private Host host;
+
+  public Room() {
+  }
 }
