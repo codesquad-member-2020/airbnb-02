@@ -22,6 +22,10 @@ final class SearchBar: UITextField {
     
     private func configureLayer() {
         layer.cornerRadius = 5
+        configureShadow()
+    }
+    
+    private func configureShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 6
