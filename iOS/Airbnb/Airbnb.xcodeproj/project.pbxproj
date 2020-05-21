@@ -144,10 +144,10 @@
 				C22A527C2473A2590055A478 /* Models */,
 				C22A527E2473A26F0055A478 /* Networking */,
 				C22A52572473A1A80055A478 /* AppDelegate.swift */,
+				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
-				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 			);
 			path = Airbnb;
