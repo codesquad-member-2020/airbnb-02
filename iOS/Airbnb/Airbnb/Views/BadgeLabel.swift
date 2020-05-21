@@ -26,6 +26,7 @@ final class BadgeLabel: UILabel {
     
     private func configureText() {
         text = BadgeViewModel.Text.default
+        textColor = BadgeViewModel.Color.defaultText
     }
     
     private func configureFont() {

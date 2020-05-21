@@ -16,4 +16,8 @@ final class BadgeViewModel {
     enum Font {
         static let `default` = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
+    
+    enum Color {
+        static let defaultText = UIColor.black
+    }
 }
