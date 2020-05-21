@@ -12,15 +12,21 @@ final class GuideLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureText()
+        configureFont()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureText()
+        configureFont()
     }
     
     private func configureText() {
         text = GuideLabelViewModel.Text.default
         textColor = GuideLabelViewModel.Color.defaultText
+    }
+    
+    private func configureFont() {
+        font = GuideLabelViewModel.Font.default
     }
 }
