@@ -18,6 +18,6 @@ final class GuideLabelViewModel {
     }
     
     enum Color {
-        static let defaultText = UIColor.darkGray
+        static let defaultText = UIColor.dimGray
     }
 }
