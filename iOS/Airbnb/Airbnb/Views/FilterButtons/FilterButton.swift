@@ -54,9 +54,7 @@ class FilterButton: UIButton {
         layer.borderColor = color.cgColor
         setTitleColor(color, for: .normal)
     }
-}
-
-extension FilterButton {
+    
     private func configureAction() {
         addTarget(self, action: #selector(invokeAction), for: .touchUpInside)
     }
