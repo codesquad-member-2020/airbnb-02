@@ -29,7 +29,7 @@ final class BadgeLabel: UILabel {
     }
     
     private func configureFont() {
-        font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        font = BadgeViewModel.Font.default
     }
     
     private func configureBorder() {
