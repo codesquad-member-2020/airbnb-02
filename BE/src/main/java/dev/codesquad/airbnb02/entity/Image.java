@@ -1,6 +1,9 @@
 package dev.codesquad.airbnb02.entity;
 
 import com.sun.istack.NotNull;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,8 +25,10 @@ public class Image {
     @NotNull
     private String imageUrl;
 
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
     @NotNull
-    private Long roomId;
+    private Room room;
 
     public Image() {}
 }
