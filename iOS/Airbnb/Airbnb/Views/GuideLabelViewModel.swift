@@ -14,7 +14,7 @@ final class GuideLabelViewModel {
     }
     
     enum Font {
-        static let `default` = UIFont.systemFont(ofSize: 16, weight: .regular)
+        static let `default` = UIFont.systemFont(ofSize: 15.5, weight: .medium)
     }
     
     enum Color {
