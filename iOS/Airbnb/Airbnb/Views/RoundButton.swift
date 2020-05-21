@@ -30,6 +30,22 @@ class RoundButton: UIButton {
         didSet { layer.cornerRadius = cornerRadius }
     }
     
+    var action: (() -> Void)?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureAction()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureAction()
+    }
+    
+    deinit {
+        removeTarget(self, action: #selector(invokeAction), for: .touchUpInside)
+    }
+    
     private func configureInsets() {
         contentEdgeInsets = UIEdgeInsets(horizontalInset: horizontalInset, verticalInset: verticalInset)
     }
@@ -40,11 +56,37 @@ class RoundButton: UIButton {
     }
 }
 
+extension RoundButton {
+    private func configureAction() {
+        addTarget(self, action: #selector(invokeAction), for: .touchUpInside)
+    }
+    
+    @objc func invokeAction(sender: RoundButton) { }
+}
+
 private extension UIEdgeInsets {
     init(horizontalInset: CGFloat, verticalInset: CGFloat) {
         self.init(top: verticalInset,
                   left: horizontalInset,
                   bottom: verticalInset,
                   right: horizontalInset)
+    }
+}
+
+final class DateButton: RoundButton {
+    override func invokeAction(sender: RoundButton) {
+        action?()
+    }
+}
+
+final class AdultButton: RoundButton {
+    override func invokeAction(sender: RoundButton) {
+        action?()
+    }
+}
+
+final class PriceButton: RoundButton {
+    override func invokeAction(sender: RoundButton) {
+        action?()
     }
 }
