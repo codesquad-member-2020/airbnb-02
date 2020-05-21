@@ -21,23 +21,29 @@
                         </stackView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="centerY" secondItem="emC-II-cfJ" secondAttribute="centerY" id="Nyr-JG-MQf"/>
                         <constraint firstItem="QLZ-Of-eWW" firstAttribute="height" secondItem="emC-II-cfJ" secondAttribute="height" id="SEz-2m-Wgk"/>
                         <constraint firstItem="QLZ-Of-eWW" firstAttribute="centerX" secondItem="emC-II-cfJ" secondAttribute="centerX" id="gh8-lR-A8a"/>
                         <constraint firstItem="QLZ-Of-eWW" firstAttribute="width" secondItem="emC-II-cfJ" secondAttribute="width" id="iU9-Ch-0TR"/>
                         <constraint firstItem="QLZ-Of-eWW" firstAttribute="width" secondItem="ZhX-Ch-diA" secondAttribute="width" id="s06-4y-CKk"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="centerY" secondItem="emC-II-cfJ" secondAttribute="centerY" id="wZl-7H-xmk"/>
                         <constraint firstItem="QLZ-Of-eWW" firstAttribute="height" secondItem="ZhX-Ch-diA" secondAttribute="height" id="xlk-Ht-STm"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="ZhX-Ch-diA"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="4qd-cv-yls"/>
                 </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-0N-Frp">
+                    <rect key="frame" x="187.5" y="263" width="39" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="emC-II-cfJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="2Mm-Zz-piw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="width" secondItem="emC-II-cfJ" secondAttribute="width" id="4dz-ZE-kxd"/>
+                <constraint firstItem="l1g-0N-Frp" firstAttribute="bottom" secondItem="emC-II-cfJ" secondAttribute="bottom" id="EDH-BX-Tj7"/>
+                <constraint firstItem="l1g-0N-Frp" firstAttribute="centerX" secondItem="emC-II-cfJ" secondAttribute="centerX" id="mKN-SP-N2Z"/>
                 <constraint firstItem="emC-II-cfJ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mRF-y2-yW5"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="height" secondItem="emC-II-cfJ" secondAttribute="height" id="o6y-tC-Qob"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="emC-II-cfJ" secondAttribute="top" id="nl7-hC-KPs"/>
+                <constraint firstItem="emC-II-cfJ" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="oHB-us-ZQB"/>
+                <constraint firstItem="emC-II-cfJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qab-vd-2KG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
