@@ -9,5 +9,7 @@
 import Foundation
 
 final class BadgeViewModel {
-    static let text = "SUPERHOST"
+    enum Text {
+        static let `default` = "SUPERHOST"
+    }
 }
