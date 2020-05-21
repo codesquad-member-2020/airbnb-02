@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class SearchBar: UITextField {
+final class SearchTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayer()
