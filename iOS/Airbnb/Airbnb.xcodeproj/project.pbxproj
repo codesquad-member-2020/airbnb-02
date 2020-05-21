@@ -18,7 +18,6 @@
 		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C26F0C8D247640DB002E7F42 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* RoundButton.swift */; };
-		C2DB8300247659D0007034AC /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB82FF247659D0007034AC /* FilterView.swift */; };
 		C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830524765F20007034AC /* BadgeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		C2DB82FF247659D0007034AC /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		C2DB830524765F20007034AC /* BadgeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +119,6 @@
 			children = (
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
 				C26F0C8C247640DB002E7F42 /* RoundButton.swift */,
-				C2DB82FF247659D0007034AC /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,7 +267,6 @@
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
-				C2DB8300247659D0007034AC /* FilterView.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
