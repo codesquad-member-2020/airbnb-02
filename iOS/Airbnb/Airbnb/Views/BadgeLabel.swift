@@ -11,7 +11,6 @@ import UIKit
 final class BadgeLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
         configureText()
         configureFont()
         configureBorder()
