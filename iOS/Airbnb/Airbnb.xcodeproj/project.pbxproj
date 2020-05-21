@@ -19,6 +19,9 @@
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830524765F20007034AC /* BadgeViewModel.swift */; };
+		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
+		C2DB8310247668C6007034AC /* AdultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* AdultButton.swift */; };
+		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C2DB830524765F20007034AC /* BadgeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
+		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
+		C2DB830F247668C6007034AC /* AdultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultButton.swift; sourceTree = "<group>"; };
+		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,8 @@
 		C22A52792473A21E0055A478 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2DB830C24766892007034AC /* FilterButtons */,
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
-				C26F0C8C247640DB002E7F42 /* FilterButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +166,17 @@
 			children = (
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C2DB830C24766892007034AC /* FilterButtons */ = {
+			isa = PBXGroup;
+			children = (
+				C26F0C8C247640DB002E7F42 /* FilterButton.swift */,
+				C2DB830D247668A7007034AC /* DateButton.swift */,
+				C2DB830F247668C6007034AC /* AdultButton.swift */,
+				C2DB831124766900007034AC /* PriceButton.swift */,
+			);
+			path = FilterButtons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +286,11 @@
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
+				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
+				C2DB8310247668C6007034AC /* AdultButton.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
+				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

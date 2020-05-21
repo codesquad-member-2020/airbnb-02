@@ -72,21 +72,3 @@ private extension UIEdgeInsets {
                   right: horizontalInset)
     }
 }
-
-final class DateButton: FilterButton {
-    override func invokeAction(sender: FilterButton) {
-        action?()
-    }
-}
-
-final class AdultButton: FilterButton {
-    override func invokeAction(sender: FilterButton) {
-        action?()
-    }
-}
-
-final class PriceButton: FilterButton {
-    override func invokeAction(sender: FilterButton) {
-        action?()
-    }
-}
