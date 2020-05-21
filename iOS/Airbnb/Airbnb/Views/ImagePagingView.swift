@@ -8,15 +8,15 @@
 
 import UIKit
 
-final class ImageScrollView: UIScrollView {
-    private let horizontalStackView = UIStackView()
-    
-    
+@IBDesignable
+final class ImagePagingView: UIView, WithXib {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        insertXibView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        insertXibView()
     }
 }
