@@ -9,6 +9,7 @@
 import UIKit
 
 final class ImageScrollView: UIScrollView {
+    private let imageStackView = ImageStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,3 +19,23 @@ final class ImageScrollView: UIScrollView {
         super.init(coder: coder)
     }
 }
+
+final class ImageStackView: UIStackView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        configure()
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
+    private func configure() {
+        axis = .horizontal
+        distribution = .fill
+    }
+}
+
+
