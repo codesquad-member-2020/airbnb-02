@@ -21,5 +21,6 @@ final class GuideLabel: UILabel {
     
     private func configureText() {
         text = GuideLabelViewModel.Text.default
+        textColor = GuideLabelViewModel.Color.defaultText
     }
 }
