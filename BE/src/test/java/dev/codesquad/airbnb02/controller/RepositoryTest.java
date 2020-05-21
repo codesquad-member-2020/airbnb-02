@@ -47,4 +47,19 @@ public class RepositoryTest {
 //        assertThat(hostRepository.findByName(name).getEmail()).isEqualTo(email);
         assertThat(hostRepository.findByName(name).isSuperhost()).isEqualTo(true);
     }
+
+    @DisplayName("RoomRepository에 Room이 가져와진다.")
+    @Test
+    public void ROOM_REPO에_ROOM이_가져와진다() {
+
+        Host host = hostRepository.findByName("hoi");
+        assertThat(roomRepository.findById(1L).get().getHost().getName()).isEqualTo(host.getName());
+    }
+
+    @DisplayName("한 명의 호스트가 여러 개의 방을 갖고 있다.")
+    @Test
+    public void 한_호스트가_여러_방_리스트_갖고있다() {
+        Host host = hostRepository.findAll().get(0);
+        assertThat(host.getRooms()).isNotNull();
+    }
 }
