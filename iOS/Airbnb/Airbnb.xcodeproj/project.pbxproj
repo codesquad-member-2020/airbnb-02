@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A33640B2476918300324367 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640A2476918300324367 /* ImageScrollView.swift */; };
 		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
 		5A3364112476A47800324367 /* XibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364102476A47800324367 /* XibRepresentable.swift */; };
 		5A3364132476A95C00324367 /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364122476A95C00324367 /* ImagePagingView.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A33640A2476918300324367 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
 		5A3364102476A47800324367 /* XibRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibRepresentable.swift; sourceTree = "<group>"; };
 		5A3364122476A95C00324367 /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingView.swift; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				5A33640B2476918300324367 /* ImagePagingView.swift in Sources */,
 				5A3364112476A47800324367 /* XibRepresentable.swift in Sources */,
-				5A33640B2476918300324367 /* ImageScrollView.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
