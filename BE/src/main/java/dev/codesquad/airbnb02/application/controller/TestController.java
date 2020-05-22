@@ -1,6 +1,7 @@
 package dev.codesquad.airbnb02.application.controller;
 
 import dev.codesquad.airbnb02.domain.host.data.HostRepository;
+import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,11 @@ public class TestController {
     @Autowired
     private RoomRepository roomRepository;
 
+    @Autowired
+    private RoomService roomService;
+
     @GetMapping("/")
     public ResponseEntity test() {
-        return ResponseEntity.ok(hostRepository.findAll());
+        return ResponseEntity.ok(roomService.findAll());
     }
 }
