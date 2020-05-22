@@ -1,12 +1,14 @@
 package dev.codesquad.airbnb02.application.controller;
 
 
-import dev.codesquad.airbnb02.domain.host.domain.Host;
+import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
+import dev.codesquad.airbnb02.domain.host.entity.Host;
 import dev.codesquad.airbnb02.domain.host.data.HostRepository;
+import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
-import dev.codesquad.airbnb02.domain.room.domain.Room;
+import dev.codesquad.airbnb02.domain.room.entity.Room;
+import dev.codesquad.airbnb02.domain.room.entity.RoomType;
 import java.util.List;
-import javassist.NotFoundException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class RepositoryTest {
 
     @Autowired
     private HostRepository hostRepository;
+
+    @Autowired
+    private RoomService roomService;
 
     @DisplayName("메인 페이지가 로딩된다.")
     @Test
@@ -75,5 +80,14 @@ public class RepositoryTest {
         Room room = roomRepository.findById(1L).orElseThrow(() -> new RuntimeException("으악"));
         assertThat(room.getImages()).isInstanceOf(List.class);
         assertThat(room.getImages().size()).isGreaterThan(1);
+    }
+
+    @DisplayName("RoomService에서 findAll()에서 데이터가 잘 반환되는지 확인한다.")
+    @Test
+    @Transactional
+    public void ROOM_SERVICE_FINDALL을_검증한다() {
+        assertThat(roomService.findAll().get(0)).isNotNull();
+        assertThat(roomService.findAll().get(0)).isInstanceOf(RoomResponseDto.class);
+        assertThat(roomService.findAll().get(0).getType()).isEqualTo("아파트");
     }
 }
