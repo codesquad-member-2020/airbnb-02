@@ -38,25 +38,27 @@ extension ImagePagingView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let dividend = scrollView.contentOffset.x
         let divisor = scrollView.frame.maxX
-        guard let remainder = modular(
+        guard let remainder = Math.modular(
             dividend: dividend,
             divisor: divisor
             ), remainder == 0 else { return }
         
-        guard let currentPage = quotient(
+        guard let currentPage = Math.quotient(
             dividend: dividend,
             divisor: divisor
             ) else { return }
         
         pageControl.currentPage = currentPage
     }
-    
-    private func modular(dividend: CGFloat, divisor: CGFloat) -> CGFloat? {
+}
+
+struct Math {
+    static func modular(dividend: CGFloat, divisor: CGFloat) -> CGFloat? {
         guard divisor != 0 else { return nil }
         return dividend.truncatingRemainder(dividingBy: divisor)
     }
     
-    private func quotient(dividend: CGFloat, divisor: CGFloat) -> Int? {
+    static func quotient(dividend: CGFloat, divisor: CGFloat) -> Int? {
         guard divisor != 0 else { return nil }
         let quotient = dividend / divisor
         return Int(quotient)
