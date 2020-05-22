@@ -1,7 +1,7 @@
-package dev.codesquad.airbnb02.controller;
+package dev.codesquad.airbnb02.application.controller;
 
-import dev.codesquad.airbnb02.repository.HostRepository;
-import dev.codesquad.airbnb02.repository.RoomRepository;
+import dev.codesquad.airbnb02.domain.host.data.HostRepository;
+import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package dev.codesquad.airbnb02.entity;
+package dev.codesquad.airbnb02.domain.room.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import dev.codesquad.airbnb02.domain.host.domain.Host;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;

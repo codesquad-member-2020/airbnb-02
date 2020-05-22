@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.dto;
+package dev.codesquad.airbnb02.application.dto;
 
 import lombok.Getter;
 import lombok.ToString;

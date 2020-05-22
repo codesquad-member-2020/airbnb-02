@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.entity;
+package dev.codesquad.airbnb02.domain.room.domain;
 
 import com.sun.istack.NotNull;
 import javax.persistence.ForeignKey;

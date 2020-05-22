@@ -1,9 +1,9 @@
-package dev.codesquad.airbnb02.controller;
+package dev.codesquad.airbnb02.application.controller;
 
 
-import dev.codesquad.airbnb02.entity.Host;
-import dev.codesquad.airbnb02.repository.HostRepository;
-import dev.codesquad.airbnb02.repository.RoomRepository;
+import dev.codesquad.airbnb02.domain.host.domain.Host;
+import dev.codesquad.airbnb02.domain.host.data.HostRepository;
+import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
