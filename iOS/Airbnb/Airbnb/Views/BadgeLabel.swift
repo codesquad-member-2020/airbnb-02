@@ -15,25 +15,12 @@ final class BadgeLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureText()
-        configureFont()
         configureBorder()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureText()
-        configureFont()
         configureBorder()
-    }
-    
-    private func configureText() {
-        text = "SUPERHOST"
-        textColor = .black
-    }
-    
-    private func configureFont() {
-        font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
     
     private func configureBorder() {
