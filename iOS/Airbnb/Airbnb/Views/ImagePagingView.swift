@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class ImagePagingView: UIView, XibRepresentable {
+final class ImagePagingView: UIView {
     //MARK:- IBOutlet
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
@@ -25,3 +25,5 @@ final class ImagePagingView: UIView, XibRepresentable {
         insertXibView()
     }
 }
+
+extension ImagePagingView: XibRepresentable { }
