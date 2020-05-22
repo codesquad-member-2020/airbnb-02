@@ -18,7 +18,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "rooms")
 public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
