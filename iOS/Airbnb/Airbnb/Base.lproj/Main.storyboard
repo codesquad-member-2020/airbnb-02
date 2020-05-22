@@ -33,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-6l-Zaj">
-                                <rect key="frame" x="24" y="113" width="214" height="38"/>
+                                <rect key="frame" x="24" y="110" width="214" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giF-a2-P29" customClass="DateButton" customModule="Airbnb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="38"/>
@@ -100,10 +100,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜와 인원을 선택하시면 가격별 숙소를 추천해드립니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YV-Ra-IIz">
+                                <rect key="frame" x="24" y="162" width="327" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" name="textGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fB2-6l-Zaj" firstAttribute="top" secondItem="7ak-5z-ugy" secondAttribute="bottom" constant="17" id="Bx4-Mc-xUJ"/>
+                            <constraint firstItem="fB2-6l-Zaj" firstAttribute="top" secondItem="7ak-5z-ugy" secondAttribute="bottom" constant="14" id="Bx4-Mc-xUJ"/>
+                            <constraint firstItem="7ak-5z-ugy" firstAttribute="leading" secondItem="3YV-Ra-IIz" secondAttribute="leading" id="P08-MX-11S"/>
+                            <constraint firstItem="3YV-Ra-IIz" firstAttribute="top" secondItem="fB2-6l-Zaj" secondAttribute="bottom" constant="14" id="SPo-Xm-9gS"/>
+                            <constraint firstItem="3YV-Ra-IIz" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" id="kqO-I1-pXY"/>
                             <constraint firstItem="7ak-5z-ugy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="lcq-MH-T72"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" constant="24" id="qt7-zg-dbA"/>
                             <constraint firstItem="fB2-6l-Zaj" firstAttribute="leading" secondItem="7ak-5z-ugy" secondAttribute="leading" id="uWF-vS-7bX"/>
