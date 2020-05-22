@@ -8,7 +8,11 @@
 
 import UIKit
 
+@IBDesignable
 final class BadgeLabel: UILabel {
+    @IBInspectable var horizontalInset: CGFloat = 6
+    @IBInspectable var verticalInset: CGFloat = 2
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureText()
@@ -36,24 +40,19 @@ final class BadgeLabel: UILabel {
         layer.borderWidth = 1
         layer.cornerRadius = 4
     }
-    
-    private enum Padding {
-        static let horizontalInset: CGFloat = 6
-        static let verticalInset: CGFloat = 2
-    }
-    
+
     override var intrinsicContentSize: CGSize {
         let `super` = super.intrinsicContentSize
         return CGSize(
-            width: `super`.width + Padding.horizontalInset * 2,
-            height: `super`.height + Padding.verticalInset * 2
+            width: `super`.width + horizontalInset * 2,
+            height: `super`.height + verticalInset * 2
         )
     }
     
     override func drawText(in rect: CGRect) {
         let inset = UIEdgeInsets(
-            horizontalInset: Padding.horizontalInset,
-            verticalInset: Padding.verticalInset
+            horizontalInset: horizontalInset,
+            verticalInset: verticalInset
         )
         super.drawText(in: rect.inset(by: inset))
     }
