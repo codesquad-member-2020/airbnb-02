@@ -1,9 +1,11 @@
-package dev.codesquad.airbnb02.domain.room.domain;
+package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
-import dev.codesquad.airbnb02.domain.host.domain.Host;
+import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.util.List;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,7 +33,8 @@ public class Room {
   private String name;
 
   @NotNull
-  private Integer type;
+  @Enumerated(EnumType.ORDINAL)
+  private RoomType type;
 
   @NotNull
   private Integer price;
