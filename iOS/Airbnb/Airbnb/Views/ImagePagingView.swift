@@ -10,6 +10,11 @@ import UIKit
 
 @IBDesignable
 final class ImagePagingView: UIView, XibRepresentable {
+    //MARK:- IBOutlet
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var pageControl: UIPageControl!
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         insertXibView()
