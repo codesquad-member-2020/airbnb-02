@@ -35,7 +35,7 @@
                     <rect key="frame" x="187.5" y="263" width="39" height="37"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="width" secondItem="emC-II-cfJ" secondAttribute="width" id="4dz-ZE-kxd"/>
                 <constraint firstItem="l1g-0N-Frp" firstAttribute="bottom" secondItem="emC-II-cfJ" secondAttribute="bottom" id="EDH-BX-Tj7"/>

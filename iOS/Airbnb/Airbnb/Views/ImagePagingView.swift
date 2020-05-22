@@ -2,7 +2,7 @@
 //  ImagePagingView.swift
 //  Airbnb
 //
-//  Created by kimdo2297 on 2020/05/21.
+//  Created by kimdo2297 on 2020/05/22.
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
