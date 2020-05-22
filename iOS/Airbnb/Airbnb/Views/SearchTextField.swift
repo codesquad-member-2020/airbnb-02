@@ -10,6 +10,14 @@ import UIKit
 
 @IBDesignable
 final class SearchTextField: UITextField {
+    @IBInspectable var color: UIColor = .black {
+        didSet { layer.borderColor = color.cgColor }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 1 {
+        didSet { layer.borderWidth = borderWidth }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayer()
@@ -26,9 +34,9 @@ final class SearchTextField: UITextField {
     }
     
     private func configureShadow() {
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = UIColor.lightGray.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 6
+        layer.shadowRadius = 8
         layer.shadowOpacity = 0.2
     }
 }
