@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static let dimGray = UIColor.init(named: "dimGray")!
+    static let dimGray = UIColor(named: "dimGray")!
 }
