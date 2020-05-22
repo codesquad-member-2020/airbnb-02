@@ -1,6 +1,10 @@
-package dev.codesquad.airbnb02.entity;
+package dev.codesquad.airbnb02.domain.host.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import dev.codesquad.airbnb02.domain.room.entity.Room;
+import java.util.List;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,7 +18,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "rooms")
 public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +29,10 @@ public class Host {
 
     @NotNull
     private String email;
+
+    @OneToMany(mappedBy = "host")
+    @JsonIgnore
+    private List<Room> rooms;
 
     @NotNull
     @ColumnDefault("0")
