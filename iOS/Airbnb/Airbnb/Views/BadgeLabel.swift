@@ -24,12 +24,12 @@ final class BadgeLabel: UILabel {
     }
     
     private func configureText() {
-        text = BadgeViewModel.Text.default
-        textColor = BadgeViewModel.Color.defaultText
+        text = "SUPERHOST"
+        textColor = .black
     }
     
     private func configureFont() {
-        font = BadgeViewModel.Font.default
+        font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
     
     private func configureBorder() {
