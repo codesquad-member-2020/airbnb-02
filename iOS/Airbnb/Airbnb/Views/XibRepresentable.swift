@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol WithXib: IdentifiableView {
+protocol XibRepresentable: IdentifiableView {
     func insertXibView()
 }
 
-extension WithXib {
+extension XibRepresentable {
     func insertXibView() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: Self.identifier, bundle: bundle)

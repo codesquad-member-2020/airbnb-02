@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class ImagePagingView: UIView, WithXib {
+final class ImagePagingView: UIView, XibRepresentable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         insertXibView()

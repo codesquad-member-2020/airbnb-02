@@ -15,7 +15,7 @@
 =======
 >>>>>>> acda548... [#5] refactor: 코드로 작성하려고 했던 뷰인데 xib로 할거라 삭제
 		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
-		5A3364112476A47800324367 /* WithXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364102476A47800324367 /* WithXib.swift */; };
+		5A3364112476A47800324367 /* XibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364102476A47800324367 /* XibRepresentable.swift */; };
 		5A3364132476A95C00324367 /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3364122476A95C00324367 /* ImagePagingView.swift */; };
 		5A3364152476A99A00324367 /* ImagePagingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3364142476A99A00324367 /* ImagePagingView.xib */; };
 		5A840974247649DD00D84413 /* GuideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840973247649DD00D84413 /* GuideLabel.swift */; };
@@ -59,7 +59,7 @@
 =======
 >>>>>>> acda548... [#5] refactor: 코드로 작성하려고 했던 뷰인데 xib로 할거라 삭제
 		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
-		5A3364102476A47800324367 /* WithXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithXib.swift; sourceTree = "<group>"; };
+		5A3364102476A47800324367 /* XibRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibRepresentable.swift; sourceTree = "<group>"; };
 		5A3364122476A95C00324367 /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingView.swift; sourceTree = "<group>"; };
 		5A3364142476A99A00324367 /* ImagePagingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingView.xib; sourceTree = "<group>"; };
 		5A840973247649DD00D84413 /* GuideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLabel.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				5A3364122476A95C00324367 /* ImagePagingView.swift */,
 				5A3364142476A99A00324367 /* ImagePagingView.xib */,
 				5A33640E2476A39600324367 /* IdentifiableView.swift */,
-				5A3364102476A47800324367 /* WithXib.swift */,
+				5A3364102476A47800324367 /* XibRepresentable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,9 +332,13 @@
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				5A33640B2476918300324367 /* ImagePagingView.swift in Sources */,
 =======
 				5A3364112476A47800324367 /* WithXib.swift in Sources */,
+=======
+				5A3364112476A47800324367 /* XibRepresentable.swift in Sources */,
+>>>>>>> bb841b8... [#5] style: xib를 나타낸다는 의미에서 더 잘어울려 프로토콜 명 수정
 				C2DB830624765F20007034AC /* BadgeViewModel.swift in Sources */,
 				5A84097624764AD700D84413 /* GuideLabelViewModel.swift in Sources */,
 <<<<<<< HEAD
