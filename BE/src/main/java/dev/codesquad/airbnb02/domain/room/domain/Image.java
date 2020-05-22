@@ -18,17 +18,19 @@ import javax.persistence.Id;
 @Setter
 @ToString
 public class Image {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @NotNull
-    private String imageUrl;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
-    @NotNull
-    private Room room;
+  @NotNull
+  private String imageUrl;
 
-    public Image() {}
+  @ManyToOne
+  @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
+  @NotNull
+  private Room room;
+
+  public Image() {
+  }
 }

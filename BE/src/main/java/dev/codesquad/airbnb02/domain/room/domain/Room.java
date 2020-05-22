@@ -1,10 +1,13 @@
 package dev.codesquad.airbnb02.domain.room.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import dev.codesquad.airbnb02.domain.host.domain.Host;
+import java.util.List;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -17,7 +20,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "images")
 public class Room {
 
   @Id
@@ -62,6 +65,10 @@ public class Room {
 
   @NotNull
   private String address;
+
+  @OneToMany(mappedBy = "room")
+  @JsonIgnore
+  private List<Image> images;
 
   @ManyToOne
   @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
