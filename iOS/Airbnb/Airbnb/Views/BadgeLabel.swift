@@ -38,26 +38,23 @@ final class BadgeLabel: UILabel {
     }
     
     private enum Padding {
-        static let left: CGFloat = 6
-        static let right: CGFloat = 6
-        static let top: CGFloat = 2
-        static let bottom: CGFloat = 2
+        static let horizontalInset: CGFloat = 6
+        static let verticalInset: CGFloat = 2
     }
     
     override var intrinsicContentSize: CGSize {
         let `super` = super.intrinsicContentSize
         return CGSize(
-            width: `super`.width + Padding.left + Padding.right,
-            height: `super`.height + Padding.top + Padding.bottom
+            width: `super`.width + Padding.horizontalInset * 2,
+            height: `super`.height + Padding.verticalInset * 2
         )
     }
     
     override func drawText(in rect: CGRect) {
         let inset = UIEdgeInsets(
-            top: Padding.top,
-            left: Padding.left,
-            bottom: Padding.bottom,
-            right: Padding.right)
+            horizontalInset: Padding.horizontalInset,
+            verticalInset: Padding.verticalInset
+        )
         super.drawText(in: rect.inset(by: inset))
     }
 }

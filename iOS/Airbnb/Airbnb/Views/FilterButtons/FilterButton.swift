@@ -62,11 +62,4 @@ class FilterButton: UIButton {
     @objc func invokeAction(sender: FilterButton) { }
 }
 
-private extension UIEdgeInsets {
-    init(horizontalInset: CGFloat, verticalInset: CGFloat) {
-        self.init(top: verticalInset,
-                  left: horizontalInset,
-                  bottom: verticalInset,
-                  right: horizontalInset)
-    }
-}
+
