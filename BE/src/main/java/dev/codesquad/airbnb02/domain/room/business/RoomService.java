@@ -2,7 +2,6 @@ package dev.codesquad.airbnb02.domain.room.business;
 
 import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
-import dev.codesquad.airbnb02.domain.room.domain.Room;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
