@@ -43,6 +43,6 @@ public class RoomResponseDto {
   public static RoomResponseDto create(Room room) {
     return new RoomResponseDto(room.getId(), room.getName(), room.getType().getType(), room.getLocation(),
         room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()), room.getPrice(), false,
-        ReviewDto.create(room.getReviewRating(), room.getReviewCount()), false);
+        ReviewDto.create(room.getReviewRating(), room.getReviewCount()), room.getHost().isSuperhost());
   }
 }
