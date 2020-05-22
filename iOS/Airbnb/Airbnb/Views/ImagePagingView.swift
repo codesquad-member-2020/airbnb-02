@@ -30,6 +30,28 @@ final class ImagePagingView: UIView {
     private func configureScrollViewDelegate() {
         scrollView.delegate = self
     }
+    
+    func configure(count: Int) {
+        configureStackView(count: count)
+        configurePageControl(count: count)
+    }
+    
+    private func configureStackView(count: Int) {
+        for _ in 0 ..< count {
+            stackView.addArrangedSubview(UIImageView())
+        }
+    }
+    
+    private func configurePageControl(count: Int) {
+        pageControl.numberOfPages = count
+    }
+    
+    func insert(at index: Int, image: UIImage) {
+        guard index < stackView.arrangedSubviews.count,
+            let imageView = stackView.arrangedSubviews[index] as? UIImageView else { return }
+        
+        imageView.image = image
+    }
 }
 
 extension ImagePagingView: XibRepresentable { }
