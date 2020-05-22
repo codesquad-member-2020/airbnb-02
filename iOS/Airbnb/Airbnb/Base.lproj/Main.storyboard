@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -106,12 +107,36 @@
                                 <color key="textColor" name="textGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNL-Dt-uNR">
+                                <rect key="frame" x="24" y="205.66666666666669" width="327" height="523.33333333333326"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="frZ-Yj-eii">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e2H-bD-pcl">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9mz-Qc-uJZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fB2-6l-Zaj" firstAttribute="top" secondItem="7ak-5z-ugy" secondAttribute="bottom" constant="14" id="Bx4-Mc-xUJ"/>
+                            <constraint firstItem="cNL-Dt-uNR" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" id="FKZ-wm-eNn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cNL-Dt-uNR" secondAttribute="bottom" id="OcK-8o-Atg"/>
                             <constraint firstItem="7ak-5z-ugy" firstAttribute="leading" secondItem="3YV-Ra-IIz" secondAttribute="leading" id="P08-MX-11S"/>
                             <constraint firstItem="3YV-Ra-IIz" firstAttribute="top" secondItem="fB2-6l-Zaj" secondAttribute="bottom" constant="14" id="SPo-Xm-9gS"/>
+                            <constraint firstItem="cNL-Dt-uNR" firstAttribute="top" secondItem="3YV-Ra-IIz" secondAttribute="bottom" constant="28" id="dYE-rX-GiS"/>
+                            <constraint firstItem="cNL-Dt-uNR" firstAttribute="leading" secondItem="7ak-5z-ugy" secondAttribute="leading" id="jwK-u7-k1i"/>
                             <constraint firstItem="3YV-Ra-IIz" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" id="kqO-I1-pXY"/>
                             <constraint firstItem="7ak-5z-ugy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="lcq-MH-T72"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" constant="24" id="qt7-zg-dbA"/>
