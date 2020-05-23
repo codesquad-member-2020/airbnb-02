@@ -8,27 +8,35 @@
 
 import UIKit
 
-@IBDesignable
 final class ImagePagingView: UIView {
-    //MARK:- IBOutlet
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    private let scrollView = UIScrollView()
+    private let stackView = UIStackView()
+    private let pageControl = UIPageControl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        insertXibView()
-        configureScrollViewDelegate()
+        configureScrollView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        insertXibView()
-        configureScrollViewDelegate()
+        configureScrollView()
     }
     
-    private func configureScrollViewDelegate() {
+    private func configureScrollView() {
+        scrollView.isPagingEnabled = true
         scrollView.delegate = self
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        configureScrollViewConstraints()
+    }
+    
+    private func configureScrollViewConstraints() {
+        addSubview(scrollView)
+        
+        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     func configure(count: Int) {
@@ -66,8 +74,6 @@ final class ImagePagingView: UIView {
         imageView.image = image
     }
 }
-
-extension ImagePagingView: XibRepresentable { }
 
 extension ImagePagingView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

@@ -13,9 +13,9 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test.configure(count: 3)
-        test.insert(at: 0, image: #imageLiteral(resourceName: "봄날은 간다"))
-        test.insert(at: 1, image: #imageLiteral(resourceName: "봄날은 간다2"))
-        test.insert(at: 2, image: #imageLiteral(resourceName: "봄날은 간다3"))
+//        test.configure(count: 3)
+//        test.insert(at: 0, image: #imageLiteral(resourceName: "봄날은 간다"))
+//        test.insert(at: 1, image: #imageLiteral(resourceName: "봄날은 간다2"))
+//        test.insert(at: 2, image: #imageLiteral(resourceName: "봄날은 간다3"))
     }
 }
