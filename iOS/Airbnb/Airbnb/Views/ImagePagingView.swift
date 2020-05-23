@@ -14,7 +14,7 @@ final class ImagePagingView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var pageControl: UIPageControl!
-        
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         insertXibView()
@@ -37,9 +37,22 @@ final class ImagePagingView: UIView {
     }
     
     private func configureStackView(count: Int) {
-        for _ in 0 ..< count {
-            stackView.addArrangedSubview(UIImageView())
+        (0 ..< count).forEach { _ in
+            let imageView = UIImageView()
+            configure(imageView: imageView)
+            stackView.addArrangedSubview(imageView)
+            configureConstraints(imageView: imageView)
         }
+    }
+    
+    private func configure(imageView: UIImageView) {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    private func configureConstraints(imageView: UIImageView) {
+        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
     }
     
     private func configurePageControl(count: Int) {

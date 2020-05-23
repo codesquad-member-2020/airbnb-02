@@ -15,22 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNk-JN-SHZ" customClass="ImagePagingView" customModule="Airbnb" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="285" width="300" height="203"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMC-dh-jlO" customClass="ImagePagingView" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="286.66666666666669" width="375" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CMC-dh-jlO" secondAttribute="height" multiplier="15:8" id="eUc-1k-0VZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="DNk-JN-SHZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="IJa-bY-S7h"/>
-                            <constraint firstItem="DNk-JN-SHZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="VP2-fK-zLE"/>
-                            <constraint firstItem="DNk-JN-SHZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="XV7-sj-P7S"/>
-                            <constraint firstItem="DNk-JN-SHZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="heK-OC-owc"/>
+                            <constraint firstItem="CMC-dh-jlO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6AF-Bs-wGj"/>
+                            <constraint firstItem="CMC-dh-jlO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="n94-Kr-jmf"/>
+                            <constraint firstItem="CMC-dh-jlO" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="xba-lP-pSS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" id="gmx-4Z-4sl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="test" destination="CMC-dh-jlO" id="dEg-pE-N8w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

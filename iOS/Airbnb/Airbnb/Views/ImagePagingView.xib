@@ -19,37 +19,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emC-II-cfJ">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emC-II-cfJ">
                     <rect key="frame" x="0.0" y="44" width="414" height="256"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLZ-Of-eWW">
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLZ-Of-eWW">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="centerY" secondItem="emC-II-cfJ" secondAttribute="centerY" id="Nyr-JG-MQf"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="height" secondItem="emC-II-cfJ" secondAttribute="height" id="SEz-2m-Wgk"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="centerX" secondItem="emC-II-cfJ" secondAttribute="centerX" id="gh8-lR-A8a"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="width" secondItem="emC-II-cfJ" secondAttribute="width" id="iU9-Ch-0TR"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="width" secondItem="ZhX-Ch-diA" secondAttribute="width" id="s06-4y-CKk"/>
-                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="height" secondItem="ZhX-Ch-diA" secondAttribute="height" id="xlk-Ht-STm"/>
+                        <constraint firstItem="ZhX-Ch-diA" firstAttribute="width" secondItem="QLZ-Of-eWW" secondAttribute="width" id="1GY-FC-5xB"/>
+                        <constraint firstItem="4qd-cv-yls" firstAttribute="height" secondItem="QLZ-Of-eWW" secondAttribute="height" id="V7B-68-0bH"/>
+                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="leading" secondItem="emC-II-cfJ" secondAttribute="leading" id="eZF-AE-QUY"/>
+                        <constraint firstItem="ZhX-Ch-diA" firstAttribute="height" secondItem="QLZ-Of-eWW" secondAttribute="height" id="eul-bv-J9Z"/>
+                        <constraint firstItem="QLZ-Of-eWW" firstAttribute="top" secondItem="emC-II-cfJ" secondAttribute="top" id="f7h-cT-i5S"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="ZhX-Ch-diA"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="4qd-cv-yls"/>
                 </scrollView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-0N-Frp">
+                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-0N-Frp">
                     <rect key="frame" x="207" y="300" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="width" secondItem="emC-II-cfJ" secondAttribute="width" id="4dz-ZE-kxd"/>
-                <constraint firstItem="l1g-0N-Frp" firstAttribute="bottom" secondItem="emC-II-cfJ" secondAttribute="bottom" id="EDH-BX-Tj7"/>
-                <constraint firstItem="l1g-0N-Frp" firstAttribute="centerX" secondItem="emC-II-cfJ" secondAttribute="centerX" id="mKN-SP-N2Z"/>
-                <constraint firstItem="emC-II-cfJ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mRF-y2-yW5"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="emC-II-cfJ" secondAttribute="top" id="nl7-hC-KPs"/>
-                <constraint firstItem="emC-II-cfJ" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="oHB-us-ZQB"/>
-                <constraint firstItem="emC-II-cfJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qab-vd-2KG"/>
+                <constraint firstItem="emC-II-cfJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Gt-3b-75P"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="emC-II-cfJ" secondAttribute="trailing" id="aHs-Wg-Id9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="emC-II-cfJ" secondAttribute="bottom" id="cIZ-5c-z56"/>
+                <constraint firstItem="emC-II-cfJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="j1x-jo-5nK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
