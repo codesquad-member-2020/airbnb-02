@@ -16,11 +16,13 @@ final class ImagePagingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureScrollView()
+        configureStackView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureScrollView()
+        configureStackView()
     }
     
     private func configureScrollView() {
@@ -37,6 +39,22 @@ final class ImagePagingView: UIView {
         scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    private func configureStackView() {
+        stackView.distribution = .fill
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        configureStackViewContstraints()
+    }
+    
+    private func configureStackViewContstraints() {
+        scrollView.addSubview(stackView)
+        
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
     
     func configure(count: Int) {
