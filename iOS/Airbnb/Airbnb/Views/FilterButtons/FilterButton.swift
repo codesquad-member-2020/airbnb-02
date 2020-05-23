@@ -61,5 +61,3 @@ class FilterButton: UIButton {
     
     @objc func invokeAction(sender: FilterButton) { }
 }
-
-
