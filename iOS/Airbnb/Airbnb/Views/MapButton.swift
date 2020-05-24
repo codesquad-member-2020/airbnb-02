@@ -13,6 +13,7 @@ final class MapButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 25 {
         didSet { layer.cornerRadius = cornerRadius }
     }
+    
     @IBInspectable var diameter: CGFloat = 50 {
         didSet { configureDiameter() }
     }
