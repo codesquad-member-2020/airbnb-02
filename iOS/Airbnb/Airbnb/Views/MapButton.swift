@@ -16,20 +16,36 @@ final class MapButton: UIButton {
     @IBInspectable var diameter: CGFloat = 50 {
         didSet { configureDiameter() }
     }
+    
+    var action: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureShadow()
+        configureAction()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureShadow()
+        configureAction()
+    }
+    
+    deinit {
+        removeTarget(self, action: #selector(invokeAction), for: .touchUpInside)
     }
     
     private func configureDiameter() {
         widthAnchor.constraint(equalToConstant: diameter).isActive = true
         heightAnchor.constraint(equalToConstant: diameter).isActive = true
+    }
+    
+    private func configureAction() {
+        addTarget(self, action: #selector(invokeAction), for: .touchUpInside)
+    }
+    
+    @objc private func invokeAction(sender: MapButton) {
+        action?()
     }
 }
 
