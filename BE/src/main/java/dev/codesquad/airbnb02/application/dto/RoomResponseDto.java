@@ -5,6 +5,8 @@ import dev.codesquad.airbnb02.domain.room.entity.Room;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -25,6 +27,7 @@ public class RoomResponseDto {
   public RoomResponseDto() {
   }
 
+  @Builder
   private RoomResponseDto(Long id, String title, String type, String location, List<String> images,
       Integer price, boolean favorite, ReviewDto review, boolean superhost) {
     this.id = id;
@@ -39,8 +42,16 @@ public class RoomResponseDto {
   }
 
   public static RoomResponseDto create(Room room) {
-    return new RoomResponseDto(room.getId(), room.getName(), room.getType().getType(), room.getLocation(),
-        room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()), room.getPrice(), false,
-        ReviewDto.ofRatingAndCount(room.getReviewRating(), room.getReviewCount()), room.getHost().isSuperhost());
+    return RoomResponseDto.builder()
+            .id(room.getId())
+            .title(room.getName())
+            .type(room.getType().getType())
+            .location(room.getLocation())
+            .images(room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()))
+            .price(room.getPrice())
+            .favorite(false)
+            .review(ReviewDto.ofRatingAndCount(room.getReviewRating(), room.getReviewCount()))
+            .superhost(room.getHost().isSuperhost())
+            .build();
   }
 }
