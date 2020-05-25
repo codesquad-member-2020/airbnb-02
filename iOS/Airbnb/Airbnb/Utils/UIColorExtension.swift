@@ -9,5 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static let dimGray = UIColor(named: "dimGray")!
+    static let completionBlack = UIColor(named: "completionBlack")!
+    static let searchBarBorderGray = UIColor(named: "searchBarBorderGray")!
+    static let textGray = UIColor(named: "textGray")!
 }
