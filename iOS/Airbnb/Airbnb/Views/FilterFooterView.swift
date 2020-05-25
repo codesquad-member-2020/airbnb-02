@@ -10,6 +10,11 @@ import UIKit
 
 @IBDesignable
 class FilterFooterView: UIView {
+    @IBOutlet weak var completeButton: UIButton!
+    
+    @IBInspectable var cornerRadius: CGFloat = 6 {
+        didSet { completeButton.layer.cornerRadius = cornerRadius }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
