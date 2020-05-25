@@ -4,20 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.util.List;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -57,17 +48,8 @@ public class Room {
   @NotNull
   private Integer reviewCount;
 
-  @NotNull
-  private String location;
-
-  @NotNull
-  private Double latitude;
-
-  @NotNull
-  private Double longitude;
-
-  @NotNull
-  private String address;
+  @Embedded
+  private Location location;
 
   @OneToMany(mappedBy = "room")
   @JsonIgnore

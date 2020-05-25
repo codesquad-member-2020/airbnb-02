@@ -46,7 +46,7 @@ public class RoomResponseDto {
             .id(room.getId())
             .title(room.getName())
             .type(room.getType().getType())
-            .location(room.getLocation())
+            .location(room.getLocation().getLocation())
             .images(room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()))
             .price(room.getPrice())
             .favorite(false)
