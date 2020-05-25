@@ -9,9 +9,6 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
-    @IBOutlet weak var test: ImagePagingView!
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
