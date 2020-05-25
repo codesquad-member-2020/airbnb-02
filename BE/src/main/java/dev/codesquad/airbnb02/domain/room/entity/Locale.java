@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 @Getter
-public class Location {
+public class Locale {
     private String location;
     private Double latitude;
     private Double longitude;

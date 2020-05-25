@@ -49,7 +49,7 @@ public class Room {
   private Integer reviewCount;
 
   @Embedded
-  private Location location;
+  private Locale locale;
 
   @OneToMany(mappedBy = "room")
   @JsonIgnore

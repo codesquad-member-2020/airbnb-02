@@ -18,8 +18,15 @@ public class RoomService {
 
   @Transactional(readOnly = true)
   public List<RoomResponseDto> findAll() {
-
     return roomRepository.findAll().stream()
+        .map(RoomResponseDto::create)
+        .collect(Collectors.toList());
+  }
+
+  @Transactional
+  public List<RoomResponseDto> findByLocation(String location) {
+    return roomRepository.findAll().stream()
+        .filter(room -> room.getLocale().getLocation().equals(location))
         .map(RoomResponseDto::create)
         .collect(Collectors.toList());
   }
