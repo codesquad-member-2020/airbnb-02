@@ -9,9 +9,27 @@
 import UIKit
 
 final class ImagePagingView: UIView {
-    private let scrollView = UIScrollView()
-    private let stackView = UIStackView()
-    private let pageControl = UIPageControl()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fill
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 0
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        return pageControl
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +46,7 @@ final class ImagePagingView: UIView {
     }
     
     private func configureScrollView() {
-        scrollView.isPagingEnabled = true
         scrollView.delegate = self
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         configureScrollViewConstraints()
     }
     
@@ -44,13 +60,6 @@ final class ImagePagingView: UIView {
     }
     
     private func configureStackView() {
-        stackView.distribution = .fill
-        stackView.axis = .horizontal
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        configureStackViewContstraints()
-    }
-    
-    private func configureStackViewContstraints() {
         scrollView.addSubview(stackView)
         
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
@@ -62,12 +71,6 @@ final class ImagePagingView: UIView {
     }
     
     private func configurePageControl() {
-        pageControl.numberOfPages = 0
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        configurePageControlConstraints()
-    }
-    
-    private func configurePageControlConstraints() {
         addSubview(pageControl)
         
         pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -140,4 +143,3 @@ struct Math {
         return Int(quotient)
     }
 }
-
