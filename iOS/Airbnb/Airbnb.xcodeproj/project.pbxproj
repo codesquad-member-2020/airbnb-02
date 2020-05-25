@@ -29,6 +29,7 @@
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
 		C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filters.storyboard */; };
+		C2E4EE68247BD76300671D53 /* FilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		C2E4EE62247BCDA700671D53 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
+		C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				5A33640E2476A39600324367 /* IdentifiableView.swift */,
 				5AD06345247A50D4000BF31B /* Shadow.swift */,
 				5AD06347247A5BB2000BF31B /* MapButton.swift */,
+				C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
+				C2E4EE68247BD76300671D53 /* FilterHeaderView.xib in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
