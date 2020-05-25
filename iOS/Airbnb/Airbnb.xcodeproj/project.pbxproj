@@ -28,6 +28,7 @@
 		C2553CE3247C17B60019588B /* FilterFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2553CE2247C17B60019588B /* FilterFooterView.xib */; };
 		C2553CE5247C1A100019588B /* FilterFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE4247C1A100019588B /* FilterFooterView.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
+		C2553CE9247C23E50019588B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* Storyboard.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
@@ -73,6 +74,7 @@
 		C2553CE2247C17B60019588B /* FilterFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterFooterView.xib; sourceTree = "<group>"; };
 		C2553CE4247C1A100019588B /* FilterFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFooterView.swift; sourceTree = "<group>"; };
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		C2553CE8247C23E50019588B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */,
 				5A33640E2476A39600324367 /* IdentifiableView.swift */,
 				C2553CE0247C146B0019588B /* NibLoadable.swift */,
+				C2553CE8247C23E50019588B /* Storyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				C2E4EE6A247C0BC900671D53 /* FilterHeaderView.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
+				C2553CE9247C23E50019588B /* Storyboard.swift in Sources */,
 				5AD06346247A50D4000BF31B /* Shadow.swift in Sources */,
 				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
 				C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */,

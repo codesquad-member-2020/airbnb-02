@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NibLoadable: IdentifiableView { }
+protocol NibLoadable: IdentifiableView where Self: UIView { }
 
 extension NibLoadable {
     func loadViewFromNib() -> UIView? {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol IdentifiableView where Self: UIView {
+protocol IdentifiableView {
     static var identifier: String { get }
 }
 
