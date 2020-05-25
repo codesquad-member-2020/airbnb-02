@@ -29,6 +29,7 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 	implementation 'org.flywaydb:flyway-core'
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 }
 
 test {

@@ -1,10 +1,10 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.util.List;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.Setter;
