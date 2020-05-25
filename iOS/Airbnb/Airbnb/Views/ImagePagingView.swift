@@ -45,6 +45,41 @@ final class ImagePagingView: UIView {
         configurePageControl()
     }
     
+    func configure(count: Int) {
+        configureStackView(count: count)
+        configurePageControl(count: count)
+    }
+    
+    func insert(at index: Int, image: UIImage) {
+        guard index < stackView.arrangedSubviews.count,
+            let imageView = stackView.arrangedSubviews[index] as? UIImageView else { return }
+        
+        imageView.image = image
+    }
+    
+    private func configureStackView(count: Int) {
+        (0 ..< count).forEach { _ in
+            let imageView = UIImageView()
+            configure(imageView: imageView)
+            stackView.addArrangedSubview(imageView)
+            configureConstraints(imageView: imageView)
+        }
+    }
+    
+    private func configurePageControl(count: Int) {
+        pageControl.numberOfPages = count
+    }
+    
+    private func configure(imageView: UIImageView) {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    private func configureConstraints(imageView: UIImageView) {
+        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+    }
+    
     private func configureScrollView() {
         scrollView.delegate = self
         configureScrollViewConstraints()
@@ -65,9 +100,9 @@ final class ImagePagingView: UIView {
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-        scrollView.contentLayoutGuide.widthAnchor.constraint(
-            equalTo: stackView.widthAnchor
-        ).isActive = true
+        scrollView.contentLayoutGuide.widthAnchor
+            .constraint(equalTo: stackView.widthAnchor)
+            .isActive = true
     }
     
     private func configurePageControl() {
@@ -75,41 +110,6 @@ final class ImagePagingView: UIView {
         
         pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-    }
-    
-    func configure(count: Int) {
-        configureStackView(count: count)
-        configurePageControl(count: count)
-    }
-    
-    private func configureStackView(count: Int) {
-        (0 ..< count).forEach { _ in
-            let imageView = UIImageView()
-            configure(imageView: imageView)
-            stackView.addArrangedSubview(imageView)
-            configureConstraints(imageView: imageView)
-        }
-    }
-    
-    private func configure(imageView: UIImageView) {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-    }
-    
-    private func configureConstraints(imageView: UIImageView) {
-        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-    }
-    
-    private func configurePageControl(count: Int) {
-        pageControl.numberOfPages = count
-    }
-    
-    func insert(at index: Int, image: UIImage) {
-        guard index < stackView.arrangedSubviews.count,
-            let imageView = stackView.arrangedSubviews[index] as? UIImageView else { return }
-        
-        imageView.image = image
     }
 }
 
