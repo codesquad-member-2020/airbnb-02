@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS room
     bath          INT          NOT NULL,
     review_rating DOUBLE       NOT NULL,
     review_count  INT          NOT NULL,
-    locale      VARCHAR(45)  NOT NULL,
+    location      VARCHAR(45)  NOT NULL,
     latitude      DOUBLE       NOT NULL,
     longitude     DOUBLE       NOT NULL,
     address       VARCHAR(45)  NOT NULL,
