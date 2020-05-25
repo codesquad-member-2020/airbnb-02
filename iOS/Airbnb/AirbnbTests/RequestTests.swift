@@ -17,7 +17,7 @@ final class RequestTests: XCTestCase {
     
     func testBNBRequest_fetch_success() {
         let expectation = XCTestExpectation(description: "데이터 잘 들어옴")
-        defer{ wait(for: [expectation], timeout: 10.0)}
+        defer { wait(for: [expectation], timeout: 10.0) }
         
         let request = BNBRequest()
         let urlRequest = try? request.urlRequest()
