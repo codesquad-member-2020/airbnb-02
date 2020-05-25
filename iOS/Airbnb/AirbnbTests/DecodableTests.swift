@@ -13,7 +13,6 @@ final class DecodableTests: XCTestCase {
     func testBNB_success() {
         let data = try! XCTUnwrap(Data.readJSON(forResource: "BNBsSuccessData"))
         let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
-        
         XCTAssertNotNil(bnbs)
     }
 }
