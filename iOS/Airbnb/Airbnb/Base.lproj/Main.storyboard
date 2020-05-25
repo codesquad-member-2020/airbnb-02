@@ -56,9 +56,6 @@
                                                 <real key="value" value="19"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="addFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1U-pg-qZA"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pa-D1-Ja1" customClass="GuestsButton" customModule="Airbnb" customModuleProvider="target">
                                         <rect key="frame" x="38" y="0.0" width="30" height="30"/>
@@ -164,6 +161,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" id="gmx-4Z-4sl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="filterButtons" destination="giF-a2-P29" collectionClass="NSMutableArray" id="mHD-d1-9QF"/>
+                        <outletCollection property="filterButtons" destination="5pa-D1-Ja1" collectionClass="NSMutableArray" id="vhU-e6-XwL"/>
+                        <outletCollection property="filterButtons" destination="glN-kW-FnV" collectionClass="NSMutableArray" id="cdL-OL-H9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
