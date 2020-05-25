@@ -9,11 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class MapButton: UIButton {
-    @IBInspectable var cornerRadius: CGFloat = 25 {
-        didSet { layer.cornerRadius = cornerRadius }
-    }
-    
+final class MapButton: RoundedButton {
     @IBInspectable var diameter: CGFloat = 50 {
         didSet { configureDiameter() }
     }
