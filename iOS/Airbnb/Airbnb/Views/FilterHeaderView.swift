@@ -23,8 +23,8 @@ class FilterHeaderView: UIView {
 
     private func configureView() {
         guard let view = loadViewFromNib() else { return }
-        view.frame = self.bounds
-        self.addSubview(view)
+        view.frame = bounds
+        addSubview(view)
     }
 }
 
