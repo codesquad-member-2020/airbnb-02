@@ -9,7 +9,7 @@
 import Foundation
 
 extension Data {
-    static func jsonData(forResource name: String) -> Data? {
+    static func readJSON(forResource name: String) -> Data? {
         guard let url = Bundle.main.url(
             forResource: name,
             withExtension: "json"
