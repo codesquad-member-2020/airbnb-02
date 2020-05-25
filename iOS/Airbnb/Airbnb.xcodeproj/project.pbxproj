@@ -25,8 +25,6 @@
 		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
-		C2553CE3247C17B60019588B /* FilterFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2553CE2247C17B60019588B /* FilterFooterView.xib */; };
-		C2553CE5247C1A100019588B /* FilterFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE4247C1A100019588B /* FilterFooterView.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
 		C2553CE9247C23E50019588B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* Storyboard.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
@@ -34,8 +32,6 @@
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
 		C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filters.storyboard */; };
-		C2E4EE68247BD76300671D53 /* FilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */; };
-		C2E4EE6A247C0BC900671D53 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4EE69247C0BC900671D53 /* FilterHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +67,6 @@
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		C2553CE2247C17B60019588B /* FilterFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterFooterView.xib; sourceTree = "<group>"; };
-		C2553CE4247C1A100019588B /* FilterFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFooterView.swift; sourceTree = "<group>"; };
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C2553CE8247C23E50019588B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
@@ -80,8 +74,6 @@
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		C2E4EE62247BCDA700671D53 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
-		C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHeaderView.xib; sourceTree = "<group>"; };
-		C2E4EE69247C0BC900671D53 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +163,6 @@
 				5A89D24B2477AD9D0046629B /* ImagePagingView.swift */,
 				5AD06345247A50D4000BF31B /* Shadow.swift */,
 				5AD06347247A5BB2000BF31B /* MapButton.swift */,
-				C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */,
-				C2E4EE69247C0BC900671D53 /* FilterHeaderView.swift */,
-				C2553CE2247C17B60019588B /* FilterFooterView.xib */,
-				C2553CE4247C1A100019588B /* FilterFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,9 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
-				C2E4EE68247BD76300671D53 /* FilterHeaderView.xib in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
-				C2553CE3247C17B60019588B /* FilterFooterView.xib in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
@@ -335,14 +321,12 @@
 			files = (
 				C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */,
 				5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */,
-				C2553CE5247C1A100019588B /* FilterFooterView.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
-				C2E4EE6A247C0BC900671D53 /* FilterHeaderView.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
 				C2553CE9247C23E50019588B /* Storyboard.swift in Sources */,
