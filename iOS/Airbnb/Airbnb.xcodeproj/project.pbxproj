@@ -25,6 +25,7 @@
 		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
+		C2553CE3247C17B60019588B /* FilterFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2553CE2247C17B60019588B /* FilterFooterView.xib */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
@@ -67,6 +68,7 @@
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		C2553CE2247C17B60019588B /* FilterFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterFooterView.xib; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				5AD06347247A5BB2000BF31B /* MapButton.swift */,
 				C2E4EE67247BD76300671D53 /* FilterHeaderView.xib */,
 				C2E4EE69247C0BC900671D53 /* FilterHeaderView.swift */,
+				C2553CE2247C17B60019588B /* FilterFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C2E4EE68247BD76300671D53 /* FilterHeaderView.xib in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
+				C2553CE3247C17B60019588B /* FilterFooterView.xib in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
