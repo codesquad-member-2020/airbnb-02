@@ -2,9 +2,7 @@ package dev.codesquad.airbnb02.application.dto;
 
 import dev.codesquad.airbnb02.domain.room.entity.Image;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
-import dev.codesquad.airbnb02.domain.room.entity.RoomType;
-import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Getter;
@@ -43,6 +41,6 @@ public class RoomResponseDto {
   public static RoomResponseDto create(Room room) {
     return new RoomResponseDto(room.getId(), room.getName(), room.getType().getType(), room.getLocation(),
         room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()), room.getPrice(), false,
-        ReviewDto.create(room.getReviewRating(), room.getReviewCount()), room.getHost().isSuperhost());
+        ReviewDto.ofRatingAndCount(room.getReviewRating(), room.getReviewCount()), room.getHost().isSuperhost());
   }
 }

@@ -16,7 +16,7 @@ public class ReviewDto {
         this.count = count;
     }
 
-    public static ReviewDto create(Double rating, Integer count) {
+    public static ReviewDto ofRatingAndCount(Double rating, Integer count) {
         return new ReviewDto(rating, count);
     }
 }
