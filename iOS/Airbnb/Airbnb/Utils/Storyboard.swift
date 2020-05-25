@@ -13,7 +13,7 @@ enum Storyboard: String {
     case filters = "Filters"
     
     var instance: UIStoryboard {
-      return UIStoryboard(name: rawValue, bundle: Bundle.main)
+        return UIStoryboard(name: rawValue, bundle: .main)
     }
     
     func load<T: UIViewController>(viewControllerType: T.Type) -> T? where T: IdentifiableView {

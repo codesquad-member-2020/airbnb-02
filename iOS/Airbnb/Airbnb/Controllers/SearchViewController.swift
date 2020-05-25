@@ -12,4 +12,10 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func addFilter(_ sender: FilterButton) {
+        guard let vc = FilterViewController.instantiate(from: .filters) else { return }
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
 }

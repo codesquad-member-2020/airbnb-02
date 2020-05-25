@@ -14,3 +14,11 @@ class FilterViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
 }
+
+extension FilterViewController: IdentifiableView { }
+
+extension FilterViewController {
+    static func instantiate(from storyboard: Storyboard) -> Self? {
+        return storyboard.load(viewControllerType: self)
+    }
+}
