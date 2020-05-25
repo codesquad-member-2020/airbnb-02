@@ -32,11 +32,6 @@ final class SearchTextField: UITextField {
         layer.cornerRadius = 5
         configureShadow()
     }
-    
-    private func configureShadow() {
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 0.2
-    }
 }
+
+extension SearchTextField: Shadow { }
