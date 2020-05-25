@@ -19,6 +19,10 @@ class FilterViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
+    
+    @IBAction func close(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }
 
 extension FilterViewController: IdentifiableView { }

@@ -31,6 +31,9 @@
                                                 <state key="normal" image="close">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="close:" destination="pnZ-xz-7cv" eventType="touchUpInside" id="teq-uT-QUz"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필터 타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HF-vb-Dfs">
                                                 <rect key="frame" x="130" y="20" width="77.666666666666686" height="20.333333333333329"/>
