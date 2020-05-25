@@ -8,7 +8,13 @@
 
 import UIKit
 
+enum FilterType {
+    case date, guests, price
+}
+
 class FilterViewController: UIViewController {
+    var filterType: FilterType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
