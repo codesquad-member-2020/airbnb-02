@@ -11,6 +11,7 @@ import Foundation
 struct BNB: Codable {
     let id: Int
     let title: String
+    let type: String
     let location: String
     let images: [String]
     let price: Int
