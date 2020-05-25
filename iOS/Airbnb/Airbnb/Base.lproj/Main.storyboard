@@ -127,9 +127,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAl-IN-PLx" customClass="MapButton" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="305" y="659" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="map.fill" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="diameter">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gAl-IN-PLx" secondAttribute="trailing" constant="20" id="1wr-Y1-qO7"/>
                             <constraint firstItem="fB2-6l-Zaj" firstAttribute="top" secondItem="7ak-5z-ugy" secondAttribute="bottom" constant="14" id="Bx4-Mc-xUJ"/>
                             <constraint firstItem="cNL-Dt-uNR" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" id="FKZ-wm-eNn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cNL-Dt-uNR" secondAttribute="bottom" id="OcK-8o-Atg"/>
@@ -140,6 +154,7 @@
                             <constraint firstItem="7ak-5z-ugy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="lcq-MH-T72"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ak-5z-ugy" secondAttribute="trailing" constant="24" id="qt7-zg-dbA"/>
                             <constraint firstItem="fB2-6l-Zaj" firstAttribute="leading" secondItem="7ak-5z-ugy" secondAttribute="leading" id="uWF-vS-7bX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gAl-IN-PLx" secondAttribute="bottom" constant="20" id="wHd-32-Zk8"/>
                             <constraint firstItem="7ak-5z-ugy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="xpd-xn-bP2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -207,6 +222,7 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="searchBarBorderGray">
             <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
