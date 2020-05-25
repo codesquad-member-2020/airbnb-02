@@ -22,13 +22,13 @@ final class MapButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureShadow()
+        configureShadow(offset: CGSize(width: 5, height: 5), opacity: 3)
         configureAction()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureShadow()
+        configureShadow(offset: CGSize(width: 5, height: 5), opacity: 3)
         configureAction()
     }
     
@@ -50,11 +50,4 @@ final class MapButton: UIButton {
     }
 }
 
-extension MapButton: Shadow {
-    func configureShadow() {
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 3
-    }
-}
+extension MapButton: Shadow { }
