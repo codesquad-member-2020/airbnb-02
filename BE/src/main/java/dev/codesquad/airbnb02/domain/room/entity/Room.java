@@ -3,6 +3,7 @@ package dev.codesquad.airbnb02.domain.room.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -60,6 +61,16 @@ public class Room {
   @NotNull
   private Host host;
 
-  public Room() {
+  public Room() {}
+
+  public boolean isValidPrice(Integer priceMin, Integer priceMax) {
+    if (checkNull(priceMax)) {
+      return true;
+    }
+    return priceMin <= this.price && this.price <= priceMax;
+  }
+
+  private boolean checkNull(Object input) {
+    return Objects.isNull(input);
   }
 }
