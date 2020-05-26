@@ -41,7 +41,7 @@ class FilterViewController: UIViewController {
     }
 }
 
-extension FilterViewController: IdentifiableView { }
+extension FilterViewController: Identifiable { }
 
 extension FilterViewController {
     static func instantiate(from storyboard: Storyboard) -> Self? {

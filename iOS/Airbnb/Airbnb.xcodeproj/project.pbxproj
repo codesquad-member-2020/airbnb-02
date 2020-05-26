@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
+		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
+		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				5A840978247651A200D84413 /* UIColorExtension.swift */,
 				5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */,
-				5A33640E2476A39600324367 /* IdentifiableView.swift */,
+				5A33640E2476A39600324367 /* Identifiable.swift */,
 				C2553CE0247C146B0019588B /* NibLoadable.swift */,
 				C2553CE8247C23E50019588B /* Storyboard.swift */,
 			);
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */,
-				5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */,
+				5A33640F2476A39600324367 /* Identifiable.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				C2E54883247C378C001B400C /* RoundedButton.swift in Sources */,

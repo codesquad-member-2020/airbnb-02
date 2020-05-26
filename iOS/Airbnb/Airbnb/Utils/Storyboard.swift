@@ -16,7 +16,7 @@ enum Storyboard: String {
         return UIStoryboard(name: rawValue, bundle: .main)
     }
     
-    func load<T: UIViewController>(viewControllerType: T.Type) -> T? where T: IdentifiableView {
+    func load<T: UIViewController>(viewControllerType: T.Type) -> T? where T: Identifiable {
         let storyboardID = viewControllerType.identifier
         return instance.instantiateViewController(withIdentifier: storyboardID) as? T
     }

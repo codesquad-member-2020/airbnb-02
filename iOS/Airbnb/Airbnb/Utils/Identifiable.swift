@@ -1,5 +1,5 @@
 //
-//  IdentifiableView.swift
+//  Identifiable.swift
 //  Airbnb
 //
 //  Created by kimdo2297 on 2020/05/21.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol IdentifiableView {
+protocol Identifiable {
     static var identifier: String { get }
 }
 
-extension IdentifiableView {
+extension Identifiable {
     static var identifier: String {
         return String(describing: self)
     }
