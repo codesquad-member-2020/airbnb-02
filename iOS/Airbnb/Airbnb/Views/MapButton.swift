@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class MapButton: RoundedButton {
+final class MapButton: UIButton {
     @IBInspectable var diameter: CGFloat = 50 {
         didSet { configureDiameter() }
     }
@@ -27,6 +27,7 @@ final class MapButton: RoundedButton {
     private func configureDiameter() {
         widthAnchor.constraint(equalToConstant: diameter).isActive = true
         heightAnchor.constraint(equalToConstant: diameter).isActive = true
+        layer.cornerRadius = diameter / 2
     }
 }
 
