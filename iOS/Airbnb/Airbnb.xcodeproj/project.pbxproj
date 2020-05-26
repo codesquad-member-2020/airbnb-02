@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* IdentifiableView.swift */; };
+		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
@@ -24,10 +24,15 @@
 		C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */; };
 		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
+		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
+		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
+		C2553CE9247C23E50019588B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* Storyboard.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
+		C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filter.storyboard */; };
+		C2E54883247C378C001B400C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54882247C378C001B400C /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A33640E2476A39600324367 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
+		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
@@ -62,10 +67,15 @@
 		C22A526E2473A1AB0055A478 /* AirbnbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTests.swift; sourceTree = "<group>"; };
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		C2553CE8247C23E50019588B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
+		C2E4EE62247BCDA700671D53 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		C2E54882247C378C001B400C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,9 @@
 			children = (
 				5A840978247651A200D84413 /* UIColorExtension.swift */,
 				5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */,
+				5A33640E2476A39600324367 /* Identifiable.swift */,
+				C2553CE0247C146B0019588B /* NibLoadable.swift */,
+				C2553CE8247C23E50019588B /* Storyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -124,11 +137,12 @@
 				C22A527C2473A2590055A478 /* Models */,
 				C22A527E2473A26F0055A478 /* Networking */,
 				C22A52572473A1A80055A478 /* AppDelegate.swift */,
-				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
-				C22A52602473A1AB0055A478 /* Assets.xcassets */,
+				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
+				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
+				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -149,9 +163,9 @@
 				5A8DB2B324755C30001FC509 /* BadgeLabel.swift */,
 				5A8DB2BB24757859001FC509 /* SearchTextField.swift */,
 				5A89D24B2477AD9D0046629B /* ImagePagingView.swift */,
-				5A33640E2476A39600324367 /* IdentifiableView.swift */,
 				5AD06345247A50D4000BF31B /* Shadow.swift */,
 				5AD06347247A5BB2000BF31B /* MapButton.swift */,
+				C2E54882247C378C001B400C /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 				C22A525B2473A1A80055A478 /* SearchViewController.swift */,
 				C22A527F2473AAB10055A478 /* BookmarkViewController.swift */,
 				5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */,
+				C2553CE6247C1CC40019588B /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +303,7 @@
 			files = (
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
+				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +322,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A33640F2476A39600324367 /* IdentifiableView.swift in Sources */,
+				C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */,
+				5A33640F2476A39600324367 /* Identifiable.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
+				C2E54883247C378C001B400C /* RoundedButton.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
+				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
+				C2553CE9247C23E50019588B /* Storyboard.swift in Sources */,
 				5AD06346247A50D4000BF31B /* Shadow.swift in Sources */,
 				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
 				C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */,
@@ -483,13 +503,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Airbnb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Airbnb2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,13 +521,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Airbnb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Airbnb2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

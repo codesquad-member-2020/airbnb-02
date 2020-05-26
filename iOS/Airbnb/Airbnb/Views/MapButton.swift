@@ -10,10 +10,6 @@ import UIKit
 
 @IBDesignable
 final class MapButton: UIButton {
-    @IBInspectable var cornerRadius: CGFloat = 25 {
-        didSet { layer.cornerRadius = cornerRadius }
-    }
-    
     @IBInspectable var diameter: CGFloat = 50 {
         didSet { configureDiameter() }
     }
@@ -31,6 +27,7 @@ final class MapButton: UIButton {
     private func configureDiameter() {
         widthAnchor.constraint(equalToConstant: diameter).isActive = true
         heightAnchor.constraint(equalToConstant: diameter).isActive = true
+        layer.cornerRadius = diameter / 2
     }
 }
 

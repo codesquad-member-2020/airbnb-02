@@ -132,9 +132,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="map.fill" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="diameter">
                                         <real key="value" value="50"/>
                                     </userDefinedRuntimeAttribute>
@@ -161,6 +158,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" id="gmx-4Z-4sl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="filterButtons" destination="giF-a2-P29" collectionClass="NSMutableArray" id="mHD-d1-9QF"/>
+                        <outletCollection property="filterButtons" destination="5pa-D1-Ja1" collectionClass="NSMutableArray" id="vhU-e6-XwL"/>
+                        <outletCollection property="filterButtons" destination="glN-kW-FnV" collectionClass="NSMutableArray" id="cdL-OL-H9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

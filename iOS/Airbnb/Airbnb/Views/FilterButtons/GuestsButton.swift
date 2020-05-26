@@ -10,6 +10,6 @@ import Foundation
 
 final class GuestsButton: FilterButton {
     override func invokeAction(sender: FilterButton) {
-        action?()
+        action?(.guests)
     }
 }

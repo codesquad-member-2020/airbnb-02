@@ -10,6 +10,6 @@ import Foundation
 
 final class PriceButton: FilterButton {
     override func invokeAction(sender: FilterButton) {
-        action?()
+        action?(.price)
     }
 }

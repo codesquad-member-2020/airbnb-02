@@ -10,6 +10,6 @@ import Foundation
 
 final class DateButton: FilterButton {
     override func invokeAction(sender: FilterButton) {
-        action?()
+        action?(.date)
     }
 }

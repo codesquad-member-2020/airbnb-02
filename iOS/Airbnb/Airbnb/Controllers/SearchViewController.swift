@@ -9,7 +9,21 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
+    
+    @IBOutlet var filterButtons: [FilterButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureButtonActions()
+    }
+    
+    private func configureButtonActions() {
+        filterButtons.forEach { button in
+            button.action = { [weak self] filterType in
+                guard let filterViewController = FilterViewController
+                    .instantiate(from: .filters, filterType: filterType) else { return }
+                self?.present(filterViewController, animated: true)
+            }
+        }
     }
 }
