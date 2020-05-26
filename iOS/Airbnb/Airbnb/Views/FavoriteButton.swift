@@ -18,6 +18,10 @@ final class FavoriteButton: RoundButton {
         didSet { configureAppearance() }
     }
     
+    var isFavorited: Bool = false {
+        didSet { setAppearance(isFavorited: isFavorited) }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureAppearance()
@@ -28,11 +32,20 @@ final class FavoriteButton: RoundButton {
         configureAppearance()
     }
     
+    func toggle() {
+        isFavorited.toggle()
+    }
+    
     private func configureAppearance() {
         let normalImage = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
         setImage(normalImage, for: .normal)
         let selectedImage = UIImage(systemName: "heart.fill")?.withRenderingMode(.alwaysTemplate)
         setImage(selectedImage, for: .selected)
         tintColor = normalColor
+    }
+    
+    private func setAppearance(isFavorited: Bool) {
+        tintColor = isFavorited ? selectedColor : normalColor
+        isSelected = isFavorited
     }
 }
