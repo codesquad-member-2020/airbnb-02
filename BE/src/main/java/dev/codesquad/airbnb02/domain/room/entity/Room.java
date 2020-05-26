@@ -69,6 +69,13 @@ public class Room {
 
   public Room() {}
 
+  public boolean isValidLocation(String location) {
+    if (checkNull(location)) {
+      return true;
+    }
+    return this.locale.isEqualsLocation(location);
+  }
+
   public boolean isValidPrice(Integer priceMin, Integer priceMax) {
     if (checkNull(priceMax)) {
       return true;

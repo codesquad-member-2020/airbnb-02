@@ -31,7 +31,7 @@ public class RoomService {
   public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
       LocalDate checkin, LocalDate checkout) {
     return roomRepository.findAll().stream()
-        .filter(room -> room.getLocale().getLocation().equals(location))
+        .filter(room -> room.isValidLocation(location))
         .filter(room -> room.isValidPrice(priceMin, priceMax))
         .filter(room -> room.isValidDate(checkin, checkout))
         .map(RoomResponseDto::create)
