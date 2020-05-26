@@ -20,9 +20,8 @@ final class SearchViewController: UIViewController {
     private func configureButtonActions() {
         filterButtons.forEach { button in
             button.action = { [weak self] filterType in
-                guard let filterViewController = FilterViewController.instantiate(from: .filters) else { return }
-                filterViewController.modalPresentationStyle = .overCurrentContext
-                filterViewController.filterType = filterType
+                guard let filterViewController = FilterViewController
+                    .instantiate(from: .filters, filterType: filterType) else { return }
                 self?.present(filterViewController, animated: true)
             }
         }
