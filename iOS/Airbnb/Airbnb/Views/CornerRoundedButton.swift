@@ -1,5 +1,5 @@
 //
-//  RoundedButton.swift
+//  CornerRoundedButton.swift
 //  Airbnb
 //
 //  Created by Chaewan Park on 2020/05/26.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class RoundedButton: UIButton {
+final class CornerRoundedButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 25 {
         didSet { layer.cornerRadius = cornerRadius }
     }

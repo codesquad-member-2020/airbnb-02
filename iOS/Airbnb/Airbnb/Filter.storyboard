@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="FilterViewController" id="pnZ-xz-7cv" customClass="FilterViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="caz-yR-UQK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-BF-8nX">
-                                <rect key="frame" x="18.666666666666657" y="351" width="337.66666666666674" height="120"/>
+                                <rect key="frame" x="30" y="240" width="540" height="120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uem-Ej-kn0" userLabel="Filter Header View">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uk-Lz-7QK">
                                                 <rect key="frame" x="8" y="8" width="25" height="25"/>
@@ -36,7 +35,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필터 타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HF-vb-Dfs">
-                                                <rect key="frame" x="132.33333333333334" y="20.333333333333314" width="73.333333333333343" height="19.333333333333329"/>
+                                                <rect key="frame" x="233.5" y="20.5" width="73.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,7 +51,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-pN-2bx" userLabel="Filter Footer View">
-                                        <rect key="frame" x="0.0" y="60" width="337.66666666666669" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="540" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-CF-yxd">
                                                 <rect key="frame" x="24" y="17" width="32" height="27"/>
@@ -61,8 +60,8 @@
                                                     <color key="titleColor" name="textGray"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbc-ME-4CB" customClass="RoundedButton" customModule="Airbnb" customModuleProvider="target">
-                                                <rect key="frame" x="257.66666666666663" y="12" width="70" height="38"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbc-ME-4CB" customClass="CornerRoundedButton" customModule="Airbnb" customModuleProvider="target">
+                                                <rect key="frame" x="460" y="12" width="70" height="38"/>
                                                 <color key="backgroundColor" name="completionBlack"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="ZGa-4V-Hgv"/>
