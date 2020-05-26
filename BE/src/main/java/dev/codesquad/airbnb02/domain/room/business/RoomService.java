@@ -24,9 +24,10 @@ public class RoomService {
   }
 
   @Transactional
-  public List<RoomResponseDto> findByLocation(String location) {
+  public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax) {
     return roomRepository.findAll().stream()
         .filter(room -> room.getLocale().getLocation().equals(location))
+        .filter(room -> room.isValidPrice(priceMin, priceMax))
         .map(RoomResponseDto::create)
         .collect(Collectors.toList());
   }

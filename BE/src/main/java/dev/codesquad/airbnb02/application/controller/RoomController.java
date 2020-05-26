@@ -6,7 +6,6 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +25,12 @@ public class RoomController {
       @RequestParam(value = "checkin", required = false) String checkin,
       @RequestParam(value = "checkout", required = false) String checkout,
       @RequestParam(value = "adults", required = false) Integer adults,
-      @RequestParam(value = "price_min", required = false) Integer priceMin,
+      @RequestParam(value = "price_min", required = false, defaultValue = "0") Integer priceMin,
       @RequestParam(value = "price_max", required = false) Integer priceMax,
       @RequestParam(value = "location", required = false) String location) {
 
-    return new ResponseEntity<>(roomService.findByLocation(location), HttpStatus.OK);
+    return new ResponseEntity<>(roomService.findFilteredBy(location, priceMin, priceMax),
+        HttpStatus.OK);
   }
 
   @GetMapping(value = "/", params = {"!checkin", "!checkout", "!adults", "!price_min", "!price_max",
