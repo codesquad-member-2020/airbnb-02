@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS room
 (
     id            INT PRIMARY KEY AUTO_INCREMENT,
     name          VARCHAR(150) NOT NULL,
-    type          INT          NOT NULL,
+    type          VARCHAR(45)  NOT NULL,
     price         INT          NOT NULL,
     maximum_guest INT          NOT NULL,
     bedroom       INT          NOT NULL,
