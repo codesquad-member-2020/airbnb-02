@@ -76,25 +76,20 @@ public class Room {
     return priceMin <= this.price && this.price <= priceMax;
   }
 
-  public boolean isValidDate(String checkinInput, String checkoutInput) {
-    LocalDate checkin = LocalDate.parse(checkinInput);
-    LocalDate checkout = LocalDate.parse(checkoutInput);
+  public boolean isValidDate(LocalDate checkin, LocalDate checkout) {
     if (checkNull(checkin) || checkNull(checkout)) {
       return true;
     }
-    // checkin, checkin + 1, checkin + 2 ..... checkout까지 순회한다.
-    // booking.getBookDate에 위의 날짜가 있는 지 확인한다.
-    // 이 중에서 단 하나라도 true(날짜랑 겹치는 것이 있다) 가 반환되면, 전체를 false 리턴한다.
 
-    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      for (Booking booking : this.bookings) {
-        if (booking.getBookDate().isEqual(date)) {
-          return true;
-        }
+    /**
+     * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
+     */
+    for(Booking booking : this.bookings) {
+      if (!booking.isAvailable(checkin, checkout)) {
+        return false;
       }
-      return false;
     }
-    return false;
+    return true;
   }
 
   private boolean checkNull(Object input) {
