@@ -18,6 +18,14 @@ final class FavoriteButton: RoundButton {
         didSet { configureAppearance() }
     }
     
+    private var bounceAnimation: CAKeyframeAnimation = {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
+        bounceAnimation.duration = TimeInterval(0.3)
+        bounceAnimation.calculationMode = .cubic
+        return bounceAnimation
+    }()
+    
     var isFavorited: Bool = false {
         didSet { setAppearance(isFavorited: isFavorited) }
     }
@@ -47,5 +55,6 @@ final class FavoriteButton: RoundButton {
     private func setAppearance(isFavorited: Bool) {
         tintColor = isFavorited ? selectedColor : normalColor
         isSelected = isFavorited
+        layer.add(bounceAnimation, forKey: nil)
     }
 }
