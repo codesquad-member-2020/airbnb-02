@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
-		5A81411A247BCDE80020ED80 /* BNBsSuccessData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsSuccessData.json */; };
+		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
 		5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814121247BD3590020ED80 /* DecodableTests.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		5A814119247BCDE80020ED80 /* BNBsSuccessData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsSuccessData.json; sourceTree = "<group>"; };
+		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
 		5A814121247BD3590020ED80 /* DecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableTests.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		5A814116247BC6040020ED80 /* Mocking */ = {
 			isa = PBXGroup;
 			children = (
-				5A814119247BCDE80020ED80 /* BNBsSuccessData.json */,
+				5A814119247BCDE80020ED80 /* BNBsTestData.json */,
 			);
 			path = Mocking;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A81411A247BCDE80020ED80 /* BNBsSuccessData.json in Resources */,
+				5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */,
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
