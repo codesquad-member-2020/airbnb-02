@@ -20,7 +20,7 @@ enum FilterType {
     }
 }
 
-class FilterViewController: UIViewController {
+final class FilterViewController: UIViewController {
     
     @IBOutlet weak var filterTitle: UILabel!
     
