@@ -10,7 +10,7 @@ import UIKit
 
 enum Storyboard: String {
     case main = "Main"
-    case filters = "Filters"
+    case filters = "Filter"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: .main)

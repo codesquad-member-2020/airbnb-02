@@ -36,8 +36,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필터 타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HF-vb-Dfs">
-                                                <rect key="frame" x="130" y="20" width="77.666666666666686" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <rect key="frame" x="132.33333333333334" y="20.333333333333314" width="73.333333333333343" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -51,24 +51,24 @@
                                             <constraint firstAttribute="height" constant="60" id="sfn-Wi-lf0"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lr-kb-mr0" userLabel="Filter Footer View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-pN-2bx" userLabel="Filter Footer View">
                                         <rect key="frame" x="0.0" y="60" width="337.66666666666669" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwq-NN-PHb">
-                                                <rect key="frame" x="24" y="14" width="39" height="30"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-CF-yxd">
+                                                <rect key="frame" x="24" y="17" width="32" height="27"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <state key="normal" title="초기화">
                                                     <color key="titleColor" name="textGray"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHo-l6-htC" customClass="RoundedButton" customModule="Airbnb" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbc-ME-4CB" customClass="RoundedButton" customModule="Airbnb" customModuleProvider="target">
                                                 <rect key="frame" x="257.66666666666663" y="12" width="70" height="38"/>
                                                 <color key="backgroundColor" name="completionBlack"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="70" id="IYm-lR-2Tp"/>
-                                                    <constraint firstAttribute="height" constant="38" id="TgS-uO-Y0n"/>
+                                                    <constraint firstAttribute="height" constant="38" id="ZGa-4V-Hgv"/>
+                                                    <constraint firstAttribute="width" constant="70" id="bdO-cb-JXr"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="완료">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -81,17 +81,12 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="bwq-NN-PHb" secondAttribute="bottom" constant="16" id="135-un-5rp"/>
-                                            <constraint firstAttribute="trailing" secondItem="nHo-l6-htC" secondAttribute="trailing" constant="10" id="KrP-KG-awk"/>
-                                            <constraint firstAttribute="bottom" secondItem="nHo-l6-htC" secondAttribute="bottom" constant="10" id="c9L-hB-dW1"/>
-                                            <constraint firstItem="bwq-NN-PHb" firstAttribute="leading" secondItem="4lr-kb-mr0" secondAttribute="leading" constant="24" id="hZZ-kn-Zgl"/>
-                                            <constraint firstAttribute="height" constant="60" id="i8B-Fh-BC7"/>
+                                            <constraint firstItem="iIv-CF-yxd" firstAttribute="leading" secondItem="UGC-pN-2bx" secondAttribute="leading" constant="24" id="3JA-4B-gMZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fbc-ME-4CB" secondAttribute="bottom" constant="10" id="IYt-Lf-O1C"/>
+                                            <constraint firstAttribute="height" constant="60" id="Jgp-ZA-6DE"/>
+                                            <constraint firstAttribute="bottom" secondItem="iIv-CF-yxd" secondAttribute="bottom" constant="16" id="hjO-QZ-QyS"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fbc-ME-4CB" secondAttribute="trailing" constant="10" id="lyw-iF-wsF"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +102,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0yy-D1-f9d"/>
                     </view>
+                    <connections>
+                        <outlet property="filterTitle" destination="9HF-vb-Dfs" id="MrY-xf-mMN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqU-c8-8p5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,7 +31,7 @@
 		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
-		C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filters.storyboard */; };
+		C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filter.storyboard */; };
 		C2E54883247C378C001B400C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54882247C378C001B400C /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,7 @@
 		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
-		C2E4EE62247BCDA700671D53 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
+		C2E4EE62247BCDA700671D53 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		C2E54882247C378C001B400C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
 				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
-				C2E4EE62247BCDA700671D53 /* Filters.storyboard */,
+				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
@@ -303,7 +303,7 @@
 			files = (
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
-				C2E4EE63247BCDA700671D53 /* Filters.storyboard in Resources */,
+				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
