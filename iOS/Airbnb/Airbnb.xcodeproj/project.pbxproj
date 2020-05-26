@@ -33,6 +33,7 @@
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
 		C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filter.storyboard */; };
 		C2E54883247C378C001B400C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54882247C378C001B400C /* RoundedButton.swift */; };
+		C2E54887247D3A47001B400C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54886247D3A47001B400C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		C2E4EE62247BCDA700671D53 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		C2E54882247C378C001B400C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		C2E54886247D3A47001B400C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				5A89D24B2477AD9D0046629B /* ImagePagingView.swift */,
 				5AD06345247A50D4000BF31B /* Shadow.swift */,
 				5AD06347247A5BB2000BF31B /* MapButton.swift */,
+				C2E54886247D3A47001B400C /* RoundButton.swift */,
 				C2E54882247C378C001B400C /* RoundedButton.swift */,
 			);
 			path = Views;
@@ -326,6 +329,7 @@
 				5A33640F2476A39600324367 /* Identifiable.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
+				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
 				C2E54883247C378C001B400C /* RoundedButton.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
