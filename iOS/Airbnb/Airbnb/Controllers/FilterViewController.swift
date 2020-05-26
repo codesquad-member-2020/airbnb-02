@@ -28,12 +28,16 @@ class FilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        configureBackgroundDim()
         configureTitle()
     }
     
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    private func configureBackgroundDim() {
+        view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
     
     private func configureTitle() {
