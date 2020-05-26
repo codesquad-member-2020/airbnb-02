@@ -8,8 +8,12 @@
 
 import Foundation
 
-enum HTTPMethod {
-    case get, post, put, patch, delete
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
 }
 
 protocol Request {
@@ -33,6 +37,9 @@ extension Request {
     
     func urlRequest() throws -> URLRequest? {
         guard let url = URL(string: path) else { throw NetworkErrorCase.invalidURL }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
         return URLRequest(url: url)
     }
 }
