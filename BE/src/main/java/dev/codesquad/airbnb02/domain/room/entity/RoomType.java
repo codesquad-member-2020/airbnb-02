@@ -1,23 +1,17 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 public enum RoomType {
-  APARTMENT(0, "아파트"),
-  HOUSE(1, "단독주택"),
-  OFFICE(2, "사무실");
+  아파트("아파트"),
+  단독주택("단독주택"),
+  사무실("사무실");
 
-  private final int code;
-  private final String type;
+  private final String name;
 
-  RoomType(int code, String type) {
-    this.code = code;
-    this.type = type;
+  RoomType(String name) {
+    this.name = name;
   }
 
-  public int getCode() {
-    return code;
-  }
-
-  public String getType() {
-    return type;
+  public String getName() {
+    return name;
   }
 }

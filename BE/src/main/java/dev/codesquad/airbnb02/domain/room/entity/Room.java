@@ -24,7 +24,7 @@ public class Room {
   private String name;
 
   @NotNull
-  @Enumerated(EnumType.ORDINAL)
+  @Enumerated(EnumType.STRING)
   private RoomType type;
 
   @NotNull
