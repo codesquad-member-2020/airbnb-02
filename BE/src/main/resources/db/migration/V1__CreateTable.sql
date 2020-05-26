@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS host;
 DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS image;
+DROP TABLE IF EXISTS booking;
 
 CREATE TABLE host
 (
@@ -36,4 +37,12 @@ CREATE TABLE IF NOT EXISTS image
     image_url VARCHAR(500),
     room_id   INT,
     CONSTRAINT image_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
+);
+
+CREATE TABLE booking
+(
+    room_id   INT      NOT NULL,
+    book_date DATE NOT NULL,
+    guest     INT      NOT NULL DEFAULT 1,
+    CONSTRAINT booking_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
 );

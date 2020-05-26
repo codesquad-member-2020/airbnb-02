@@ -2,6 +2,7 @@ package dev.codesquad.airbnb02.application.controller;
 
 import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
+import java.util.Date;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -29,7 +30,7 @@ public class RoomController {
       @RequestParam(value = "price_max", required = false) Integer priceMax,
       @RequestParam(value = "location", required = false) String location) {
 
-    return new ResponseEntity<>(roomService.findFilteredBy(location, priceMin, priceMax),
+    return new ResponseEntity<>(roomService.findFilteredBy(location, priceMin, priceMax, checkin, checkout),
         HttpStatus.OK);
   }
 
