@@ -1,59 +1,59 @@
 [
-  {
-    "id": 1,
-    "title": "해운대 펜트하우스 더탑플로어",
-    "type": "Entire apartment",
-    "location": "부산",
-    "images": [
-      "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
-      "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
-    ],
-    "price": 50000,
-    "favorite": false,
-    "review": {
-      "rating": 4.83,
-      "count": 200
+    {
+        "id": 1,
+        "title": "해운대 펜트하우스 더탑플로어",
+        "type": "Entire apartment",
+        "location": "부산",
+        "images": [
+            "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
+        ],
+        "price": 50000,
+        "favorite": false,
+        "review": {
+            "rating": 4.83,
+            "count": 200
+        },
+        "superhost": true
     },
-    "superhost": true
-  },
-  {
-    "id": 2,
-    "title": "압구정 현대아파트",
-    "type": "Entire house",
-    "location": "서울",
-    "images": [
-      "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
-      "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
-    ],
-    "price": 90000,
-    "favorite": true,
-    "review": {
-      "rating": 4.93,
-      "count": 203
+    {
+        "id": 2,
+        "title": "압구정 현대아파트",
+        "type": "Entire house",
+        "location": "서울",
+        "images": [
+            "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
+        ],
+        "price": 90000,
+        "favorite": true,
+        "review": {
+            "rating": 4.93,
+            "count": 203
+        },
+        "superhost": false
     },
-    "superhost": false
-  },
-  {
-    "id": 3,
-    "title": "샌프란시스코 감성하우스",
-    "type": "Entire apartment",
-    "location": "춘천",
-    "images": [
-      "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
-      "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
-      "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
-    ],
-    "price": 30000,
-    "favorite": false,
-    "review": {
-      "rating": 3.11,
-      "count": 11
-    },
-    "superhost": false
-  }
+    {
+        "id": 3,
+        "title": "샌프란시스코 감성하우스",
+        "type": "Entire apartment",
+        "location": "춘천",
+        "images": [
+            "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
+            "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
+        ],
+        "price": 30000,
+        "favorite": false,
+        "review": {
+            "rating": 3.11,
+            "count": 11
+        },
+        "superhost": false
+    }
 ]
