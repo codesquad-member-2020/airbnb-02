@@ -12,4 +12,5 @@ extension UIColor {
     static let completionBlack = UIColor(named: "completionBlack")!
     static let searchBarBorderGray = UIColor(named: "searchBarBorderGray")!
     static let textGray = UIColor(named: "textGray")!
+    static let pointPink = UIColor(named: "pointPink")!
 }
