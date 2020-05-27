@@ -1,4 +1,3 @@
-
 # Airbnb iOS
 
 숙소예약 서비스 iOS 앱
@@ -66,6 +65,4 @@
 [pr38]: https://github.com/codesquad-member-2020/airbnb-02/pull/38
 [pr46]: https://github.com/codesquad-member-2020/airbnb-02/pull/46
 [pr56]: https://github.com/codesquad-member-2020/airbnb-02/pull/56
-
-
 

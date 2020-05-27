@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
+		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
+		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
+		5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814121247BD3590020ED80 /* DecodableTests.swift */; };
+		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
@@ -47,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
+		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
+		5A814121247BD3590020ED80 /* DecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableTests.swift; sourceTree = "<group>"; };
+		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
@@ -96,6 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A814116247BC6040020ED80 /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				5A814119247BCDE80020ED80 /* BNBsTestData.json */,
+			);
+			path = Mocking;
+			sourceTree = "<group>";
+		};
+		5A81411D247BCE630020ED80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A81411E247BCE900020ED80 /* BNB.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5A8409772476518800D84413 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +128,7 @@
 				5A33640E2476A39600324367 /* Identifiable.swift */,
 				C2553CE0247C146B0019588B /* NibLoadable.swift */,
 				C2553CE8247C23E50019588B /* Storyboard.swift */,
+				5A814123247BD3CD0020ED80 /* DataExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -134,7 +159,7 @@
 				C22A527A2473A2350055A478 /* ViewModels */,
 				C22A527D2473A2620055A478 /* Controllers */,
 				C22A527B2473A2440055A478 /* UseCases */,
-				C22A527C2473A2590055A478 /* Models */,
+				5A81411D247BCE630020ED80 /* Models */,
 				C22A527E2473A26F0055A478 /* Networking */,
 				C22A52572473A1A80055A478 /* AppDelegate.swift */,
 				C22A52592473A1A80055A478 /* SceneDelegate.swift */,
@@ -152,6 +177,7 @@
 			children = (
 				C22A526E2473A1AB0055A478 /* AirbnbTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
+				5A814121247BD3590020ED80 /* DecodableTests.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -184,13 +210,6 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		C22A527C2473A2590055A478 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		C22A527D2473A2620055A478 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +224,7 @@
 		C22A527E2473A26F0055A478 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5A814116247BC6040020ED80 /* Mocking */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -301,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */,
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
@@ -328,6 +349,8 @@
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				C2E54883247C378C001B400C /* RoundedButton.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
+				5A81411F247BCE900020ED80 /* BNB.swift in Sources */,
+				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
@@ -350,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */,
 				C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
