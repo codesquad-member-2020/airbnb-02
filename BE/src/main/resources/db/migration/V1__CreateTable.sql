@@ -42,8 +42,15 @@ CREATE TABLE IF NOT EXISTS image
 CREATE TABLE booking
 (
     id        INT PRIMARY KEY AUTO_INCREMENT,
-    room_id   INT      NOT NULL,
+    room_id   INT  NOT NULL,
     book_date DATE NOT NULL,
-    guest     INT      NOT NULL DEFAULT 1,
+    guest     INT  NOT NULL DEFAULT 1,
     CONSTRAINT booking_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
+);
+
+CREATE TABLE favorite
+(
+    room_id INT NOT NULL,
+    user_id INT NOT NULL,
+    favor    TINYINT DEFAULT FALSE
 );
