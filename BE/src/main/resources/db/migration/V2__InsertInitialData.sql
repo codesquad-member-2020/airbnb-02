@@ -431,3 +431,15 @@ VALUES ('https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9
        ('https://a1.muscache.com/im/pictures/72230850/77e857cd_original.jpg?aki_policy=large', 50),
        ('https://a2.muscache.com/im/pictures/4d7f3eeb-46ca-4700-9f97-93edb2771118.jpg?aki_policy=large',
         50);
+
+INSERT INTO booking (room_id, book_date)
+VALUES (1, '2020-05-20'),
+       (1, '2020-05-21'),
+       (2, '2020-05-20'),
+       (2, '2020-05-21'),
+       (3, '2020-05-16'),
+       (3, '2020-05-17'),
+       (3, '2020-05-18'),
+       (3, '2020-05-19'),
+       (3, '2020-05-20'),
+       (3, '2020-05-21');

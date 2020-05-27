@@ -3,7 +3,9 @@ package dev.codesquad.airbnb02.domain.room.entity;
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
+import org.springframework.stereotype.Component;
 
+@Component
 @Embeddable
 @Getter
 public class Locale {
@@ -11,4 +13,8 @@ public class Locale {
     private Double latitude;
     private Double longitude;
     private String address;
+
+    public boolean isEqualsLocation(String location) {
+        return location.equals(this.location);
+    }
 }

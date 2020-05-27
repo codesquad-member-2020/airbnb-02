@@ -30,6 +30,7 @@ dependencies {
     }
 	implementation 'org.flywaydb:flyway-core'
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
 }
 
 test {
