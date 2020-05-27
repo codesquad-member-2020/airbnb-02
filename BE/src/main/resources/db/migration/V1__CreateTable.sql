@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS booking;
 
-CREATE TABLE host
+CREATE TABLE IF NOT EXISTS host
 (
     id        INT PRIMARY KEY AUTO_INCREMENT,
     name      VARCHAR(45) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS image
     CONSTRAINT image_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
 );
 
-CREATE TABLE booking
+CREATE TABLE IF NOT EXISTS booking
 (
     id        INT PRIMARY KEY AUTO_INCREMENT,
     room_id   INT      NOT NULL,
