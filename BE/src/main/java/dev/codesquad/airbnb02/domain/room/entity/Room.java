@@ -2,9 +2,8 @@ package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
-import dev.codesquad.airbnb02.domain.room.data.Favorite;
+import dev.codesquad.airbnb02.domain.favorite.Favorite;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
@@ -69,7 +68,8 @@ public class Room {
   private List<Booking> bookings;
 
   @ElementCollection
-  @CollectionTable(name = "favorite", joinColumns = @JoinColumn(name = "room_id"))
+  @CollectionTable(name = "favorite",
+      joinColumns = @JoinColumn(name = "room_id", insertable = false, updatable = false))
   private List<Favorite> favorites;
 
   public Room() {}
@@ -96,7 +96,7 @@ public class Room {
     /**
      * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
      */
-    for(Booking booking : this.bookings) {
+    for (Booking booking : this.bookings) {
       if (!booking.isAvailable(checkin, checkout)) {
         return false;
       }
