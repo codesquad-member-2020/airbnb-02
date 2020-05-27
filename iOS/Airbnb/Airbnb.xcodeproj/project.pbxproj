@@ -150,7 +150,6 @@
 		C22A524B2473A1A70055A478 = {
 			isa = PBXGroup;
 			children = (
-				5ADA00DD247E7BC300E30D6C /* Default-568h@2x.png */,
 				C22A52562473A1A80055A478 /* Airbnb */,
 				C22A526D2473A1AB0055A478 /* AirbnbTests */,
 				C22A52552473A1A80055A478 /* Products */,
