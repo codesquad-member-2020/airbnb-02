@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -35,6 +36,20 @@ public class Booking {
 
   @NotNull
   private int guest;
+
+  public Booking() {}
+
+  @Builder
+  protected Booking(LocalDate bookDate, int guest) {
+    this.bookDate = bookDate;
+    this.guest = guest;
+  }
+
+  public static Booking create(LocalDate bookDate) {
+    return Booking.builder()
+        .bookDate(bookDate)
+        .build();
+  }
 
   /**
    *  checkin - checkout 범위에 bookDate 있는지 확인
