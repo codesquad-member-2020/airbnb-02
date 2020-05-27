@@ -39,8 +39,9 @@ CREATE TABLE IF NOT EXISTS image
     CONSTRAINT image_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
 );
 
-CREATE TABLE booking
+CREATE TABLE IF NOT EXISTS booking
 (
+    id        INT PRIMARY KEY AUTO_INCREMENT,
     room_id   INT      NOT NULL,
     book_date DATE NOT NULL,
     guest     INT      NOT NULL DEFAULT 1,
