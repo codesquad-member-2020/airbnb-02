@@ -6,9 +6,9 @@
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class SearchResultViewModel: NSObject {
+final class SearchResultViewModel: NSObject {
     typealias Key = [BNB]?
     
     private var bnbs: Key = nil {
@@ -21,6 +21,17 @@ class SearchResultViewModel: NSObject {
     
     func update(bnbs: Key) {
         self.bnbs = bnbs
+    }
+}
+
+extension SearchResultViewModel: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell else { return UICollectionViewCell() }
+        return cell
     }
 }
 
