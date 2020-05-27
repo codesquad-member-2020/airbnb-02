@@ -9,25 +9,30 @@
 import XCTest
 @testable import Airbnb
 
+private struct FakeRequest: Request {
+    var path: String { return "https://test/request" }
+    var queryItems: [URLQueryItem]? {
+        return [URLQueryItem(name: "checkin", value: "2020-05-21"),
+                URLQueryItem(name: "checkout", value: "2020-05-22"),
+                URLQueryItem(name: "adults", value: "2"),
+                URLQueryItem(name: "baby", value: "1")]
+    }
+}
+
 final class BNBsRequestTests: XCTestCase {
-    func testBNBRequest_path_success() {
+    func testBNBRequest_isCorrect() {
         let request = BNBRequest()
         XCTAssertEqual(request.path, Endpoints.main)
+        XCTAssertEqual(request.method, HTTPMethod.get)
     }
     
-    func testBNBRequest_fetch_success() {
-        let expectation = XCTestExpectation(description: "데이터 잘 들어옴")
-        defer { wait(for: [expectation], timeout: 10.0) }
-        
-        let request = BNBRequest()
-        let urlRequest = try? request.urlRequest()
-        URLSession.shared.dataTask(with: try! XCTUnwrap(urlRequest))
-        { data, urlResponse, error in
-            defer { expectation.fulfill() }
-            
-            XCTAssertNil(error)
-            XCTAssertNotNil(urlResponse)
-            XCTAssertNotNil(data)
-        }.resume()
+    func testFakeRequest_query() {
+        let request = FakeRequest()
+        let urlRequest = try! request.urlRequest()!
+        let url = try! XCTUnwrap(urlRequest.url)
+        XCTAssertEqual(
+            url.absoluteString,
+            "https://test/request?checkin=2020-05-21&checkout=2020-05-22&adults=2&baby=1"
+        )
     }
 }
