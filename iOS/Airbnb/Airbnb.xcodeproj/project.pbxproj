@@ -25,6 +25,7 @@
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
+		5ADA00DE247E7BC300E30D6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA00DD247E7BC300E30D6C /* Default-568h@2x.png */; };
 		C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52572473A1A80055A478 /* AppDelegate.swift */; };
 		C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52592473A1A80055A478 /* SceneDelegate.swift */; };
 		C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A525B2473A1A80055A478 /* SearchViewController.swift */; };
@@ -74,6 +75,7 @@
 		5AD06347247A5BB2000BF31B /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		5ADA00DB247E4F3500E30D6C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		5ADA00DD247E7BC300E30D6C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C22A52542473A1A80055A478 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22A52572473A1A80055A478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22A52592473A1A80055A478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		C22A524B2473A1A70055A478 = {
 			isa = PBXGroup;
 			children = (
+				5ADA00DD247E7BC300E30D6C /* Default-568h@2x.png */,
 				C22A52562473A1A80055A478 /* Airbnb */,
 				C22A526D2473A1AB0055A478 /* AirbnbTests */,
 				C22A52552473A1A80055A478 /* Products */,
