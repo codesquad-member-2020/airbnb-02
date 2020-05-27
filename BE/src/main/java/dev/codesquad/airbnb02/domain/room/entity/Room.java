@@ -2,6 +2,7 @@ package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
+import dev.codesquad.airbnb02.domain.room.data.Favorite;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -66,6 +67,10 @@ public class Room {
   @OneToMany(mappedBy = "room")
   @JsonIgnore
   private List<Booking> bookings;
+
+  @ElementCollection
+  @CollectionTable(name = "favorite", joinColumns = @JoinColumn(name = "room_id"))
+  private List<Favorite> favorites;
 
   public Room() {}
 
