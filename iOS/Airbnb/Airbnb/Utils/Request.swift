@@ -17,8 +17,9 @@ enum HTTPMethod: String {
 }
 
 protocol Request {
-    var path: String { get }
     var method: HTTPMethod { get }
+    var path: String { get }
+    var queryItems: [URLQueryItem]? { get }
     var body: Data? { get }
     var headers: [String: String]? { get }
     
@@ -26,20 +27,28 @@ protocol Request {
 }
 
 enum NetworkErrorCase: Error {
+    case invalidPath
     case invalidURL
     case notFound
 }
 
 extension Request {
     var method: HTTPMethod { return .get }
+    var queryItems: [URLQueryItem]? { return nil }
     var body: Data? { return nil }
     var headers: [String: String]? { return nil }
     
+    
     func urlRequest() throws -> URLRequest? {
-        guard let url = URL(string: path) else { throw NetworkErrorCase.invalidURL }
+        guard var urlComponents = URLComponents(string: path)
+            else { throw NetworkErrorCase.invalidPath }
+        urlComponents.queryItems = queryItems
         
+        guard let url = urlComponents.url else { throw NetworkErrorCase.invalidURL }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        return URLRequest(url: url)
+        urlRequest.httpBody = body
+        headers?.forEach { urlRequest.addValue($1, forHTTPHeaderField: $1) }
+        return urlRequest
     }
 }
