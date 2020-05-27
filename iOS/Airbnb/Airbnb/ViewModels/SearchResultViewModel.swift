@@ -15,7 +15,7 @@ final class SearchResultViewModel: NSObject {
         didSet { NotificationCenter.default.post(name: .bnbsDidUpdate, object: self) }
     }
     
-    init(with bnbs: Key) {
+    init(with bnbs: Key = nil) {
         self.bnbs = bnbs
     }
     

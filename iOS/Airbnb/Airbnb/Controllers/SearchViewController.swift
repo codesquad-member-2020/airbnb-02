@@ -11,10 +11,17 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     @IBOutlet var filterButtons: [FilterButton]!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let viewModel = SearchResultViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = viewModel
+        
         configureButtonActions()
+        
     }
     
     private func configureButtonActions() {
