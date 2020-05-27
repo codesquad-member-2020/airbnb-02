@@ -13,4 +13,10 @@ public class ExceptionAdvice {
   private String catchBookingNotAllowedException(BookingNotAllowedException e) {
     return e.getMessage();
   }
+
+  @ExceptionHandler
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  private String catchNotFoundDataException(NotFoundDataException e) {
+    return e.getMessage();
+  }
 }
