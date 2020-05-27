@@ -10,6 +10,6 @@ import Foundation
 
 struct BNBRequest: Request {
     var path: String {
-        return "http://13.125.56.23/api/main"
+        return Endpoints.main
     }
 }
