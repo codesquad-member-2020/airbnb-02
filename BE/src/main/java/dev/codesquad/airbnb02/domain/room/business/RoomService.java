@@ -22,7 +22,7 @@ public class RoomService {
 
   @Transactional(readOnly = true)
   public List<RoomResponseDto> findAll() {
-    return roomRepository.findAll().stream()
+     return roomRepository.findAll().stream()
         .map(RoomResponseDto::create)
         .collect(Collectors.toList());
   }
@@ -31,10 +31,10 @@ public class RoomService {
   public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
       String checkin, String checkout) {
     return roomRepository.findAll().stream()
-//        .filter(room -> room.getLocale().getLocation().equals(location))
-//        .filter(room -> room.isValidPrice(priceMin, priceMax))
+        .filter(room -> room.getLocale().getLocation().equals(location))
+        .filter(room -> room.isValidPrice(priceMin, priceMax))
         .filter(room -> room.isValidDate(checkin, checkout))
-        .map(RoomResponseDto::create)
+        .map(room -> RoomResponseDto.create(room))
         .collect(Collectors.toList());
   }
 }
