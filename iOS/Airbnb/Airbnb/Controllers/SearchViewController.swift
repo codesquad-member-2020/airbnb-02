@@ -15,13 +15,21 @@ final class SearchViewController: UIViewController {
     
     private let viewModel = SearchResultViewModel()
     
+    private var observer: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.dataSource = viewModel
         
+        configureObserver()
         configureButtonActions()
-        
+    }
+    
+    private func configureObserver() {
+        observer = NotificationCenter.default.addObserver(forName: .bnbsDidUpdate) { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
     
     private func configureButtonActions() {
