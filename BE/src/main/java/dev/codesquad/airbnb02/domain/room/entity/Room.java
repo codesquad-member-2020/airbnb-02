@@ -54,8 +54,8 @@ public class Room {
   @Embedded
   private Locale locale;
 
-  @OneToMany(mappedBy = "room")
   @JsonIgnore
+  @OneToMany(mappedBy = "room")
   private List<Image> images = new ArrayList<>();
 
   @NotNull
@@ -102,6 +102,13 @@ public class Room {
   public void addBooking(Booking booking) {
     bookings.add(booking);
     booking.setRoom(this);
+  }
+
+  public void addBookings(LocalDate checkin, LocalDate checkout) {
+    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
+      Booking booking = Booking.create(date);
+      addBooking(booking);
+    }
   }
 
   private boolean checkNull(Object input) {
