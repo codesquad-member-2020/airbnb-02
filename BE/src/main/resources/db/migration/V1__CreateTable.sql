@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS host;
 DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS booking;
+DROP TABLE IF EXISTS favorite;
+DROP TABLE IF EXISTS user;
 
 CREATE TABLE host
 (
@@ -52,5 +54,11 @@ CREATE TABLE favorite
 (
     room_id INT NOT NULL,
     user_id INT NOT NULL,
-    favor    TINYINT DEFAULT FALSE
+    favor   TINYINT DEFAULT FALSE
+);
+
+CREATE TABLE user
+(
+    id        INT PRIMARY KEY AUTO_INCREMENT,
+    github_id VARCHAR(45) NOT NULL
 );
