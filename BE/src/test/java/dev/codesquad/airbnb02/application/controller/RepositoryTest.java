@@ -90,4 +90,11 @@ public class RepositoryTest {
         assertThat(roomService.findAll().get(0)).isInstanceOf(RoomResponseDto.class);
         assertThat(roomService.findAll().get(0).getType()).isEqualTo("아파트");
     }
+
+    @Test
+    @Transactional
+    public void ROOM이_Favorite을_들고있다() {
+        assertThat(roomRepository.findById(1L).get().getFavorites()).isNotNull();
+        assertThat(roomService.findAll().get(0).isFavorite()).isInstanceOf(Boolean.class);
+    }
 }
