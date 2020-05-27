@@ -3,9 +3,12 @@ package dev.codesquad.airbnb02.domain.room.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -16,7 +19,7 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString(exclude = {"images", "bookings"})
+@ToString(exclude = {"images", "booking"})
 public class Room {
 
   @Id
@@ -65,7 +68,7 @@ public class Room {
 
   @OneToMany(mappedBy = "room")
   @JsonIgnore
-  private List<Booking> bookings;
+  private List<Booking> booking;
 
   public Room() {}
 
@@ -82,19 +85,24 @@ public class Room {
     if (checkNull(checkin) || checkNull(checkout)) {
       return true;
     }
+
     // checkin, checkin + 1, checkin + 2 ..... checkout까지 순회한다.
     // booking.getBookDate에 위의 날짜가 있는 지 확인한다.
     // 이 중에서 단 하나라도 true(날짜랑 겹치는 것이 있다) 가 반환되면, 전체를 false 리턴한다.
 
-    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      for (Booking booking : this.bookings) {
-        if (booking.getBookDate().isEqual(date)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    return false;
+    AtomicBoolean result = new AtomicBoolean(true);
+
+    Stream.iterate(checkin, date -> date.plusDays(1))
+        .limit(ChronoUnit.DAYS.between(checkin, checkout) + 1)
+        .forEach(date -> {
+          List<Booking> list = this.booking.stream().filter(
+              element -> element.getBookDate().equals(date)).collect(Collectors.toList());
+          if (list.size() > 0) {
+            result.set(false);
+          }
+        });
+
+    return result.get();
   }
 
   private boolean checkNull(Object input) {
