@@ -29,10 +29,10 @@ public class RoomService {
 
   @Transactional
   public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
-      String checkin, String checkout) {
+      LocalDate checkin, LocalDate checkout) {
     return roomRepository.findAll().stream()
-//        .filter(room -> room.getLocale().getLocation().equals(location))
-//        .filter(room -> room.isValidPrice(priceMin, priceMax))
+        .filter(room -> room.isValidLocation(location))
+        .filter(room -> room.isValidPrice(priceMin, priceMax))
         .filter(room -> room.isValidDate(checkin, checkout))
         .map(RoomResponseDto::create)
         .collect(Collectors.toList());

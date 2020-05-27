@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS image
 
 CREATE TABLE booking
 (
+    id        INT PRIMARY KEY AUTO_INCREMENT,
     room_id   INT      NOT NULL,
     book_date DATE NOT NULL,
     guest     INT      NOT NULL DEFAULT 1,

@@ -13,4 +13,8 @@ public class Locale {
     private Double latitude;
     private Double longitude;
     private String address;
+
+    public boolean isEqualsLocation(String location) {
+        return location.equals(this.location);
+    }
 }
