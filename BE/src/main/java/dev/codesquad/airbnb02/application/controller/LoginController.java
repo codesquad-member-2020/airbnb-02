@@ -29,7 +29,8 @@ public class LoginController {
     private final String USER_ID = "userId";
     private final Integer EXPIRE_TIME = 60*60*6;
     private final String HEADER_LOCATION = "Location";
-    private final String REDIRECT_URL = "http://localhost:8080?";
+    private final String WEB_REDIRECT_URL = "http://localhost:8080?";
+    private final String MOBILE_REDIRECT_URL = "squadbnb://?token=";
     public static final String OAUTH_URL_SERVER = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user:email";
 
     @GetMapping("/callback")
@@ -44,7 +45,7 @@ public class LoginController {
         Cookie cookie = new Cookie(USER_ID, githubUser.getUserId());
         cookie.setMaxAge(EXPIRE_TIME);
         response.addCookie(cookie);
-        response.setHeader(HEADER_LOCATION, REDIRECT_URL + jwt);
+        response.setHeader(HEADER_LOCATION, MOBILE_REDIRECT_URL + jwt);
         return new ResponseEntity(HttpStatus.FOUND);
     }
 }
