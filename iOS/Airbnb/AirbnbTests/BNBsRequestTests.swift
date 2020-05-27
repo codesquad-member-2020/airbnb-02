@@ -9,10 +9,10 @@
 import XCTest
 @testable import Airbnb
 
-final class RequestTests: XCTestCase {
+final class BNBsRequestTests: XCTestCase {
     func testBNBRequest_path_success() {
         let request = BNBRequest()
-        XCTAssertEqual(request.path, "http://13.125.56.23/api/main")
+        XCTAssertEqual(request.path, Endpoints.main)
     }
     
     func testBNBRequest_fetch_success() {
