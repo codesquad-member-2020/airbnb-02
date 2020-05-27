@@ -3,7 +3,7 @@ package dev.codesquad.airbnb02.domain.room.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
@@ -56,16 +56,16 @@ public class Room {
 
   @OneToMany(mappedBy = "room")
   @JsonIgnore
-  private List<Image> images;
+  private List<Image> images = new ArrayList<>();
 
+  @NotNull
   @ManyToOne
   @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
-  @NotNull
   private Host host;
 
-  @OneToMany(mappedBy = "room")
   @JsonIgnore
-  private List<Booking> bookings;
+  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+  private List<Booking> bookings = new ArrayList<>();
 
   public Room() {}
 
@@ -83,20 +83,25 @@ public class Room {
     return priceMin <= this.price && this.price <= priceMax;
   }
 
+  /**
+   * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
+   */
   public boolean isValidDate(LocalDate checkin, LocalDate checkout) {
     if (checkNull(checkin) || checkNull(checkout)) {
       return true;
     }
 
-    /**
-     * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
-     */
     for(Booking booking : this.bookings) {
       if (!booking.isAvailable(checkin, checkout)) {
         return false;
       }
     }
     return true;
+  }
+
+  public void addBooking(Booking booking) {
+    bookings.add(booking);
+    booking.setRoom(this);
   }
 
   private boolean checkNull(Object input) {
