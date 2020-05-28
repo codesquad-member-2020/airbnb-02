@@ -35,7 +35,7 @@
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
-		C2553CE9247C23E50019588B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* Storyboard.swift */; };
+		C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* StoryboardRouter.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C2B959C3247E549A003DC5D9 /* BNBsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */; };
 		C2B959C5247E584E003DC5D9 /* BNBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C4247E584E003DC5D9 /* BNBCell.swift */; };
@@ -92,7 +92,7 @@
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		C2553CE8247C23E50019588B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		C2553CE8247C23E50019588B /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsViewModel.swift; sourceTree = "<group>"; };
 		C2B959C4247E584E003DC5D9 /* BNBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBCell.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */,
 				5A33640E2476A39600324367 /* Identifiable.swift */,
 				C2553CE0247C146B0019588B /* NibLoadable.swift */,
-				C2553CE8247C23E50019588B /* Storyboard.swift */,
+				C2553CE8247C23E50019588B /* StoryboardRouter.swift */,
 				5A814123247BD3CD0020ED80 /* DataExtensions.swift */,
 				C2B959C6247E5C25003DC5D9 /* Observable.swift */,
 				C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */,
@@ -392,7 +392,7 @@
 				C2205D21247EAEA9008D3FBC /* BNBRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
-				C2553CE9247C23E50019588B /* Storyboard.swift in Sources */,
+				C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */,
 				5AD06346247A50D4000BF31B /* Shadow.swift in Sources */,
 				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
 				C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Storyboard.swift
+//  StoryboardRouter.swift
 //  Airbnb
 //
 //  Created by Chaewan Park on 2020/05/26.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Storyboard: String {
+enum StoryboardRouter: String {
     case main = "Main"
     case filters = "Filter"
     
