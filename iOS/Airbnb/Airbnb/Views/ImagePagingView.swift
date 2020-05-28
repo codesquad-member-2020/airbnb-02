@@ -118,13 +118,13 @@ extension ImagePagingView: UIScrollViewDelegate {
         let dividend = scrollView.contentOffset.x
         let divisor = scrollView.frame.maxX
         guard let remainder = Math.modular(
-            of: dividend,
-            divideBy: divisor
+            of: Int(dividend),
+            divideBy: Int(divisor)
             ), remainder == 0 else { return }
         
         guard let currentPage = Math.quotient(
-            of: dividend,
-            divideBy: divisor
+            of: Int(dividend),
+            divideBy: Int(divisor)
             ) else { return }
         
         pageControl.currentPage = currentPage
@@ -132,12 +132,12 @@ extension ImagePagingView: UIScrollViewDelegate {
 }
 
 struct Math {
-    static func modular(of dividend: CGFloat, divideBy divisor: CGFloat) -> CGFloat? {
+    static func modular(of dividend: Int, divideBy divisor: Int) -> CGFloat? {
         guard divisor != 0 else { return nil }
-        return dividend.truncatingRemainder(dividingBy: divisor)
+        return CGFloat(dividend / divisor)
     }
     
-    static func quotient(of dividend: CGFloat, divideBy divisor: CGFloat) -> Int? {
+    static func quotient(of dividend: Int, divideBy divisor: Int) -> Int? {
         guard divisor != 0 else { return nil }
         let quotient = dividend / divisor
         return Int(quotient)
