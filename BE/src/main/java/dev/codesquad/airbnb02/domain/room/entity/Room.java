@@ -1,6 +1,7 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,13 +11,15 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
-@ToString(exclude = {"images", "bookings"})
+@ToString(exclude = {"images"})
+@NoArgsConstructor
 public class Room {
 
   @Id
@@ -54,7 +57,6 @@ public class Room {
   @Embedded
   private Locale locale;
 
-  @JsonIgnore
   @OneToMany(mappedBy = "room")
   private List<Image> images = new ArrayList<>();
 
@@ -64,10 +66,8 @@ public class Room {
   private Host host;
 
   @JsonIgnore
-  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Booking> bookings = new ArrayList<>();
-
-  public Room() {}
 
   public boolean isValidLocation(String location) {
     if (checkNull(location)) {
@@ -91,7 +91,7 @@ public class Room {
       return true;
     }
 
-    for(Booking booking : this.bookings) {
+    for (Booking booking : this.bookings) {
       if (!booking.isAvailable(checkin, checkout)) {
         return false;
       }
@@ -109,6 +109,34 @@ public class Room {
       Booking booking = Booking.create(date);
       addBooking(booking);
     }
+  }
+
+  public void removeBooking(Booking booking) {
+    bookings.remove(booking);
+  }
+
+  public void removeBookings(LocalDate checkin, LocalDate checkout) {
+    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
+      Booking booking = findBookingByDate(date);
+      removeBooking(booking);
+    }
+  }
+
+  public List<Booking> findBookings(LocalDate checkin, LocalDate checkout) {
+    List<Booking> bookings = new ArrayList<>();
+    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
+       bookings.add(Booking.create(date));
+    }
+    return bookings;
+  }
+
+  private Booking findBookingByDate(LocalDate date) {
+    for (Booking booking : this.bookings) {
+      if (booking.isEqualsBookDate(date)) {
+        return booking;
+      }
+    }
+    throw new NotFoundDataException("해당 기간에 예약이 없습니다.");
   }
 
   private boolean checkNull(Object input) {
