@@ -244,6 +244,14 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="326" height="217"/>
+                                        <connections>
+                                            <outlet property="badgeLabel" destination="FKI-3E-dhL" id="3kr-uy-qYO"/>
+                                            <outlet property="bnbTypeLabel" destination="RDM-We-20G" id="v1W-iR-ysy"/>
+                                            <outlet property="imagePagingView" destination="HxI-uw-mWQ" id="WZG-ck-PAl"/>
+                                            <outlet property="locationLabel" destination="EM0-Pe-LoG" id="VR8-Hv-X18"/>
+                                            <outlet property="ratingLabel" destination="7FY-mz-Y0d" id="71h-Vk-g1H"/>
+                                            <outlet property="titleLabel" destination="Qdm-8e-Jwp" id="BtZ-ja-rM5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

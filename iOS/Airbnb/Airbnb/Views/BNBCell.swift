@@ -9,6 +9,12 @@
 import UIKit
 
 final class BNBCell: UICollectionViewCell {
+    @IBOutlet weak var imagePagingView: ImagePagingView!
+    @IBOutlet weak var badgeLabel: BadgeLabel!
+    @IBOutlet weak var bnbTypeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
 }
 
