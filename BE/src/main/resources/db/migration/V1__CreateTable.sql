@@ -2,8 +2,10 @@ DROP TABLE IF EXISTS host;
 DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS booking;
+DROP TABLE IF EXISTS favorite;
+DROP TABLE IF EXISTS user;
 
-CREATE TABLE host
+CREATE TABLE IF NOT EXISTS host
 (
     id        INT PRIMARY KEY AUTO_INCREMENT,
     name      VARCHAR(45) NOT NULL,
@@ -39,11 +41,24 @@ CREATE TABLE IF NOT EXISTS image
     CONSTRAINT image_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
 );
 
-CREATE TABLE booking
+CREATE TABLE IF NOT EXISTS booking
 (
     id        INT PRIMARY KEY AUTO_INCREMENT,
-    room_id   INT      NOT NULL,
+    room_id   INT  NOT NULL,
     book_date DATE NOT NULL,
-    guest     INT      NOT NULL DEFAULT 1,
+    guest     INT  NOT NULL DEFAULT 1,
     CONSTRAINT booking_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
+);
+
+CREATE TABLE IF NOT EXISTS favorite
+(
+    room_id INT NOT NULL,
+    user_id INT NOT NULL,
+    favor   TINYINT DEFAULT FALSE
+);
+
+CREATE TABLE IF NOT EXISTS user
+(
+    id        INT PRIMARY KEY AUTO_INCREMENT,
+    github_id VARCHAR(45) NOT NULL
 );

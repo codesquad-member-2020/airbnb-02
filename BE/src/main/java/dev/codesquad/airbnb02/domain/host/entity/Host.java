@@ -5,6 +5,7 @@ import dev.codesquad.airbnb02.domain.room.entity.Room;
 import java.util.List;
 import javax.persistence.OneToMany;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.ColumnDefault;
@@ -17,35 +18,34 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
 @ToString(exclude = "rooms")
 public class Host {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @NotNull
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @NotNull
-    private String email;
+  @NotNull
+  private String name;
 
-    @OneToMany(mappedBy = "host")
-    @JsonIgnore
-    private List<Room> rooms;
+  @NotNull
+  private String email;
 
-    @NotNull
-    @ColumnDefault("0")
-    private boolean superhost;
+  @OneToMany(mappedBy = "host")
+  @JsonIgnore
+  private List<Room> rooms;
 
-    public Host() {}
+  @NotNull
+  @ColumnDefault("0")
+  private boolean superhost;
 
-    private Host(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+  private Host(String name, String email) {
+    this.name = name;
+    this.email = email;
+  }
 
-    public static Host create(String name, String email) {
-        return new Host(name, email);
-    }
+  public static Host create(String name, String email) {
+    return new Host(name, email);
+  }
 }
