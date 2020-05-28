@@ -194,7 +194,7 @@
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-et-19p">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-et-19p" customClass="ReviewCountLabel" customModule="Airbnb" customModuleProvider="target">
                                                                                     <rect key="frame" x="40.333333333333314" y="0.0" width="17" height="22.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" name="textGray"/>
@@ -250,6 +250,7 @@
                                             <outlet property="imagePagingView" destination="HxI-uw-mWQ" id="WZG-ck-PAl"/>
                                             <outlet property="locationLabel" destination="EM0-Pe-LoG" id="VR8-Hv-X18"/>
                                             <outlet property="ratingLabel" destination="7FY-mz-Y0d" id="71h-Vk-g1H"/>
+                                            <outlet property="reviewCountLabel" destination="hpB-et-19p" id="BtK-XC-vYP"/>
                                             <outlet property="titleLabel" destination="Qdm-8e-Jwp" id="BtZ-ja-rM5"/>
                                         </connections>
                                     </collectionViewCell>
