@@ -13,13 +13,15 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "room")
+@NoArgsConstructor
 public class Booking {
 
   @Id
@@ -36,8 +38,6 @@ public class Booking {
 
   @NotNull
   private int guest;
-
-  public Booking() {}
 
   @Builder
   protected Booking(LocalDate bookDate, int guest) {
@@ -62,5 +62,9 @@ public class Booking {
       }
     }
     return true;
+  }
+
+  public boolean isEqualsBookDate(LocalDate date) {
+    return date.equals(this.bookDate);
   }
 }
