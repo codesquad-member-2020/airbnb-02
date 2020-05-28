@@ -3,7 +3,7 @@ package dev.codesquad.airbnb02.application.controller;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-import dev.codesquad.airbnb02.application.dto.FavoriteResponseDto;
+import dev.codesquad.airbnb02.application.dto.UserFavoriteResponseDto;
 import java.util.Objects;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -41,9 +41,9 @@ public class UserControllerTest {
         .queryParam("roomid", roomId)
         .build(false);
 
-    ResponseEntity<FavoriteResponseDto> response = new TestRestTemplate().exchange(
+    ResponseEntity<UserFavoriteResponseDto> response = new TestRestTemplate().exchange(
         builder.toUri(), HttpMethod.PUT, new HttpEntity<String>(headers),
-        FavoriteResponseDto.class);
+        UserFavoriteResponseDto.class);
 
     assertAll(
         () -> assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK),
@@ -64,9 +64,9 @@ public class UserControllerTest {
         .queryParam("roomid", roomId)
         .build(false);
 
-    ResponseEntity<FavoriteResponseDto> response = new TestRestTemplate().exchange(
+    ResponseEntity<UserFavoriteResponseDto> response = new TestRestTemplate().exchange(
         builder.toUri(), HttpMethod.PUT, new HttpEntity<String>(headers),
-        FavoriteResponseDto.class);
+        UserFavoriteResponseDto.class);
 
     assertAll(
         () -> assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK),
