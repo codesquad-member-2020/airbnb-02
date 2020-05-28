@@ -16,6 +16,8 @@ jobs:
     name: DEPLOY
       # 빌드가 어느 운영체제에서 돌아가느냐?
     runs-on: ubuntu-18.04
+    env:
+      working-directory: ./BE
 
       # step은 job의 하위 집합이다. step에서 정의한 작업을 순차적으로 진행한다.
     steps:
@@ -45,7 +47,6 @@ jobs:
         # Gradle에 실행 권한을 부여한다.
       - name: Grant execute permission for gradlew
         run: |
-          cd BE
           chmod +x gradlew
         shell: bash
 
