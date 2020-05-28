@@ -51,13 +51,10 @@ public class RoomService {
   }
 
   @Transactional
-  public List<BookingResponseDto> removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+  public void removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
     Room room = findRoom(roomId);
     room.removeBookings(checkin, checkout);
     roomRepository.save(room);
-    return room.findBookings(checkin, checkout).stream()
-        .map(booking -> BookingResponseDto.create(roomId, booking))
-        .collect(Collectors.toList());
   }
 
   private Room findRoom(Long roomId) {
