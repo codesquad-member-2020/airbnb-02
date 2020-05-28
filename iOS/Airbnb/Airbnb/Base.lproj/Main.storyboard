@@ -159,6 +159,7 @@
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" id="gmx-4Z-4sl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="cNL-Dt-uNR" id="O44-vB-IeH"/>
                         <outletCollection property="filterButtons" destination="giF-a2-P29" collectionClass="NSMutableArray" id="mHD-d1-9QF"/>
                         <outletCollection property="filterButtons" destination="5pa-D1-Ja1" collectionClass="NSMutableArray" id="vhU-e6-XwL"/>
                         <outletCollection property="filterButtons" destination="glN-kW-FnV" collectionClass="NSMutableArray" id="cdL-OL-H9W"/>

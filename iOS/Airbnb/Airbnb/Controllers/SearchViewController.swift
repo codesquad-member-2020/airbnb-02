@@ -11,10 +11,26 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     @IBOutlet var filterButtons: [FilterButton]!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let viewModel = BNBsViewModel()
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureObserver()
         configureButtonActions()
+    }
+    
+    private func configureCollectionView() {
+        collectionView.dataSource = viewModel
+    }
+    
+    private func configureObserver() {
+        token = BNBsViewModel.Notification.addObserver { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
     
     private func configureButtonActions() {
