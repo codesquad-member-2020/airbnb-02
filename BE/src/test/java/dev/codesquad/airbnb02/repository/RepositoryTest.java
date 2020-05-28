@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.application.controller;
+package dev.codesquad.airbnb02.repository;
 
 
 import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
@@ -57,7 +57,6 @@ public class RepositoryTest {
         hostRepository.save(host);
 
         //then
-//        assertThat(hostRepository.findByName(name).getEmail()).isEqualTo(email);
         assertThat(hostRepository.findByName(name).isSuperhost()).isEqualTo(true);
     }
 
