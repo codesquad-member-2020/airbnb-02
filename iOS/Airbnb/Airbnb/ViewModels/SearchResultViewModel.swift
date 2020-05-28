@@ -9,6 +9,10 @@
 import UIKit
 
 final class SearchResultViewModel: NSObject {
+    enum Notification: Observable {
+        static let update = Foundation.Notification.Name("bnbsDidUpdate")
+    }
+    
     typealias Key = [BNB]?
     
     private var bnbs: Key = nil {

@@ -15,7 +15,7 @@ final class SearchViewController: UIViewController {
     
     private let viewModel = SearchResultViewModel()
     
-    private var observer: NotificationToken?
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureObserver() {
-        observer = NotificationCenter.default.addObserver(forName: .bnbsDidUpdate) { [weak self] _ in
+        token = SearchResultViewModel.Notification.addObserver { [weak self] _ in
             self?.collectionView.reloadData()
         }
     }
