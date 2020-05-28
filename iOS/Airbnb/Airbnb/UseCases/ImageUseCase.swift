@@ -24,19 +24,20 @@ final class ImageUseCase {
     
     private func downloadImage() {
         guard !imageRequests.isEmpty else { return }
-        guard let imageRequest = imageRequests.first,
-            let urlRequest = try? imageRequest.urlRequest() else { return }
-        
-        _ = networkDispatcher.download(urlRequest, interceptor: nil) { tempURL, response in
-            if let destinaionURL = try? FileManager.default.url(
-                for: .cachesDirectory,
-                in: .userDomainMask,
-                appropriateFor: nil,
-                create: false
-            ).appendingPathComponent(tempURL.lastPathComponent) {
-                return (destinaionURL, .removePreviousFile)
+        guard let urlRequest = try? imageRequests.first?.urlRequest() else { return }
+            
+        networkDispatcher.download(urlRequest, interceptor: nil, to:  nil).validate().response { response in
+            switch response.result {
+            case .success(let tempURL):
+                guard let destinaionURL = try? FileManager.default.url(
+                    for: .cachesDirectory,
+                    in: .userDomainMask,
+                    appropriateFor: nil,
+                    create: false).appendingPathComponent(urlRequest.url!.lastPathComponent) else { return }
+                try? FileManager.default.moveItem(at: tempURL!, to: destinaionURL)
+            default:
+                break
             }
-            return (tempURL, .removePreviousFile)
         }
     }
 }

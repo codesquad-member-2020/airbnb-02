@@ -24,6 +24,7 @@
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A87601A247FC75500E7FBC3 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A876019247FC75500E7FBC3 /* ImageRequest.swift */; };
 		5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */; };
+		5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
@@ -88,6 +89,7 @@
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A876019247FC75500E7FBC3 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
+		5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCaseTests.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
@@ -229,6 +231,7 @@
 				5A25EAE7247F853B0038240F /* DispatcherTests.swift */,
 				5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */,
 				5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */,
+				5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */,
 				C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */,
 				5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */,
+				5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */,
 				5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* BNBsRequestTests.swift in Sources */,
