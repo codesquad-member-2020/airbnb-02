@@ -51,7 +51,9 @@ jobs:
 
         # Gradle을 활용해 배포한다.
       - name: Build with Gradle
-        run: ./gradlew build
+        run: |
+          echo $(ls)
+          ./gradlew build
         shell: bash
 
         # 버전마다 이름을 다르게 하기 위해서 GITHUB_SHA라고 하는 해시이름을 활용하여 zip 파일을 만든다.
