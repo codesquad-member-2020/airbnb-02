@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class  BNBsUseCase {
+final class BNBsUseCase {
     private let bnbsTask: BNBsTask
     private var handler: ([BNB]?) -> ()
     private var bnbRequests = [BNBRequest]() { didSet { requestBNBs() } }
