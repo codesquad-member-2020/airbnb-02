@@ -55,7 +55,6 @@ jobs:
         # Gradle을 활용해 배포한다.
       - name: Build with Gradle
         run: |
-          echo $(ls)
           ./gradlew build -x test
         shell: bash
         working-directory: ./BE
@@ -82,4 +81,4 @@ jobs:
 
         # 실제로 코드를 배포한다.
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name sigrid-dev --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=sigrid-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name sigrid-dev --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name sigrid-dev --s3-location bucket=sigrid-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
