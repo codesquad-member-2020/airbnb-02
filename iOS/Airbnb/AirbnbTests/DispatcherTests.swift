@@ -40,7 +40,7 @@ final class DispatcherTests: XCTestCase {
 
             XCTAssertNil(error)
             XCTAssertNotNil(urlResponse)
-            let data = try! XCTUnwrap(Data.readJSON(forResource: "BNBsTestData"))
+            let data = try! XCTUnwrap(data)
             let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
             XCTAssertNotNil(bnbs)
         }
