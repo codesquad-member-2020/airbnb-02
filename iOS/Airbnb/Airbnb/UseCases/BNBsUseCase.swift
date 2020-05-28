@@ -10,8 +10,8 @@ import Foundation
 
 final class  BNBsUseCase {
     private let bnbsTask: BNBsTask
-    private var bnbRequests = [BNBRequest]()
     private var handler: ([BNB]?) -> ()
+    private var bnbRequests = [BNBRequest]() { didSet { requestBNBs() } }
     
     init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
@@ -24,7 +24,6 @@ final class  BNBsUseCase {
     
     func append(bnbRequest: BNBRequest) {
         bnbRequests.append(bnbRequest)
-        requestBNBs()
     }
     
     private func requestBNBs() {

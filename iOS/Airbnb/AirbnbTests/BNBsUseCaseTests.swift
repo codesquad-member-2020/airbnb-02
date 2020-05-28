@@ -11,7 +11,17 @@ import XCTest
 @testable import Alamofire
 
 final class BNBsUseCaseTests: XCTestCase {
-    let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
+    var bnbsUseCase: BNBsUseCase!
+    
+    override func setUp() {
+        super.setUp()
+        bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
+    }
+    
+    override func tearDown() {
+        bnbsUseCase = nil
+        super.tearDown()
+    }
     
     func testBNBsUseCase_fetch_success() {
         let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
