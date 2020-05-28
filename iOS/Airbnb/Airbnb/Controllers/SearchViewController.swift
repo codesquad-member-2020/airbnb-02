@@ -19,10 +19,12 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.dataSource = viewModel
-        
         configureObserver()
         configureButtonActions()
+    }
+    
+    private func configureCollectionView() {
+        collectionView.dataSource = viewModel
     }
     
     private func configureObserver() {
