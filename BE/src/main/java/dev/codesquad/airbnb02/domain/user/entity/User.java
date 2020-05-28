@@ -29,7 +29,7 @@ public class User {
 
   @ElementCollection
   @CollectionTable(name = "favorite",
-      joinColumns = @JoinColumn(name = "user_id", insertable = false, updatable = false))
+      joinColumns = @JoinColumn(name = "user_id"))
   private List<Favorite> favorites;
 
   public Favorite addFavorite(Long roomId) {
@@ -38,7 +38,6 @@ public class User {
     }
     Favorite favorite = Favorite.builder()
         .roomId(roomId)
-        .userId(this.id)
         .favor(true)
         .build();
     this.favorites.add(favorite);

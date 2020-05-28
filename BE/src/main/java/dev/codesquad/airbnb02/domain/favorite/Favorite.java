@@ -14,16 +14,12 @@ public class Favorite {
   @Column(name = "room_id", nullable = false)
   private Long roomId;
 
-  @Column(name = "user_id", nullable = false)
-  private Long userId;
-
   @Column(nullable = false)
   private boolean favor;
 
   @Builder
-  public Favorite(Long roomId, Long userId, boolean favor) {
+  public Favorite(Long roomId, boolean favor) {
     this.roomId = roomId;
-    this.userId = userId;
     this.favor = favor;
   }
 }
