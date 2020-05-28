@@ -47,8 +47,10 @@ jobs:
         # Gradle에 실행 권한을 부여한다.
       - name: Grant execute permission for gradlew
         run: |
+          echo $pwd
           chmod +x gradlew
         shell: bash
+        working-directory: ./BE
 
         # Gradle을 활용해 배포한다.
       - name: Build with Gradle
@@ -56,12 +58,14 @@ jobs:
           echo $(ls)
           ./gradlew build
         shell: bash
+        working-directory: ./BE
 
         # 버전마다 이름을 다르게 하기 위해서 GITHUB_SHA라고 하는 해시이름을 활용하여 zip 파일을 만든다.
         # CodeDeploy를 사용하기 위해서는 S3를 거쳐야 한다. 따라서 압축된 파일을 만들어주고 이를 옮긴다.
       - name: Make zip file
         run: zip -qq -r ./$GITHUB_SHA.zip .
         shell: bash
+        working-directory: ./BE/build/libs
 
         # AWS 서비스를 사용하기 위한 인증 과정이다.
       - name: Configure AWS credentials
