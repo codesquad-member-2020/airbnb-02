@@ -9,8 +9,8 @@
 import Foundation
 
 final class NotificationToken {
-    let token: NSObjectProtocol
-    let center: NotificationCenter
+    private let token: NSObjectProtocol
+    private let center: NotificationCenter
     
     init(token: NSObjectProtocol, center: NotificationCenter) {
         self.token = token
