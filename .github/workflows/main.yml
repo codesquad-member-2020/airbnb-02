@@ -19,6 +19,9 @@ jobs:
 
       # step은 job의 하위 집합이다. step에서 정의한 작업을 순차적으로 진행한다.
     steps:
+      - name: Debug Action
+        uses: hmarr/debug-action@v1.0.0
+        
         # 위에서 정의한 브랜치로 체크아웃한다.
       - name: Checkout
         uses: actions/checkout@v2
