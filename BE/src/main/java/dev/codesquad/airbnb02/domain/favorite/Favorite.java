@@ -5,11 +5,9 @@ import javax.persistence.Embeddable;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
-@Setter
 @Embeddable
 public class Favorite {
 
@@ -23,7 +21,8 @@ public class Favorite {
   private boolean favor;
 
   @Builder
-  public Favorite(Long userId, boolean favor) {
+  public Favorite(Long roomId, Long userId, boolean favor) {
+    this.roomId = roomId;
     this.userId = userId;
     this.favor = favor;
   }
