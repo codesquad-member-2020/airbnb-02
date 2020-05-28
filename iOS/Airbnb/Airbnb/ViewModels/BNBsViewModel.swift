@@ -1,5 +1,5 @@
 //
-//  SearchResultViewModel.swift
+//  BNBsViewModel.swift
 //  Airbnb
 //
 //  Created by Chaewan Park on 2020/05/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SearchResultViewModel: NSObject {
+final class BNBsViewModel: NSObject {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("bnbsDidUpdate")
     }
@@ -28,7 +28,7 @@ final class SearchResultViewModel: NSObject {
     }
 }
 
-extension SearchResultViewModel: UICollectionViewDataSource {
+extension BNBsViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
