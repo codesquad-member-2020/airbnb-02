@@ -11,7 +11,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,15 +40,5 @@ public class RoomController {
       "!location"})
   public ResponseEntity<List<RoomResponseDto>> viewAllRooms() {
     return new ResponseEntity<>(roomService.findAll(), HttpStatus.OK);
-  }
-
-  @GetMapping("/book/{roomId}")
-  public ResponseEntity createBooking(
-      @PathVariable Long roomId,
-      @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
-      @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
-
-    roomService.createBooking(roomId, checkin, checkout);
-    return new ResponseEntity(HttpStatus.OK);
   }
 }
