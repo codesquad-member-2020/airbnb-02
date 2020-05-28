@@ -13,8 +13,11 @@ protocol Observable {
 }
 
 extension Observable {
-    static func addObserver(using block: @escaping (Any?) -> Void) -> NotificationToken {
-        let token = NotificationCenter.default.addObserver(forName: update, object: nil, queue: .main) { block($0.object) }
+    static func addObserver(object obj: Any? = nil,
+                            queue: OperationQueue? = .main,
+                            using block: @escaping (Any?) -> Void) -> NotificationToken {
+        let token = NotificationCenter.default
+            .addObserver(forName: update, object: obj, queue: queue) { block($0.object) }
         return NotificationToken(token: token, center: NotificationCenter.default)
     }
 }
