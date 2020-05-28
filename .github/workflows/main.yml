@@ -56,7 +56,7 @@ jobs:
       - name: Build with Gradle
         run: |
           echo $(ls)
-          ./gradlew build
+          ./gradlew build -x test
         shell: bash
         working-directory: ./BE
 
