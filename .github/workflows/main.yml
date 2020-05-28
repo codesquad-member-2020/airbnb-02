@@ -82,4 +82,4 @@ jobs:
 
         # 실제로 코드를 배포한다.
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name testapp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=isntyet-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name sigrid-dev --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=sigrid-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
