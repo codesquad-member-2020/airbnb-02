@@ -29,7 +29,7 @@ final class BNBsUseCaseTests: XCTestCase {
         
         let requestCount = 10
         var count = 0
-        bnbsUseCase.updateAfter { bnbs in
+        bnbsUseCase.updateNotify { bnbs in
             _ = try! XCTUnwrap(bnbs)
             count += 1
             

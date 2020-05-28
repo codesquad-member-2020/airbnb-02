@@ -18,7 +18,7 @@ final class BNBsUseCase {
         self.handler = handler
     }
     
-    func updateAfter(handler: @escaping ([BNB]?) -> ()) {
+    func updateNotify(handler: @escaping ([BNB]?) -> ()) {
         self.handler = handler
     }
     
