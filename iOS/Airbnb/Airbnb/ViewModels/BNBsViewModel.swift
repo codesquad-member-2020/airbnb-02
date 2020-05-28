@@ -16,7 +16,7 @@ final class BNBsViewModel: NSObject {
     typealias Key = [BNB]?
     
     private var bnbs: Key = nil {
-        didSet { NotificationCenter.default.post(name: .bnbsDidUpdate, object: self) }
+        didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
     
     init(with bnbs: Key = nil) {
@@ -37,8 +37,4 @@ extension BNBsViewModel: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell else { return UICollectionViewCell() }
         return cell
     }
-}
-
-extension Notification.Name {
-    static let bnbsDidUpdate = Notification.Name("bnbsDidUpdate")
 }
