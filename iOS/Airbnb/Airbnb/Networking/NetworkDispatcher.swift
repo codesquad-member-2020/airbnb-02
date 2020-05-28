@@ -14,8 +14,6 @@ protocol NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
 }
 
-extension NetworkDispatcher {}
-
 extension Session: NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let urlRequest = try? request.urlRequest() else { return }
