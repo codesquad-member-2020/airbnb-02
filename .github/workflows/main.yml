@@ -45,8 +45,7 @@ jobs:
         # Gradle에 실행 권한을 부여한다.
       - name: Grant execute permission for gradlew
         run: |
-          echo $PWD
-          echo $(ls)
+          cd BE
           chmod +x gradlew
         shell: bash
 
