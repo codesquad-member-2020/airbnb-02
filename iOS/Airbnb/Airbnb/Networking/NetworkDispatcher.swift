@@ -12,6 +12,12 @@ import Alamofire
 
 protocol NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
+    
+    func download(
+        _ convertible: URLRequestConvertible,
+        interceptor: RequestInterceptor?,
+        to destination: DownloadRequest.Destination?
+    ) -> DownloadRequest
 }
 
 extension Session: NetworkDispatcher {
