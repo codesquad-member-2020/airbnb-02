@@ -20,14 +20,14 @@ public class RoomServiceTest {
     this.roomService = roomService;
   }
 
-  @DisplayName("체크인 날짜와 체크아웃 날짜에 따라 필터링이 된다.")
+//  @DisplayName("체크인 날짜와 체크아웃 날짜에 따라 필터링이 된다.")
 //  @CsvSource({"2020-05-20, 2020-05-21, 2", "2020-05-16, 2020-05-21, 1",
 //      "2020-05-25, 2020-05-26, 0"})
 //  @ParameterizedTest
-  @Test
-  void 체크인_체크아웃_날짜에_따라_리턴된다() {
-    assertThat(roomService.findFilteredBy(null, null, null,
-        "2020-05-20", "2020-05-21")
-        .size()).isEqualTo(3);
-  }
+//  @Test
+//  void 체크인_체크아웃_날짜에_따라_리턴된다() {
+//    assertThat(roomService.findFilteredBy(null, null, null,
+//        "2020-05-20", "2020-05-21")
+//        .size()).isEqualTo(3);
+//  }
 }
