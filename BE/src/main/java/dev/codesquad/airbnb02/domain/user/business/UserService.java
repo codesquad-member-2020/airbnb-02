@@ -25,7 +25,7 @@ public class UserService {
   }
 
   @Transactional
-  public UserFavoriteResponseDto deleteFavorite(Long roomId, Long userId) {
+  public UserFavoriteResponseDto deleteFavorite(Long userId, Long roomId) {
     User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
     Favorite favorite = user.deleteFavorite(roomId);
     userRepository.save(user);
