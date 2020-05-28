@@ -77,7 +77,8 @@ jobs:
 
         # 배포 zip 파일을 S3에 업로드한다.
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://isntyet-deploy/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://sigrid-deploy/$PROJECT_NAME/$GITHUB_SHA.zip
+        working-directory: ./BE/build/libs
 
         # 실제로 코드를 배포한다.
       - name: Code Deploy
