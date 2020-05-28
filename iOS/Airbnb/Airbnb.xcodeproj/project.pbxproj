@@ -12,6 +12,7 @@
 		5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* DispatcherTests.swift */; };
 		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
 		5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* BNBsTask.swift */; };
+		5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
@@ -69,6 +70,7 @@
 		5A25EAE7247F853B0038240F /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		5A25EAEB247F88330038240F /* BNBsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTask.swift; sourceTree = "<group>"; };
+		5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTaskTests.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				5A814121247BD3590020ED80 /* DecodableTests.swift */,
 				5A81412F247BF2BE0020ED80 /* BNBsRequestTests.swift */,
 				5A25EAE7247F853B0038240F /* DispatcherTests.swift */,
+				5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */,
 				C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */,
 				5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */,
+				5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* BNBsRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
