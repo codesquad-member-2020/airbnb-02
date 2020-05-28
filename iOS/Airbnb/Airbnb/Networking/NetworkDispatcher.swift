@@ -13,18 +13,17 @@ import Alamofire
 protocol NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
     
-    func download(
-        _ convertible: URLRequestConvertible,
-        interceptor: RequestInterceptor?,
-        to destination: DownloadRequest.Destination?
-    ) -> DownloadRequest
+    func download(url: URL) -> DownloadRequest
 }
-
 extension Session: NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let urlRequest = try? request.urlRequest() else { return }
         self.request(urlRequest).validate().response { afDataResponse in
             completionHandler(afDataResponse.data, afDataResponse.response, afDataResponse.error)
         }
+    }
+    
+    func download(url: URL) -> DownloadRequest {
+        download(url)
     }
 }

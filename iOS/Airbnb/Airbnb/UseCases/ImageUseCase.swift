@@ -11,29 +11,29 @@ import Foundation
 import Alamofire
 
 final class ImageUseCase {
-    private var imageRequests = [ImageRequest]() { didSet { downloadImage() } }
+    private var imageURLs = [URL]() { didSet { downloadImage() } }
     private let networkDispatcher: NetworkDispatcher
     
     init(networkDispatcher: NetworkDispatcher) {
         self.networkDispatcher = networkDispatcher
     }
     
-    func append(imageRequest: ImageRequest) {
-        imageRequests.append(imageRequest)
+    func append(imageURL: URL) {
+        imageURLs.append(imageURL)
     }
     
     private func downloadImage() {
-        guard !imageRequests.isEmpty else { return }
-        guard let urlRequest = try? imageRequests.first?.urlRequest() else { return }
-            
-        networkDispatcher.download(urlRequest, interceptor: nil, to:  nil).validate().response { response in
+        guard !imageURLs.isEmpty,
+            let imageURL = imageURLs.first else { return }
+        
+        networkDispatcher.download(url: imageURL).validate().response { response in
             switch response.result {
             case .success(let tempURL):
                 guard let destinaionURL = try? FileManager.default.url(
                     for: .cachesDirectory,
                     in: .userDomainMask,
                     appropriateFor: nil,
-                    create: false).appendingPathComponent(urlRequest.url!.lastPathComponent) else { return }
+                    create: false).appendingPathComponent(imageURL.lastPathComponent) else { return }
                 try? FileManager.default.moveItem(at: tempURL!, to: destinaionURL)
             default:
                 break

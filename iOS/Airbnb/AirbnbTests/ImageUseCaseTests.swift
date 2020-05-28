@@ -28,18 +28,20 @@ final class ImageUseCaseTests: XCTestCase {
         defer { wait(for: [expectation], timeout: 10.0) }
         
         //when
-        let imageRequest = ImageRequest(path:
-            "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large")
-        imageUseCase.append(imageRequest: imageRequest)
+        let imageURL = URL(
+            string: "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large"
+        )!
+        imageUseCase.append(imageURL: imageURL)
         DispatchQueue(label: "").asyncAfter(deadline: .now() + 5) {
-            let lastPathComponent = URL(string: imageRequest.path)!.lastPathComponent
+            let lastPathComponent = imageURL.lastPathComponent
             guard let destinaionURL = try? FileManager.default.url(
                 for: .cachesDirectory,
                 in: .userDomainMask,
                 appropriateFor:
                 nil,
                 create: false).appendingPathComponent(lastPathComponent) else { return }
-            print(destinaionURL)
+            
+            //then
             let imageData = try? Data(contentsOf: destinaionURL)
             XCTAssertNotNil(imageData)
             expectation.fulfill()
