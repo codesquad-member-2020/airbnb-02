@@ -10,12 +10,14 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString(exclude = {"images", "bookings"})
 public class Room {
 
@@ -71,8 +73,6 @@ public class Room {
   @CollectionTable(name = "favorite",
       joinColumns = @JoinColumn(name = "room_id", insertable = false, updatable = false))
   private List<Favorite> favorites;
-
-  public Room() {}
 
   public boolean isValidLocation(String location) {
     if (checkNull(location)) {
