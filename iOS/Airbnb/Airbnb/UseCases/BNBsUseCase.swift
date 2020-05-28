@@ -8,21 +8,32 @@
 
 import Foundation
 
-struct BNBsUseCase {
+final class  BNBsUseCase {
     private let bnbsTask: BNBsTask
     private var bnbRequests = [BNBRequest]()
+    private var handler: ([BNB]?) -> ()
     
-    init(bnbsTask: BNBsTask) {
+    init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
+        self.handler = handler
     }
     
-    mutating func append(bnbRequest: BNBRequest) {
+    func updateAfter(handler: @escaping ([BNB]?) -> ()) {
+        self.handler = handler
+    }
+    
+    func append(bnbRequest: BNBRequest) {
         bnbRequests.append(bnbRequest)
+        requestBNBs()
     }
     
-    func requestBNBs(completionHandler: @escaping ([BNB]?) -> ()) {
+    private func requestBNBs() {
         guard !bnbRequests.isEmpty else { return }
         guard let bnbRequest = bnbRequests.first else { return }
-        bnbsTask.perform(bnbRequest) { completionHandler($0) }
+        
+        bnbsTask.perform(bnbRequest) { [weak self] bnbs in
+            self!.handler(bnbs)
+        }
     }
 }
+
