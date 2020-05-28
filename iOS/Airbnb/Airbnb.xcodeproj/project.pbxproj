@@ -10,6 +10,8 @@
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
 		5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* DispatcherTests.swift */; };
+		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
+		5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* BNBsTask.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
+		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		5A25EAEB247F88330038240F /* BNBsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTask.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				C2205D1E247EAEA9008D3FBC /* Request.swift */,
 				C2205D1F247EAEA9008D3FBC /* BNBRequest.swift */,
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
+				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
+				5A25EAEB247F88330038240F /* BNBsTask.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -404,6 +410,8 @@
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
+				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
+				5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */,
 				C2205D21247EAEA9008D3FBC /* BNBRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
