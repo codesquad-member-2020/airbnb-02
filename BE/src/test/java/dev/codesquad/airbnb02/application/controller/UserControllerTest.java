@@ -30,7 +30,6 @@ public class UserControllerTest {
 
   @DisplayName("컨트롤러 접속을 통하여 정상적으로 즐겨찾기가 등록되는 지 확인한다.")
   @CsvSource({"11", "12", "13"})
-  @Transactional
   @ParameterizedTest
   void 즐겨찾기가_등록된다(Long roomId) {
     String baseUrl = "http://localhost:" + port;
@@ -52,8 +51,7 @@ public class UserControllerTest {
   }
 
   @DisplayName("컨트롤러 접속을 통하여 정상적으로 즐겨찾기가 삭제되는 지 확인한다.")
-  @CsvSource({"1", "2", "3"})
-  @Transactional
+  @CsvSource({"11", "12", "13"})
   @ParameterizedTest
   void 즐겨찾기가_삭제된다(Long roomId) {
     String baseUrl = "http://localhost:" + port;

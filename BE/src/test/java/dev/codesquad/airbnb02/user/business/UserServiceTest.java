@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
+import dev.codesquad.airbnb02.domain.favorite.Favorite;
 import dev.codesquad.airbnb02.domain.user.business.UserService;
 import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import dev.codesquad.airbnb02.domain.user.entity.User;
@@ -41,7 +42,7 @@ public class UserServiceTest {
     int previousSize = user.getFavorites().size();
     //when
     Long nextRoomId = (long) user.getFavorites().size() + 5;
-    boolean afterResult = userService.addFavorite(nextRoomId, user.getId()).isFavor();
+    boolean afterResult = userService.addFavorite(user.getId(), nextRoomId).isFavor();
     //then
     assertAll(
         () -> assertThat(afterResult).isEqualTo(true),
@@ -54,18 +55,18 @@ public class UserServiceTest {
   }
 
   @DisplayName("사용자의 즐겨찾기를 게시글 DB에서 삭제한다.")
-  @CsvSource({"1", "2"})
   @Transactional
-  @ParameterizedTest
-  void 즐겨찾기가_취소된다(Long roomId) {
+  @Test
+  void 즐겨찾기가_취소된다() {
     //given
-    boolean beforeResult = user.getFavorites().get(0).isFavor();
-    assertThat(beforeResult).isEqualTo(true);
+    userService.addFavorite(1L, 47L);
+    int previousSize = user.getFavorites().size();
     //when
-    boolean afterResult = userService.deleteFavorite(roomId, user.getId()).isFavor();
+    Favorite favorite = userRepository.findById(1L).get().getFavorites().get(
+        userRepository.findById(1L).get().getFavorites().size() - 1);
+    userService.deleteFavorite(user.getId(), favorite.getRoomId());
     //then
-    assertThat(userRepository.findById(1L).get().getFavorites().get(0).isFavor())
-        .isEqualTo(afterResult);
+    assertThat(userRepository.findById(1L).get().getFavorites().size()).isLessThan(previousSize);
   }
 
   @DisplayName("사용자의 즐겨찾기를 보여주는 DB 상에 존재하지 않는 방을 삭제하려고 하면 오류를 발생시킨다.")
