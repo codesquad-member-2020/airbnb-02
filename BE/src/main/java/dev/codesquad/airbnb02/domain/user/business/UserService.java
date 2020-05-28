@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.domain.user.business;
 
+import dev.codesquad.airbnb02.application.dto.UserFavoriteResponseDto;
 import dev.codesquad.airbnb02.domain.favorite.Favorite;
 import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import dev.codesquad.airbnb02.domain.user.entity.User;
@@ -16,19 +17,19 @@ public class UserService {
   }
 
   @Transactional
-  public Favorite addFavorite(Long roomId, Long userId) {
+  public UserFavoriteResponseDto addFavorite(Long userId, Long roomId) {
     User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
     Favorite favorite = user.addFavorite(roomId);
     userRepository.save(user);
-    return favorite;
+    return UserFavoriteResponseDto.create(favorite, userId);
   }
 
   @Transactional
-  public Favorite deleteFavorite(Long roomId, Long userId) {
+  public UserFavoriteResponseDto deleteFavorite(Long roomId, Long userId) {
     User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
     Favorite favorite = user.deleteFavorite(roomId);
     userRepository.save(user);
-    return favorite;
+    return UserFavoriteResponseDto.create(favorite, userId);
   }
 
 }
