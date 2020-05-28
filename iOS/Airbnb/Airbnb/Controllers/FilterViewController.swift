@@ -48,7 +48,7 @@ final class FilterViewController: UIViewController {
 extension FilterViewController: Identifiable { }
 
 extension FilterViewController {
-    static func instantiate(from storyboard: Storyboard,
+    static func instantiate(from storyboard: StoryboardRouter,
                             presentationStyle: UIModalPresentationStyle = .overCurrentContext,
                             transitionStyle: UIModalTransitionStyle = .crossDissolve,
                             filterType: FilterType) -> Self? {
