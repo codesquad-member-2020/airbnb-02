@@ -68,9 +68,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIA2LU4OVCKY3GKR5VS
-          aws-secret-access-key: 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
-          aws-region: ap-northeast-2
+          aws-access-key-id: $
+          aws-secret-access-key: $
+          aws-region: $
 
         # 배포 zip 파일을 S3에 업로드한다.
       - name: Upload to S3
