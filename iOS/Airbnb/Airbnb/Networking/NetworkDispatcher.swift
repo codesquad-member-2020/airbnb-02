@@ -13,7 +13,7 @@ import Alamofire
 protocol NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
     
-    func download(url: URL) -> DownloadRequest
+    func download(url: URL, completionHandler: @escaping (URL? , URLResponse?, Error?) -> ())
 }
 extension Session: NetworkDispatcher {
     func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -23,7 +23,14 @@ extension Session: NetworkDispatcher {
         }
     }
     
-    func download(url: URL) -> DownloadRequest {
-        download(url)
+    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) {
+        download(url).validate().response { afDownloadResponse in
+            switch afDownloadResponse.result {
+            case .success(let tempURL):
+                completionHandler(tempURL, afDownloadResponse.response, nil)
+            case .failure(let error):
+                completionHandler(nil, afDownloadResponse.response, error)
+            }
+        }
     }
 }

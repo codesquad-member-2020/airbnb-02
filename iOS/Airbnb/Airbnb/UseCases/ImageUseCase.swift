@@ -26,16 +26,13 @@ final class ImageUseCase {
         guard !imageURLs.isEmpty,
             let imageURL = imageURLs.first else { return }
         
-        networkDispatcher.download(url: imageURL).validate().response { response in
-            switch response.result {
-            case .success(let tempURL):
-                guard let destinaionURL = Cache.suggestedDownloadDestination(
-                    lastPathComponent: imageURL.lastPathComponent
-                    ) else { return }
-                try? FileManager.default.moveItem(at: tempURL!, to: destinaionURL)
-            default:
-                break
-            }
+        networkDispatcher.download(url: imageURL) { tempURL, urlResponse, error in
+            guard let tempURL = tempURL else { return }
+            guard let destinaionURL = Cache.suggestedDownloadDestination(
+                lastPathComponent: imageURL.lastPathComponent
+                ) else { return }
+            
+            try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
         }
     }
 }
