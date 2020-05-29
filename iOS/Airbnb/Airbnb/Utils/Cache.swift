@@ -23,10 +23,15 @@ struct Cache {
         return destinaionURL
     }
     
-    func fileExists(lastPathComponent: String) -> Bool {
+    func fileExists(
+        for directory: FileManager.SearchPathDirectory = .cachesDirectory,
+        in domain: FileManager.SearchPathDomainMask = .userDomainMask,
+        lastPathComponent: String
+    ) -> Bool {
         guard let destinationURL = suggestedDownloadDestination(
-            lastPathComponent: lastPathComponent
-            ) else { return false }
+            for: directory,
+            in: domain,
+            lastPathComponent: lastPathComponent) else { return false }
         return FileManager.default.fileExists(atPath: destinationURL.path)
     }
 }
