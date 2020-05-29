@@ -30,16 +30,12 @@ final class ImageUseCaseTests: XCTestCase {
         //when
         let imageURL = URL(
             string: "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large"
-        )!
+            )!
         imageUseCase.append(imageURL: imageURL)
         DispatchQueue(label: "").asyncAfter(deadline: .now() + 5) {
-            let lastPathComponent = imageURL.lastPathComponent
-            guard let destinaionURL = try? FileManager.default.url(
-                for: .cachesDirectory,
-                in: .userDomainMask,
-                appropriateFor:
-                nil,
-                create: false).appendingPathComponent(lastPathComponent) else { return }
+            guard let destinaionURL = Cache.suggestedDownloadDestination(
+                lastPathComponent: imageURL.lastPathComponent
+                ) else { return }
             
             //then
             let imageData = try? Data(contentsOf: destinaionURL)

@@ -29,11 +29,9 @@ final class ImageUseCase {
         networkDispatcher.download(url: imageURL).validate().response { response in
             switch response.result {
             case .success(let tempURL):
-                guard let destinaionURL = try? FileManager.default.url(
-                    for: .cachesDirectory,
-                    in: .userDomainMask,
-                    appropriateFor: nil,
-                    create: false).appendingPathComponent(imageURL.lastPathComponent) else { return }
+                guard let destinaionURL = Cache.suggestedDownloadDestination(
+                    lastPathComponent: imageURL.lastPathComponent
+                    ) else { return }
                 try? FileManager.default.moveItem(at: tempURL!, to: destinaionURL)
             default:
                 break
