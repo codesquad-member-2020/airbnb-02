@@ -8,30 +8,8 @@
 
 import Foundation
 
-import Alamofire
-
 protocol NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
     
     func download(url: URL, completionHandler: @escaping (URL? , URLResponse?, Error?) -> ())
-}
-
-extension Session: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        guard let urlRequest = try? request.urlRequest() else { return }
-        self.request(urlRequest).validate().response { afDataResponse in
-            completionHandler(afDataResponse.data, afDataResponse.response, afDataResponse.error)
-        }
-    }
-    
-    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) {
-        download(url).validate().response { afDownloadResponse in
-            switch afDownloadResponse.result {
-            case .success(let tempURL):
-                completionHandler(tempURL, afDownloadResponse.response, nil)
-            case .failure(let error):
-                completionHandler(nil, afDownloadResponse.response, error)
-            }
-        }
-    }
 }
