@@ -8,7 +8,25 @@
 
 import Foundation
 
-struct Cache {
+final class Cache {
+    func read(
+        for directory: FileManager.SearchPathDirectory = .cachesDirectory,
+        in domain: FileManager.SearchPathDomainMask = .userDomainMask,
+        lastPathComponent: String,
+        completionHandler: (Data) -> ()
+    ) {
+        guard let destinationURL = suggestedDownloadDestination(
+        for: directory,
+        in: domain,
+        lastPathComponent: lastPathComponent) else { return }
+        
+        if let data = try? Data(contentsOf: destinationURL) {
+            completionHandler(data)
+        } else {
+            
+        }
+    }
+    
     func suggestedDownloadDestination(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
