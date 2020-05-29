@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BNBRequest: Request {
+struct BNBsRequest: Request {
     var path: String {
         return Endpoints.main
     }

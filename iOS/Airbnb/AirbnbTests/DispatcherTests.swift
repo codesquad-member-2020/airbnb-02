@@ -15,7 +15,7 @@ final class DispatcherTests: XCTestCase {
         let expectation = XCTestExpectation(description: "데이터 잘 들어옴")
         defer { wait(for: [expectation], timeout: 10.0) }
 
-        let request = BNBRequest()
+        let request = BNBsRequest()
         AF.execute(request: request) { data, urlResponse, error in
             defer { expectation.fulfill() }
 

@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Alamofire
-
 final class ImageUseCase {
     private var imageURLs = [URL]() { didSet { downloadImage() } }
     private let networkDispatcher: NetworkDispatcher
