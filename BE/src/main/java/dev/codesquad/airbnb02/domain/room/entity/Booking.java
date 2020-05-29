@@ -1,32 +1,55 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDate;
-import java.time.Period;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
-@ToString
+@Setter
+@ToString(exclude = "room")
+@NoArgsConstructor
 public class Booking {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @ManyToOne
+  @JsonIgnore
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
   private Room room;
 
+  @NotNull
   private LocalDate bookDate;
+
+  @NotNull
   private int guest;
+
+  @Builder
+  protected Booking(LocalDate bookDate, int guest) {
+    this.bookDate = bookDate;
+    this.guest = guest;
+  }
+
+  public static Booking create(LocalDate bookDate) {
+    return Booking.builder()
+        .bookDate(bookDate)
+        .build();
+  }
 
   /**
    *  checkin - checkout 범위에 bookDate 있는지 확인
@@ -39,5 +62,9 @@ public class Booking {
       }
     }
     return true;
+  }
+
+  public boolean isEqualsBookDate(LocalDate date) {
+    return date.equals(this.bookDate);
   }
 }
