@@ -70,7 +70,7 @@ jobs:
         with:
           aws-access-key-id: $
           aws-secret-access-key: $
-          aws-region: $
+          aws-region: ap-northeast-2
 
         # 배포 zip 파일을 S3에 업로드한다.
       - name: Upload to S3
