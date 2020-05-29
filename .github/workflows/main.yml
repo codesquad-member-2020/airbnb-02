@@ -6,8 +6,6 @@ name: CI
 on:
   push:
     branches: [ deploy-action ]
-#  pull_request:
-#    branches: [ master ]
 
 # 아래의 Job들이 깃헙 액션에서 진행된다.
 jobs:
