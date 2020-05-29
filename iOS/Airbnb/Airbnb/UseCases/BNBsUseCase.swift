@@ -27,12 +27,11 @@ final class BNBsUseCase {
     }
     
     private func requestBNBs() {
-        guard !bnbRequests.isEmpty else { return }
-        guard let bnbRequest = bnbRequests.first else { return }
+        guard let bnbRequest = bnbRequests.pop() else { return }
         
+        bnbRequests.removeFirst()
         bnbsTask.perform(bnbRequest) { [weak self] bnbs in
             self!.handler(bnbs)
         }
     }
 }
-

@@ -10,6 +10,5 @@ import Foundation
 
 protocol NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
-    
     func download(url: URL, completionHandler: @escaping (URL? , URLResponse?, Error?) -> ())
 }

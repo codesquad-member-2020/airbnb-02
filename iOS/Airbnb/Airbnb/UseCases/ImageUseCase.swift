@@ -23,9 +23,8 @@ final class ImageUseCase {
     }
     
     private func downloadImage() {
-        guard !imageURLs.isEmpty,
-            let imageURL = imageURLs.first else { return }
-        
+        guard let imageURL = imageURLs.pop() else { return }
+            
         networkDispatcher.download(url: imageURL) { tempURL, urlResponse, error in
             guard let tempURL = tempURL else { return }
             guard let destinaionURL = Cache().suggestedDownloadDestination(
