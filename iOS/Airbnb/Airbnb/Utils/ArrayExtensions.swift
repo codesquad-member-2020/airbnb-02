@@ -9,9 +9,8 @@
 import Foundation
 
 extension Array {
-    mutating func pop() -> Element? {
-        guard let element = first else { return nil }
-        removeFirst()
-        return element
+    mutating func dequeue() -> Element? {
+        guard first != nil else { return nil }
+        return removeFirst()
     }
 }

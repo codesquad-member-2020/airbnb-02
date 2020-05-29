@@ -30,11 +30,22 @@ final class BNBsViewModel: NSObject {
 
 extension BNBsViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return bnbs?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell,
+        let bnb = bnbs?[indexPath.row] else { return UICollectionViewCell() }
+        cell.configure(with: bnb)
+        
+        var count = 0
+        bnb.images.forEach { urlString in
+            guard let url = URL(string: urlString) else { return }
+            ImageCache().read(lastPathComponent: url.lastPathComponent) { image in
+                cell.imagePagingView.insert(at: count, image: image)
+            }
+            count += 1
+        }
         return cell
     }
 }

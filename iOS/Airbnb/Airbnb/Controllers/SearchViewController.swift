@@ -8,13 +8,16 @@
 
 import UIKit
 
+import Alamofire
+
 final class SearchViewController: UIViewController {
-    
     @IBOutlet var filterButtons: [FilterButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = BNBsViewModel()
     private let layoutDelegate = BNBsLayout()
+    private let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
+    private let imageUseCase = ImageUseCase(networkDispatcher: AF)
     
     private var token: NotificationToken?
     
@@ -24,6 +27,17 @@ final class SearchViewController: UIViewController {
         configureObserver()
         configureButtonActions()
         configureCollectionView()
+        configureUseCase()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bnbsUseCase.append(bnbRequest: BNBsRequest())
+    }
+    
+    @IBAction func toggleFavorite(_ sender: FavoriteButton) {
+        sender.toggle()
     }
     
     private func configureCollectionView() {
@@ -43,6 +57,24 @@ final class SearchViewController: UIViewController {
                 guard let filterViewController = FilterViewController
                     .instantiate(from: .filters, filterType: filterType) else { return }
                 self?.present(filterViewController, animated: true)
+            }
+        }
+    }
+    
+    private func configureUseCase() {
+        bnbsUseCase.updateNotify { [weak self] bnbs in
+            self?.viewModel.update(bnbs: bnbs)
+            
+            let cache = ImageCache()
+            bnbs?.forEach {
+                $0.images.forEach { urlString in
+                    guard let url = URL(string: urlString) else { return }
+                    guard cache.fileExists(lastPathComponent: url.lastPathComponent) else {
+                        self?.imageUseCase.append(imageURL: url)
+                        return
+                    }
+                    
+                }
             }
         }
     }

@@ -32,7 +32,6 @@ final class BNBsUseCaseTests: XCTestCase {
         bnbsUseCase.updateNotify { bnbs in
             _ = try! XCTUnwrap(bnbs)
             count += 1
-            
             if count == requestCount {
                 expectation.fulfill()
             }

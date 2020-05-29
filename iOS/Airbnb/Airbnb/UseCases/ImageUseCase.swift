@@ -9,8 +9,13 @@
 import Foundation
 
 final class ImageUseCase {
-    private var imageURLs = [URL]() { didSet { downloadImage() } }
     private let networkDispatcher: NetworkDispatcher
+    private var imageURLs = [URL]() {
+        didSet {
+            guard oldValue.count < imageURLs.count else { return }
+            downloadImage()
+        }
+    }
     
     init(networkDispatcher: NetworkDispatcher) {
         self.networkDispatcher = networkDispatcher
@@ -21,11 +26,11 @@ final class ImageUseCase {
     }
     
     private func downloadImage() {
-        guard let imageURL = imageURLs.pop() else { return }
+        guard let imageURL = imageURLs.dequeue() else { return }
             
         networkDispatcher.download(url: imageURL) { tempURL, urlResponse, error in
             guard let tempURL = tempURL else { return }
-            guard let destinaionURL = Cache().suggestedDownloadDestination(
+            guard let destinaionURL = ImageCache().suggestedDownloadDestination(
                 lastPathComponent: imageURL.lastPathComponent
                 ) else { return }
             
