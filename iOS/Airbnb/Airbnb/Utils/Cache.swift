@@ -9,7 +9,7 @@
 import Foundation
 
 struct Cache {
-    static func suggestedDownloadDestination(
+    func suggestedDownloadDestination(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
         lastPathComponent: String
@@ -21,5 +21,12 @@ struct Cache {
             create: false)
             .appendingPathComponent(lastPathComponent) else { return nil }
         return destinaionURL
+    }
+    
+    func fileExists(lastPathComponent: String) -> Bool {
+        guard let destinationURL = suggestedDownloadDestination(
+            lastPathComponent: lastPathComponent
+            ) else { return false }
+        return FileManager.default.fileExists(atPath: destinationURL.path)
     }
 }

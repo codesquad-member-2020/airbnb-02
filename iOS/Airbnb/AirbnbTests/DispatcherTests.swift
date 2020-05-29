@@ -16,7 +16,7 @@ final class DispatcherTests: XCTestCase {
         defer { wait(for: [expectation], timeout: 10.0) }
 
         let request = BNBRequest()
-        AF.excute(request: request) { data, urlResponse, error in
+        AF.execute(request: request) { data, urlResponse, error in
             defer { expectation.fulfill() }
 
             XCTAssertNil(error)

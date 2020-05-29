@@ -11,12 +11,13 @@ import Foundation
 import Alamofire
 
 protocol NetworkDispatcher {
-    func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
+    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
     
     func download(url: URL, completionHandler: @escaping (URL? , URLResponse?, Error?) -> ())
 }
+
 extension Session: NetworkDispatcher {
-    func excute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let urlRequest = try? request.urlRequest() else { return }
         self.request(urlRequest).validate().response { afDataResponse in
             completionHandler(afDataResponse.data, afDataResponse.response, afDataResponse.error)

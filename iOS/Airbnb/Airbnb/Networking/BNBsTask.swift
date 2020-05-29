@@ -19,7 +19,7 @@ final class BNBsTask: NetworkTask {
     }
 
     func perform(_ request: BNBRequest, completionHandler: @escaping ([BNB]?) -> ()) {
-        networkDispatcher.excute(request: request) { data, urlResponse, error in
+        networkDispatcher.execute(request: request) { data, urlResponse, error in
             guard let data = data else { return }
             let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
             completionHandler(bnbs)
