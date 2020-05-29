@@ -23,7 +23,8 @@ final class Cache {
         if let data = try? Data(contentsOf: destinationURL) {
             completionHandler(data)
         } else {
-            
+            guard let defaultData = Data.readPNG(forResource: "airbnb") else { return }
+            completionHandler(defaultData)
         }
     }
     

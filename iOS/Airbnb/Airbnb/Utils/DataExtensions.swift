@@ -16,4 +16,12 @@ extension Data {
             ) else { return nil }
         return try? Data(contentsOf: url)
     }
+    
+    static func readPNG(forResource name: String) -> Data? {
+        guard let url = Bundle.main.url(
+            forResource: name,
+            withExtension: "png"
+            ) else { return nil }
+        return try? Data(contentsOf: url)
+    }
 }
