@@ -11,7 +11,12 @@ import Foundation
 final class BNBsUseCase {
     private let bnbsTask: BNBsTask
     private var handler: ([BNB]?) -> ()
-    private var bnbRequests = [BNBsRequest]() { didSet { requestBNBs() } }
+    private var bnbRequests = [BNBsRequest]() {
+        didSet {
+            guard oldValue.count < bnbRequests.count else { return }
+            requestBNBs()
+        }
+    }
     
     init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
@@ -27,11 +32,9 @@ final class BNBsUseCase {
     }
     
     private func requestBNBs() {
-        guard let bnbRequest = bnbRequests.pop() else { return }
-        
-        bnbRequests.removeFirst()
+        guard let bnbRequest = bnbRequests.dequeue() else { return }
         bnbsTask.perform(bnbRequest) { [weak self] bnbs in
-            self!.handler(bnbs)
+            self?.handler(bnbs)
         }
     }
 }

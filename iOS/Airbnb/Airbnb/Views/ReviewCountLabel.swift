@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ReviewCountLabel: UILabel {
-    func setText(to count: String) {
+final class ReviewCountLabel: UILabel {
+    func setText(to count: Int) {
         text = "(\(count))"
     }
 }

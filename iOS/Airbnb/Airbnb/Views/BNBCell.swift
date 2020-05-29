@@ -16,6 +16,18 @@ final class BNBCell: UICollectionViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: ReviewCountLabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var favoriteButton: FavoriteButton!
+    
+    func configure(with bnb: BNB) {
+        badgeLabel.isHidden = !bnb.superhost
+        bnbTypeLabel.text = bnb.type
+        locationLabel.text = bnb.location
+        ratingLabel.text = "\(bnb.review.rating)"
+        reviewCountLabel.setText(to: bnb.review.count)
+        titleLabel.text = bnb.title
+        favoriteButton.isFavorited = bnb.favorite
+        imagePagingView.configure(count: bnb.images.count)
+    }
 }
 
 extension BNBCell: Identifiable { }

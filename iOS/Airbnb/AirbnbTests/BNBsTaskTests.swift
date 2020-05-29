@@ -13,7 +13,7 @@ import XCTest
 final class BNBsTaskTests: XCTestCase {
     func testTaskPerform_success() {
         let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
-              defer { wait(for: [expectation], timeout: 10.0) }
+        defer { wait(for: [expectation], timeout: 10.0) }
         let bnbRequest = BNBsRequest()
         let bnbsTask = BNBsTask(networkDispatcher: AF)
         bnbsTask.perform(bnbRequest) { bnbs in

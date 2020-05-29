@@ -1,19 +1,19 @@
 //
-//  Cache.swift
+//  ImageCache.swift
 //  Airbnb
 //
 //  Created by kimdo2297 on 2020/05/29.
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class Cache {
+final class ImageCache {
     func read(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
         lastPathComponent: String,
-        completionHandler: (Data) -> ()
+        completionHandler: (UIImage) -> ()
     ) {
         guard let destinationURL = suggestedDownloadDestination(
         for: directory,
@@ -21,9 +21,9 @@ final class Cache {
         lastPathComponent: lastPathComponent) else { return }
         
         if let data = try? Data(contentsOf: destinationURL) {
-            completionHandler(data)
+            completionHandler(UIImage(data: data)!)
         } else {
-            guard let defaultData = Data.readPNG(forResource: "airbnb") else { return }
+            guard let defaultData = UIImage(named: "airbnb") else { return }
             completionHandler(defaultData)
         }
     }
