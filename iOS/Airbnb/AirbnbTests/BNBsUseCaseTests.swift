@@ -39,7 +39,7 @@ final class BNBsUseCaseTests: XCTestCase {
         }
         
         for _ in 0 ..< requestCount {
-            bnbsUseCase.append(bnbRequest: BNBRequest())
+            bnbsUseCase.append(bnbRequest: BNBsRequest())
         }
     }
 }

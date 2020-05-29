@@ -21,7 +21,7 @@ private struct FakeRequest: Request {
 
 final class BNBsRequestTests: XCTestCase {
     func testBNBRequest_isCorrect() {
-        let request = BNBRequest()
+        let request = BNBsRequest()
         XCTAssertEqual(request.path, Endpoints.main)
         XCTAssertEqual(request.method, HTTPMethod.get)
     }

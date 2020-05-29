@@ -9,7 +9,7 @@
 import Foundation
 
 final class BNBsTask: NetworkTask {
-    typealias Input = BNBRequest
+    typealias Input = BNBsRequest
     typealias Output = [BNB]
 
     private let networkDispatcher: NetworkDispatcher
@@ -18,8 +18,8 @@ final class BNBsTask: NetworkTask {
         self.networkDispatcher = networkDispatcher
     }
 
-    func perform(_ request: BNBRequest, completionHandler: @escaping ([BNB]?) -> ()) {
-        networkDispatcher.excute(request: request) { data, urlResponse, error in
+    func perform(_ request: BNBsRequest, completionHandler: @escaping ([BNB]?) -> ()) {
+        networkDispatcher.execute(request: request) { data, urlResponse, error in
             guard let data = data else { return }
             let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
             completionHandler(bnbs)
