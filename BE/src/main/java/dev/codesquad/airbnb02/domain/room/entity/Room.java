@@ -2,20 +2,22 @@ package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
+import dev.codesquad.airbnb02.domain.favorite.Favorite;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString(exclude = {"images", "bookings"})
 public class Room {
 
@@ -67,7 +69,10 @@ public class Room {
   @JsonIgnore
   private List<Booking> bookings;
 
-  public Room() {}
+  @ElementCollection
+  @CollectionTable(name = "favorite",
+      joinColumns = @JoinColumn(name = "room_id", insertable = false, updatable = false))
+  private List<Favorite> favorites;
 
   public boolean isValidLocation(String location) {
     if (checkNull(location)) {
@@ -91,7 +96,7 @@ public class Room {
     /**
      * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
      */
-    for(Booking booking : this.bookings) {
+    for (Booking booking : this.bookings) {
       if (!booking.isAvailable(checkin, checkout)) {
         return false;
       }

@@ -443,3 +443,16 @@ VALUES (1, '2020-05-20'),
        (3, '2020-05-19'),
        (3, '2020-05-20'),
        (3, '2020-05-21');
+
+INSERT INTO favorite (room_id, user_id, favor)
+VALUES (1, 1, 1),
+       (1, 2, 1),
+       (1, 3, 1),
+       (2, 1, 1),
+       (2, 2, 1),
+       (2, 3, 1);
+
+INSERT INTO user (github_id)
+VALUES ('jypthemiracle'),
+       ('wooody92'),
+       ('heidi');
