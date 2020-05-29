@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 final class ImagePagingView: UIView {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()

@@ -14,6 +14,8 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = BNBsViewModel()
+    private let layoutDelegate = BNBsLayout()
+    
     private var token: NotificationToken?
     
     override func viewDidLoad() {
@@ -21,10 +23,12 @@ final class SearchViewController: UIViewController {
         
         configureObserver()
         configureButtonActions()
+        configureCollectionView()
     }
     
     private func configureCollectionView() {
         collectionView.dataSource = viewModel
+        collectionView.delegate = layoutDelegate
     }
     
     private func configureObserver() {

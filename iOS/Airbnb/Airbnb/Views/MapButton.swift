@@ -12,12 +12,12 @@ import UIKit
 final class MapButton: RoundButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureShadow(offset: CGSize(width: 5, height: 5), opacity: 3)
+        configureShadow(offset: CGSize(width: 0, height: 0), opacity: 0.5)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureShadow(offset: CGSize(width: 5, height: 5), opacity: 3)
+        configureShadow(offset: CGSize(width: 0, height: 0), opacity: 0.5)
     }
 }
 

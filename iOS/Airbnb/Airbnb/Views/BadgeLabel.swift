@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 final class BadgeLabel: UILabel {
-    @IBInspectable var horizontalInset: CGFloat = 6
+    @IBInspectable var horizontalInset: CGFloat = 5
     @IBInspectable var verticalInset: CGFloat = 2
     
     override init(frame: CGRect) {

@@ -109,21 +109,150 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNL-Dt-uNR">
                                 <rect key="frame" x="24" y="207" width="327" height="522"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="frZ-Yj-eii">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="frZ-Yj-eii">
+                                    <size key="itemSize" width="326" height="217"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BNBCell" id="e2H-bD-pcl">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BNBCell" id="e2H-bD-pcl" customClass="BNBCell" customModule="Airbnb" customModuleProvider="target">
+                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="326" height="217"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9mz-Qc-uJZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tl8-9o-RZp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="217"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxI-uw-mWQ" customClass="ImagePagingView" customModule="Airbnb" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="170"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" priority="250" constant="240" id="7Ye-Tp-7kr"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="auA-DT-R5H">
+                                                            <rect key="frame" x="0.0" y="174" width="326" height="43"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qjE-5y-EDF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="22.666666666666668"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHOST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-3E-dhL" customClass="BadgeLabel" customModule="Airbnb" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="2.6666666666666572" width="77.333333333333329" height="17.333333333333332"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="horizontalInset">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="verticalInset">
+                                                                                    <real key="value" value="2"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BNB type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDM-We-20G">
+                                                                            <rect key="frame" x="82.333333333333329" y="4.3333333333333437" width="53.333333333333329" height="14.333333333333336"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" name="textGray"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="∙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yC-fi-OHY">
+                                                                            <rect key="frame" x="140.66666666666666" y="3.6666666666666563" width="6" height="15.666666666666664"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <color key="textColor" name="textGray"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM0-Pe-LoG">
+                                                                            <rect key="frame" x="151.66666666666666" y="4.3333333333333437" width="48.666666666666657" height="14.333333333333336"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" name="textGray"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMk-px-r0P">
+                                                                            <rect key="frame" x="205.33333333333334" y="1.3333333333333428" width="58.333333333333343" height="20.333333333333332"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8aL-Jb-fVA">
+                                                                            <rect key="frame" x="268.66666666666669" y="0.0" width="57.333333333333314" height="22.666666666666668"/>
+                                                                            <subviews>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="KID-AW-2PD">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="11" height="22.666666666666668"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="11" id="ivE-Tp-Vib"/>
+                                                                                    </constraints>
+                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="6" scale="small"/>
+                                                                                </imageView>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FY-mz-Y0d">
+                                                                                    <rect key="frame" x="12.999999999999998" y="0.0" width="25.333333333333329" height="22.666666666666668"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-et-19p" customClass="ReviewCountLabel" customModule="Airbnb" customModuleProvider="target">
+                                                                                    <rect key="frame" x="40.333333333333314" y="0.0" width="17" height="22.666666666666668"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <color key="textColor" name="textGray"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-8e-Jwp">
+                                                                    <rect key="frame" x="0.0" y="22.666666666666657" width="326" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMu-Ec-iql" customClass="FavoriteButton" customModule="Airbnb" customModuleProvider="target">
+                                                    <rect key="frame" x="283" y="10" width="33" height="33"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="diameter">
+                                                            <real key="value" value="33"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
+                                                            <color key="value" name="completionBlack"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                            <color key="value" name="pointPink"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tl8-9o-RZp" firstAttribute="leading" secondItem="9mz-Qc-uJZ" secondAttribute="leading" id="5pt-U9-6yO"/>
+                                                <constraint firstItem="tl8-9o-RZp" firstAttribute="top" secondItem="9mz-Qc-uJZ" secondAttribute="top" id="EAZ-oV-MBy"/>
+                                                <constraint firstAttribute="bottom" secondItem="tl8-9o-RZp" secondAttribute="bottom" id="Gdu-fI-g4X"/>
+                                                <constraint firstItem="HxI-uw-mWQ" firstAttribute="width" secondItem="9mz-Qc-uJZ" secondAttribute="width" id="Ql5-XQ-6JV"/>
+                                                <constraint firstAttribute="trailing" secondItem="KMu-Ec-iql" secondAttribute="trailing" constant="10" id="eVZ-Az-XBo"/>
+                                                <constraint firstItem="KMu-Ec-iql" firstAttribute="top" secondItem="9mz-Qc-uJZ" secondAttribute="top" constant="10" id="qog-1x-UDF"/>
+                                                <constraint firstAttribute="trailing" secondItem="tl8-9o-RZp" secondAttribute="trailing" id="uO7-hT-Nxd"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="326" height="217"/>
+                                        <connections>
+                                            <outlet property="badgeLabel" destination="FKI-3E-dhL" id="3kr-uy-qYO"/>
+                                            <outlet property="bnbTypeLabel" destination="RDM-We-20G" id="v1W-iR-ysy"/>
+                                            <outlet property="imagePagingView" destination="HxI-uw-mWQ" id="WZG-ck-PAl"/>
+                                            <outlet property="locationLabel" destination="EM0-Pe-LoG" id="VR8-Hv-X18"/>
+                                            <outlet property="ratingLabel" destination="7FY-mz-Y0d" id="71h-Vk-g1H"/>
+                                            <outlet property="reviewCountLabel" destination="hpB-et-19p" id="BtK-XC-vYP"/>
+                                            <outlet property="titleLabel" destination="Qdm-8e-Jwp" id="BtZ-ja-rM5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -167,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621.73913043478262" y="138.61607142857142"/>
+            <point key="canvasLocation" x="621.60000000000002" y="138.17733990147784"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nxY-Pa-Tcl">
@@ -227,6 +356,13 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="map.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star" width="30" height="30"/>
+        <namedColor name="completionBlack">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pointPink">
+            <color red="1" green="0.35294117647058826" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="searchBarBorderGray">
             <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

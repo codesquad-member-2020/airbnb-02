@@ -14,7 +14,7 @@ extension Shadow {
     func configureShadow(
         color: UIColor = .lightGray,
         offset: CGSize = CGSize(width: 0, height: 0),
-        radius: CGFloat = 8,
+        radius: CGFloat = 5,
         opacity: Float = 0.2
     ) {
         layer.shadowColor = color.cgColor
