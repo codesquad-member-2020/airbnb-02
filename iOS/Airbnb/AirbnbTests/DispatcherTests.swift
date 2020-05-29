@@ -29,20 +29,4 @@ final class DispatcherTests: XCTestCase {
             XCTAssertNotNil(data)
         }
     }
-
-    func testAlamofireSession_codable_success() {
-        let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
-        defer { wait(for: [expectation], timeout: 10.0) }
-
-        let request = BNBRequest()
-        AF.excute(request: request) { data, urlResponse, error in
-            defer { expectation.fulfill() }
-
-            XCTAssertNil(error)
-            XCTAssertNotNil(urlResponse)
-            let data = try! XCTUnwrap(data)
-            let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
-            XCTAssertNotNil(bnbs)
-        }
-    }
 }
