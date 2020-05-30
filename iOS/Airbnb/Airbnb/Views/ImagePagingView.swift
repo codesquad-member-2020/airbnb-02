@@ -58,6 +58,10 @@ final class ImagePagingView: UIView {
         imageView.image = image
     }
     
+    func initCurrentPage() {
+        pageControl.currentPage = 0
+    }
+    
     private func configureStackView(count: Int) {
         guard count > stackView.arrangedSubviews.count else { return }
         
