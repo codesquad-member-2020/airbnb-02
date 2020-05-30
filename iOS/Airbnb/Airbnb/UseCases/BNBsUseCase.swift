@@ -11,12 +11,7 @@ import Foundation
 final class BNBsUseCase {
     private let bnbsTask: BNBsTask
     private var handler: ([BNB]?) -> ()
-    private var bnbRequests = [BNBsRequest]() {
-        didSet {
-            guard oldValue.count < bnbRequests.count else { return }
-            requestBNBs()
-        }
-    }
+    private let requestQueue = DispatchQueue(label: "bnbsRequest.serial.queue")
     
     init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
@@ -27,13 +22,14 @@ final class BNBsUseCase {
         self.handler = handler
     }
     
-    func append(bnbRequest: BNBsRequest) {
-        bnbRequests.append(bnbRequest)
+    func append(bnbsRequest: BNBsRequest) {
+        requestQueue.async { [weak self] in
+            self?.requestBNBs(bnbsRequest)
+        }
     }
     
-    private func requestBNBs() {
-        guard let bnbRequest = bnbRequests.dequeue() else { return }
-        bnbsTask.perform(bnbRequest) { [weak self] bnbs in
+    private func requestBNBs(_ bnbsRequest: BNBsRequest) {
+        bnbsTask.perform(bnbsRequest) { [weak self] bnbs in
             self?.handler(bnbs)
         }
     }

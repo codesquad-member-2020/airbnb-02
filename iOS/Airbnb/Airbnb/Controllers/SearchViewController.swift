@@ -33,7 +33,7 @@ final class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        bnbsUseCase.append(bnbRequest: BNBsRequest())
+        bnbsUseCase.append(bnbsRequest: BNBsRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
