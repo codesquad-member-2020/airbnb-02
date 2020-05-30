@@ -64,16 +64,16 @@ final class SearchViewController: UIViewController {
     private func configureUseCase() {
         bnbsUseCase.updateNotify { [weak self] bnbs in
             self?.viewModel.update(bnbs: bnbs)
-            
-            bnbs?.forEach {
-                $0.images.forEach { urlString in
-                    guard let url = URL(string: urlString) else { return }
-                    guard ImageCache.fileExists(lastPathComponent: url.lastPathComponent) else {
-                        self?.imageUseCase.append(imageURL: url)
-                        return
-                    }
-                    
-                }
+            self?.configureImageUseCase(bnbs)
+        }
+    }
+    
+    private func configureImageUseCase(_ bnbs: [BNB]?) {
+        bnbs?.forEach {
+            $0.images.forEach { urlString in
+                guard let url = URL(string: urlString) else { return }
+                guard !ImageCache.fileExists(lastPathComponent: url.lastPathComponent) else { return }
+                    imageUseCase.append(imageURL: url)
             }
         }
     }
