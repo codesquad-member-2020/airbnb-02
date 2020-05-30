@@ -59,7 +59,10 @@ final class ImagePagingView: UIView {
     }
     
     private func configureStackView(count: Int) {
-        (0 ..< count).forEach { _ in
+        guard count > stackView.arrangedSubviews.count else { return }
+        
+        let length = count - stackView.arrangedSubviews.count
+        (0 ..< length).forEach { _ in
             let imageView = UIImageView()
             configure(imageView: imageView)
             stackView.addArrangedSubview(imageView)
@@ -68,6 +71,8 @@ final class ImagePagingView: UIView {
     }
     
     private func configurePageControl(count: Int) {
+        guard count > pageControl.numberOfPages else { return }
+        
         pageControl.numberOfPages = count
     }
     
