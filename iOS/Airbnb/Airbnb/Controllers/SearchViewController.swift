@@ -65,11 +65,10 @@ final class SearchViewController: UIViewController {
         bnbsUseCase.updateNotify { [weak self] bnbs in
             self?.viewModel.update(bnbs: bnbs)
             
-            let cache = ImageCache()
             bnbs?.forEach {
                 $0.images.forEach { urlString in
                     guard let url = URL(string: urlString) else { return }
-                    guard cache.fileExists(lastPathComponent: url.lastPathComponent) else {
+                    guard ImageCache.fileExists(lastPathComponent: url.lastPathComponent) else {
                         self?.imageUseCase.append(imageURL: url)
                         return
                     }

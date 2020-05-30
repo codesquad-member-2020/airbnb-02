@@ -9,26 +9,25 @@
 import UIKit
 
 final class ImageCache {
-    func read(
+    static func read(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
-        lastPathComponent: String,
-        completionHandler: (UIImage) -> ()
-    ) {
+        lastPathComponent: String
+    ) -> UIImage? {
         guard let destinationURL = suggestedDownloadDestination(
         for: directory,
         in: domain,
-        lastPathComponent: lastPathComponent) else { return }
+        lastPathComponent: lastPathComponent) else { return nil }
         
         if let data = try? Data(contentsOf: destinationURL) {
-            completionHandler(UIImage(data: data)!)
+            return UIImage(data: data)!
         } else {
-            guard let defaultData = UIImage(named: "airbnb") else { return }
-            completionHandler(defaultData)
+            guard let defaultImage = UIImage(named: "airbnb") else { return nil }
+            return defaultImage
         }
     }
     
-    func suggestedDownloadDestination(
+    static func suggestedDownloadDestination(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
         lastPathComponent: String
@@ -42,7 +41,7 @@ final class ImageCache {
         return destinaionURL
     }
     
-    func fileExists(
+    static func fileExists(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
         lastPathComponent: String

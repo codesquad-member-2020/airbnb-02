@@ -15,7 +15,6 @@ final class BNBsViewModel: NSObject {
     
     typealias Key = [BNB]?
     
-    private let imageCache = ImageCache()
     private var bnbs: Key = nil {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
@@ -36,15 +35,15 @@ extension BNBsViewModel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell,
-        let bnb = bnbs?[indexPath.row] else { return UICollectionViewCell() }
+            let bnb = bnbs?[indexPath.row] else { return UICollectionViewCell() }
         cell.configure(with: bnb)
         
         var count = 0
         bnb.images.forEach { urlString in
             guard let url = URL(string: urlString) else { return }
-            imageCache.read(lastPathComponent: url.lastPathComponent) { image in
-                cell.imagePagingView.insert(at: count, image: image)
-            }
+            guard let image = ImageCache.read(lastPathComponent: url.lastPathComponent) else { return }
+            
+            cell.imagePagingView.insert(at: count, image: image)
             count += 1
         }
         return cell

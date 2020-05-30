@@ -25,7 +25,7 @@ final class ImageUseCase {
     private func downloadImage(imageURL: URL) {
         networkDispatcher.download(url: imageURL) { tempURL, urlResponse, error in
             guard let tempURL = tempURL else { return }
-            guard let destinaionURL = ImageCache().suggestedDownloadDestination(
+            guard let destinaionURL = ImageCache.suggestedDownloadDestination(
                 lastPathComponent: imageURL.lastPathComponent
                 ) else { return }
             
