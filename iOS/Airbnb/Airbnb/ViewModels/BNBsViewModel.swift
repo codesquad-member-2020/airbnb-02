@@ -15,6 +15,7 @@ final class BNBsViewModel: NSObject {
     
     typealias Key = [BNB]?
     
+    private let imageCache = ImageCache()
     private var bnbs: Key = nil {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
@@ -41,7 +42,7 @@ extension BNBsViewModel: UICollectionViewDataSource {
         var count = 0
         bnb.images.forEach { urlString in
             guard let url = URL(string: urlString) else { return }
-            ImageCache().read(lastPathComponent: url.lastPathComponent) { image in
+            imageCache.read(lastPathComponent: url.lastPathComponent) { image in
                 cell.imagePagingView.insert(at: count, image: image)
             }
             count += 1
