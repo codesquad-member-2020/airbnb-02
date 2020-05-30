@@ -38,13 +38,13 @@ extension BNBsViewModel: UICollectionViewDataSource {
             let bnb = bnbs?[indexPath.row] else { return UICollectionViewCell() }
         cell.configure(with: bnb)
         
-        var count = 0
+        var index = 0
         bnb.images.forEach { urlString in
             guard let url = URL(string: urlString) else { return }
             guard let image = ImageCache.read(lastPathComponent: url.lastPathComponent) else { return }
             
-            cell.imagePagingView.insert(at: count, image: image)
-            count += 1
+            cell.imagePagingView.insert(at: index, image: image)
+            index += 1
         }
         return cell
     }
