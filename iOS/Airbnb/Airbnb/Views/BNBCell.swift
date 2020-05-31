@@ -30,7 +30,7 @@ final class BNBCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        imagePagingView.initCurrentPage()
+        imagePagingView.reset()
     }
 }
 

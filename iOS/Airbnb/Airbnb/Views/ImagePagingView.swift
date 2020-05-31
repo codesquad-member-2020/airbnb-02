@@ -58,7 +58,16 @@ final class ImagePagingView: UIView {
         imageView.image = image
     }
     
-    func initCurrentPage() {
+    func reset() {
+        resetScrollView()
+        resetPageControl()
+    }
+    
+    private func resetScrollView() {
+        scrollView.contentOffset.x = 0
+    }
+    
+    private func resetPageControl() {
         pageControl.currentPage = 0
     }
     

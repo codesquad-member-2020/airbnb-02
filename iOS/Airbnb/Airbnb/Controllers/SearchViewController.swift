@@ -46,7 +46,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureObserver() {
-        token = BNBsViewModel.Notification.addObserver { [weak self] _ in
+        token = BNBsViewModel.Notification.addObserver(forName: BNBsViewModel.Notification.update) { [weak self] _ in
             self?.collectionView.reloadData()
         }
     }
