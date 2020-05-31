@@ -26,15 +26,15 @@ final class BNBViewModel {
     private func configureObserver() {
         imageToken = ImageUseCase.Notification.addObserver{ [weak self] notification in
             guard let imageURL = notification.userInfo?["imageURL"] as? URL,
-            let viewModel = self else { return }
+                let bnbID = self?.bnb.id else { return }
             
-            viewModel.bnb.images.forEach {
+            self?.bnb.images.forEach {
                 guard imageURL == URL(string: $0) else { return }
                 
                 NotificationCenter.default.post(
                     name: Notification.update,
                     object: self,
-                    userInfo: ["bnbID": viewModel.bnb.id])
+                    userInfo: ["bnbID": bnbID])
             }
         }
     }
