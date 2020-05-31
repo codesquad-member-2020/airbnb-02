@@ -34,9 +34,11 @@ final class ImageUseCase {
                 ) else { return }
             
             try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
-            NotificationCenter.default.post(name: Notification.update,
-                                            object: self,
-                                            userInfo: ["imageURL": imageURL])
+            NotificationCenter.default.post(
+                name: Notification.update,
+                object: self,
+                userInfo: ["imageURL": imageURL]
+            )
         }
     }
 }

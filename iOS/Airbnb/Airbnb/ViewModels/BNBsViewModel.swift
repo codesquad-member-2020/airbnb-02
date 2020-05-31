@@ -27,13 +27,22 @@ final class BNBsViewModel: NSObject {
 }
 
 extension BNBsViewModel: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return bnbViewModels.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath)
-            as? BNBCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: BNBCell.identifier,
+            for: indexPath) as? BNBCell
+            else { return UICollectionViewCell() }
+        
         let bnb = bnbViewModels[indexPath.row].bnb
         cell.configure(with: bnb)
         

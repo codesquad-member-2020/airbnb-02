@@ -14,7 +14,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet var filterButtons: [FilterButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let viewModel = BNBsViewModel()
+    private let bnbsViewModel = BNBsViewModel()
     private let layoutDelegate = BNBsLayout()
     private let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
     private let imageUseCase = ImageUseCase(networkDispatcher: AF)
@@ -42,7 +42,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        collectionView.dataSource = viewModel
+        collectionView.dataSource = bnbsViewModel
         collectionView.delegate = layoutDelegate
     }
     
@@ -71,7 +71,7 @@ final class SearchViewController: UIViewController {
         bnbsUseCase.updateNotify { [weak self] bnbs in
             guard let bnbs = bnbs else { return }
             
-            self?.viewModel.update(bnbs: bnbs)
+            self?.bnbsViewModel.update(bnbs: bnbs)
             self?.configureImageUseCase(bnbs)
         }
     }
@@ -80,8 +80,10 @@ final class SearchViewController: UIViewController {
         bnbs.forEach {
             $0.images.forEach { urlString in
                 guard let url = URL(string: urlString) else { return }
-                guard !ImageCache.fileExists(lastPathComponent: url.lastPathComponent) else { return }
-                    imageUseCase.append(imageURL: url)
+                guard !ImageCache.fileExists(
+                    lastPathComponent: url.lastPathComponent
+                    ) else { return }
+                imageUseCase.append(imageURL: url)
             }
         }
     }

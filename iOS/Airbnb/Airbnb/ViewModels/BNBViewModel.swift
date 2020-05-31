@@ -16,7 +16,7 @@ final class BNBViewModel {
     typealias Key = BNB
     
     var bnb: Key
-    private var token: NotificationToken?
+    private var imageToken: NotificationToken?
     
     init(bnb: BNB) {
         self.bnb = bnb
@@ -24,7 +24,7 @@ final class BNBViewModel {
     }
     
     private func configureObserver() {
-        token = ImageUseCase.Notification.addObserver{ [weak self] notification in
+        imageToken = ImageUseCase.Notification.addObserver{ [weak self] notification in
             guard let imageURL = notification.userInfo?["imageURL"] as? URL,
             let viewModel = self else { return }
             
