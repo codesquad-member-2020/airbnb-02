@@ -12,8 +12,8 @@ final class BNBsViewModel: NSObject {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("bnbsDidUpdate")
     }
-
-    private var bnbViewModels: [BNBViewModel]? = nil {
+    
+    private var bnbViewModels: [BNBViewModel] {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
     
@@ -28,12 +28,13 @@ final class BNBsViewModel: NSObject {
 
 extension BNBsViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bnbViewModels?.count ?? 0
+        return bnbViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell,
-            let bnb = bnbViewModels?[indexPath.row].bnb else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath)
+            as? BNBCell else { return UICollectionViewCell() }
+        let bnb = bnbViewModels[indexPath.row].bnb
         cell.configure(with: bnb)
         
         var index = 0
