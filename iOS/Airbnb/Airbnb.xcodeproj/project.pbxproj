@@ -34,6 +34,7 @@
 		5AD06346247A50D4000BF31B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06345247A50D4000BF31B /* Shadow.swift */; };
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
+		5ADA864624838558000C06E9 /* BNBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864524838558000C06E9 /* BNBViewModel.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		C2205D20247EAEA9008D3FBC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1E247EAEA9008D3FBC /* Request.swift */; };
 		C2205D21247EAEA9008D3FBC /* BNBsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */; };
@@ -100,6 +101,7 @@
 		5AD06345247A50D4000BF31B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		5AD06347247A5BB2000BF31B /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		5ADA00DB247E4F3500E30D6C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		5ADA864524838558000C06E9 /* BNBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBViewModel.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
 		C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BNBsRequest.swift; path = Airbnb/Networking/BNBsRequest.swift; sourceTree = SOURCE_ROOT; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */,
+				5ADA864524838558000C06E9 /* BNBViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A81411F247BCE900020ED80 /* BNB.swift in Sources */,
 				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
+				5ADA864624838558000C06E9 /* BNBViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */,

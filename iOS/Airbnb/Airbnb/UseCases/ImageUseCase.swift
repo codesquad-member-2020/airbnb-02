@@ -9,6 +9,10 @@
 import Foundation
 
 final class ImageUseCase {
+    enum Notification: Observable {
+        static let update = Foundation.Notification.Name("imageDidDownload")
+    }
+    
     private let networkDispatcher: NetworkDispatcher
     private let urlsQueue = DispatchQueue(label: "urls.serial.queue")
     
@@ -30,6 +34,9 @@ final class ImageUseCase {
                 ) else { return }
             
             try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
+            NotificationCenter.default.post(name: Notification.update,
+                                            object: self,
+                                            userInfo: ["imageURL": imageURL])
         }
     }
 }

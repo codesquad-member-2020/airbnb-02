@@ -12,30 +12,28 @@ final class BNBsViewModel: NSObject {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("bnbsDidUpdate")
     }
-    
-    typealias Key = [BNB]?
-    
-    private var bnbs: Key = nil {
+
+    private var bnbViewModels: [BNBViewModel]? = nil {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
     
-    init(with bnbs: Key = nil) {
-        self.bnbs = bnbs
+    init(with bnbs: [BNB] = []) {
+        self.bnbViewModels = bnbs.map { BNBViewModel(bnb: $0) }
     }
     
-    func update(bnbs: Key) {
-        self.bnbs = bnbs
+    func update(bnbs: [BNB]) {
+        self.bnbViewModels = bnbs.map { BNBViewModel(bnb: $0) }
     }
 }
 
 extension BNBsViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bnbs?.count ?? 0
+        return bnbViewModels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BNBCell.identifier, for: indexPath) as? BNBCell,
-            let bnb = bnbs?[indexPath.row] else { return UICollectionViewCell() }
+            let bnb = bnbViewModels?[indexPath.row].bnb else { return UICollectionViewCell() }
         cell.configure(with: bnb)
         
         var index = 0
