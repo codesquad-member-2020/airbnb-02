@@ -12,6 +12,10 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func close(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }
 
 extension LoginViewController: Identifiable { }

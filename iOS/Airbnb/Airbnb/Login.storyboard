@@ -36,14 +36,27 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-7n-RFT">
+                                <rect key="frame" x="8" y="52" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0ED-wU-Car"/>
+                                    <constraint firstAttribute="width" constant="35" id="wla-bz-HEH"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="close:" destination="9aP-tM-ujJ" eventType="touchUpInside" id="8dA-GK-r6P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bqd-VX-q92" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="1.35" id="3oS-cZ-PEa"/>
                             <constraint firstItem="bqd-VX-q92" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="510-PG-Ukh"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="a5C-Y2-OaK"/>
+                            <constraint firstItem="Ghg-7n-RFT" firstAttribute="top" secondItem="knu-pn-4k9" secondAttribute="top" constant="8" id="ar4-qq-UMV"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="0.7" id="hAy-Wz-v4E"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.75" id="hGO-ta-czR"/>
+                            <constraint firstItem="Ghg-7n-RFT" firstAttribute="leading" secondItem="knu-pn-4k9" secondAttribute="leading" constant="8" id="q4h-Wh-1Xp"/>
                             <constraint firstItem="bqd-VX-q92" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.85" id="vgR-hi-k3d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="knu-pn-4k9"/>
@@ -56,5 +69,6 @@
     </scenes>
     <resources>
         <image name="airbnb_title_logo" width="288.5" height="394.5"/>
+        <image name="close" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
 </document>
