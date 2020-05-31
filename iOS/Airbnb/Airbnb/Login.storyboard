@@ -21,12 +21,30 @@
                                     <constraint firstAttribute="width" secondItem="Obi-dp-QHb" secondAttribute="height" multiplier="1:1" id="QgV-sP-vM3"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-VX-q92" customClass="LoginButton" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="594" width="352" height="35"/>
+                                <color key="backgroundColor" red="0.99794119599999997" green="0.35348880290000001" blue="0.37253212930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bqd-VX-q92" secondAttribute="height" multiplier="10:1" id="ehQ-mc-xLm"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="Github으로 로그인"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="1.35" id="3oS-cZ-PEa"/>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="510-PG-Ukh"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="a5C-Y2-OaK"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="0.7" id="hAy-Wz-v4E"/>
                             <constraint firstItem="Obi-dp-QHb" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.75" id="hGO-ta-czR"/>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.85" id="vgR-hi-k3d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="knu-pn-4k9"/>
                     </view>
