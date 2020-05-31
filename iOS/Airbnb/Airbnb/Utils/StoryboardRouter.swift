@@ -11,6 +11,7 @@ import UIKit
 enum StoryboardRouter: String {
     case main = "Main"
     case filters = "Filter"
+    case login = "Login"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: .main)
