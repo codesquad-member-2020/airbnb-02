@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ImageCache {
+struct ImageCache {
     static func read(
         for directory: FileManager.SearchPathDirectory = .cachesDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask,
