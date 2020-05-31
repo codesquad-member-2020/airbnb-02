@@ -14,7 +14,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet var filterButtons: [FilterButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let bnbsViewModel = BNBsViewModel()
+    private let bnbsViewModel = BNBViewModels()
     private let layoutDelegate = BNBsLayout()
     private let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
     private let imageUseCase = ImageUseCase(networkDispatcher: AF)
@@ -47,7 +47,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureObservers() {
-        bnbsToken = BNBsViewModel.Notification.addObserver { [weak self] _ in
+        bnbsToken = BNBViewModels.Notification.addObserver { [weak self] _ in
             self?.collectionView.reloadData()
         }
         

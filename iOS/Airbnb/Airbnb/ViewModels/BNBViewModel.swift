@@ -34,7 +34,8 @@ final class BNBViewModel {
                 NotificationCenter.default.post(
                     name: Notification.update,
                     object: self,
-                    userInfo: ["bnbID": bnbID])
+                    userInfo: ["bnbID": bnbID]
+                )
             }
         }
     }

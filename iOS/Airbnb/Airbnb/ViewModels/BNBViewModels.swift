@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BNBsViewModel: NSObject {
+final class BNBViewModels: NSObject {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("bnbsDidUpdate")
     }
@@ -26,7 +26,7 @@ final class BNBsViewModel: NSObject {
     }
 }
 
-extension BNBsViewModel: UICollectionViewDataSource {
+extension BNBViewModels: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
