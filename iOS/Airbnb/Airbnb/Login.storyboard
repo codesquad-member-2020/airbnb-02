@@ -14,7 +14,20 @@
                     <view key="view" contentMode="scaleToFill" id="yXg-98-rxi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airbnb_title_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Obi-dp-QHb">
+                                <rect key="frame" x="52" y="162" width="310.5" height="310.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Obi-dp-QHb" secondAttribute="height" multiplier="1:1" id="QgV-sP-vM3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="a5C-Y2-OaK"/>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="0.7" id="hAy-Wz-v4E"/>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.75" id="hGO-ta-czR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="knu-pn-4k9"/>
                     </view>
                 </viewController>
@@ -23,4 +36,7 @@
             <point key="canvasLocation" x="9" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="airbnb_title_logo" width="288.5" height="394.5"/>
+    </resources>
 </document>
