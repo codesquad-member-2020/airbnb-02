@@ -52,6 +52,7 @@
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
+		C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A617432484D52F00A8E88B /* URLProtocolMock.swift */; };
 		C2B959C3247E549A003DC5D9 /* BNBsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */; };
 		C2B959C5247E584E003DC5D9 /* BNBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C4247E584E003DC5D9 /* BNBCell.swift */; };
 		C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C6247E5C25003DC5D9 /* Observable.swift */; };
@@ -123,6 +124,7 @@
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
+		C2A617432484D52F00A8E88B /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsViewModel.swift; sourceTree = "<group>"; };
 		C2B959C4247E584E003DC5D9 /* BNBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBCell.swift; sourceTree = "<group>"; };
 		C2B959C6247E5C25003DC5D9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		C22A526D2473A1AB0055A478 /* AirbnbTests */ = {
 			isa = PBXGroup;
 			children = (
+				C2A617422484D51800A8E88B /* Mocking */,
 				C22A526E2473A1AB0055A478 /* AirbnbTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
 				5A814121247BD3590020ED80 /* DecodableTests.swift */,
@@ -309,6 +312,14 @@
 				C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C2A617422484D51800A8E88B /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				C2A617432484D52F00A8E88B /* URLProtocolMock.swift */,
+			);
+			path = Mocking;
 			sourceTree = "<group>";
 		};
 		C2DB830C24766892007034AC /* FilterButtons */ = {
@@ -487,6 +498,7 @@
 				5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* BNBsRequestTests.swift in Sources */,
+				C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

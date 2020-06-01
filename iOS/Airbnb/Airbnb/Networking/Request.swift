@@ -23,13 +23,7 @@ protocol Request {
     var body: Data? { get }
     var headers: [String: String]? { get }
     
-    func urlRequest() throws -> URLRequest?
-}
-
-enum NetworkErrorCase: Error {
-    case invalidPath
-    case invalidURL
-    case notFound
+    func urlRequest() -> URLRequest?
 }
 
 extension Request {
@@ -38,13 +32,11 @@ extension Request {
     var body: Data? { return nil }
     var headers: [String: String]? { return nil }
     
-    
-    func urlRequest() throws -> URLRequest? {
-        guard var urlComponents = URLComponents(string: path)
-            else { throw NetworkErrorCase.invalidPath }
+    func urlRequest() -> URLRequest? {
+        guard var urlComponents = URLComponents(string: path) else { return nil }
         urlComponents.queryItems = queryItems
         
-        guard let url = urlComponents.url else { throw NetworkErrorCase.invalidURL }
+        guard let url = urlComponents.url else { return nil }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         urlRequest.httpBody = body
