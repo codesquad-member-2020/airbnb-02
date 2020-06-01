@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 final class LoginViewController: UIViewController {
     override func viewDidLoad() {
@@ -15,6 +16,22 @@ final class LoginViewController: UIViewController {
     
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func githubButtonDidTouch(_ sender: LoginButton) {
+        requestOAuth()
+    }
+    
+    
+    private func requestOAuth() {
+        guard let authURL = URL(string: "https://example.com/auth") else { return }
+        let scheme = "squadbnb:"
+        
+        let session = ASWebAuthenticationSession(
+            url: authURL,
+            callbackURLScheme: scheme) { callbackURL, error in
+            
+        }
     }
 }
 

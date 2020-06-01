@@ -35,6 +35,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubButtonDidTouch:" destination="9aP-tM-ujJ" eventType="touchUpInside" id="I8r-5r-hnX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-7n-RFT">
                                 <rect key="frame" x="8" y="52" width="35" height="35"/>
