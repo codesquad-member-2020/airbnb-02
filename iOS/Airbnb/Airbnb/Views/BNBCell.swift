@@ -28,6 +28,10 @@ final class BNBCell: UICollectionViewCell {
         favoriteButton.isFavorited = bnb.favorite
         imagePagingView.configure(count: bnb.images.count)
     }
+    
+    override func prepareForReuse() {
+        imagePagingView.reset()
+    }
 }
 
 extension BNBCell: Identifiable { }
