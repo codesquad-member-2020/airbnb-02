@@ -45,7 +45,7 @@ public class UserServiceTest {
 		//when
 		Long nextRoomId = (long) previousSize + 5;
 		Room room = roomRepository.findById(nextRoomId).orElseThrow(RuntimeException::new);
-		user.addLikedRoom(room);
+		user.addBookmark(room);
 		//then
 		assertAll(
 			() -> assertThat(user.findLikedRoomByRoomId(nextRoomId)).isNotNull(),
@@ -66,7 +66,7 @@ public class UserServiceTest {
 		//when
 		Long nextRoomId = 1L;
 		Room room = roomRepository.findById(nextRoomId).orElseThrow(RuntimeException::new);
-		user.deleteLikedRoom(room);
+		user.removeBookmark(room);
 		//then
 		assertAll(
 			() -> assertThat(user.findLikedRoomByRoomId(nextRoomId)).isNull(),
@@ -84,7 +84,7 @@ public class UserServiceTest {
 	void 즐겨찾기가_없으면_삭제시_오류를_뿜는다(Long roomId) {
 		Room room = roomRepository.findById(roomId).orElseThrow(RuntimeException::new);
 		assertThatExceptionOfType(RuntimeException.class)
-			.isThrownBy(() -> user.deleteLikedRoom(room));
+			.isThrownBy(() -> user.removeBookmark(room));
 	}
 
 	@DisplayName("사용자 아이디와 방 아이디를 입력하면, 해당 사용자가 해당 방을 좋아요 했는 지 알려준다.")
@@ -92,6 +92,6 @@ public class UserServiceTest {
 		"1,5,false", "1,9,false", "1,48,false", "1,18,false", "1,21,false"})
 	@ParameterizedTest
 	void 사용자가_방을_좋아요_했는지_알려준다(Long userId, Long roomId, boolean result) {
-		assertThat(userService.findLikedRoomByUserIdAndRoomId(userId, roomId)).isEqualTo(result);
+		assertThat(userService.isUserBookmarkedRoom(userId, roomId)).isEqualTo(result);
 	}
 }
