@@ -26,7 +26,6 @@
 		5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */; };
 		5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601F2480B08600E7FBC3 /* ImageCache.swift */; };
 		5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* SessionExtension.swift */; };
-		5A8760252480D4EE00E7FBC3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760242480D4EE00E7FBC3 /* ArrayExtensions.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
@@ -35,6 +34,7 @@
 		5AD06346247A50D4000BF31B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06345247A50D4000BF31B /* Shadow.swift */; };
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
+		5ADA864624838558000C06E9 /* BNBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864524838558000C06E9 /* BNBViewModel.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		C2205D20247EAEA9008D3FBC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1E247EAEA9008D3FBC /* Request.swift */; };
 		C2205D21247EAEA9008D3FBC /* BNBsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */; };
@@ -52,7 +52,7 @@
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
-		C2B959C3247E549A003DC5D9 /* BNBsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */; };
+		C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */; };
 		C2B959C5247E584E003DC5D9 /* BNBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C4247E584E003DC5D9 /* BNBCell.swift */; };
 		C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C6247E5C25003DC5D9 /* Observable.swift */; };
 		C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */; };
@@ -93,7 +93,6 @@
 		5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCaseTests.swift; sourceTree = "<group>"; };
 		5A87601F2480B08600E7FBC3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5A8760212480D22E00E7FBC3 /* SessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExtension.swift; sourceTree = "<group>"; };
-		5A8760242480D4EE00E7FBC3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
@@ -102,6 +101,7 @@
 		5AD06345247A50D4000BF31B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		5AD06347247A5BB2000BF31B /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		5ADA00DB247E4F3500E30D6C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		5ADA864524838558000C06E9 /* BNBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBViewModel.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
 		C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BNBsRequest.swift; path = Airbnb/Networking/BNBsRequest.swift; sourceTree = SOURCE_ROOT; };
@@ -123,7 +123,7 @@
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
-		C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsViewModel.swift; sourceTree = "<group>"; };
+		C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBViewModels.swift; sourceTree = "<group>"; };
 		C2B959C4247E584E003DC5D9 /* BNBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBCell.swift; sourceTree = "<group>"; };
 		C2B959C6247E5C25003DC5D9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
@@ -182,7 +182,6 @@
 				C2B959C6247E5C25003DC5D9 /* Observable.swift */,
 				C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */,
 				5A87601F2480B08600E7FBC3 /* ImageCache.swift */,
-				5A8760242480D4EE00E7FBC3 /* ArrayExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -263,7 +262,8 @@
 		C22A527A2473A2350055A478 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C2B959C2247E549A003DC5D9 /* BNBsViewModel.swift */,
+				C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */,
+				5ADA864524838558000C06E9 /* BNBViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -444,6 +444,7 @@
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A81411F247BCE900020ED80 /* BNB.swift in Sources */,
 				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
+				5ADA864624838558000C06E9 /* BNBViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
 				5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */,
@@ -464,9 +465,8 @@
 				5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */,
 				C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */,
 				5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */,
-				5A8760252480D4EE00E7FBC3 /* ArrayExtensions.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
-				C2B959C3247E549A003DC5D9 /* BNBsViewModel.swift in Sources */,
+				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,

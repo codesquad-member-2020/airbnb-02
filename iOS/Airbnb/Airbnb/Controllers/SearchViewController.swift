@@ -14,17 +14,18 @@ final class SearchViewController: UIViewController {
     @IBOutlet var filterButtons: [FilterButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let viewModel = BNBsViewModel()
+    private let bnbsViewModel = BNBViewModels()
     private let layoutDelegate = BNBsLayout()
     private let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
     private let imageUseCase = ImageUseCase(networkDispatcher: AF)
     
-    private var token: NotificationToken?
+    private var bnbsToken: NotificationToken?
+    private var bnbToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureObserver()
+        configureObservers()
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
@@ -33,7 +34,7 @@ final class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        bnbsUseCase.append(bnbRequest: BNBsRequest())
+        bnbsUseCase.append(bnbsRequest: BNBsRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -41,13 +42,18 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        collectionView.dataSource = viewModel
+        collectionView.dataSource = bnbsViewModel
         collectionView.delegate = layoutDelegate
     }
     
-    private func configureObserver() {
-        token = BNBsViewModel.Notification.addObserver { [weak self] _ in
+    private func configureObservers() {
+        bnbsToken = BNBViewModels.Notification.addObserver { [weak self] _ in
             self?.collectionView.reloadData()
+        }
+        
+        bnbToken = BNBViewModel.Notification.addObserver { [weak self] notification in
+            guard let bnbID = notification.userInfo?["bnbID"] as? Int else { return }
+            self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
         }
     }
     
@@ -63,18 +69,21 @@ final class SearchViewController: UIViewController {
     
     private func configureUseCase() {
         bnbsUseCase.updateNotify { [weak self] bnbs in
-            self?.viewModel.update(bnbs: bnbs)
+            guard let bnbs = bnbs else { return }
             
-            let cache = ImageCache()
-            bnbs?.forEach {
-                $0.images.forEach { urlString in
-                    guard let url = URL(string: urlString) else { return }
-                    guard cache.fileExists(lastPathComponent: url.lastPathComponent) else {
-                        self?.imageUseCase.append(imageURL: url)
-                        return
-                    }
-                    
-                }
+            self?.bnbsViewModel.update(bnbs: bnbs)
+            self?.configureImageUseCase(bnbs)
+        }
+    }
+    
+    private func configureImageUseCase(_ bnbs: [BNB]) {
+        bnbs.forEach {
+            $0.images.forEach { urlString in
+                guard let url = URL(string: urlString) else { return }
+                guard !ImageCache.fileExists(
+                    lastPathComponent: url.lastPathComponent
+                    ) else { return }
+                imageUseCase.append(imageURL: url)
             }
         }
     }
