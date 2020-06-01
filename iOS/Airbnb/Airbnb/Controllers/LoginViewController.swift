@@ -32,6 +32,14 @@ final class LoginViewController: UIViewController {
             callbackURLScheme: scheme) { callbackURL, error in
             
         }
+        
+        session.presentationContextProvider = self
+    }
+}
+
+extension LoginViewController: ASWebAuthenticationPresentationContextProviding {
+    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        return view.window!
     }
 }
 
