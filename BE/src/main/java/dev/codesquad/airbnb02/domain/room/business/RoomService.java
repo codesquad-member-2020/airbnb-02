@@ -13,6 +13,7 @@ import dev.codesquad.airbnb02.common.exception.BookingNotAllowedException;
 import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
+import dev.codesquad.airbnb02.domain.user.business.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -21,9 +22,11 @@ import lombok.extern.slf4j.Slf4j;
 public class RoomService {
 
   private final RoomRepository roomRepository;
+  private final UserService userService;
 
-  public RoomService(RoomRepository roomRepository) {
+  public RoomService(RoomRepository roomRepository, UserService userService) {
     this.roomRepository = roomRepository;
+    this.userService = userService;
   }
 
   public List<RoomResponseDto> findAll() {
@@ -44,7 +47,9 @@ public class RoomService {
 
   public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
     Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
-    return RoomDetailResponseDto.create(room);
+    Long userId = 1L;
+    boolean favorite = userService.findLikedRoomByUserIdAndRoomId(userId, room.getId());
+    return RoomDetailResponseDto.create(room, favorite);
   }
 
   @Transactional
