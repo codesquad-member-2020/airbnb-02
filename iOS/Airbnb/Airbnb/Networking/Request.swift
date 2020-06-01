@@ -21,7 +21,7 @@ protocol Request {
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
     var body: Data? { get }
-    var headers: [String: String]? { get }
+    var headers: [String: String] { get }
     
     func urlRequest() -> URLRequest?
 }
@@ -30,7 +30,7 @@ extension Request {
     var method: HTTPMethod { return .get }
     var queryItems: [URLQueryItem]? { return nil }
     var body: Data? { return nil }
-    var headers: [String: String]? { return nil }
+    var headers: [String: String] { return [:] }
     
     func urlRequest() -> URLRequest? {
         guard var urlComponents = URLComponents(string: path) else { return nil }
@@ -40,7 +40,7 @@ extension Request {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         urlRequest.httpBody = body
-        headers?.forEach { urlRequest.addValue($1, forHTTPHeaderField: $1) }
+        headers.forEach { urlRequest.addValue($1, forHTTPHeaderField: $0) }
         return urlRequest
     }
 }
