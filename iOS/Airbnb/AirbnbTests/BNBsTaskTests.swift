@@ -15,7 +15,7 @@ final class BNBsTaskTests: XCTestCase {
         let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
         defer { wait(for: [expectation], timeout: 10.0) }
         let bnbRequest = SearchRequest()
-        let bnbsTask = BNBsTask(networkDispatcher: AF)
+        let bnbsTask = BNBsTask(networkDispatcher: AFSession())
         bnbsTask.perform(bnbRequest) { bnbs in
             defer { expectation.fulfill() }
             _ = try! XCTUnwrap(bnbs)

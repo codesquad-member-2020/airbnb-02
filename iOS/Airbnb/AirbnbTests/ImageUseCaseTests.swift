@@ -15,7 +15,7 @@ final class ImageUseCaseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        imageUseCase = ImageUseCase(networkDispatcher: AF)
+        imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     }
     
     override func tearDown() {
