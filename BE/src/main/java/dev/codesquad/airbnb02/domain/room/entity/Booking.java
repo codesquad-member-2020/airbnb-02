@@ -1,6 +1,7 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.codesquad.airbnb02.domain.user.entity.User;
 import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +21,7 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString(exclude = "room")
+@ToString(exclude = {"room", "user"})
 @NoArgsConstructor
 public class Booking {
 
@@ -32,6 +33,11 @@ public class Booking {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
   private Room room;
+
+  @JsonIgnore
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
+  private User user;
 
   @NotNull
   private LocalDate bookDate;
