@@ -21,55 +21,63 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional(readOnly = true)
 public class RoomService {
 
-  private final RoomRepository roomRepository;
-  private final UserService userService;
+	private final RoomRepository roomRepository;
+	private final UserService userService;
 
-  public RoomService(RoomRepository roomRepository, UserService userService) {
-    this.roomRepository = roomRepository;
-    this.userService = userService;
-  }
+	public RoomService(RoomRepository roomRepository, UserService userService) {
+		this.roomRepository = roomRepository;
+		this.userService = userService;
+	}
 
-  public List<RoomResponseDto> findAll() {
-    return roomRepository.findAll().stream()
-        .map(RoomResponseDto::create)
-        .collect(Collectors.toList());
-  }
+	public List<RoomResponseDto> findAll() {
+		Long userId = 1L;
+		return roomRepository.findAll().stream()
+			.map(room -> RoomResponseDto.create(room, isUserLikedRoom(room.getId(), userId)))
+			.collect(Collectors.toList());
+	}
 
-  public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
-      LocalDate checkin, LocalDate checkout) {
-    return roomRepository.findAll().stream()
-        .filter(room -> room.isValidLocation(location))
-        .filter(room -> room.isValidPrice(priceMin, priceMax))
-        .filter(room -> room.isValidDate(checkin, checkout))
-        .map(RoomResponseDto::create)
-        .collect(Collectors.toList());
-  }
+	public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
+		LocalDate checkin, LocalDate checkout) {
 
-  public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
-    Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
-    Long userId = 1L;
-    boolean favorite = userService.findLikedRoomByUserIdAndRoomId(userId, room.getId());
-    return RoomDetailResponseDto.create(room, favorite);
-  }
+		Long userId = 1L;
+		return roomRepository.findAll().stream()
+			.filter(room -> room.isValidLocation(location))
+			.filter(room -> room.isValidPrice(priceMin, priceMax))
+			.filter(room -> room.isValidDate(checkin, checkout))
+			.map(room -> RoomResponseDto.create(room, isUserLikedRoom(room.getId(), userId)))
+			.collect(Collectors.toList());
+	}
 
-  @Transactional
-  public void createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
-    Room room = findRoom(roomId);
-    if (! room.isValidDate(checkin, checkout)) {
-      throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
-    }
-    room.addBookings(checkin, checkout);
-    roomRepository.save(room);
-  }
+	public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
+		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		Long userId = 1L;
+		boolean favorite = isUserLikedRoom(roomId, userId);
+		return RoomDetailResponseDto.create(room, favorite);
+	}
 
-  @Transactional
-  public void removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
-    Room room = findRoom(roomId);
-    room.removeBookings(checkin, checkout);
-    roomRepository.save(room);
-  }
+	private boolean isUserLikedRoom(Long roomId, Long userId) {
+		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		return userService.findLikedRoomByUserIdAndRoomId(userId, room.getId());
+	}
 
-  private Room findRoom(Long roomId) {
-    return roomRepository.findById(roomId).orElseThrow(() -> new NotFoundDataException("해당 숙소를 찾을 수 없습니다."));
-  }
+	@Transactional
+	public void createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+		Room room = findRoom(roomId);
+		if (! room.isValidDate(checkin, checkout)) {
+			throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
+		}
+		room.addBookings(checkin, checkout);
+		roomRepository.save(room);
+	}
+
+	@Transactional
+	public void removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+		Room room = findRoom(roomId);
+		room.removeBookings(checkin, checkout);
+		roomRepository.save(room);
+	}
+
+	private Room findRoom(Long roomId) {
+		return roomRepository.findById(roomId).orElseThrow(() -> new NotFoundDataException("해당 숙소를 찾을 수 없습니다."));
+	}
 }
