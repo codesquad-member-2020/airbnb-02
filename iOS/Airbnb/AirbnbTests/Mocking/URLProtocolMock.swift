@@ -11,7 +11,7 @@ import Foundation
 
 class URLProtocolMock: URLProtocol {
     static var testURLs = [
-        BNBsRequest().urlRequest()!: Data.readJSON(forResource: "BNBsTestData")!
+        SearchRequest().urlRequest()!: Data.readJSON(forResource: "BNBsTestData")!
     ]
     
     override class func canInit(with request: URLRequest) -> Bool {

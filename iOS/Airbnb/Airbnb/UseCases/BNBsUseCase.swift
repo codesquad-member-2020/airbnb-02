@@ -11,7 +11,7 @@ import Foundation
 final class BNBsUseCase {
     private let bnbsTask: BNBsTask
     private var handler: ([BNB]?) -> ()
-    private var bnbRequests = [BNBsRequest]() {
+    private var bnbRequests = [SearchRequest]() {
         didSet {
             guard oldValue.count < bnbRequests.count else { return }
             requestBNBs()
@@ -27,7 +27,7 @@ final class BNBsUseCase {
         self.handler = handler
     }
     
-    func append(bnbRequest: BNBsRequest) {
+    func append(bnbRequest: SearchRequest) {
         bnbRequests.append(bnbRequest)
     }
     
