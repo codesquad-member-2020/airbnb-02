@@ -10,8 +10,8 @@ import Foundation
 @testable import Airbnb
 
 class URLProtocolMock: URLProtocol {
-    static var testURLs = [
-        SearchRequest().urlRequest()!: Data.readJSON(forResource: "BNBsTestData")!
+    static let testURLs = [
+        SearchRequest().urlRequest()!: bnbsTestData
     ]
     
     override class func canInit(with request: URLRequest) -> Bool {
@@ -35,4 +35,8 @@ class URLProtocolMock: URLProtocol {
     }
     
     override func stopLoading() { }
+}
+
+extension URLProtocolMock {
+    static let bnbsTestData = Data.readJSON(of: Bundle(for: URLProtocolMock.self), for: "BNBsTestData")!
 }

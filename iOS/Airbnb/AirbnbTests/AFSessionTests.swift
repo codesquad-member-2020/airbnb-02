@@ -29,7 +29,8 @@ final class AFSessionTests: XCTestCase {
         
         afSession.execute(request: SearchRequest()) { data, response, error in
             defer { expectation.fulfill() }
-            XCTAssertEqual(data, Data.readJSON(forResource: "BNBsTestData")!)
+            let expectedData = Data.readJSON(of: Bundle(for: AFSessionTests.self), for: "BNBsTestData")!
+            XCTAssertEqual(data, expectedData)
             XCTAssertNil(error)
             let httpResponse = response as! HTTPURLResponse
             XCTAssertEqual(httpResponse.statusCode, 200)

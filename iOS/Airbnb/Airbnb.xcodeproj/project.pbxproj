@@ -16,7 +16,6 @@
 		5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* BNBsUseCase.swift */; };
 		5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
-		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
 		5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814121247BD3590020ED80 /* DecodableTests.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
@@ -36,6 +35,7 @@
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
+		C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		C2205D20247EAEA9008D3FBC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1E247EAEA9008D3FBC /* Request.swift */; };
 		C2205D21247EAEA9008D3FBC /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1F247EAEA9008D3FBC /* SearchRequest.swift */; };
 		C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52572473A1A80055A478 /* AppDelegate.swift */; };
@@ -415,7 +415,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */,
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
@@ -427,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */,
 				C2A6174924851AFA00A8E88B /* OneBNBTestData.json in Resources */,
 				C2A6174B24851C8900A8E88B /* OneInvalidBNBTestData.json in Resources */,
 			);

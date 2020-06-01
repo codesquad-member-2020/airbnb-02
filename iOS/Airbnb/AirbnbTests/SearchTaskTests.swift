@@ -26,7 +26,7 @@ final class SearchTaskTests: XCTestCase {
 
 final class NetworkDispatcherValidStub: NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        let data = Data.readJSON(forResource: "OneBNBTestData")
+        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneBNBTestData")!
         completionHandler(data, HTTPURLResponse(), nil)
     }
     
@@ -35,7 +35,7 @@ final class NetworkDispatcherValidStub: NetworkDispatcher {
 
 final class NetworkDispatcherInvalidStub: NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        let data = Data.readJSON(forResource: "OneInvalidBNBTestData")
+        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneInvalidBNBTestData")!
         completionHandler(data, HTTPURLResponse(), nil)
     }
     
