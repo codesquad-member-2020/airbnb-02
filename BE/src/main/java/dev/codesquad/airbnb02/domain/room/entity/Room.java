@@ -23,7 +23,6 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
 import dev.codesquad.airbnb02.domain.room.vo.Locale;
 import dev.codesquad.airbnb02.domain.user.entity.User;
@@ -144,6 +143,16 @@ public class Room {
       Booking booking = findBookingByDate(date, user.getId());
       removeBooking(booking);
     }
+  }
+
+  public List<Booking> findBookingsByUserId(Long userId) {
+    List<Booking> bookings = new ArrayList<>();
+    for (Booking booking : this.bookings) {
+      if (booking.isEqualsUserId(userId)) {
+        bookings.add(booking);
+      }
+    }
+    return bookings;
   }
 
   private Booking findBookingByDate(LocalDate date, Long userId) {
