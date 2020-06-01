@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.domain.room.business;
 
+import dev.codesquad.airbnb02.application.dto.BookingResponseDto;
 import dev.codesquad.airbnb02.domain.user.entity.User;
 import java.time.LocalDate;
 import java.util.List;
@@ -62,26 +63,26 @@ public class RoomService {
 	}
 
 	@Transactional
-	public void createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+	public BookingResponseDto createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
 		Long userId = 2L;
 		User user = userService.getUser(userId);
-
 		Room room = findRoom(roomId);
 		if (!room.isValidDate(checkin, checkout)) {
 			throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
 		}
 		room.addBookings(checkin, checkout, user);
 		roomRepository.save(room);
+		return BookingResponseDto.create(userId, room);
 	}
 
 	@Transactional
-	public void removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+	public BookingResponseDto removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
 		Long userId = 2L;
 		User user = userService.getUser(userId);
-
 		Room room = findRoom(roomId);
 		room.removeBookings(checkin, checkout, user);
 		roomRepository.save(room);
+		return BookingResponseDto.create(userId, room);
 	}
 
 	private Room findRoom(Long roomId) {
