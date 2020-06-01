@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import dev.codesquad.airbnb02.domain.room.entity.Image;
-import dev.codesquad.airbnb02.domain.room.entity.Locale;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
+import dev.codesquad.airbnb02.domain.room.vo.Locale;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
