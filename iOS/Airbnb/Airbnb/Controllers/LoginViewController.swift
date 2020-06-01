@@ -30,10 +30,15 @@ final class LoginViewController: UIViewController {
         let session = ASWebAuthenticationSession(
             url: authURL,
             callbackURLScheme: scheme) { callbackURL, error in
-            
+                guard error == nil, let callbackURL = callbackURL else { return }
+                
+                let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
+                let token = queryItems?.filter({ $0.name == "token" }).first?.value
+                
         }
         
         session.presentationContextProvider = self
+        
     }
 }
 
