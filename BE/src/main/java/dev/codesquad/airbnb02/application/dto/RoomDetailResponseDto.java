@@ -49,14 +49,14 @@ public class RoomDetailResponseDto {
 		this.price = price;
 	}
 
-	public static RoomDetailResponseDto create(Room room) {
+	public static RoomDetailResponseDto create(Room room, boolean favorite) {
 		return RoomDetailResponseDto.builder()
 			.id(room.getId())
 			.title(room.getName())
 			.type(room.getType().getName())
 			.locale(room.getLocale())
 			.images(room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()))
-			.favorite(false) //TODO: 현재 로그인된 사용자를 받아서 Service 측에서 즐겨찾기 여부를 파라미터로 주입해주어야 한다.
+			.favorite(favorite)
 			.host(room.getHost().getName())
 			.superhost(room.getHost().isSuperhost())
 			.totalGuest(room.getMaximumGuest())
