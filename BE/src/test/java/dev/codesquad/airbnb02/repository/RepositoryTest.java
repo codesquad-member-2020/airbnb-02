@@ -94,16 +94,16 @@ public class RepositoryTest {
         assertThat(roomService.findAll().get(0).getType()).isEqualTo("아파트");
     }
 
-    @Test
-    @Transactional
-    public void ROOM이_Favorite을_들고있다() {
-        assertThat(roomRepository.findById(1L).get().getFavorites()).isNotNull();
-        assertThat(roomService.findAll().get(0).isFavorite()).isInstanceOf(Boolean.class);
-    }
-
-    @Test
-    @Transactional
-    public void USER가_Favorite을_들고있다() {
-        assertThat(userRepository.findById(1L).get().getFavorites()).isNotNull();
-    }
+    // @Test
+    // @Transactional
+    // public void ROOM이_Favorite을_들고있다() {
+    //     assertThat(roomRepository.findById(1L).get().getFavorites()).isNotNull();
+    //     assertThat(roomService.findAll().get(0).isFavorite()).isInstanceOf(Boolean.class);
+    // }
+    //
+    // @Test
+    // @Transactional
+    // public void USER가_Favorite을_들고있다() {
+    //     assertThat(userRepository.findById(1L).get().getFavorites()).isNotNull();
+    // }
 }

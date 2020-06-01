@@ -1,7 +1,8 @@
 package dev.codesquad.airbnb02.domain.user.business;
 
-import dev.codesquad.airbnb02.application.dto.UserFavoriteResponseDto;
-import dev.codesquad.airbnb02.domain.favorite.Favorite;
+import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
+import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
+import dev.codesquad.airbnb02.domain.room.entity.Room;
 import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import dev.codesquad.airbnb02.domain.user.entity.User;
 import org.springframework.stereotype.Service;
@@ -11,25 +12,30 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
   private final UserRepository userRepository;
+  private final RoomRepository roomRepository;
 
-  public UserService(UserRepository userRepository) {
+  public UserService(UserRepository userRepository,
+      RoomRepository roomRepository) {
     this.userRepository = userRepository;
+    this.roomRepository = roomRepository;
   }
 
   @Transactional
-  public UserFavoriteResponseDto addFavorite(Long userId, Long roomId) {
+  public RoomResponseDto addLikedRoom(Long userId, Long roomId) {
     User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
-    Favorite favorite = user.addFavorite(roomId);
+    Room room = roomRepository.findById(roomId).orElseThrow(RuntimeException::new);
+    user.addLikedRoom(room);
     userRepository.save(user);
-    return UserFavoriteResponseDto.create(favorite, userId);
+    return RoomResponseDto.create(room);
   }
 
   @Transactional
-  public UserFavoriteResponseDto deleteFavorite(Long userId, Long roomId) {
+  public RoomResponseDto deleteLikedRoom(Long userId, Long roomId) {
     User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
-    Favorite favorite = user.deleteFavorite(roomId);
+    Room room = roomRepository.findById(roomId).orElseThrow(RuntimeException::new);
+    user.deleteLikedRoom(room);
     userRepository.save(user);
-    return UserFavoriteResponseDto.create(favorite, userId);
+    return RoomResponseDto.create(room);
   }
 
 }

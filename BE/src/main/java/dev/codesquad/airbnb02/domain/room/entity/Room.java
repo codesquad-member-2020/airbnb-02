@@ -3,14 +3,29 @@ package dev.codesquad.airbnb02.domain.room.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
-import dev.codesquad.airbnb02.domain.favorite.Favorite;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.*;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import dev.codesquad.airbnb02.domain.user.entity.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -67,10 +82,13 @@ public class Room {
   private Host host;
 
   @JsonIgnore
-  @ElementCollection
-  @CollectionTable(name = "favorite",
-      joinColumns = @JoinColumn(name = "room_id", insertable = false, updatable = false))
-  private List<Favorite> favorites;
+  @ManyToMany
+  @JoinTable(
+      name = "favorite",
+      joinColumns = @JoinColumn(name = "room_id"),
+      inverseJoinColumns = @JoinColumn(name = "user_id")
+  )
+  private List<User> users;
 
   @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Booking> bookings = new ArrayList<>();
