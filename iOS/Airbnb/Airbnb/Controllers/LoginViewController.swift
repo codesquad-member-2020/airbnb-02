@@ -23,16 +23,21 @@ final class LoginViewController: UIViewController {
         
         let session = ASWebAuthenticationSession(
             url: authURL,
-            callbackURLScheme: AuthKeys.scheme) { callbackURL, error in
+            callbackURLScheme: AuthKeys.scheme) { [weak self] callbackURL, error in
                 guard error == nil, let callbackURL = callbackURL else { return }
                 
-                let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
-                let token = queryItems?.filter({ $0.name == AuthKeys.payloadKey }).first?.value
-                
+                self?.writeToken(from: callbackURL, to: UserDefaults.standard)
+                self?.dismiss(animated: true)
         }
-        
         session.presentationContextProvider = self
         session.start()
+    }
+    
+    private func writeToken(from callbackURL: URL, to userDefaults: UserDefaults) {
+        guard let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems,
+        let token = queryItems.filter({ $0.name == AuthKeys.payloadKey }).first?.value else { return }
+        
+        userDefaults.set(token, forKey: "jwt")
     }
 }
 

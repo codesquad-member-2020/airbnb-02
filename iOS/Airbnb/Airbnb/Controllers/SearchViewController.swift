@@ -20,6 +20,7 @@ final class SearchViewController: UIViewController {
     private let imageUseCase = ImageUseCase(networkDispatcher: AF)
     
     private var token: NotificationToken?
+    private var hasBeenDisplayed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +39,10 @@ final class SearchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        guard !hasBeenDisplayed, let loginViewController = LoginViewController.instantiate(from: .login) else { return }
         
-        guard let loginViewController = LoginViewController.instantiate(from: .login) else { return }
         present(loginViewController, animated: false)
+        hasBeenDisplayed = true
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
