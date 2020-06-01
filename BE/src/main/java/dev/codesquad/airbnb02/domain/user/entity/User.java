@@ -36,22 +36,25 @@ public class User {
   )
   private List<Room> rooms = new ArrayList<>();
 
-  //TODO: LikedRoom을 bookmark로 이름을 변경하여 본다.
-  public Room addLikedRoom(Room room) {
+  public Room addBookmark(Room room) {
     rooms.add(room);
     return room;
   }
 
-  public Room deleteLikedRoom(Room room) {
+  public Room removeBookmark(Room room) {
     rooms.remove(room);
     return room;
   }
 
-  //TODO: 아래 메소드가 roomId가 아니라 room을 받아서 처리하도록 리팩토링한다.
   public Room findLikedRoomByRoomId(Long roomId) {
     return this.rooms.stream()
         .filter(room -> room.getId().equals(roomId))
         .findAny()
         .orElse(null);
+  }
+
+  public boolean isBookmarked(Room inputRoom) {
+    return this.rooms.stream()
+        .anyMatch(room -> room.equals(inputRoom));
   }
 }
