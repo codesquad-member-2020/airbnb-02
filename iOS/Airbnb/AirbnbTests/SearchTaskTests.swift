@@ -10,16 +10,24 @@ import XCTest
 @testable import Airbnb
 
 final class SearchTaskTests: XCTestCase {
-    private var searchTask: SearchTask!
+    func testPerform_DecodingSeccess() {
+        let expectation = XCTestExpectation(description: "디코딩 성공")
+        defer { wait(for: [expectation], timeout: 1) }
+        
+        SearchTask(networkDispatcher: NetworkDispatcherValidStub()).perform(SearchRequest()) {
+            guard let bnbs = $0 else { return }
+            XCTAssertEqual(bnbs, [BNB()])
+            expectation.fulfill()
+        }
+    }
     
-    func testTaskPerform_success() {
-        let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
-        defer { wait(for: [expectation], timeout: 10.0) }
-        let bnbRequest = SearchRequest()
-        let bnbsTask = SearchTask(networkDispatcher: AFSession())
-        bnbsTask.perform(bnbRequest) { bnbs in
-            defer { expectation.fulfill() }
-            _ = try! XCTUnwrap(bnbs)
+    func testPerform_DecodingFailure() {
+        let expectation = XCTestExpectation(description: "디코딩 실패")
+        defer { wait(for: [expectation], timeout: 1) }
+        
+        SearchTask(networkDispatcher: NetworkDispatcherInvalidStub()).perform(SearchRequest()) {
+            XCTAssertNil($0)
+            expectation.fulfill()
         }
     }
 }
@@ -40,4 +48,20 @@ final class NetworkDispatcherInvalidStub: NetworkDispatcher {
     }
     
     func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
+}
+
+private extension BNB {
+    init() {
+        self.init(
+            id: 1,
+            title: "해운대 펜트하우스 더탑플로어",
+            type: "Entire apartment",
+            location: "부산",
+            images: [],
+            price: 50000,
+            favorite: false,
+            review: Review(rating: 4.83, count: 200),
+            superhost: true
+        )
+    }
 }

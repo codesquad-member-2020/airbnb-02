@@ -24,3 +24,7 @@ struct Review: Codable {
     let rating: Double
     let count: Int
 }
+
+extension Review: Equatable { }
+
+extension BNB: Equatable { }
