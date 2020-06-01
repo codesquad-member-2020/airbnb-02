@@ -67,7 +67,7 @@ public class RoomService {
 		User user = userService.getUser(userId);
 
 		Room room = findRoom(roomId);
-		if (! room.isValidDate(checkin, checkout)) {
+		if (!room.isValidDate(checkin, checkout)) {
 			throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
 		}
 		room.addBookings(checkin, checkout, user);

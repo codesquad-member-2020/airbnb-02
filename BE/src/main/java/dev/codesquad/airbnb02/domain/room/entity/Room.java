@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
+import dev.codesquad.airbnb02.common.exception.BookingNotAllowedException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -151,7 +152,7 @@ public class Room {
         return booking;
       }
     }
-    throw new NotFoundDataException("해당 기간에 예약이 없습니다.");
+    throw new BookingNotAllowedException("예약정보 혹은 유저정보가 올바르지 않습니다.");
   }
 
   private boolean checkNull(Object input) {
