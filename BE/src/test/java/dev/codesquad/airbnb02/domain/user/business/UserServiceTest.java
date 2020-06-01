@@ -86,4 +86,12 @@ public class UserServiceTest {
 		assertThatExceptionOfType(RuntimeException.class)
 			.isThrownBy(() -> user.deleteLikedRoom(room));
 	}
+
+	@DisplayName("사용자 아이디와 방 아이디를 입력하면, 해당 사용자가 해당 방을 좋아요 했는 지 알려준다.")
+	@CsvSource({"1,1,true", "1,2,true", "2,1,true", "2,2,true", "3,1,true", "3,2,true",
+		"1,5,false", "1,9,false", "1,48,false", "1,18,false", "1,21,false"})
+	@ParameterizedTest
+	void 사용자가_방을_좋아요_했는지_알려준다(Long userId, Long roomId, boolean result) {
+		assertThat(userService.findLikedRoomByUserIdAndRoomId(userId, roomId)).isEqualTo(result);
+	}
 }
