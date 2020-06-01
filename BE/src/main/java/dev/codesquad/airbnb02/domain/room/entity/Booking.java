@@ -24,6 +24,7 @@ import lombok.ToString;
 public class Booking {
 
   @Id
+  @JsonIgnore
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
