@@ -33,14 +33,14 @@ final class ImageUseCaseTests: XCTestCase {
             )!
         imageUseCase.append(imageURL: imageURL)
         DispatchQueue(label: "").asyncAfter(deadline: .now() + 5) {
-            guard let destinaionURL = ImageCache().suggestedDownloadDestination(
+            guard let destinaionURL = ImageCache.suggestedDownloadDestination(
                 lastPathComponent: imageURL.lastPathComponent
                 ) else { return }
             
             //then
             let imageData = try? Data(contentsOf: destinaionURL)
             XCTAssertNotNil(imageData)
-            XCTAssertTrue(ImageCache().fileExists(lastPathComponent: imageURL.lastPathComponent))
+            XCTAssertTrue(ImageCache.fileExists(lastPathComponent: imageURL.lastPathComponent))
             expectation.fulfill()
         }
     }
