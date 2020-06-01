@@ -11,8 +11,8 @@
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
 		5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* AFSessionTests.swift */; };
 		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
-		5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* BNBsTask.swift */; };
-		5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */; };
+		5A25EAEC247F88330038240F /* SearchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* SearchTask.swift */; };
+		5A25EAF0247F88BD0038240F /* SearchTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */; };
 		5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* BNBsUseCase.swift */; };
 		5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
@@ -44,7 +44,6 @@
 		C22A525F2473A1A80055A478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A525D2473A1A80055A478 /* Main.storyboard */; };
 		C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22A52602473A1AB0055A478 /* Assets.xcassets */; };
 		C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */; };
-		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
@@ -79,8 +78,8 @@
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
-		5A25EAEB247F88330038240F /* BNBsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTask.swift; sourceTree = "<group>"; };
-		5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTaskTests.swift; sourceTree = "<group>"; };
+		5A25EAEB247F88330038240F /* SearchTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTask.swift; sourceTree = "<group>"; };
+		5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTaskTests.swift; sourceTree = "<group>"; };
 		5A25EAF1247F8B410038240F /* BNBsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCase.swift; sourceTree = "<group>"; };
 		5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCaseTests.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 		C22A52632473A1AB0055A478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C22A52652473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A526A2473A1AB0055A478 /* AirbnbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C22A526E2473A1AB0055A478 /* AirbnbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTests.swift; sourceTree = "<group>"; };
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -225,14 +223,13 @@
 			isa = PBXGroup;
 			children = (
 				C2A617422484D51800A8E88B /* Mocking */,
-				C22A526E2473A1AB0055A478 /* AirbnbTests.swift */,
-				C22A52702473A1AB0055A478 /* Info.plist */,
 				5A814121247BD3590020ED80 /* DecodableTests.swift */,
 				5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */,
 				5A25EAE7247F853B0038240F /* AFSessionTests.swift */,
-				5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */,
+				5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */,
 				5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */,
 				5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */,
+				C22A52702473A1AB0055A478 /* Info.plist */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -292,7 +289,7 @@
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
 				5A8760212480D22E00E7FBC3 /* AFSession.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
-				5A25EAEB247F88330038240F /* BNBsTask.swift */,
+				5A25EAEB247F88330038240F /* SearchTask.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -455,7 +452,7 @@
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */,
-				5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */,
+				5A25EAEC247F88330038240F /* SearchTask.swift in Sources */,
 				C2205D21247EAEA9008D3FBC /* SearchRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
@@ -484,11 +481,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */,
-				C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */,
 				5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */,
 				5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */,
 				5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */,
-				5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */,
+				5A25EAF0247F88BD0038240F /* SearchTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */,
 				C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */,
 			);

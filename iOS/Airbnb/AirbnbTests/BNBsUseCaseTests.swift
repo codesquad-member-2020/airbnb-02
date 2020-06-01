@@ -15,7 +15,7 @@ final class BNBsUseCaseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AFSession()))
+        bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
     }
     
     override func tearDown() {

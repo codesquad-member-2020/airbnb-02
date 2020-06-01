@@ -1,5 +1,5 @@
 //
-//  BNBsTask.swift
+//  SearchTask.swift
 //  Airbnb
 //
 //  Created by kimdo2297 on 2020/05/28.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class BNBsTask: NetworkTask {
+final class SearchTask: NetworkTask {
     typealias Input = SearchRequest
     typealias Output = [BNB]
 

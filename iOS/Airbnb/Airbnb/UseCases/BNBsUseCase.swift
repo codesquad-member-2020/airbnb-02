@@ -9,7 +9,7 @@
 import Foundation
 
 final class BNBsUseCase {
-    private let bnbsTask: BNBsTask
+    private let bnbsTask: SearchTask
     private var handler: ([BNB]?) -> ()
     private var bnbRequests = [SearchRequest]() {
         didSet {
@@ -18,7 +18,7 @@ final class BNBsUseCase {
         }
     }
     
-    init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
+    init(bnbsTask: SearchTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
         self.handler = handler
     }
