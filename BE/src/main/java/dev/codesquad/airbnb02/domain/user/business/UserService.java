@@ -30,7 +30,8 @@ public class UserService {
 		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
 		user.addLikedRoom(room);
 		userRepository.save(user);
-		return RoomResponseDto.create(room);
+		//TODO: 아래 하드코딩한 favorite 결과를 리팩토링 어떻게 할 지 고민해본다.
+		return RoomResponseDto.create(room, true);
 	}
 
 	@Transactional
@@ -39,13 +40,15 @@ public class UserService {
 		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
 		user.deleteLikedRoom(room);
 		userRepository.save(user);
-		return RoomResponseDto.create(room);
+		//TODO: 아래 하드코딩한 favorite 결과를 리팩토링 어떻게 할 지 고민해본다.
+		return RoomResponseDto.create(room, false);
 	}
 
 	@Transactional(readOnly = true)
 	public boolean findLikedRoomByUserIdAndRoomId(Long userId, Long roomId) {
 		User user = userRepository.findById(userId).orElseThrow(NotFoundDataException::new);
 		// Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		//TODO: 아래 메소드가 roomId가 아니라 room을 받아서 처리하도록 리팩토링한다.
 		return ! Objects.isNull(user.findLikedRoomByRoomId(roomId));
 	}
 
