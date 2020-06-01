@@ -32,7 +32,7 @@ public class RoomService {
 	public List<RoomResponseDto> findAll() {
 		Long userId = 1L;
 		return roomRepository.findAll().stream()
-			.map(room -> RoomResponseDto.create(room, isUserLikedRoom(room.getId(), userId)))
+			.map(room -> RoomResponseDto.create(room, isUserBookmarkedRoom(room.getId(), userId)))
 			.collect(Collectors.toList());
 	}
 
@@ -44,20 +44,20 @@ public class RoomService {
 			.filter(room -> room.isValidLocation(location))
 			.filter(room -> room.isValidPrice(priceMin, priceMax))
 			.filter(room -> room.isValidDate(checkin, checkout))
-			.map(room -> RoomResponseDto.create(room, isUserLikedRoom(room.getId(), userId)))
+			.map(room -> RoomResponseDto.create(room, isUserBookmarkedRoom(room.getId(), userId)))
 			.collect(Collectors.toList());
 	}
 
 	public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
 		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
 		Long userId = 1L;
-		boolean favorite = isUserLikedRoom(roomId, userId);
+		boolean favorite = isUserBookmarkedRoom(roomId, userId);
 		return RoomDetailResponseDto.create(room, favorite);
 	}
 
-	private boolean isUserLikedRoom(Long roomId, Long userId) {
+	private boolean isUserBookmarkedRoom(Long roomId, Long userId) {
 		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
-		return userService.findLikedRoomByUserIdAndRoomId(userId, room.getId());
+		return userService.isUserBookmarkedRoom(userId, room.getId());
 	}
 
 	@Transactional
