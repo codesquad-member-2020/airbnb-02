@@ -18,12 +18,7 @@ final class LoginViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func githubButtonDidTouch(_ sender: LoginButton) {
-        requestOAuth()
-    }
-    
-    
-    private func requestOAuth() {
+    @IBAction func reqeustGithubOAuth(_ sender: LoginButton) {
         guard let authURL = URL(string: "https://example.com/auth") else { return }
         let scheme = "squadbnb:"
         
