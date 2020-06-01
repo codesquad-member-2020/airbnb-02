@@ -34,11 +34,10 @@ final class LoginViewController: UIViewController {
                 
                 let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
                 let token = queryItems?.filter({ $0.name == "token" }).first?.value
-                
         }
         
         session.presentationContextProvider = self
-        
+        session.start()
     }
 }
 
