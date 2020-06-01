@@ -1,9 +1,5 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
-import dev.codesquad.airbnb02.domain.host.entity.Host;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +21,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.codesquad.airbnb02.common.exception.NotFoundDataException;
+import dev.codesquad.airbnb02.domain.host.entity.Host;
+import dev.codesquad.airbnb02.domain.room.vo.Locale;
 import dev.codesquad.airbnb02.domain.user.entity.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

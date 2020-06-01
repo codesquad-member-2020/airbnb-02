@@ -36,12 +36,12 @@ public class User {
   )
   private List<Room> rooms = new ArrayList<>();
 
-  public Room addLikedRoom(Room room) {
+  public Room addBookmark(Room room) {
     rooms.add(room);
     return room;
   }
 
-  public Room deleteLikedRoom(Room room) {
+  public Room removeBookmark(Room room) {
     rooms.remove(room);
     return room;
   }
@@ -51,5 +51,10 @@ public class User {
         .filter(room -> room.getId().equals(roomId))
         .findAny()
         .orElse(null);
+  }
+
+  public boolean isBookmarked(Room inputRoom) {
+    return this.rooms.stream()
+        .anyMatch(room -> room.equals(inputRoom));
   }
 }
