@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.user.business;
+package dev.codesquad.airbnb02.domain.user.business;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
-import dev.codesquad.airbnb02.domain.user.business.UserService;
 import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import dev.codesquad.airbnb02.domain.user.entity.User;
 

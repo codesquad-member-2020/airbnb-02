@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.repository;
+package dev.codesquad.airbnb02.domain.repository;
 
 
 import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
@@ -7,7 +7,6 @@ import dev.codesquad.airbnb02.domain.host.data.HostRepository;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
-import dev.codesquad.airbnb02.domain.room.entity.RoomType;
 import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
