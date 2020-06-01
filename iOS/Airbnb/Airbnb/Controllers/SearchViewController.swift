@@ -36,6 +36,13 @@ final class SearchViewController: UIViewController {
         bnbsUseCase.append(bnbRequest: BNBsRequest())
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let loginViewController = LoginViewController.instantiate(from: .login) else { return }
+        present(loginViewController, animated: false)
+    }
+    
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
         sender.toggle()
     }

@@ -19,16 +19,16 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func reqeustGithubOAuth(_ sender: LoginButton) {
-        guard let authURL = URL(string: "https://example.com/auth") else { return }
-        let scheme = "squadbnb:"
+        guard let authURL = URL(string: Endpoints.authURL) else {return }
         
         let session = ASWebAuthenticationSession(
             url: authURL,
-            callbackURLScheme: scheme) { callbackURL, error in
+            callbackURLScheme: AuthKeys.scheme) { callbackURL, error in
                 guard error == nil, let callbackURL = callbackURL else { return }
                 
                 let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
-                let token = queryItems?.filter({ $0.name == "token" }).first?.value
+                let token = queryItems?.filter({ $0.name == AuthKeys.payloadKey }).first?.value
+                
         }
         
         session.presentationContextProvider = self

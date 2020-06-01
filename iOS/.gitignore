@@ -44,3 +44,5 @@ playground.xcworkspace
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
+
+/Users/kimdo/git_files/airbnb-02/iOS/Airbnb/Airbnb/Networking/AuthKeys.swift
