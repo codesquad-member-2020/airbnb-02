@@ -34,7 +34,7 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString(exclude = {"images"})
+@ToString
 @NoArgsConstructor
 public class Room {
 
@@ -125,12 +125,11 @@ public class Room {
 
   public void addBooking(Booking booking) {
     bookings.add(booking);
-    booking.setRoom(this);
   }
 
-  public void addBookings(LocalDate checkin, LocalDate checkout) {
+  public void addBookings(LocalDate checkin, LocalDate checkout, User user) {
     for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      Booking booking = Booking.create(date);
+      Booking booking = Booking.create(date, user, this);
       addBooking(booking);
     }
   }
@@ -139,24 +138,16 @@ public class Room {
     bookings.remove(booking);
   }
 
-  public void removeBookings(LocalDate checkin, LocalDate checkout) {
+  public void removeBookings(LocalDate checkin, LocalDate checkout, User user) {
     for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      Booking booking = findBookingByDate(date);
+      Booking booking = findBookingByDate(date, user.getId());
       removeBooking(booking);
     }
   }
 
-  public List<Booking> findBookings(LocalDate checkin, LocalDate checkout) {
-    List<Booking> bookings = new ArrayList<>();
-    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-       bookings.add(Booking.create(date));
-    }
-    return bookings;
-  }
-
-  private Booking findBookingByDate(LocalDate date) {
+  private Booking findBookingByDate(LocalDate date, Long userId) {
     for (Booking booking : this.bookings) {
-      if (booking.isEqualsBookDate(date)) {
+      if (booking.isEqualsBookDateAndUserId(date, userId)) {
         return booking;
       }
     }
