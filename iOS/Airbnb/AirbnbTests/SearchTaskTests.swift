@@ -10,6 +10,8 @@ import XCTest
 @testable import Airbnb
 
 final class SearchTaskTests: XCTestCase {
+    private var searchTask: SearchTask!
+    
     func testTaskPerform_success() {
         let expectation = XCTestExpectation(description: "데이터 잘 처리됨")
         defer { wait(for: [expectation], timeout: 10.0) }
@@ -20,4 +22,22 @@ final class SearchTaskTests: XCTestCase {
             _ = try! XCTUnwrap(bnbs)
         }
     }
+}
+
+final class NetworkDispatcherValidStub: NetworkDispatcher {
+    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        let data = Data.readJSON(forResource: "OneBNBTestData")
+        completionHandler(data, HTTPURLResponse(), nil)
+    }
+    
+    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
+}
+
+final class NetworkDispatcherInvalidStub: NetworkDispatcher {
+    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        let data = Data.readJSON(forResource: "OneInvalidBNBTestData")
+        completionHandler(data, HTTPURLResponse(), nil)
+    }
+    
+    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
 }
