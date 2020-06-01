@@ -15,12 +15,10 @@ import javax.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
-@Setter
 @ToString(exclude = {"room", "user"})
 @NoArgsConstructor
 public class Booking {
@@ -31,13 +29,13 @@ public class Booking {
 
   @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
-  private Room room;
+  @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
+  private User user;
 
   @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
-  private User user;
+  @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
+  private Room room;
 
   @NotNull
   private LocalDate bookDate;
@@ -46,14 +44,18 @@ public class Booking {
   private int guest;
 
   @Builder
-  protected Booking(LocalDate bookDate, int guest) {
+  protected Booking(LocalDate bookDate, User user, Room room, int guest) {
     this.bookDate = bookDate;
+    this.user = user;
+    this.room = room;
     this.guest = guest;
   }
 
-  public static Booking create(LocalDate bookDate) {
+  public static Booking create(LocalDate bookDate, User user, Room room) {
     return Booking.builder()
         .bookDate(bookDate)
+        .user(user)
+        .room(room)
         .build();
   }
 
