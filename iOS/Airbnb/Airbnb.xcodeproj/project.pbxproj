@@ -51,6 +51,8 @@
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
 		C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* StoryboardRouter.swift */; };
+		C2587BAA2486701800CCFE04 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2587BA82486701800CCFE04 /* Calendar.storyboard */; };
+		C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
@@ -127,6 +129,8 @@
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C2553CE8247C23E50019588B /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
+		C2587BA92486701800CCFE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
+		C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
 				5ADA864A2483D066000C06E9 /* Login.storyboard */,
 				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
+				C2587BA82486701800CCFE04 /* Calendar.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
@@ -287,6 +292,7 @@
 				C2553CE6247C1CC40019588B /* FilterViewController.swift */,
 				5ADA864C2483D09E000C06E9 /* LoginViewController.swift */,
 				5A40000024876EBC001F1C63 /* BNBTabBarController.swift */,
+				C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				5ADA864B2483D066000C06E9 /* Login.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
+				C2587BAA2486701800CCFE04 /* Calendar.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +496,7 @@
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
+				C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,
 				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
@@ -535,6 +543,14 @@
 				C22A52632473A1AB0055A478 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C2587BA82486701800CCFE04 /* Calendar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2587BA92486701800CCFE04 /* Base */,
+			);
+			name = Calendar.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
