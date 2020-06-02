@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
 		5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* DispatcherTests.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				5A8760212480D22E00E7FBC3 /* SessionExtension.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A25EAEB247F88330038240F /* BNBsTask.swift */,
+				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,
 				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
+				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
 				5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */,
 			);

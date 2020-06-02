@@ -9,7 +9,9 @@
 import Foundation
 
 enum AuthKeys {
-    static let clientID = "8d92d01b11ba14d3d18f"
     static let scheme = "squadbnb:"
     static let payloadKey = "token"
+    
+    static let clientID = URLQueryItem(name: "client_id", value: "8d92d01b11ba14d3d18f")
+    static let scope = URLQueryItem(name: "scope", value: "user:email")
 }

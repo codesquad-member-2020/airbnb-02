@@ -19,7 +19,10 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func requestGithubOAuth(_ sender: LoginButton) {
-        guard let authURL = URL(string: Endpoints.authURL) else {return }
+        guard let authURL = try? AuthRequest(
+            path: Endpoints.authURL,
+            queryItems: [AuthKeys.clientID, AuthKeys.scope]
+        ).urlRequest()?.url else { return }
         
         let session = ASWebAuthenticationSession(
             url: authURL,
