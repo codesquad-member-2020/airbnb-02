@@ -9,7 +9,7 @@
 import Foundation
 @testable import Airbnb
 
-class URLProtocolMock: URLProtocol {
+final class URLProtocolMock: URLProtocol {
     static let testURLs = [
         SearchRequest().urlRequest()!: bnbsTestData
     ]
