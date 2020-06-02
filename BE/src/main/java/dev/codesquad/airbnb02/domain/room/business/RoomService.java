@@ -85,7 +85,7 @@ public class RoomService {
 		return BookingResponseDto.create(user, room);
 	}
 
-	private Room findRoom(Long roomId) {
+	public Room findRoom(Long roomId) {
 		return roomRepository.findById(roomId).orElseThrow(() -> new NotFoundDataException("해당 숙소를 찾을 수 없습니다."));
 	}
 }
