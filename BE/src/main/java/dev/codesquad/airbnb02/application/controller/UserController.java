@@ -29,4 +29,9 @@ public class UserController {
       @RequestParam(value = "room_id") Long roomId) {
     return ResponseEntity.ok(userService.removeBookmark(userId, roomId));
   }
+
+  @GetMapping("/{userId}/favorite/all")
+  public ResponseEntity viewBookmarkedRooms(@PathVariable Long userId) {
+    return ResponseEntity.ok(userService.getBookmarkedRooms(userId));
+  }
 }

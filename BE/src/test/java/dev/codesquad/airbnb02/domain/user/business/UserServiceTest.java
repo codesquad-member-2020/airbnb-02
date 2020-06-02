@@ -3,6 +3,8 @@ package dev.codesquad.airbnb02.domain.user.business;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -93,5 +95,13 @@ public class UserServiceTest {
 	@ParameterizedTest
 	void 사용자가_방을_좋아요_했는지_알려준다(Long userId, Long roomId, boolean result) {
 		assertThat(userService.isUserBookmarkedRoom(userId, roomId)).isEqualTo(result);
+	}
+
+	@DisplayName("사용자가 즐겨찾기 한 숙소 리스트를 확인한다.")
+	@CsvSource({"1","2","3"})
+	@ParameterizedTest
+	public void 사용자의_즐겨찾기_목록을_보여준다(Long userId) throws Exception {
+		assertThat(userService.getBookmarkedRooms(userId)).isInstanceOf(List.class);
+		assertThat(userService.getBookmarkedRooms(userId).get(0)).isInstanceOf(RoomResponseDto.class);
 	}
 }
