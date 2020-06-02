@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.common.jwt;
 
+import dev.codesquad.airbnb02.common.exception.InvalidTokenException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.HashMap;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JwtService {
 
-  private String secretKey = "JinIsTheBest";
+  private final String SECRET_KEY = "JinIsTheBest";
 
   public String createJwt(String userId) {
     final SignatureAlgorithm SIGNATUREALGORITHM = SignatureAlgorithm.HS256;
@@ -27,7 +28,16 @@ public class JwtService {
     return Jwts.builder()
         .setHeader(header)
         .setClaims(payload)
-        .signWith(SIGNATUREALGORITHM, secretKey.getBytes())
+        .signWith(SIGNATUREALGORITHM, SECRET_KEY.getBytes())
         .compact();
+  }
+
+  public boolean isValidToken(String token) {
+    try {
+      Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
+      return true;
+    } catch (Exception e) {
+      throw new InvalidTokenException(e.getMessage());
+    }
   }
 }
