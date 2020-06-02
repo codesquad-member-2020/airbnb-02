@@ -51,21 +51,21 @@ public class RoomService {
 	}
 
 	public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
-		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		Room room = findRoom(roomId);
 		Long userId = 1L;
 		boolean favorite = isUserBookmarkedRoom(roomId, userId);
 		return RoomDetailResponseDto.create(room, favorite);
 	}
 
 	private boolean isUserBookmarkedRoom(Long roomId, Long userId) {
-		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		Room room = findRoom(roomId);
 		return userService.isUserBookmarkedRoom(userId, room.getId());
 	}
 
 	@Transactional
 	public BookingResponseDto createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
 		Long userId = 2L;
-		User user = userService.getUser(userId);
+		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
 		if (!room.isValidDate(checkin, checkout)) {
 			throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
@@ -78,7 +78,7 @@ public class RoomService {
 	@Transactional
 	public BookingResponseDto removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
 		Long userId = 2L;
-		User user = userService.getUser(userId);
+		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
 		room.removeBookings(checkin, checkout, user);
 		roomRepository.save(room);

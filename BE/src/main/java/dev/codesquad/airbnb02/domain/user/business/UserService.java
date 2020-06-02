@@ -47,7 +47,7 @@ public class UserService {
 		return user.isBookmarked(room);
 	}
 
-	public User getUser(Long userId) {
+	public User findUser(Long userId) {
 		return userRepository.findById(userId).orElseThrow(NotFoundDataException::new);
 	}
 }
