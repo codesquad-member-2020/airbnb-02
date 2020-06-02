@@ -18,7 +18,7 @@ final class LoginViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func reqeustGithubOAuth(_ sender: LoginButton) {
+    @IBAction func requestGithubOAuth(_ sender: LoginButton) {
         guard let authURL = URL(string: Endpoints.authURL) else {return }
         
         let session = ASWebAuthenticationSession(

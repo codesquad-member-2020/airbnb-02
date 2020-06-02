@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,17 +11,17 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="9aP-tM-ujJ" customClass="LoginViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXg-98-rxi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airbnb_title_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Obi-dp-QHb">
-                                <rect key="frame" x="52" y="162" width="310.5" height="310.5"/>
+                                <rect key="frame" x="75" y="-15" width="450" height="450"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Obi-dp-QHb" secondAttribute="height" multiplier="1:1" id="QgV-sP-vM3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-VX-q92" customClass="LoginButton" customModule="Airbnb" customModuleProvider="target">
-                                <rect key="frame" x="31" y="594" width="352" height="35"/>
+                                <rect key="frame" x="45" y="379.5" width="510" height="51"/>
                                 <color key="backgroundColor" red="0.99794119599999997" green="0.35348880290000001" blue="0.37253212930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bqd-VX-q92" secondAttribute="height" multiplier="10:1" id="ehQ-mc-xLm"/>
@@ -36,11 +35,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="reqeustGithubOAuth:" destination="9aP-tM-ujJ" eventType="touchUpInside" id="I8r-5r-hnX"/>
+                                    <action selector="requestGithubOAuth:" destination="9aP-tM-ujJ" eventType="touchUpInside" id="I8r-5r-hnX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-7n-RFT">
-                                <rect key="frame" x="8" y="52" width="35" height="35"/>
+                                <rect key="frame" x="8" y="8" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="0ED-wU-Car"/>
                                     <constraint firstAttribute="width" constant="35" id="wla-bz-HEH"/>
