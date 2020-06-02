@@ -1,9 +1,10 @@
-package dev.codesquad.airbnb02.domain.room.entity;
-
-import lombok.Getter;
+package dev.codesquad.airbnb02.domain.room.vo;
 
 import javax.persistence.Embeddable;
+
 import org.springframework.stereotype.Component;
+
+import lombok.Getter;
 
 @Component
 @Embeddable

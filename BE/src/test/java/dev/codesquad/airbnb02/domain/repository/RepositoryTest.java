@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.application.controller;
+package dev.codesquad.airbnb02.domain.repository;
 
 
 import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
@@ -7,7 +7,7 @@ import dev.codesquad.airbnb02.domain.host.data.HostRepository;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import dev.codesquad.airbnb02.domain.room.data.RoomRepository;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
-import dev.codesquad.airbnb02.domain.room.entity.RoomType;
+import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,6 +29,9 @@ public class RepositoryTest {
 
     @Autowired
     private HostRepository hostRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private RoomService roomService;
@@ -53,7 +56,6 @@ public class RepositoryTest {
         hostRepository.save(host);
 
         //then
-//        assertThat(hostRepository.findByName(name).getEmail()).isEqualTo(email);
         assertThat(hostRepository.findByName(name).isSuperhost()).isEqualTo(true);
     }
 
@@ -90,4 +92,17 @@ public class RepositoryTest {
         assertThat(roomService.findAll().get(0)).isInstanceOf(RoomResponseDto.class);
         assertThat(roomService.findAll().get(0).getType()).isEqualTo("아파트");
     }
+
+    // @Test
+    // @Transactional
+    // public void ROOM이_Favorite을_들고있다() {
+    //     assertThat(roomRepository.findById(1L).get().getFavorites()).isNotNull();
+    //     assertThat(roomService.findAll().get(0).isFavorite()).isInstanceOf(Boolean.class);
+    // }
+    //
+    // @Test
+    // @Transactional
+    // public void USER가_Favorite을_들고있다() {
+    //     assertThat(userRepository.findById(1L).get().getFavorites()).isNotNull();
+    // }
 }

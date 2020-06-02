@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "room")
 public class Image {
 
   @Id
@@ -26,11 +27,11 @@ public class Image {
   @NotNull
   private String imageUrl;
 
+  @JsonIgnore
+  @NotNull
   @ManyToOne
   @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
-  @NotNull
   private Room room;
 
-  public Image() {
-  }
+  public Image() {}
 }
