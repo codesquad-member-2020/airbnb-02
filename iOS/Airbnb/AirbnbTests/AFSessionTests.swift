@@ -24,7 +24,7 @@ final class AFSessionTests: XCTestCase {
     }
     
     func testExecuteSuccess() {
-        let expectation = XCTestExpectation(description: "네트워크 통신 성공")
+        let expectation = XCTestExpectation(description: "네트워크 응답 받음")
         defer { wait(for: [expectation], timeout: 1) }
         
         afSession.execute(request: SearchRequest()) { data, response, error in

@@ -22,7 +22,7 @@ final class BNBsUseCase {
         self.handler = handler
     }
     
-    func append(request: SearchRequest) {
+    func request(_ request: SearchRequest) {
         requestQueue.async { [weak self] in
             self?.requestBNBs(request)
         }
