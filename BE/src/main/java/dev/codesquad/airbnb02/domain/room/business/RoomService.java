@@ -72,7 +72,7 @@ public class RoomService {
 		}
 		room.addBookings(checkin, checkout, user);
 		roomRepository.save(room);
-		return BookingResponseDto.create(userId, room);
+		return BookingResponseDto.create(user, room);
 	}
 
 	@Transactional
@@ -82,7 +82,7 @@ public class RoomService {
 		Room room = findRoom(roomId);
 		room.removeBookings(checkin, checkout, user);
 		roomRepository.save(room);
-		return BookingResponseDto.create(userId, room);
+		return BookingResponseDto.create(user, room);
 	}
 
 	private Room findRoom(Long roomId) {

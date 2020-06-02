@@ -140,24 +140,24 @@ public class Room {
 
   public void removeBookings(LocalDate checkin, LocalDate checkout, User user) {
     for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      Booking booking = findBookingByDate(date, user.getId());
+      Booking booking = findBookingByDate(date, user);
       removeBooking(booking);
     }
   }
 
-  public List<Booking> findBookingsByUserId(Long userId) {
+  public List<Booking> findBookingsByUserId(User user) {
     List<Booking> bookings = new ArrayList<>();
     for (Booking booking : this.bookings) {
-      if (booking.isEqualsUserId(userId)) {
+      if (booking.isEqualsUser(user)) {
         bookings.add(booking);
       }
     }
     return bookings;
   }
 
-  private Booking findBookingByDate(LocalDate date, Long userId) {
+  private Booking findBookingByDate(LocalDate date, User user) {
     for (Booking booking : this.bookings) {
-      if (booking.isEqualsBookDateAndUserId(date, userId)) {
+      if (booking.isEqualsBookDateAndUser(date, user)) {
         return booking;
       }
     }

@@ -77,11 +77,11 @@ public class Booking {
     return date.equals(this.bookDate);
   }
 
-  public boolean isEqualsUserId(Long userId) {
-    return userId.equals(this.user.getId());
+  public boolean isEqualsUser(User user) {
+    return user.equals(this.user);
   }
 
-  public boolean isEqualsBookDateAndUserId(LocalDate date, Long userId) {
-    return isEqualsBookDate(date) && isEqualsUserId(userId);
+  public boolean isEqualsBookDateAndUser(LocalDate date, User user) {
+    return isEqualsBookDate(date) && isEqualsUser(user);
   }
 }
