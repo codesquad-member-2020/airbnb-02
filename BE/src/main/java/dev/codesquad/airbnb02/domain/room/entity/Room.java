@@ -1,41 +1,22 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
-import dev.codesquad.airbnb02.common.exception.BookingNotAllowedException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.codesquad.airbnb02.domain.host.entity.Host;
-import dev.codesquad.airbnb02.domain.room.vo.Locale;
-import dev.codesquad.airbnb02.domain.user.entity.User;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
-@ToString(exclude = "users")
-@NoArgsConstructor
+@ToString(exclude = {"images", "bookings"})
 public class Room {
 
   @Id
@@ -74,24 +55,19 @@ public class Room {
   private Locale locale;
 
   @OneToMany(mappedBy = "room")
-  private List<Image> images = new ArrayList<>();
+  @JsonIgnore
+  private List<Image> images;
 
-  @NotNull
   @ManyToOne
   @JoinColumn(foreignKey = @ForeignKey(name = "host_id"))
+  @NotNull
   private Host host;
 
+  @OneToMany(mappedBy = "room")
   @JsonIgnore
-  @ManyToMany
-  @JoinTable(
-      name = "favorite",
-      joinColumns = @JoinColumn(name = "room_id"),
-      inverseJoinColumns = @JoinColumn(name = "user_id")
-  )
-  private List<User> users;
+  private List<Booking> bookings;
 
-  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Booking> bookings = new ArrayList<>();
+  public Room() {}
 
   public boolean isValidLocation(String location) {
     if (checkNull(location)) {
@@ -107,61 +83,20 @@ public class Room {
     return priceMin <= this.price && this.price <= priceMax;
   }
 
-  /**
-   * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
-   */
   public boolean isValidDate(LocalDate checkin, LocalDate checkout) {
     if (checkNull(checkin) || checkNull(checkout)) {
       return true;
     }
 
-    for (Booking booking : this.bookings) {
+    /**
+     * checkin - checkout 내에, 숙소가 예약 가능 하다면 true, 아니면 false 반환
+     */
+    for(Booking booking : this.bookings) {
       if (!booking.isAvailable(checkin, checkout)) {
         return false;
       }
     }
     return true;
-  }
-
-  public void addBooking(Booking booking) {
-    bookings.add(booking);
-  }
-
-  public void addBookings(LocalDate checkin, LocalDate checkout, User user) {
-    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      Booking booking = Booking.create(date, user, this);
-      addBooking(booking);
-    }
-  }
-
-  public void removeBooking(Booking booking) {
-    bookings.remove(booking);
-  }
-
-  public void removeBookings(LocalDate checkin, LocalDate checkout, User user) {
-    for (LocalDate date = checkin; date.isBefore(checkout); date = date.plusDays(1)) {
-      Booking booking = findBookingByDate(date, user);
-      removeBooking(booking);
-    }
-  }
-
-  public List<Booking> findBookingsByUser(User user) {
-    List<Booking> bookings = new ArrayList<>();
-    for (Booking booking : this.bookings) {
-      if (booking.isEqualsUser(user)) {
-        bookings.add(booking);
-      }
-    }
-    return bookings;
-  }
-
-  private Booking findBookingByDate(LocalDate date, User user) {
-    for (Booking booking : this.bookings) {
-      if (booking.isEqualsBookDateAndUser(date, user)) {
-        return booking;
-      }
-    }
-    throw new BookingNotAllowedException("예약정보 혹은 유저정보가 올바르지 않습니다.");
   }
 
   private boolean checkNull(Object input) {

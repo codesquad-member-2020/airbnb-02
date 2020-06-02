@@ -1,64 +1,32 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.codesquad.airbnb02.domain.user.entity.User;
 import java.time.LocalDate;
+import java.time.Period;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
 @Getter
-@ToString(exclude = {"room", "user"})
-@NoArgsConstructor
+@ToString
 public class Booking {
 
   @Id
-  @JsonIgnore
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @JsonIgnore
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
-  private User user;
-
-  @JsonIgnore
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(foreignKey = @ForeignKey(name = "room_id"))
   private Room room;
 
-  @NotNull
   private LocalDate bookDate;
-
-  @NotNull
   private int guest;
-
-  @Builder
-  private Booking(LocalDate bookDate, User user, Room room, int guest) {
-    this.bookDate = bookDate;
-    this.user = user;
-    this.room = room;
-    this.guest = guest;
-  }
-
-  public static Booking create(LocalDate bookDate, User user, Room room) {
-    return Booking.builder()
-        .bookDate(bookDate)
-        .user(user)
-        .room(room)
-        .build();
-  }
 
   /**
    *  checkin - checkout 범위에 bookDate 있는지 확인
@@ -71,17 +39,5 @@ public class Booking {
       }
     }
     return true;
-  }
-
-  public boolean isEqualsBookDate(LocalDate date) {
-    return date.equals(this.bookDate);
-  }
-
-  public boolean isEqualsUser(User user) {
-    return user.equals(this.user);
-  }
-
-  public boolean isEqualsBookDateAndUser(LocalDate date, User user) {
-    return isEqualsBookDate(date) && isEqualsUser(user);
   }
 }

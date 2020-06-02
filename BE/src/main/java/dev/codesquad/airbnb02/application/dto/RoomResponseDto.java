@@ -1,10 +1,11 @@
 package dev.codesquad.airbnb02.application.dto;
 
+import dev.codesquad.airbnb02.domain.room.entity.Image;
+import dev.codesquad.airbnb02.domain.room.entity.Room;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-import dev.codesquad.airbnb02.domain.room.entity.Image;
-import dev.codesquad.airbnb02.domain.room.entity.Room;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -40,17 +41,17 @@ public class RoomResponseDto {
     this.superhost = superhost;
   }
 
-  public static RoomResponseDto create(Room room, boolean favorite) {
+  public static RoomResponseDto create(Room room) {
     return RoomResponseDto.builder()
-        .id(room.getId())
-        .title(room.getName())
-        .type(room.getType().getName())
-        .location(room.getLocale().getLocation())
-        .images(room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()))
-        .price(room.getPrice())
-        .favorite(favorite)
-        .review(ReviewDto.ofRatingAndCount(room.getReviewRating(), room.getReviewCount()))
-        .superhost(room.getHost().isSuperhost())
+            .id(room.getId())
+            .title(room.getName())
+            .type(room.getType().getName())
+            .location(room.getLocale().getLocation())
+            .images(room.getImages().stream().map(Image::getImageUrl).collect(Collectors.toList()))
+            .price(room.getPrice())
+            .favorite(false)
+            .review(ReviewDto.ofRatingAndCount(room.getReviewRating(), room.getReviewCount()))
+            .superhost(room.getHost().isSuperhost())
             .build();
   }
 }

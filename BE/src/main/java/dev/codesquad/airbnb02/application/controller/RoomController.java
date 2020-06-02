@@ -1,22 +1,18 @@
 package dev.codesquad.airbnb02.application.controller;
 
+import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
+import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import java.time.LocalDate;
 import java.util.List;
-
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import dev.codesquad.airbnb02.application.dto.RoomDetailResponseDto;
-import dev.codesquad.airbnb02.application.dto.RoomResponseDto;
-import dev.codesquad.airbnb02.domain.room.business.RoomService;
-import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,7 +22,7 @@ public class RoomController {
 
   private final RoomService roomService;
 
-  @GetMapping("/main")
+  @GetMapping("/")
   public ResponseEntity<List<RoomResponseDto>> viewFilteredRooms(
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout,
@@ -40,14 +36,9 @@ public class RoomController {
         HttpStatus.OK);
   }
 
-  @GetMapping(value = "/main", params = {"!checkin", "!checkout", "!adults", "!price_min", "!price_max",
+  @GetMapping(value = "/", params = {"!checkin", "!checkout", "!adults", "!price_min", "!price_max",
       "!location"})
   public ResponseEntity<List<RoomResponseDto>> viewAllRooms() {
     return new ResponseEntity<>(roomService.findAll(), HttpStatus.OK);
-  }
-
-  @GetMapping("/detail/{roomId}")
-  public ResponseEntity<RoomDetailResponseDto> viewRoomDetail(@PathVariable Long roomId) {
-    return new ResponseEntity<>(roomService.findDetailByRoomId(roomId), HttpStatus.OK);
   }
 }
