@@ -10,7 +10,7 @@ import UIKit
 import AuthenticationServices
 
 protocol LoginViewControllerDelegate: class {
-    func loginViewControllerSignInWithGitHubdidSuccess()
+    func loginDidSuccess(_ viewController: LoginViewController)
 }
 
 final class LoginViewController: UIViewController {
@@ -34,7 +34,8 @@ final class LoginViewController: UIViewController {
                 
                 self?.writeToken(from: callbackURL, to: UserDefaults.standard)
                 self?.dismiss(animated: true) { [weak self] in
-                    self?.delegate?.loginViewControllerSignInWithGitHubdidSuccess()
+                    guard let self = self else { return }
+                    self.delegate?.loginDidSuccess(self)
                 }
         }
         session.presentationContextProvider = self

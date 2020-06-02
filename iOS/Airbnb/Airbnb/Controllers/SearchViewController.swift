@@ -96,7 +96,7 @@ final class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: LoginViewControllerDelegate {
-    func loginViewControllerSignInWithGitHubdidSuccess() {
-         fetchBNBs()
+    func loginDidSuccess(_ viewController: LoginViewController) {
+        fetchBNBs()
     }
 }
