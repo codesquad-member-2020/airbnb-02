@@ -39,8 +39,8 @@ final class SearchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard !hasBeenDisplayed, let loginViewController = LoginViewController.instantiate(from: .login),
-            haveNoToken(from: .standard) || isInvalidToken(from: .standard) else { return }
+        guard !hasBeenDisplayed, haveNoToken(from: .standard),
+            let loginViewController = LoginViewController.instantiate(from: .login) else { return }
         
         present(loginViewController, animated: false)
         hasBeenDisplayed = true
@@ -48,10 +48,6 @@ final class SearchViewController: UIViewController {
     
     private func haveNoToken(from userDefault: UserDefaults) -> Bool {
         return userDefault.string(forKey: "jwt") == nil
-    }
-    
-    private func isInvalidToken(from userDefault: UserDefaults) -> Bool {
-        return true
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
