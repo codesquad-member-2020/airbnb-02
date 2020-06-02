@@ -3,6 +3,7 @@ package dev.codesquad.airbnb02.common.jwt;
 import dev.codesquad.airbnb02.common.exception.InvalidTokenException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ public class JwtService {
     final String USER_ID = "userId";
     final String TYP = "typ";
     final String ALG = "HS256";
+    final int EXPIRATION_TIME = 1000 * 60 * 60 * 10;
 
     Map<String, Object> header = new HashMap<>();
     header.put(TYP, "JWT");
@@ -28,6 +30,8 @@ public class JwtService {
     return Jwts.builder()
         .setHeader(header)
         .setClaims(payload)
+        .setIssuedAt(new Date(System.currentTimeMillis()))
+        .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
         .signWith(SIGNATUREALGORITHM, SECRET_KEY.getBytes())
         .compact();
   }
