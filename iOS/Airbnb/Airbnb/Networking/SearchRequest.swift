@@ -1,5 +1,5 @@
 //
-//  BNBRequest.swift
+//  SearchRequest.swift
 //  Airbnb
 //
 //  Created by kimdo2297 on 2020/05/25.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BNBsRequest: Request {
+struct SearchRequest: Request {
     var path: String {
         return Endpoints.main
     }

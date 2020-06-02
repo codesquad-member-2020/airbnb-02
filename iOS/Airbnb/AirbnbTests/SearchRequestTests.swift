@@ -1,5 +1,5 @@
 //
-//  RequestTests.swift
+//  SearchRequestTests.swift
 //  AirbnbTests
 //
 //  Created by kimdo2297 on 2020/05/25.
@@ -19,16 +19,16 @@ private struct FakeRequest: Request {
     }
 }
 
-final class BNBsRequestTests: XCTestCase {
-    func testBNBRequest_isCorrect() {
-        let request = BNBsRequest()
+final class SearchRequestTests: XCTestCase {
+    func testSearchRequest_isCorrect() {
+        let request = SearchRequest()
         XCTAssertEqual(request.path, Endpoints.main)
         XCTAssertEqual(request.method, HTTPMethod.get)
     }
     
-    func testFakeRequest_query() {
+    func testFakeRequest_withQuery() {
         let request = FakeRequest()
-        let urlRequest = try! request.urlRequest()!
+        let urlRequest = request.urlRequest()!
         let url = try! XCTUnwrap(urlRequest.url)
         XCTAssertEqual(
             url.absoluteString,

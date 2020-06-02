@@ -9,23 +9,19 @@
 /* Begin PBXBuildFile section */
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
-		5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* DispatcherTests.swift */; };
+		5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* AFSessionTests.swift */; };
 		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
-		5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* BNBsTask.swift */; };
-		5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */; };
+		5A25EAEC247F88330038240F /* SearchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* SearchTask.swift */; };
+		5A25EAF0247F88BD0038240F /* SearchTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */; };
 		5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* BNBsUseCase.swift */; };
-		5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
-		5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
-		5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814121247BD3590020ED80 /* DecodableTests.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
-		5A814130247BF2BE0020ED80 /* BNBsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* BNBsRequestTests.swift */; };
+		5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */; };
-		5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */; };
 		5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601F2480B08600E7FBC3 /* ImageCache.swift */; };
-		5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* SessionExtension.swift */; };
+		5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* AFSession.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
@@ -36,15 +32,15 @@
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
 		5ADA864624838558000C06E9 /* BNBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864524838558000C06E9 /* BNBViewModel.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
+		C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		C2205D20247EAEA9008D3FBC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1E247EAEA9008D3FBC /* Request.swift */; };
-		C2205D21247EAEA9008D3FBC /* BNBsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */; };
+		C2205D21247EAEA9008D3FBC /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1F247EAEA9008D3FBC /* SearchRequest.swift */; };
 		C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52572473A1A80055A478 /* AppDelegate.swift */; };
 		C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A52592473A1A80055A478 /* SceneDelegate.swift */; };
 		C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A525B2473A1A80055A478 /* SearchViewController.swift */; };
 		C22A525F2473A1A80055A478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A525D2473A1A80055A478 /* Main.storyboard */; };
 		C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22A52602473A1AB0055A478 /* Assets.xcassets */; };
 		C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */; };
-		C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A526E2473A1AB0055A478 /* AirbnbTests.swift */; };
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
@@ -52,6 +48,9 @@
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
 		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
+		C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A617432484D52F00A8E88B /* URLProtocolMock.swift */; };
+		C2A6174924851AFA00A8E88B /* OneBNBTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A6174824851AFA00A8E88B /* OneBNBTestData.json */; };
+		C2A6174B24851C8900A8E88B /* OneInvalidBNBTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A6174A24851C8900A8E88B /* OneInvalidBNBTestData.json */; };
 		C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */; };
 		C2B959C5247E584E003DC5D9 /* BNBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C4247E584E003DC5D9 /* BNBCell.swift */; };
 		C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C6247E5C25003DC5D9 /* Observable.swift */; };
@@ -76,23 +75,20 @@
 
 /* Begin PBXFileReference section */
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
-		5A25EAE7247F853B0038240F /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
+		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
-		5A25EAEB247F88330038240F /* BNBsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTask.swift; sourceTree = "<group>"; };
-		5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsTaskTests.swift; sourceTree = "<group>"; };
+		5A25EAEB247F88330038240F /* SearchTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTask.swift; sourceTree = "<group>"; };
+		5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTaskTests.swift; sourceTree = "<group>"; };
 		5A25EAF1247F8B410038240F /* BNBsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCase.swift; sourceTree = "<group>"; };
-		5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCaseTests.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
-		5A814121247BD3590020ED80 /* DecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableTests.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
-		5A81412F247BF2BE0020ED80 /* BNBsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsRequestTests.swift; sourceTree = "<group>"; };
+		5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestTests.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
-		5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCaseTests.swift; sourceTree = "<group>"; };
 		5A87601F2480B08600E7FBC3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		5A8760212480D22E00E7FBC3 /* SessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExtension.swift; sourceTree = "<group>"; };
+		5A8760212480D22E00E7FBC3 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
@@ -104,7 +100,7 @@
 		5ADA864524838558000C06E9 /* BNBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBViewModel.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
-		C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BNBsRequest.swift; path = Airbnb/Networking/BNBsRequest.swift; sourceTree = SOURCE_ROOT; };
+		C2205D1F247EAEA9008D3FBC /* SearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRequest.swift; path = Airbnb/Networking/SearchRequest.swift; sourceTree = SOURCE_ROOT; };
 		C22A52542473A1A80055A478 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22A52572473A1A80055A478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22A52592473A1A80055A478 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 		C22A52632473A1AB0055A478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C22A52652473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A526A2473A1AB0055A478 /* AirbnbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C22A526E2473A1AB0055A478 /* AirbnbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTests.swift; sourceTree = "<group>"; };
 		C22A52702473A1AB0055A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -123,6 +118,9 @@
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
+		C2A617432484D52F00A8E88B /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		C2A6174824851AFA00A8E88B /* OneBNBTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OneBNBTestData.json; sourceTree = "<group>"; };
+		C2A6174A24851C8900A8E88B /* OneInvalidBNBTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OneInvalidBNBTestData.json; sourceTree = "<group>"; };
 		C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBViewModels.swift; sourceTree = "<group>"; };
 		C2B959C4247E584E003DC5D9 /* BNBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBCell.swift; sourceTree = "<group>"; };
 		C2B959C6247E5C25003DC5D9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -154,14 +152,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A814116247BC6040020ED80 /* Mocking */ = {
-			isa = PBXGroup;
-			children = (
-				5A814119247BCDE80020ED80 /* BNBsTestData.json */,
-			);
-			path = Mocking;
-			sourceTree = "<group>";
-		};
 		5A81411D247BCE630020ED80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,14 +219,11 @@
 		C22A526D2473A1AB0055A478 /* AirbnbTests */ = {
 			isa = PBXGroup;
 			children = (
-				C22A526E2473A1AB0055A478 /* AirbnbTests.swift */,
+				C2A617422484D51800A8E88B /* Mocking */,
+				5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */,
+				5A25EAE7247F853B0038240F /* AFSessionTests.swift */,
+				5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
-				5A814121247BD3590020ED80 /* DecodableTests.swift */,
-				5A81412F247BF2BE0020ED80 /* BNBsRequestTests.swift */,
-				5A25EAE7247F853B0038240F /* DispatcherTests.swift */,
-				5A25EAEF247F88BD0038240F /* BNBsTaskTests.swift */,
-				5A25EAF3247F8F0E0038240F /* BNBsUseCaseTests.swift */,
-				5A87601D247FD80000E7FBC3 /* ImageUseCaseTests.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -291,14 +278,13 @@
 		C22A527E2473A26F0055A478 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5A814116247BC6040020ED80 /* Mocking */,
 				5ADA00DB247E4F3500E30D6C /* EndPoints.swift */,
 				C2205D1E247EAEA9008D3FBC /* Request.swift */,
-				C2205D1F247EAEA9008D3FBC /* BNBsRequest.swift */,
+				C2205D1F247EAEA9008D3FBC /* SearchRequest.swift */,
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
-				5A8760212480D22E00E7FBC3 /* SessionExtension.swift */,
+				5A8760212480D22E00E7FBC3 /* AFSession.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
-				5A25EAEB247F88330038240F /* BNBsTask.swift */,
+				5A25EAEB247F88330038240F /* SearchTask.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -309,6 +295,17 @@
 				C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C2A617422484D51800A8E88B /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				C2A617432484D52F00A8E88B /* URLProtocolMock.swift */,
+				C2A6174A24851C8900A8E88B /* OneInvalidBNBTestData.json */,
+				C2A6174824851AFA00A8E88B /* OneBNBTestData.json */,
+				5A814119247BCDE80020ED80 /* BNBsTestData.json */,
+			);
+			path = Mocking;
 			sourceTree = "<group>";
 		};
 		C2DB830C24766892007034AC /* FilterButtons */ = {
@@ -409,7 +406,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A81411A247BCDE80020ED80 /* BNBsTestData.json in Resources */,
 				C22A52642473A1AB0055A478 /* LaunchScreen.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
@@ -421,6 +417,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */,
+				C2A6174924851AFA00A8E88B /* OneBNBTestData.json in Resources */,
+				C2A6174B24851C8900A8E88B /* OneInvalidBNBTestData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,8 +452,8 @@
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */,
-				5A25EAEC247F88330038240F /* BNBsTask.swift in Sources */,
-				C2205D21247EAEA9008D3FBC /* BNBsRequest.swift in Sources */,
+				5A25EAEC247F88330038240F /* SearchTask.swift in Sources */,
+				C2205D21247EAEA9008D3FBC /* SearchRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* SearchViewController.swift in Sources */,
 				C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */,
@@ -472,7 +471,7 @@
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,
 				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
-				5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */,
+				5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,13 +479,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A814122247BD3590020ED80 /* DecodableTests.swift in Sources */,
-				C22A526F2473A1AB0055A478 /* AirbnbTests.swift in Sources */,
-				5A25EAF4247F8F0E0038240F /* BNBsUseCaseTests.swift in Sources */,
-				5A87601E247FD80000E7FBC3 /* ImageUseCaseTests.swift in Sources */,
-				5A25EAE8247F853B0038240F /* DispatcherTests.swift in Sources */,
-				5A25EAF0247F88BD0038240F /* BNBsTaskTests.swift in Sources */,
-				5A814130247BF2BE0020ED80 /* BNBsRequestTests.swift in Sources */,
+				5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */,
+				5A25EAF0247F88BD0038240F /* SearchTaskTests.swift in Sources */,
+				5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */,
+				C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

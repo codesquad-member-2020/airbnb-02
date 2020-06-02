@@ -16,8 +16,8 @@ final class SearchViewController: UIViewController {
     
     private let bnbsViewModel = BNBViewModels()
     private let layoutDelegate = BNBsLayout()
-    private let bnbsUseCase = BNBsUseCase(bnbsTask: BNBsTask(networkDispatcher: AF))
-    private let imageUseCase = ImageUseCase(networkDispatcher: AF)
+    private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
+    private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
     private var bnbsToken: NotificationToken?
     private var bnbToken: NotificationToken?
@@ -34,7 +34,7 @@ final class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        bnbsUseCase.append(bnbsRequest: BNBsRequest())
+        bnbsUseCase.request(SearchRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -83,7 +83,7 @@ final class SearchViewController: UIViewController {
                 guard !ImageCache.fileExists(
                     lastPathComponent: url.lastPathComponent
                     ) else { return }
-                imageUseCase.append(imageURL: url)
+                imageUseCase.request(imageURL: url)
             }
         }
     }

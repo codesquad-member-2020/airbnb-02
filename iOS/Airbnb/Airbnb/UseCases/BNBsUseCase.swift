@@ -9,11 +9,11 @@
 import Foundation
 
 final class BNBsUseCase {
-    private let bnbsTask: BNBsTask
+    private let bnbsTask: SearchTask
     private var handler: ([BNB]?) -> ()
     private let requestQueue = DispatchQueue(label: "bnbsRequest.serial.queue")
     
-    init(bnbsTask: BNBsTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
+    init(bnbsTask: SearchTask, handler: @escaping ([BNB]?) -> () = { _ in }) {
         self.bnbsTask = bnbsTask
         self.handler = handler
     }
@@ -22,14 +22,14 @@ final class BNBsUseCase {
         self.handler = handler
     }
     
-    func append(bnbsRequest: BNBsRequest) {
+    func request(_ request: SearchRequest) {
         requestQueue.async { [weak self] in
-            self?.requestBNBs(bnbsRequest)
+            self?.requestBNBs(request)
         }
     }
     
-    private func requestBNBs(_ bnbsRequest: BNBsRequest) {
-        bnbsTask.perform(bnbsRequest) { [weak self] bnbs in
+    private func requestBNBs(_ request: SearchRequest) {
+        bnbsTask.perform(request) { [weak self] bnbs in
             self?.handler(bnbs)
         }
     }

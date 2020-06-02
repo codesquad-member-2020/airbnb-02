@@ -20,7 +20,7 @@ final class ImageUseCase {
         self.networkDispatcher = networkDispatcher
     }
     
-    func append(imageURL: URL) {
+    func request(imageURL: URL) {
         urlsQueue.async { [weak self] in
             self?.downloadImage(imageURL: imageURL)
         }
