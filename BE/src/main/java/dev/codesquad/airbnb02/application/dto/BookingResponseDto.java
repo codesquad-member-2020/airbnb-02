@@ -2,6 +2,7 @@ package dev.codesquad.airbnb02.application.dto;
 
 import dev.codesquad.airbnb02.domain.room.entity.Booking;
 import dev.codesquad.airbnb02.domain.room.entity.Room;
+import dev.codesquad.airbnb02.domain.user.entity.User;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -15,13 +16,13 @@ public class BookingResponseDto {
   private Long roomId;
   private List<Booking> bookings = new ArrayList<>();
 
-  private BookingResponseDto(Long userId, Room room) {
-    this.userId = userId;
+  private BookingResponseDto(User user, Room room) {
+    this.userId = user.getId();
     this.roomId = room.getId();
-    this.bookings = room.findBookingsByUserId(userId);
+    this.bookings = room.findBookingsByUserId(user);
   }
 
-  public static BookingResponseDto create(Long userId, Room room) {
-    return new BookingResponseDto(userId, room);
+  public static BookingResponseDto create(User user, Room room) {
+    return new BookingResponseDto(user, room);
   }
 }
