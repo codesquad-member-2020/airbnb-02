@@ -19,7 +19,7 @@ public class BookingResponseDto {
   private BookingResponseDto(User user, Room room) {
     this.userId = user.getId();
     this.roomId = room.getId();
-    this.bookings = room.findBookingsByUserId(user);
+    this.bookings = room.findBookingsByUser(user);
   }
 
   public static BookingResponseDto create(User user, Room room) {

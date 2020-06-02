@@ -145,7 +145,7 @@ public class Room {
     }
   }
 
-  public List<Booking> findBookingsByUserId(User user) {
+  public List<Booking> findBookingsByUser(User user) {
     List<Booking> bookings = new ArrayList<>();
     for (Booking booking : this.bookings) {
       if (booking.isEqualsUser(user)) {
