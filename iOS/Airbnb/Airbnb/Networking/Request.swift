@@ -38,7 +38,6 @@ extension Request {
     var body: Data? { return nil }
     var headers: [String: String]? { return nil }
     
-    
     func urlRequest() throws -> URLRequest? {
         guard var urlComponents = URLComponents(string: path)
             else { throw NetworkErrorCase.invalidPath }
