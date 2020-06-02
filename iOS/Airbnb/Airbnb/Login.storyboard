@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="85c-hz-PL1">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="9aP-tM-ujJ" customClass="LoginViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yXg-98-rxi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airbnb_title_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Obi-dp-QHb">
+                                <rect key="frame" x="52" y="162" width="310.5" height="310.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Obi-dp-QHb" secondAttribute="height" multiplier="1:1" id="QgV-sP-vM3"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-VX-q92" customClass="LoginButton" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="594" width="352" height="35"/>
+                                <color key="backgroundColor" red="0.99794119599999997" green="0.35348880290000001" blue="0.37253212930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bqd-VX-q92" secondAttribute="height" multiplier="10:1" id="ehQ-mc-xLm"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="Github으로 로그인"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-7n-RFT">
+                                <rect key="frame" x="8" y="52" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0ED-wU-Car"/>
+                                    <constraint firstAttribute="width" constant="35" id="wla-bz-HEH"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="close:" destination="9aP-tM-ujJ" eventType="touchUpInside" id="8dA-GK-r6P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="1.35" id="3oS-cZ-PEa"/>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="510-PG-Ukh"/>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="centerX" secondItem="knu-pn-4k9" secondAttribute="centerX" id="a5C-Y2-OaK"/>
+                            <constraint firstItem="Ghg-7n-RFT" firstAttribute="top" secondItem="knu-pn-4k9" secondAttribute="top" constant="8" id="ar4-qq-UMV"/>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="centerY" secondItem="knu-pn-4k9" secondAttribute="centerY" multiplier="0.7" id="hAy-Wz-v4E"/>
+                            <constraint firstItem="Obi-dp-QHb" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.75" id="hGO-ta-czR"/>
+                            <constraint firstItem="Ghg-7n-RFT" firstAttribute="leading" secondItem="knu-pn-4k9" secondAttribute="leading" constant="8" id="q4h-Wh-1Xp"/>
+                            <constraint firstItem="bqd-VX-q92" firstAttribute="width" secondItem="knu-pn-4k9" secondAttribute="width" multiplier="0.85" id="vgR-hi-k3d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="knu-pn-4k9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jg1-Db-O0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airbnb_title_logo" width="288.5" height="394.5"/>
+        <image name="close" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
+</document>
