@@ -9,7 +9,13 @@
 import UIKit
 import AuthenticationServices
 
+protocol LoginViewControllerDelegate: class {
+    func loginDidSuccess(_ viewController: LoginViewController)
+}
+
 final class LoginViewController: UIViewController {
+    weak var delegate: LoginViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,7 +33,10 @@ final class LoginViewController: UIViewController {
                 guard error == nil, let callbackURL = callbackURL else { return }
                 
                 self?.writeToken(from: callbackURL, to: UserDefaults.standard)
-                self?.dismiss(animated: true)
+                self?.dismiss(animated: true) { [weak self] in
+                    guard let self = self else { return }
+                    self.delegate?.loginDidSuccess(self)
+                }
         }
         session.presentationContextProvider = self
         session.start()

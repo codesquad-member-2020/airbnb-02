@@ -31,18 +31,20 @@ final class SearchViewController: UIViewController {
         configureUseCase()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        bnbsUseCase.append(bnbRequest: BNBsRequest())
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard !hasBeenDisplayed, let loginViewController = LoginViewController.instantiate(from: .login) else { return }
-        
-        present(loginViewController, animated: false)
-        hasBeenDisplayed = true
+        if !hasBeenDisplayed, haveNoToken(from: .standard),
+            let loginViewController = LoginViewController.instantiate(from: .login) {
+            loginViewController.delegate = self
+            present(loginViewController, animated: false)
+            hasBeenDisplayed = true
+        } else {
+            fetchBNBs()
+        }
+    }
+    
+    private func haveNoToken(from userDefault: UserDefaults) -> Bool {
+        return userDefault.string(forKey: "jwt") == nil
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -86,5 +88,15 @@ final class SearchViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func fetchBNBs() {
+        bnbsUseCase.append(bnbRequest: BNBsRequest())
+    }
+}
+
+extension SearchViewController: LoginViewControllerDelegate {
+    func loginDidSuccess(_ viewController: LoginViewController) {
+        fetchBNBs()
     }
 }
