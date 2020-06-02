@@ -432,18 +432,6 @@ VALUES ('https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9
        ('https://a2.muscache.com/im/pictures/4d7f3eeb-46ca-4700-9f97-93edb2771118.jpg?aki_policy=large',
         50);
 
-INSERT INTO booking (room_id, book_date)
-VALUES (1, '2020-05-20'),
-       (1, '2020-05-21'),
-       (2, '2020-05-20'),
-       (2, '2020-05-21'),
-       (3, '2020-05-16'),
-       (3, '2020-05-17'),
-       (3, '2020-05-18'),
-       (3, '2020-05-19'),
-       (3, '2020-05-20'),
-       (3, '2020-05-21');
-
 INSERT INTO favorite (room_id, user_id, favor)
 VALUES (1, 1, 1),
        (1, 2, 1),
@@ -456,3 +444,15 @@ INSERT INTO user (github_id)
 VALUES ('jypthemiracle'),
        ('wooody92'),
        ('heidi');
+
+INSERT INTO booking (room_id, user_id, book_date)
+VALUES (1, 1, '2020-05-20'),
+       (1, 1, '2020-05-21'),
+       (2, 2, '2020-05-20'),
+       (2, 3, '2020-05-21'),
+       (3, 1, '2020-05-16'),
+       (3, 1, '2020-05-17'),
+       (3, 2, '2020-05-18'),
+       (3, 2, '2020-05-19'),
+       (3, 3, '2020-05-20'),
+       (3, 3, '2020-05-21');

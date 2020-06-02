@@ -1,5 +1,7 @@
 package dev.codesquad.airbnb02.domain.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.codesquad.airbnb02.domain.room.entity.Booking;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +15,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import dev.codesquad.airbnb02.domain.room.entity.Room;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Getter
+@ToString
 @NoArgsConstructor
 public class User {
 
@@ -28,6 +33,7 @@ public class User {
   @Column(name = "github_id")
   private String githubId;
 
+  @JsonIgnore
   @ManyToMany
   @JoinTable(
       name = "favorite",
@@ -35,6 +41,9 @@ public class User {
       inverseJoinColumns = @JoinColumn(name = "room_id")
   )
   private List<Room> rooms = new ArrayList<>();
+
+  @OneToMany(mappedBy = "user")
+  private List<Booking> bookings = new ArrayList<>();
 
   public Room addBookmark(Room room) {
     rooms.add(room);

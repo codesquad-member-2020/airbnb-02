@@ -28,8 +28,7 @@ public class BookingController {
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
 
-    roomService.createBooking(roomId, checkin, checkout);
-    return new ResponseEntity(HttpStatus.OK);
+    return new ResponseEntity(roomService.createBooking(roomId, checkin, checkout), HttpStatus.OK);
   }
 
   @DeleteMapping("/{roomId}")
@@ -38,7 +37,6 @@ public class BookingController {
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
 
-    roomService.removeBooking(roomId, checkin, checkout);
-    return new ResponseEntity(HttpStatus.OK);
+    return new ResponseEntity(roomService.removeBooking(roomId, checkin, checkout), HttpStatus.OK);
   }
 }

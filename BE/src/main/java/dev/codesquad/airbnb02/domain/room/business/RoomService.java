@@ -1,5 +1,7 @@
 package dev.codesquad.airbnb02.domain.room.business;
 
+import dev.codesquad.airbnb02.application.dto.BookingResponseDto;
+import dev.codesquad.airbnb02.domain.user.entity.User;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,32 +51,38 @@ public class RoomService {
 	}
 
 	public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
-		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		Room room = findRoom(roomId);
 		Long userId = 1L;
 		boolean favorite = isUserBookmarkedRoom(roomId, userId);
 		return RoomDetailResponseDto.create(room, favorite);
 	}
 
 	private boolean isUserBookmarkedRoom(Long roomId, Long userId) {
-		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
+		Room room = findRoom(roomId);
 		return userService.isUserBookmarkedRoom(userId, room.getId());
 	}
 
 	@Transactional
-	public void createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+	public BookingResponseDto createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+		Long userId = 2L;
+		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
-		if (! room.isValidDate(checkin, checkout)) {
+		if (!room.isValidDate(checkin, checkout)) {
 			throw new BookingNotAllowedException("이미 예약된 날짜가 존재 합니다.");
 		}
-		room.addBookings(checkin, checkout);
+		room.addBookings(checkin, checkout, user);
 		roomRepository.save(room);
+		return BookingResponseDto.create(user, room);
 	}
 
 	@Transactional
-	public void removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+	public BookingResponseDto removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
+		Long userId = 2L;
+		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
-		room.removeBookings(checkin, checkout);
+		room.removeBookings(checkin, checkout, user);
 		roomRepository.save(room);
+		return BookingResponseDto.create(user, room);
 	}
 
 	private Room findRoom(Long roomId) {

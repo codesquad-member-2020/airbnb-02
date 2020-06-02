@@ -11,6 +11,7 @@ import dev.codesquad.airbnb02.domain.user.data.UserRepository;
 import dev.codesquad.airbnb02.domain.user.entity.User;
 
 @Service
+@Transactional(readOnly = true)
 public class UserService {
 
 	private final UserRepository userRepository;
@@ -40,11 +41,13 @@ public class UserService {
 		return RoomResponseDto.create(room, false);
 	}
 
-	@Transactional(readOnly = true)
 	public boolean isUserBookmarkedRoom(Long userId, Long roomId) {
 		User user = userRepository.findById(userId).orElseThrow(NotFoundDataException::new);
 		Room room = roomRepository.findById(roomId).orElseThrow(NotFoundDataException::new);
 		return user.isBookmarked(room);
 	}
 
+	public User findUser(Long userId) {
+		return userRepository.findById(userId).orElseThrow(NotFoundDataException::new);
+	}
 }
