@@ -34,7 +34,7 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "users")
 @NoArgsConstructor
 public class Room {
 

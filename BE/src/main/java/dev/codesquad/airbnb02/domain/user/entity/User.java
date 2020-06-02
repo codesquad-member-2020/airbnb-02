@@ -18,9 +18,11 @@ import dev.codesquad.airbnb02.domain.room.entity.Room;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Getter
+@ToString
 @NoArgsConstructor
 public class User {
 
