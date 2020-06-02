@@ -11,7 +11,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
       "/search/**",
       "/all",
       "/detail/**",
-      "/callback"
+      "/callback",
+      "/user/**",
+      "/booking/**"
   };
 
   @Bean
