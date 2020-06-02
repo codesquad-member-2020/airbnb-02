@@ -45,7 +45,7 @@ public class Booking {
   private int guest;
 
   @Builder
-  protected Booking(LocalDate bookDate, User user, Room room, int guest) {
+  private Booking(LocalDate bookDate, User user, Room room, int guest) {
     this.bookDate = bookDate;
     this.user = user;
     this.room = room;
