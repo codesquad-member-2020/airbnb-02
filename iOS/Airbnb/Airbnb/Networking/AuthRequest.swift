@@ -9,11 +9,11 @@
 import Foundation
 
 struct AuthRequest: Request {
-    var path: String
-    var queryItems: [URLQueryItem]?
+    var path: String {
+        Endpoints.authURL
+    }
     
-    init(path: String, queryItems: [URLQueryItem]) {
-        self.path = path
-        self.queryItems = queryItems
+    var queryItems: [URLQueryItem]? {
+        return [AuthKeys.clientID, AuthKeys.scope]
     }
 }
