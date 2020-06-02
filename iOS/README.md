@@ -10,9 +10,9 @@
 
 ## 단계별 구현 내용
 
-### 메인 검색 화면 구현
+### 메인 검색 화면, 필터 화면 구현
 
-> [PR # [iOS] ][pr.....]
+> [PR #57 [iOS] 메인화면, 필터화면 뷰 구현][pr57]
 
 * [Pair] 기본 탭바 컨트롤러와 뷰 컨트롤러 구현 [Issue][issue3] [PR][pr4]
 * [Jason] Tab Bar에 연결된 뷰 컨트롤러 생성 부분 리팩토링 [Issue][issue11] [PR][pr12]
@@ -28,12 +28,31 @@
 * [Jason] 맵 버튼 구현 [Issue][issue40] [PR][pr46]
 * [Heidi] Filter VC 및 화면 전환 구현 [Issue][issue49] [PR][pr56]
 
-
 **실행 결과**
 
 ![result1](result1.png)
 
+### 메인 검색 화면 완성 및 테스트
 
+> [PR #119 [iOS] 메인 검색 화면 완성 및 테스트][pr119]
+
+* [Jason] 메인 화면 네트워크 응답 모델 객체 구현 [Issue][issue43] [PR][pr53]
+* [Heidi] 하트 커스텀 버튼 구현 [Issue][issue61] [PR][pr62]
+* [Jason] URL Request 생성을 담당하는 객체 구현 [Issue][issue42] [PR][pr54]
+* [Heidi] 숙소 검색 결과 뷰모델 구현 [Issue][issue71] [PR][pr74]
+* [Jason] NetworkDispatcher 구현 [Issue][issue44] [PR][pr78]
+* [Jason] BNBsTask 구현 [Issue][issue48] [PR][pr79]
+* [Jason] BNBsUseCase 구현 [Issue][issue55] [PR][pr82]
+* [Heidi] 리뷰 피드백 반영 [Issue][issue77] [PR][pr80]
+* [Jason] 리뷰 피드백 반영 [Issue][issue83] [PR][pr85]
+* [Heidi] 스토리보드로 컬렉션 뷰 커스텀 셀 구성 [Issue][issue70] [PR][pr87]
+* [Jason] Image Cache, Image UseCase 구현 [Issue][issue86] [PR][pr93]
+* [Pair] UseCase, ViewModel, VC 연결 및 셀에 데이터 디스플레이 [Issue][issue97] [PR][pr100]
+* [Heidi] Networking Layer 테스트 개선 [Issue][issue107] [PR][pr118]
+
+**실행 결과**
+
+![result2](result2.png)
 
 
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1mEWSSgX4h4rGINgtG6D2y6Qk0B0QxjHbdrxlQimck3Y/edit?usp=sharing
@@ -50,7 +69,20 @@
 [issue30]: https://github.com/codesquad-member-2020/airbnb-02/issues/30
 [issue34]: https://github.com/codesquad-member-2020/airbnb-02/issues/34
 [issue40]: https://github.com/codesquad-member-2020/airbnb-02/issues/40
+[issue42]: https://github.com/codesquad-member-2020/airbnb-02/issues/42
+[issue43]: https://github.com/codesquad-member-2020/airbnb-02/issues/43
+[issue44]: https://github.com/codesquad-member-2020/airbnb-02/issues/44
+[issue48]: https://github.com/codesquad-member-2020/airbnb-02/issues/48
 [issue49]: https://github.com/codesquad-member-2020/airbnb-02/issues/49
+[issue55]: https://github.com/codesquad-member-2020/airbnb-02/issues/55
+[issue61]: https://github.com/codesquad-member-2020/airbnb-02/issues/61
+[issue70]: https://github.com/codesquad-member-2020/airbnb-02/issues/70
+[issue71]: https://github.com/codesquad-member-2020/airbnb-02/issues/71
+[issue77]: https://github.com/codesquad-member-2020/airbnb-02/issues/77
+[issue83]: https://github.com/codesquad-member-2020/airbnb-02/issues/83
+[issue86]: https://github.com/codesquad-member-2020/airbnb-02/issues/86
+[issue97]: https://github.com/codesquad-member-2020/airbnb-02/issues/97
+[issue107]: https://github.com/codesquad-member-2020/airbnb-02/issues/107
 
 [pr4]: https://github.com/codesquad-member-2020/airbnb-02/pull/4
 [pr12]: https://github.com/codesquad-member-2020/airbnb-02/pull/12
@@ -64,5 +96,22 @@
 [pr37]: https://github.com/codesquad-member-2020/airbnb-02/pull/37
 [pr38]: https://github.com/codesquad-member-2020/airbnb-02/pull/38
 [pr46]: https://github.com/codesquad-member-2020/airbnb-02/pull/46
+[pr53]: https://github.com/codesquad-member-2020/airbnb-02/pull/53
+[pr54]: https://github.com/codesquad-member-2020/airbnb-02/pull/54
 [pr56]: https://github.com/codesquad-member-2020/airbnb-02/pull/56
+[pr57]: https://github.com/codesquad-member-2020/airbnb-02/pull/57
+[pr62]: https://github.com/codesquad-member-2020/airbnb-02/pull/62
+[pr74]: https://github.com/codesquad-member-2020/airbnb-02/pull/74
+[pr78]: https://github.com/codesquad-member-2020/airbnb-02/pull/78
+[pr79]: https://github.com/codesquad-member-2020/airbnb-02/pull/79
+[pr80]: https://github.com/codesquad-member-2020/airbnb-02/pull/80
+[pr82]: https://github.com/codesquad-member-2020/airbnb-02/pull/82
+[pr85]: https://github.com/codesquad-member-2020/airbnb-02/pull/85
+[pr87]: https://github.com/codesquad-member-2020/airbnb-02/pull/87
+[pr93]: https://github.com/codesquad-member-2020/airbnb-02/pull/93
+[pr100]: https://github.com/codesquad-member-2020/airbnb-02/pull/100
+[pr118]: https://github.com/codesquad-member-2020/airbnb-02/pull/118
+[pr119]: https://github.com/codesquad-member-2020/airbnb-02/pull/119
+
+
 

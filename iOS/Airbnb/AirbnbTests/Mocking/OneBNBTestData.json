@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "해운대 펜트하우스 더탑플로어",
+        "type": "Entire apartment",
+        "location": "부산",
+        "images": [],
+        "price": 50000,
+        "favorite": false,
+        "review": {
+            "rating": 4.83,
+            "count": 200
+        },
+        "superhost": true
+    }
+]
