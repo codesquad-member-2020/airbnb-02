@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 final class ImagePagingView: UIView {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -57,8 +58,24 @@ final class ImagePagingView: UIView {
         imageView.image = image
     }
     
+    func reset() {
+        resetScrollView()
+        resetPageControl()
+    }
+    
+    private func resetScrollView() {
+        scrollView.contentOffset.x = 0
+    }
+    
+    private func resetPageControl() {
+        pageControl.currentPage = 0
+    }
+    
     private func configureStackView(count: Int) {
-        (0 ..< count).forEach { _ in
+        guard count > stackView.arrangedSubviews.count else { return }
+        
+        let length = count - stackView.arrangedSubviews.count
+        (0 ..< length).forEach { _ in
             let imageView = UIImageView()
             configure(imageView: imageView)
             stackView.addArrangedSubview(imageView)
@@ -67,6 +84,8 @@ final class ImagePagingView: UIView {
     }
     
     private func configurePageControl(count: Int) {
+        guard count > pageControl.numberOfPages else { return }
+        
         pageControl.numberOfPages = count
     }
     

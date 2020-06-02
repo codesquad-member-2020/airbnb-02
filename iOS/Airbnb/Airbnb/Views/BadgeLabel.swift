@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 final class BadgeLabel: UILabel {
-    @IBInspectable var horizontalInset: CGFloat = 6
+    @IBInspectable var horizontalInset: CGFloat = 5
     @IBInspectable var verticalInset: CGFloat = 2
     
     override init(frame: CGRect) {
@@ -29,10 +29,9 @@ final class BadgeLabel: UILabel {
     }
 
     override var intrinsicContentSize: CGSize {
-        let `super` = super.intrinsicContentSize
         return CGSize(
-            width: `super`.width + horizontalInset * 2,
-            height: `super`.height + verticalInset * 2
+            width: super.intrinsicContentSize.width + horizontalInset * 2,
+            height: super.intrinsicContentSize.height + verticalInset * 2
         )
     }
     

@@ -8,13 +8,53 @@
 
 import UIKit
 
+import Alamofire
+
 final class SearchViewController: UIViewController {
-    
     @IBOutlet var filterButtons: [FilterButton]!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let bnbsViewModel = BNBViewModels()
+    private let layoutDelegate = BNBsLayout()
+    private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
+    private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
+    
+    private var bnbsToken: NotificationToken?
+    private var bnbToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureObservers()
         configureButtonActions()
+        configureCollectionView()
+        configureUseCase()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bnbsUseCase.request(SearchRequest())
+    }
+    
+    @IBAction func toggleFavorite(_ sender: FavoriteButton) {
+        sender.toggle()
+    }
+    
+    private func configureCollectionView() {
+        collectionView.dataSource = bnbsViewModel
+        collectionView.delegate = layoutDelegate
+    }
+    
+    private func configureObservers() {
+        bnbsToken = BNBViewModels.Notification.addObserver { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
+        
+        bnbToken = BNBViewModel.Notification.addObserver { [weak self] notification in
+            guard let bnbID = notification.userInfo?["bnbID"] as? Int else { return }
+            self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
+        }
     }
     
     private func configureButtonActions() {
@@ -23,6 +63,27 @@ final class SearchViewController: UIViewController {
                 guard let filterViewController = FilterViewController
                     .instantiate(from: .filters, filterType: filterType) else { return }
                 self?.present(filterViewController, animated: true)
+            }
+        }
+    }
+    
+    private func configureUseCase() {
+        bnbsUseCase.updateNotify { [weak self] bnbs in
+            guard let bnbs = bnbs else { return }
+            
+            self?.bnbsViewModel.update(bnbs: bnbs)
+            self?.configureImageUseCase(bnbs)
+        }
+    }
+    
+    private func configureImageUseCase(_ bnbs: [BNB]) {
+        bnbs.forEach {
+            $0.images.forEach { urlString in
+                guard let url = URL(string: urlString) else { return }
+                guard !ImageCache.fileExists(
+                    lastPathComponent: url.lastPathComponent
+                    ) else { return }
+                imageUseCase.request(imageURL: url)
             }
         }
     }
