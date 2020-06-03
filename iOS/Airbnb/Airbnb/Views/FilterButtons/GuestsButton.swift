@@ -11,6 +11,6 @@ import Foundation
 final class GuestsButton: FilterButton {
     override func invokeAction(sender: FilterButton) {
         super.invokeAction(sender: sender)
-        action?(.guests)
+        action?(nil)
     }
 }

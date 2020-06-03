@@ -8,42 +8,18 @@
 
 import UIKit
 
-enum FilterType {
-    case date, guests, price
-    
-    var title: String {
-        switch self {
-        case .date: return "체크인 — 체크아웃"
-        case .guests: return "인원"
-        case .price: return "가격"
-        }
-    }
-    
-    var viewController: UIViewController? {
-        switch self {
-        case .date: return CalendarViewController.instantiate()
-        case .guests: return nil
-        case .price: return nil
-        }
-    }
-}
-
 final class FilterViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
-    var filterType: FilterType?
-    
-    private var viewController: UIViewController?
+    private var subViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
+        addSubViewController()
         configureTitle()
-        
-        viewController = filterType?.viewController
-        stackView.insertArrangedSubview(viewController!.view, at: 1)
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -54,8 +30,13 @@ final class FilterViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
     
+    private func addSubViewController() {
+        guard let viewController = subViewController else { return }
+        stackView.insertArrangedSubview(viewController.view, at: 1)
+    }
+    
     private func configureTitle() {
-        filterTitle.text = filterType?.title
+        filterTitle.text = subViewController?.title
     }
 }
 
@@ -66,12 +47,12 @@ extension FilterViewController {
         from storyboard: StoryboardRouter = .filters,
         presentationStyle: UIModalPresentationStyle = .overCurrentContext,
         transitionStyle: UIModalTransitionStyle = .crossDissolve,
-        filterType: FilterType
+        subViewController: UIViewController?
     ) -> Self? {
         guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
         viewController.modalPresentationStyle = presentationStyle
         viewController.modalTransitionStyle = transitionStyle
-        viewController.filterType = filterType
+        viewController.subViewController = subViewController
         return viewController
     }
 }

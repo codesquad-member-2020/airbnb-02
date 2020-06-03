@@ -17,6 +17,8 @@ final class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "체크인 — 체크아웃"
+        
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
     }
