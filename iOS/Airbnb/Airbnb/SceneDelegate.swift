@@ -8,10 +8,32 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        
+        guard let bnbTabBarController = BNBTabBarController.instantiate(from: .main) else { return }
+        window?.rootViewController = bnbTabBarController
+        window?.makeKeyAndVisible()
+        
+        if haveNoToken(from: .standard) {
+            presentLoginViewController(bnbTabBarController)
+        }
+    }
+    
+    private func haveNoToken(from userDefault: UserDefaults) -> Bool {
+        return userDefault.string(forKey: "jwt") == nil
+    }
+    
+    private func presentLoginViewController(_ tabBarController: BNBTabBarController) {
+        guard let searchViewController = tabBarController.children.first as? SearchViewController,
+            let loginViewController = LoginViewController.instantiate(from: .login) else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.nanoseconds(1)) {
+            searchViewController.present(loginViewController, animated: true)
+        }
     }
 }

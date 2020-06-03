@@ -29,11 +29,10 @@ final class SearchViewController: UIViewController {
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
+        fetchBNBs()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private func fetchBNBs() {
         bnbsUseCase.request(SearchRequest())
     }
     

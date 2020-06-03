@@ -10,6 +10,7 @@ import Foundation
 
 enum Endpoints {
     static let baseURL = "http://13.125.56.23/api"
-    
     static let main = "\(baseURL)/main"
+    
+    static let authURL = "https://github.com/login/oauth/authorize"
 }

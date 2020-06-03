@@ -305,7 +305,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nxY-Pa-Tcl">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WQL-lo-9gs" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BNBTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="WQL-lo-9gs" customClass="BNBTabBarController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U2u-F5-9kI">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
