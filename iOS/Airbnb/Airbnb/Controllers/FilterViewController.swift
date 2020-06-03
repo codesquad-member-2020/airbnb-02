@@ -35,13 +35,15 @@ final class FilterViewController: UIViewController {
     
     var filterType: FilterType?
     
+    private var viewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
         configureTitle()
         
-        guard let view = filterType?.viewController?.view else { return }
-        stackView.insertArrangedSubview(view, at: 1)
+        viewController = filterType?.viewController
+        stackView.insertArrangedSubview(viewController!.view, at: 1)
     }
     
     @IBAction func close(_ sender: UIButton) {
