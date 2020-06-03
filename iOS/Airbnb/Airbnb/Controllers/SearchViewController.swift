@@ -19,7 +19,6 @@ final class SearchViewController: UIViewController {
     private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
-    private var hasBeenDisplayed = false
     private var bnbsToken: NotificationToken?
     private var bnbToken: NotificationToken?
     
@@ -30,22 +29,11 @@ final class SearchViewController: UIViewController {
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
+        fetchBNBs()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if !hasBeenDisplayed, haveNoToken(from: .standard),
-            let loginViewController = LoginViewController.instantiate(from: .login) {
-            loginViewController.delegate = self
-            present(loginViewController, animated: false)
-            hasBeenDisplayed = true
-        } else {
-            fetchBNBs()
-        }
-    }
-    
-    private func haveNoToken(from userDefault: UserDefaults) -> Bool {
-        return userDefault.string(forKey: "jwt") == nil
+    private func fetchBNBs() {
+        bnbsUseCase.request(SearchRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -97,15 +85,5 @@ final class SearchViewController: UIViewController {
                 imageUseCase.request(imageURL: url)
             }
         }
-    }
-    
-    private func fetchBNBs() {
-        bnbsUseCase.request(SearchRequest())
-    }
-}
-
-extension SearchViewController: LoginViewControllerDelegate {
-    func loginDidSuccess(_ viewController: LoginViewController) {
-        fetchBNBs()
     }
 }
