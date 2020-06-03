@@ -17,6 +17,8 @@
 		5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* BNBsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
+		5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000524879C35001F1C63 /* PriceViewController.swift */; };
+		5A40000824879F12001F1C63 /* Price.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40000724879F12001F1C63 /* Price.storyboard */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */; };
@@ -94,6 +96,8 @@
 		5A25EAF1247F8B410038240F /* BNBsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
+		5A40000524879C35001F1C63 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
+		5A40000724879F12001F1C63 /* Price.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Price.storyboard; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				5ADA864A2483D066000C06E9 /* Login.storyboard */,
 				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
 				C2587BA82486701800CCFE04 /* Calendar.storyboard */,
+				5A40000724879F12001F1C63 /* Price.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
@@ -301,6 +306,7 @@
 				5ADA864C2483D09E000C06E9 /* LoginViewController.swift */,
 				5A40000024876EBC001F1C63 /* BNBTabBarController.swift */,
 				C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */,
+				5A40000524879C35001F1C63 /* PriceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
 				C2587BAA2486701800CCFE04 /* Calendar.storyboard in Resources */,
+				5A40000824879F12001F1C63 /* Price.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +513,7 @@
 				5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */,
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
+				5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
 				C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */,
