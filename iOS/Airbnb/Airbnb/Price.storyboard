@@ -22,9 +22,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 범위 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-Dh-Zkq">
-                                <rect key="frame" x="16" y="125" width="99" height="18"/>
+                                <rect key="frame" x="16" y="118" width="99" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 평균 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xar-dI-jOD">
+                                <rect key="frame" x="16" y="143" width="86" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -32,13 +38,16 @@
                         <constraints>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="89J-cd-ttR"/>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" constant="20" id="9EX-H7-f11"/>
-                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="37" id="s6A-Hr-Tba"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="30" id="s6A-Hr-Tba"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="top" secondItem="lUe-Dh-Zkq" secondAttribute="bottom" constant="7" id="xh8-AV-TXz"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="yfn-Ke-OP7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M7Z-Ea-8RG"/>
                     </view>
                     <size key="freeformSize" width="414" height="313"/>
                     <connections>
+                        <outlet property="priceAvarage" destination="xar-dI-jOD" id="6DR-21-tcn"/>
                         <outlet property="priceRange" destination="lUe-Dh-Zkq" id="fMX-wz-qJK"/>
                     </connections>
                 </viewController>

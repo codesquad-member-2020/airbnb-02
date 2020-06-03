@@ -10,16 +10,33 @@ import UIKit
 
 final class PriceViewController: UIViewController {
     @IBOutlet weak var priceRange: UILabel!
+    @IBOutlet weak var priceAvarage: UILabel!
+    
     var prices: [(key: Int, value: Int)]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePriceRange()
+        configurePriceAvarage()
     }
     
     private func configurePriceRange() {
         guard let minPrice = prices.first?.key, let maxPrice = prices.last?.key else { return }
         priceRange.text = "\(minPrice)원부터 \(maxPrice)원 이상"
+    }
+    
+    private func configurePriceAvarage() {
+        priceAvarage.text = "일박 평균 가격은 \(generateAverage())원"
+    }
+    
+    private func generateAverage() -> Int {
+        var totalPrice = 0
+        var totalCount = 0
+        prices.forEach { price, count in
+            totalPrice += price
+            totalCount += count
+        }
+        return Int(totalPrice / totalCount)
     }
 }
 

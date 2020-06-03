@@ -30,7 +30,7 @@ final class FilterViewController: UIViewController {
         addChild(priceViewController)
         stackView.insertArrangedSubview(priceViewController.view, at: 1)
         let safeArea = view.safeAreaLayoutGuide
-        priceViewController.view.heightAnchor.constraint(equalTo: safeArea.heightAnchor, multiplier: 0.35).isActive = true
+        priceViewController.view.heightAnchor.constraint(equalTo: safeArea.heightAnchor, multiplier: 0.4).isActive = true
         priceViewController.view.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
     
