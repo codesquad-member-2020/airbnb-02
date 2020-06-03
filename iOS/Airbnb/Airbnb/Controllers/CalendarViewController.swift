@@ -8,10 +8,19 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+final class CalendarViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension CalendarViewController: Identifiable { }
+
+extension CalendarViewController {
+    static func instantiate(from storyboard: StoryboardRouter = .calendar) -> Self? {
+        guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
+        return viewController
     }
 }
