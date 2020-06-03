@@ -18,10 +18,19 @@ enum FilterType {
         case .price: return "가격"
         }
     }
+    
+    var viewController: UIViewController? {
+        switch self {
+        case .date: return CalendarViewController.instantiate()
+        case .guests: return nil
+        case .price: return nil
+        }
+    }
 }
 
 final class FilterViewController: UIViewController {
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
     var filterType: FilterType?
@@ -30,6 +39,9 @@ final class FilterViewController: UIViewController {
         super.viewDidLoad()
         configureBackgroundDim()
         configureTitle()
+        
+        guard let view = filterType?.viewController?.view else { return }
+        stackView.insertArrangedSubview(view, at: 1)
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -49,7 +61,7 @@ extension FilterViewController: Identifiable { }
 
 extension FilterViewController {
     static func instantiate(
-        from storyboard: StoryboardRouter,
+        from storyboard: StoryboardRouter = .filters,
         presentationStyle: UIModalPresentationStyle = .overCurrentContext,
         transitionStyle: UIModalTransitionStyle = .crossDissolve,
         filterType: FilterType
