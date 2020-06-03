@@ -9,7 +9,6 @@
 import UIKit
 
 final class FilterViewController: UIViewController {
-    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
@@ -18,8 +17,7 @@ final class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
-        addSubViewController()
-        configureTitle()
+        displaySubViewController()
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -30,13 +28,10 @@ final class FilterViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
     
-    private func addSubViewController() {
+    private func displaySubViewController() {
         guard let viewController = subViewController else { return }
         stackView.insertArrangedSubview(viewController.view, at: 1)
-    }
-    
-    private func configureTitle() {
-        filterTitle.text = subViewController?.title
+        filterTitle.text = viewController.title
     }
 }
 
