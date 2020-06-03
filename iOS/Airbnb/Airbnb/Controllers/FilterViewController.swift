@@ -12,8 +12,10 @@ final class FilterViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
+
     private var subViewController: UIViewController?
-    
+    var prices: [(key: Int, value: Int)]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
@@ -23,12 +25,10 @@ final class FilterViewController: UIViewController {
     
     private func temp_showPriceViewController() {
         guard let priceViewController = PriceViewController.instantiate() else { return }
+        priceViewController.prices = prices
         
         addChild(priceViewController)
         stackView.insertArrangedSubview(priceViewController.view, at: 1)
-        
-        priceViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
         let safeArea = view.safeAreaLayoutGuide
         priceViewController.view.heightAnchor.constraint(equalTo: safeArea.heightAnchor, multiplier: 0.35).isActive = true
         priceViewController.view.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true

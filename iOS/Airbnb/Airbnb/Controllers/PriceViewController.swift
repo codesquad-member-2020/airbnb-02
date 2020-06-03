@@ -9,8 +9,17 @@
 import UIKit
 
 final class PriceViewController: UIViewController {
+    @IBOutlet weak var priceRange: UILabel!
+    var prices: [(key: Int, value: Int)]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurePriceRange()
+    }
+    
+    private func configurePriceRange() {
+        guard let minPrice = prices.first?.key, let maxPrice = prices.last?.key else { return }
+        priceRange.text = "\(minPrice)원부터 \(maxPrice)원 이상"
     }
 }
 
