@@ -35,10 +35,8 @@ CREATE TABLE IF NOT EXISTS room
 
 CREATE TABLE IF NOT EXISTS image
 (
-    id        INT PRIMARY KEY AUTO_INCREMENT,
     image_url VARCHAR(500),
-    room_id   INT,
-    CONSTRAINT image_has_room_id FOREIGN KEY (room_id) REFERENCES room (id)
+    room_id   INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS user
