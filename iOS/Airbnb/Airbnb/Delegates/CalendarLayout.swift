@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarLayout: NSObject { }
+final class CalendarLayout: NSObject { }
 
 extension CalendarLayout: UICollectionViewDelegateFlowLayout {
     func collectionView(

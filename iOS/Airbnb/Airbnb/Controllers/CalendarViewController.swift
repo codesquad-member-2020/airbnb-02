@@ -11,8 +11,14 @@ import UIKit
 final class CalendarViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var viewModel = CalendarViewModel()
+    private var layoutDelegate = CalendarLayout()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = viewModel
+        collectionView.delegate = layoutDelegate
     }
 }
 

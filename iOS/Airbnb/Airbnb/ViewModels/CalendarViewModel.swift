@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CalendarViewModel: NSObject { }
+final class CalendarViewModel: NSObject { }
 
 extension CalendarViewModel: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 12
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
