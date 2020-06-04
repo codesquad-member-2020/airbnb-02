@@ -8,7 +8,16 @@
 
 import UIKit
 
-final class CalendarViewModel: NSObject { }
+final class CalendarViewModel: NSObject {
+    typealias Key = (startDate: Date, endDate: Date)?
+    
+    private var period: Key
+    
+    init(startDate: Date, endDate: Date) {
+        period = (startDate, endDate)
+        super.init()
+    }
+}
 
 extension CalendarViewModel: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

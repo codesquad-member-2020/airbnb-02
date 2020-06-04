@@ -56,7 +56,7 @@ extension FilterViewController {
 }
 
 extension FilterViewController: CalendarDelegate {
-    func maxPeriod(_ viewController: CalendarViewController) -> DateComponents {
-        return DateComponents()
+    func durationFromToday(_ viewController: CalendarViewController) -> DateComponents {
+        return DateComponents(year: 1)
     }
 }
