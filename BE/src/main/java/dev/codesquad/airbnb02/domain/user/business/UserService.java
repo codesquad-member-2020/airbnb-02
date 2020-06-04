@@ -76,10 +76,11 @@ public class UserService {
 
 	@Transactional
 	public void save(String githubId) {
-		if (!Objects.isNull(userRepository.findUserByGithubId(githubId))) {
+		User user = userRepository.findUserByGithubId(githubId).orElse(null);
+		if (!Objects.isNull(user)) {
 			return;
 		}
-		User user = User.create(githubId);
-		userRepository.save(user);
+		User newUser = User.create(githubId);
+		userRepository.save(newUser);
 	}
 }
