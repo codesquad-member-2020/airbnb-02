@@ -79,7 +79,7 @@ final class SearchViewController: UIViewController {
                 prices.updateValue(1, forKey: price)
             }
         }
-        priceViewController.prices = prices.sorted(by: <)
+        priceViewController.priceViewModel = PriceViewModel(prices: prices.sorted(by: <))
     }
     
     private func configureUseCase() {
