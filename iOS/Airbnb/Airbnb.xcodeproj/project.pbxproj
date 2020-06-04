@@ -38,6 +38,7 @@
 		5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864E2483E773000C06E9 /* LoginButton.swift */; };
 		5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA86542484F788000C06E9 /* AuthKeys.swift */; };
 		C203465F24892F4700A16C40 /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C203465E24892F4700A16C40 /* FilterSubViewController.swift */; };
+		C2034661248957AD00A16C40 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2034660248957AD00A16C40 /* CalendarViewModelTests.swift */; };
 		C20C5B8924879E2800DED737 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C5B8824879E2800DED737 /* CalendarLayout.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
@@ -117,6 +118,7 @@
 		5ADA864E2483E773000C06E9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		5ADA86542484F788000C06E9 /* AuthKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeys.swift; sourceTree = "<group>"; };
 		C203465E24892F4700A16C40 /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
+		C2034660248957AD00A16C40 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
 		C20C5B8824879E2800DED737 /* CalendarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
@@ -249,6 +251,7 @@
 				5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */,
 				5A25EAE7247F853B0038240F /* AFSessionTests.swift */,
 				5A25EAEF247F88BD0038240F /* SearchTaskTests.swift */,
+				C2034660248957AD00A16C40 /* CalendarViewModelTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
 			);
 			path = AirbnbTests;
@@ -527,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2034661248957AD00A16C40 /* CalendarViewModelTests.swift in Sources */,
 				5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* SearchTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */,
