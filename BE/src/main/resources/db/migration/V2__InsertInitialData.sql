@@ -443,7 +443,8 @@ VALUES (1, 1, 1),
 INSERT INTO user (github_id)
 VALUES ('jypthemiracle'),
        ('wooody92'),
-       ('heidi');
+       ('heidi'),
+       ('guest');
 
 INSERT INTO booking (room_id, user_id, book_date)
 VALUES (1, 1, '2020-05-20'),
