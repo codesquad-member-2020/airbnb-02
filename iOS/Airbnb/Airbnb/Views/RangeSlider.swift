@@ -11,27 +11,41 @@ import UIKit
 final class RangeSlider: UIControl {
     let trackTintColor = UIColor(white: 0.9, alpha: 1)
     let trackHighlightTintColor = UIColor(white: 0.5, alpha: 1)
-    var lowerValue: CGFloat = 0 {
+    var lowerValue: CGFloat = 0.2 {
+        didSet {
+            
+        }
+    }
+    var upperValue: CGFloat = 0.8 {
+        didSet {
+            
+        }
+    }
+    
+    override var bounds: CGRect {
         didSet {
             updateLayerFrames()
         }
     }
-    var upperValue: CGFloat = 1 {
-        didSet {
-            updateLayerFrames()
-        }
-    }
+    
     private let trackLayer = RangeSliderTrackLayer()
+    private let lowerThumbImageView = UIImageView()
+    private let upperThumbImageView = UIImageView()
+    private let thumbImage = UIImage(systemName: "circle.fill")!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureTrackLayer()
+        configure(imageView: lowerThumbImageView)
+        configure(imageView: upperThumbImageView)
         updateLayerFrames()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureTrackLayer()
+        configure(imageView: lowerThumbImageView)
+        configure(imageView: upperThumbImageView)
         updateLayerFrames()
     }
     
@@ -42,16 +56,32 @@ final class RangeSlider: UIControl {
         trackLayer.setNeedsDisplay()
     }
     
+    private func configure(imageView: UIImageView) {
+        imageView.image = thumbImage
+        imageView.tintColor = trackHighlightTintColor
+        addSubview(imageView)
+    }
+    
     func positionForValue(_ value: CGFloat) -> CGFloat {
         return bounds.width * value
     }
     
+    private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
+        let x = positionForValue(value) - thumbImage.size.width / 2.0
+        return CGPoint(x: x, y: (bounds.height - thumbImage.size.height) / 2.0)
+    }
+    
     private func updateLayerFrames() {
-      CATransaction.begin()
-      CATransaction.setDisableActions(true)
-
-      trackLayer.frame = bounds.insetBy(dx: 0.0, dy: bounds.height / 3)
-      trackLayer.setNeedsDisplay()
-      CATransaction.commit()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
+        trackLayer.frame = bounds.insetBy(dx: 0.0, dy: bounds.height / 3)
+        trackLayer.setNeedsDisplay()
+        lowerThumbImageView.frame = CGRect(origin: thumbOriginForValue(lowerValue),
+                                           size: thumbImage.size)
+        upperThumbImageView.frame = CGRect(origin: thumbOriginForValue(upperValue),
+                                           size: thumbImage.size)
+        
+        CATransaction.commit()
     }
 }
