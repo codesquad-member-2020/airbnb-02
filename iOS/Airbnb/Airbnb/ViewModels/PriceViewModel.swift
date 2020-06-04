@@ -29,20 +29,22 @@ final class PriceViewModel {
     }
     
     var priceAvarageText: String? {
-        guard let avarage = formatter.string(
-            from: generateAverage() as NSNumber
+        guard let avarage = generateAverage(), let avaragePrice = formatter.string(
+            from: avarage as NSNumber
             ) else { return nil }
         
-        return  "일박 평균 가격은 \(avarage)원"
+        return  "일박 평균 가격은 \(avaragePrice)원"
     }
     
-    private func generateAverage() -> Int {
+    private func generateAverage() -> Int? {
         var totalPrice = 0
         var totalCount = 0
         prices.forEach { price, count in
             totalPrice += price
             totalCount += count
         }
+        
+        guard totalCount != 0 else { return nil }
         return Int(totalPrice / totalCount)
     }
 }
