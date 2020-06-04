@@ -26,12 +26,22 @@ final class PriceViewController: UIViewController {
     }
     
     private func configurePriceRange() {
-        guard let minPrice = prices.first?.key, let maxPrice = prices.last?.key else { return }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        guard let first = prices.first,
+            let minPrice = formatter.string(from: first.key as NSNumber),
+            let last = prices.last,
+            let maxPrice = formatter.string(from: last.key as NSNumber) else { return }
+        
         priceRange.text = "\(minPrice)원부터 \(maxPrice)원 이상"
     }
     
     private func configurePriceAvarage() {
-        priceAvarage.text = "일박 평균 가격은 \(generateAverage())원"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        guard let avarage = formatter.string(from: generateAverage() as NSNumber) else { return }
+        
+        priceAvarage.text = "일박 평균 가격은 \(avarage)원"
     }
     
     private func generateAverage() -> Int {
