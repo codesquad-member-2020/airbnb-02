@@ -13,12 +13,14 @@ final class PriceViewController: UIViewController {
     @IBOutlet weak var priceAvarage: UILabel!
     
     var priceViewModel: PriceViewModel?
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTitle()
         configurePriceRange()
         configurePriceAvarage()
+        configureObserver()
     }
     
     private func configureTitle() {
@@ -26,11 +28,24 @@ final class PriceViewController: UIViewController {
     }
     
     private func configurePriceRange() {
-        priceRange.text = priceViewModel?.priceRangeText
+        priceRange.text = priceViewModel?.priceRangeText()
     }
     
     private func configurePriceAvarage() {
-        priceAvarage.text = priceViewModel?.priceAvarageText
+        priceAvarage.text = priceViewModel?.priceAvarageText()
+    }
+    
+    private func configureObserver() {
+        token = RangeSlider.Notification.addObserver { [weak self] notification in
+            self?.updateMinMaxPrice(notification)
+            
+        }
+    }
+    
+    private func updateMinMaxPrice(_ notification: Notification) {
+        guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
+            let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
+        priceRange.text = priceViewModel?.priceRangeText(minimumPercent: lowerValue, maximumPercent: upperValue)
     }
 }
 
