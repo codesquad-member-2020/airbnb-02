@@ -1,0 +1,11 @@
+test: UserService to return whether user like room or not
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch BE/feat/#108
+# Changes to be committed:
+#	modified:   BE/src/test/java/dev/codesquad/airbnb02/domain/user/business/UserServiceTest.java
+#
+# Changes not staged for commit:
+#	modified:   BE/src/main/java/dev/codesquad/airbnb02/domain/user/business/UserService.java
+#
