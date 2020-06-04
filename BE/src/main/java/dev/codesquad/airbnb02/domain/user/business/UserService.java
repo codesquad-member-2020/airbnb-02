@@ -72,4 +72,10 @@ public class UserService {
 		String githubId = jwtService.getUserId();
 		return findUserByGithubId(githubId).getId();
 	}
+
+	@Transactional
+	public void save(String githubId) {
+		User user = User.create(githubId);
+		userRepository.save(user);
+	}
 }
