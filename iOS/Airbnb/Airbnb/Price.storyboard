@@ -16,19 +16,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 범위" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-9d-d9d">
-                                <rect key="frame" x="16" y="64" width="74" height="24"/>
+                                <rect key="frame" x="16" y="44" width="74" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 범위 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-Dh-Zkq">
-                                <rect key="frame" x="16" y="118" width="99" height="18"/>
+                                <rect key="frame" x="16" y="88" width="99" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 평균 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xar-dI-jOD">
-                                <rect key="frame" x="16" y="143" width="86" height="16"/>
+                                <rect key="frame" x="16" y="113" width="86" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,12 +36,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="154" id="BNM-m4-rPm"/>
-                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="iHs-Ys-SJE" secondAttribute="top" constant="64" id="FAx-VX-vAT"/>
-                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
-                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
-                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
-                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="30" id="s6A-Hr-Tba"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" id="FAx-VX-vAT"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
+                            <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="184" id="aBD-gd-SJU"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="20" id="s6A-Hr-Tba"/>
                             <constraint firstItem="xar-dI-jOD" firstAttribute="top" secondItem="lUe-Dh-Zkq" secondAttribute="bottom" constant="7" id="xh8-AV-TXz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M7Z-Ea-8RG"/>
