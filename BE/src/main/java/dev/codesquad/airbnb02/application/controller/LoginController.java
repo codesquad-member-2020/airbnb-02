@@ -4,6 +4,7 @@ import dev.codesquad.airbnb02.common.jwt.JwtService;
 import dev.codesquad.airbnb02.common.oauth.Github;
 import dev.codesquad.airbnb02.common.oauth.GithubUser;
 import dev.codesquad.airbnb02.common.oauth.service.LoginService;
+import dev.codesquad.airbnb02.domain.user.business.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ public class LoginController {
 
     private final LoginService loginService;
     private final JwtService jwtService;
+    private final UserService userService;
 
     private final String USER_ID = "userId";
     private final Integer EXPIRE_TIME = 60*60*6;
@@ -40,6 +42,7 @@ public class LoginController {
         GithubUser githubUser = loginService.requestUserInfo(github.getAccessToken());
         log.info("Github UserId : {}", githubUser);
 
+        userService.save(githubUser.getUserId());
         String jwt = jwtService.createJwt(githubUser.getUserId());
 
         Cookie cookie = new Cookie(USER_ID, githubUser.getUserId());

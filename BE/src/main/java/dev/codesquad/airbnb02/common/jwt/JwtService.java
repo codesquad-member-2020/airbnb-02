@@ -19,6 +19,7 @@ public class JwtService {
   private final String SECRET_KEY = "JinIsTheBest";
   private final String AUTHORIZATION = "Authorization";
   private final String NULL_TOKEN = "Token 정보가 올바르지 않습니다.";
+  private final String GUEST = "guest";
 
   public String createJwt(String userId) {
     final SignatureAlgorithm SIGNATUREALGORITHM = SignatureAlgorithm.HS256;
@@ -60,6 +61,6 @@ public class JwtService {
       Jws<Claims> claims = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
       return claims.getBody().getSubject();
     }
-    throw new InvalidTokenException(NULL_TOKEN);
+    return GUEST;
   }
 }

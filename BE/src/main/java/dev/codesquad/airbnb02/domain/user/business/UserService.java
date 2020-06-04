@@ -3,6 +3,7 @@ package dev.codesquad.airbnb02.domain.user.business;
 import dev.codesquad.airbnb02.common.jwt.JwtService;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -71,5 +72,14 @@ public class UserService {
 	public Long findUserIdByToken() {
 		String githubId = jwtService.getUserId();
 		return findUserByGithubId(githubId).getId();
+	}
+
+	@Transactional
+	public void save(String githubId) {
+		if (!Objects.isNull(userRepository.findUserByGithubId(githubId))) {
+			return;
+		}
+		User user = User.create(githubId);
+		userRepository.save(user);
 	}
 }
