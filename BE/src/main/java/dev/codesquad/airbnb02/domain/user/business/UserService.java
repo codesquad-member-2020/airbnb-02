@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.domain.user.business;
 
+import dev.codesquad.airbnb02.common.jwt.JwtService;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,7 @@ public class UserService {
 
 	private final UserRepository userRepository;
 	private final RoomRepository roomRepository;
+	private final JwtService jwtService;
 
 	@Transactional
 	public RoomResponseDto addBookmark(Long userId, Long roomId) {
@@ -60,5 +62,14 @@ public class UserService {
 		return bookmarkedRoom.stream()
 				.map(room -> RoomResponseDto.create(room, true))
 				.collect(Collectors.toList());
+	}
+
+	public User findUserByGithubId(String githubId) {
+		return userRepository.findUserByGithubId(githubId).orElseThrow(() -> new NotFoundDataException("해당 유저를 찾을 수 없습니다."));
+	}
+
+	public Long findUserIdByToken() {
+		String githubId = jwtService.getUserId();
+		return findUserByGithubId(githubId).getId();
 	}
 }
