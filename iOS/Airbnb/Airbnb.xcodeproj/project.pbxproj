@@ -37,6 +37,7 @@
 		5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864C2483D09E000C06E9 /* LoginViewController.swift */; };
 		5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA864E2483E773000C06E9 /* LoginButton.swift */; };
 		5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA86542484F788000C06E9 /* AuthKeys.swift */; };
+		C203465F24892F4700A16C40 /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C203465E24892F4700A16C40 /* FilterSubViewController.swift */; };
 		C20C5B8924879E2800DED737 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C5B8824879E2800DED737 /* CalendarLayout.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
@@ -115,6 +116,7 @@
 		5ADA864C2483D09E000C06E9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ADA864E2483E773000C06E9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		5ADA86542484F788000C06E9 /* AuthKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeys.swift; sourceTree = "<group>"; };
+		C203465E24892F4700A16C40 /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
 		C20C5B8824879E2800DED737 /* CalendarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
@@ -298,6 +300,7 @@
 				C22A527F2473AAB10055A478 /* BookmarkViewController.swift */,
 				5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */,
 				C2553CE6247C1CC40019588B /* FilterViewController.swift */,
+				C203465E24892F4700A16C40 /* FilterSubViewController.swift */,
 				5ADA864C2483D09E000C06E9 /* LoginViewController.swift */,
 				5A40000024876EBC001F1C63 /* BNBTabBarController.swift */,
 				C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */,
@@ -512,6 +515,7 @@
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,
 				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
+				C203465F24892F4700A16C40 /* FilterSubViewController.swift in Sources */,
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
 				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
