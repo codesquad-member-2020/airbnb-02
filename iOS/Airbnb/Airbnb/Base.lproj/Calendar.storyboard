@@ -96,7 +96,6 @@
                                                 <constraint firstItem="2Ds-DY-aPy" firstAttribute="centerY" secondItem="IWp-zh-6Aq" secondAttribute="centerY" id="fe7-PK-lFb"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarHeaderView" id="lai-6N-rSd" customClass="CalendarHeaderView" customModule="Airbnb" customModuleProvider="target">
@@ -110,7 +109,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.60383173010000002" green="0.75644919020000001" blue="0.4279714053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="QyA-i4-MLZ" firstAttribute="centerY" secondItem="lai-6N-rSd" secondAttribute="centerY" id="4ru-Yu-UXQ"/>
                                         <constraint firstAttribute="trailing" secondItem="QyA-i4-MLZ" secondAttribute="trailing" constant="16" id="K8k-SF-jI9"/>
