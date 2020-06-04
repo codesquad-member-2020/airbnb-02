@@ -20,6 +20,8 @@
 		5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000524879C35001F1C63 /* PriceViewController.swift */; };
 		5A40000824879F12001F1C63 /* Price.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40000724879F12001F1C63 /* Price.storyboard */; };
 		5A40000A2488D590001F1C63 /* PriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4000092488D590001F1C63 /* PriceViewModel.swift */; };
+		5A40000C2488F860001F1C63 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000B2488F860001F1C63 /* RangeSlider.swift */; };
+		5A40000E2488FA70001F1C63 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */; };
@@ -100,6 +102,8 @@
 		5A40000524879C35001F1C63 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		5A40000724879F12001F1C63 /* Price.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Price.storyboard; sourceTree = "<group>"; };
 		5A4000092488D590001F1C63 /* PriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewModel.swift; sourceTree = "<group>"; };
+		5A40000B2488F860001F1C63 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */,
 				5ADA864E2483E773000C06E9 /* LoginButton.swift */,
 				C2587BB42487899B00CCFE04 /* CalendarCell.swift */,
+				5A40000B2488F860001F1C63 /* RangeSlider.swift */,
+				5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */,
+				5A40000E2488FA70001F1C63 /* RangeSliderTrackLayer.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
 				C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */,
@@ -527,6 +534,7 @@
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
 				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
+				5A40000C2488F860001F1C63 /* RangeSlider.swift in Sources */,
 				5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
