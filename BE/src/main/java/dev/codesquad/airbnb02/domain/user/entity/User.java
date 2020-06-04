@@ -45,6 +45,14 @@ public class User {
   @OneToMany(mappedBy = "user")
   private List<Booking> bookings = new ArrayList<>();
 
+  private User(String githubId) {
+    this.githubId = githubId;
+  }
+
+  public static User create(String githubId) {
+    return new User(githubId);
+  }
+
   public Room addBookmark(Room room) {
     rooms.add(room);
     return room;
