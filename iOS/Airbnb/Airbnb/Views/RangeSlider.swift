@@ -11,14 +11,16 @@ import UIKit
 final class RangeSlider: UIControl {
     let trackTintColor = UIColor(white: 0.9, alpha: 1)
     let trackHighlightTintColor = UIColor(white: 0.5, alpha: 1)
+    let minimumValue: CGFloat = 0
+    let maximumValue: CGFloat = 1
     var lowerValue: CGFloat = 0.2 {
         didSet {
-            
+            updateLayerFrames()
         }
     }
     var upperValue: CGFloat = 0.8 {
         didSet {
-            
+            updateLayerFrames()
         }
     }
     
@@ -32,6 +34,7 @@ final class RangeSlider: UIControl {
     private let lowerThumbImageView = UIImageView()
     private let upperThumbImageView = UIImageView()
     private let thumbImage = UIImage(systemName: "circle.fill")!
+    private var previousLocation = CGPoint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,5 +86,48 @@ final class RangeSlider: UIControl {
                                            size: thumbImage.size)
         
         CATransaction.commit()
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        previousLocation = touch.location(in: self)
+        
+        if lowerThumbImageView.frame.contains(previousLocation) {
+            lowerThumbImageView.isHighlighted = true
+        } else if upperThumbImageView.frame.contains(previousLocation) {
+            upperThumbImageView.isHighlighted = true
+        }
+        
+        return lowerThumbImageView.isHighlighted || upperThumbImageView.isHighlighted
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let location = touch.location(in: self)
+        let deltaLocation = location.x - previousLocation.x
+        let deltaValue = (maximumValue - minimumValue) * deltaLocation / bounds.width
+        previousLocation = location
+        
+        
+        if lowerThumbImageView.isHighlighted {
+            lowerValue += deltaValue
+            let upperValue = upperThumbImageView.frame.minX / bounds.width
+            lowerValue = boundValue(lowerValue, toLowerValue: minimumValue,
+                                    upperValue: upperValue)
+        } else if upperThumbImageView.isHighlighted {
+            upperValue += deltaValue
+            let lowerValue = lowerThumbImageView.frame.maxX / bounds.width
+            upperValue = boundValue(upperValue, toLowerValue: lowerValue,
+                                    upperValue: maximumValue)
+        }
+        
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        lowerThumbImageView.isHighlighted = false
+        upperThumbImageView.isHighlighted = false
+    }
+    
+    private func boundValue(_ value: CGFloat, toLowerValue lowerValue: CGFloat, upperValue: CGFloat) -> CGFloat {
+      return min(max(value, lowerValue), upperValue)
     }
 }
