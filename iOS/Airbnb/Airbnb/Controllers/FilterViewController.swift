@@ -11,9 +11,9 @@ import UIKit
 final class FilterViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
-    
+
     private var subViewController: UIViewController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()

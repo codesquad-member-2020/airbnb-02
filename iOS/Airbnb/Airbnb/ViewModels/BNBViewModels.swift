@@ -24,6 +24,10 @@ final class BNBViewModels: NSObject {
     func update(bnbs: [BNB]) {
         self.bnbViewModels = bnbs.map { BNBViewModel(bnb: $0) }
     }
+    
+    func repeatViewModels(handler: (BNBViewModel) -> ()) {
+        bnbViewModels.forEach { handler($0) }
+    }
 }
 
 extension BNBViewModels: UICollectionViewDataSource {

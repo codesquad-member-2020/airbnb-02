@@ -61,9 +61,25 @@ final class SearchViewController: UIViewController {
             button.action = { [weak self] viewController in
                 guard let filterViewController = FilterViewController
                     .instantiate(from: .filters, subViewController: viewController) else { return }
+                self?.insertPricesIf(viewController as? PriceViewController)
                 self?.present(filterViewController, animated: true)
             }
         }
+    }
+    
+    private func insertPricesIf(_ priceViewController: PriceViewController?) {
+        guard let priceViewController = priceViewController else { return }
+        
+        var prices = [Int: Int]()
+        bnbsViewModel.repeatViewModels {
+            let price = $0.bnb.price
+            if let count = prices[$0.bnb.price] {
+                prices.updateValue(count + 1, forKey: price)
+            } else {
+                prices.updateValue(1, forKey: price)
+            }
+        }
+        priceViewController.priceViewModel = PriceViewModel(prices: prices.sorted(by: <))
     }
     
     private func configureUseCase() {
