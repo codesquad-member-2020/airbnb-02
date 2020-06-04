@@ -38,14 +38,21 @@ final class PriceViewController: UIViewController {
     private func configureObserver() {
         token = RangeSlider.Notification.addObserver { [weak self] notification in
             self?.updateMinMaxPrice(notification)
-            
         }
     }
     
     private func updateMinMaxPrice(_ notification: Notification) {
         guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
             let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
-        priceRange.text = priceViewModel?.priceRangeText(minimumPercent: lowerValue, maximumPercent: upperValue)
+        
+        priceRange.text = priceViewModel?.priceRangeText(
+            minimumPercent: lowerValue,
+            maximumPercent: upperValue
+        )
+        priceAvarage.text = priceViewModel?.priceAvarageText(
+            minimumPercent: lowerValue,
+            maximumPercent: upperValue
+        )
     }
 }
 
