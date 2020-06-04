@@ -36,12 +36,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="89J-cd-ttR"/>
-                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" constant="20" id="9EX-H7-f11"/>
-                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="154" id="BNM-m4-rPm"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="iHs-Ys-SJE" secondAttribute="top" constant="64" id="FAx-VX-vAT"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="iHs-Ys-SJE" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="30" id="s6A-Hr-Tba"/>
                             <constraint firstItem="xar-dI-jOD" firstAttribute="top" secondItem="lUe-Dh-Zkq" secondAttribute="bottom" constant="7" id="xh8-AV-TXz"/>
-                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="yfn-Ke-OP7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M7Z-Ea-8RG"/>
                     </view>

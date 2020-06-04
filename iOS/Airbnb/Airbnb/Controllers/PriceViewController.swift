@@ -16,8 +16,13 @@ final class PriceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTitle()
         configurePriceRange()
         configurePriceAvarage()
+    }
+    
+    private func configureTitle() {
+        title = "가격"
     }
     
     private func configurePriceRange() {
