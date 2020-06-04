@@ -33,13 +33,22 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-KW-2cm" customClass="RangeSlider" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="263" width="352" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gs2-so-ZTA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hkf-KW-2cm" firstAttribute="width" secondItem="M7Z-Ea-8RG" secondAttribute="width" multiplier="0.85" id="7sz-7s-16e"/>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" id="FAx-VX-vAT"/>
+                            <constraint firstItem="hkf-KW-2cm" firstAttribute="centerX" secondItem="M7Z-Ea-8RG" secondAttribute="centerX" id="MGh-8Z-UDW"/>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
                             <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="184" id="aBD-gd-SJU"/>
                             <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="hkf-KW-2cm" secondAttribute="bottom" constant="20" id="nok-0W-Zjs"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="20" id="s6A-Hr-Tba"/>
                             <constraint firstItem="xar-dI-jOD" firstAttribute="top" secondItem="lUe-Dh-Zkq" secondAttribute="bottom" constant="7" id="xh8-AV-TXz"/>
