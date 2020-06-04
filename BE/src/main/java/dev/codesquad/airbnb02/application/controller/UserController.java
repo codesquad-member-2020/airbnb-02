@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.application.controller;
 
+import dev.codesquad.airbnb02.common.jwt.JwtService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 public class UserController {
 
   private final UserService userService;
+  private final JwtService jwtService;
 
   @GetMapping("/{userId}/favorite/add")
   public ResponseEntity<RoomResponseDto> addFavorite(@PathVariable Long userId,
@@ -30,8 +32,9 @@ public class UserController {
     return ResponseEntity.ok(userService.removeBookmark(userId, roomId));
   }
 
-  @GetMapping("/{userId}/favorite/all")
-  public ResponseEntity viewBookmarkedRooms(@PathVariable Long userId) {
+  @GetMapping("/favorite/all")
+  public ResponseEntity viewBookmarkedRooms() {
+    Long userId = userService.findUserIdByToken();
     return ResponseEntity.ok(userService.getBookmarkedRooms(userId));
   }
 }
