@@ -8,7 +8,9 @@
 
 import UIKit
 
-final class CalendarLayout: NSObject { }
+final class CalendarLayout: NSObject {
+    private var cellSize: CGSize?
+}
 
 extension CalendarLayout: UICollectionViewDelegateFlowLayout {
     func collectionView(
@@ -17,6 +19,28 @@ extension CalendarLayout: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let size = collectionView.frame.width / 7
-        return CGSize(width: size, height: size)
+        cellSize = CGSize(width: size, height: size)
+        return cellSize!
+    }
+}
+
+extension CalendarLayout: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        guard let view = scrollView as? UICollectionView,
+            let layout = view.collectionViewLayout as? UICollectionViewFlowLayout,
+            let cellHeight = cellSize?.height else { return }
+        
+        let targetOffset = targetContentOffset.pointee.y
+        let totalHeight = layout.headerReferenceSize.height + cellHeight * 6
+        
+        if scrollView.contentOffset.y > targetContentOffset.pointee.y {
+            targetContentOffset.pointee.y = totalHeight * floor(targetOffset / totalHeight)
+        } else {
+            targetContentOffset.pointee.y = totalHeight * ceil(targetOffset / totalHeight)
+        }
     }
 }
