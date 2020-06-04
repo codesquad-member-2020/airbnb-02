@@ -9,7 +9,7 @@
 import UIKit
 
 final class CalendarViewModel: NSObject {
-    typealias Key = (startDate: Date, endDate: Date)?
+    typealias Key = (startDate: Date, endDate: Date)
     
     private var period: Key
     
@@ -17,11 +17,18 @@ final class CalendarViewModel: NSObject {
         period = (startDate, endDate)
         super.init()
     }
+    
+    func numberOfMonths() -> Int {
+        return Calendar.current.dateComponents(
+            [.month],
+            from: period.startDate,
+            to: period.endDate).month! + 1
+    }
 }
 
 extension CalendarViewModel: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return numberOfMonths()
     }
     
     func collectionView(
