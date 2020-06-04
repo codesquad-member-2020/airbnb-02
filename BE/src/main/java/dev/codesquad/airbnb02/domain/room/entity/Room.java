@@ -1,6 +1,7 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 import dev.codesquad.airbnb02.common.exception.BookingNotAllowedException;
+import dev.codesquad.airbnb02.domain.room.vo.Image;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

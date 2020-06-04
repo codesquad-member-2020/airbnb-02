@@ -24,10 +24,9 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
     final String token = request.getHeader(AUTHORIZATION);
     log.info("token >> {}", token);
 
-    // 개발 단계에서 원활한 테스트를 위해 인터셉터 주석 처리
-//    if (!jwtService.isValidToken(token)) {
-//      return false;
-//    }
+    if (!jwtService.isValidToken(token)) {
+      return false;
+    }
     return true;
   }
 }

@@ -1,8 +1,9 @@
 package dev.codesquad.airbnb02.application.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,20 +19,21 @@ public class UserController {
 
   private final UserService userService;
 
-  @GetMapping("/{userId}/favorite/add")
-  public ResponseEntity<RoomResponseDto> addFavorite(@PathVariable Long userId,
-      @RequestParam(value = "room_id") Long roomId) {
+  @PostMapping("/favorite/add")
+  public ResponseEntity<RoomResponseDto> addFavorite(@RequestParam(value = "room_id") Long roomId) {
+    Long userId = userService.findUserIdByToken();
     return ResponseEntity.ok(userService.addBookmark(userId, roomId));
   }
 
-  @GetMapping("/{userId}/favorite/delete")
-  public ResponseEntity<RoomResponseDto> deleteFavorite(@PathVariable Long userId,
-      @RequestParam(value = "room_id") Long roomId) {
+  @DeleteMapping("/favorite/delete")
+  public ResponseEntity<RoomResponseDto> deleteFavorite(@RequestParam(value = "room_id") Long roomId) {
+    Long userId = userService.findUserIdByToken();
     return ResponseEntity.ok(userService.removeBookmark(userId, roomId));
   }
 
-  @GetMapping("/{userId}/favorite/all")
-  public ResponseEntity viewBookmarkedRooms(@PathVariable Long userId) {
+  @GetMapping("/favorite/all")
+  public ResponseEntity viewBookmarkedRooms() {
+    Long userId = userService.findUserIdByToken();
     return ResponseEntity.ok(userService.getBookmarkedRooms(userId));
   }
 }
