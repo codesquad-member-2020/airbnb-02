@@ -18,22 +18,14 @@ final class PriceViewModel {
     
     init(prices: [(key: Int, value: Int)]) {
         self.prices = prices
-        print(prices.count)
     }
     
     func priceRangeText(minimumPercent: CGFloat = 0, maximumPercent: CGFloat = 1) -> String? {
-        var first = prices[0]
-        if Int(minimumPercent * CGFloat(prices.count)) > 0 {
-            first = prices[Int(minimumPercent * CGFloat(prices.count))]
-        }
-        
-        var last = prices[prices.count - 1]
-        if Int(maximumPercent * CGFloat(prices.count)) < prices.count {
-            last = prices[Int(maximumPercent * CGFloat(prices.count))]
-        }
-        
-        guard let minPrice = formatter.string(from: first.key as NSNumber),
-            let maxPrice = formatter.string(from: last.key as NSNumber) else { return nil }
+        guard let minPrice = formatter.string(from:
+            prices[firstIndex(minimumPercent: minimumPercent)].key as NSNumber),
+            let maxPrice = formatter.string(from:
+                prices[lastIndex(maximumPercent: maximumPercent)].key as NSNumber)
+            else { return nil }
         
         return "\(minPrice)원부터 \(maxPrice)원 이상"
     }
@@ -49,12 +41,23 @@ final class PriceViewModel {
     private func generateAverage(minimumPercent: CGFloat, maximumPercent: CGFloat) -> Int? {
         var totalPrice = 0
         var totalCount = 0
-        prices.forEach { price, count in
-            totalPrice += price
-            totalCount += count
+        
+        for index in firstIndex(minimumPercent: minimumPercent) ... lastIndex(maximumPercent: maximumPercent) {
+            totalPrice += prices[index].key * prices[index].value
+            totalCount += prices[index].value
         }
         
         guard totalCount != 0 else { return nil }
         return Int(totalPrice / totalCount)
+    }
+    
+    private func firstIndex(minimumPercent: CGFloat) -> Int {
+        guard Int(minimumPercent * CGFloat(prices.count)) > 0 else { return 0 }
+        return Int(minimumPercent * CGFloat(prices.count))
+    }
+    
+    private func lastIndex(maximumPercent: CGFloat) -> Int {
+        guard Int(maximumPercent * CGFloat(prices.count)) < prices.count else { return prices.count - 1 }
+        return Int(maximumPercent * CGFloat(prices.count))
     }
 }

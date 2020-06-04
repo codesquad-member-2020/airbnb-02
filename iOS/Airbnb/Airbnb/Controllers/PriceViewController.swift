@@ -53,6 +53,13 @@ final class PriceViewController: FilterViewController {
         guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
             let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
         
-        contentView.priceRange.text = priceViewModel?.priceRangeText(minimumPercent: lowerValue, maximumPercent: upperValue)
+        contentView.priceRange.text = priceViewModel?.priceRangeText(
+            minimumPercent: lowerValue,
+            maximumPercent: upperValue
+        )
+        contentView.priceAverage.text = priceViewModel?.priceAvarageText(
+            minimumPercent: lowerValue,
+            maximumPercent: upperValue
+        )
     }
 }
