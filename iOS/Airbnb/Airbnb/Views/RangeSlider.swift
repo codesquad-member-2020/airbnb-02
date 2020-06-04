@@ -9,18 +9,32 @@
 import UIKit
 
 final class RangeSlider: UIControl {
+    enum Notification: Observable {
+        static let update = Foundation.Notification.Name("valueDidUpdate")
+    }
+    
     let trackTintColor = UIColor(white: 0.9, alpha: 1)
     let trackHighlightTintColor = UIColor(white: 0.5, alpha: 1)
     let minimumValue: CGFloat = 0
     let maximumValue: CGFloat = 1
-    var lowerValue: CGFloat = 0.2 {
+    var lowerValue: CGFloat = 0 {
         didSet {
             updateLayerFrames()
+            NotificationCenter.default.post(
+                name: Notification.update,
+                object: self,
+                userInfo: ["lowerValue": lowerValue, "upperValue": upperValue]
+            )
         }
     }
-    var upperValue: CGFloat = 0.8 {
+    var upperValue: CGFloat = 1 {
         didSet {
             updateLayerFrames()
+            NotificationCenter.default.post(
+                name: Notification.update,
+                object: self,
+                userInfo: ["lowerValue": lowerValue, "upperValue": upperValue]
+            )
         }
     }
     
@@ -128,6 +142,6 @@ final class RangeSlider: UIControl {
     }
     
     private func boundValue(_ value: CGFloat, toLowerValue lowerValue: CGFloat, upperValue: CGFloat) -> CGFloat {
-      return min(max(value, lowerValue), upperValue)
+        return min(max(value, lowerValue), upperValue)
     }
 }

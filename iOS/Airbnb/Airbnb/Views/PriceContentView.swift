@@ -9,6 +9,9 @@
 import UIKit
 
 final class PriceContentView: UIView, Identifiable, NibLoadable {
+    @IBOutlet weak var priceRange: UILabel!
+    @IBOutlet weak var priceAverage: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
