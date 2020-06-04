@@ -48,4 +48,18 @@ extension CalendarViewModel: UICollectionViewDataSource {
         ) as? CalendarCell else { return UICollectionViewCell() }
         return cell
     }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard case UICollectionView.elementKindSectionHeader = kind,
+            let view = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind, withReuseIdentifier:
+                CalendarHeaderView.identifier,
+                for: indexPath
+            ) as? CalendarHeaderView else { return UICollectionReusableView() }
+        view.headerLabel.text = "하하호호"
+        return view
+    }
 }
