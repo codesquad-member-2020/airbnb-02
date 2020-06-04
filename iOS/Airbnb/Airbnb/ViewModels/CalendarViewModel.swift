@@ -11,18 +11,23 @@ import UIKit
 final class CalendarViewModel: NSObject {
     typealias Key = (startDate: Date, endDate: Date)
     
-    private var period: Key
+    private var calendar: Key
     
     init(startDate: Date, endDate: Date) {
-        period = (startDate, endDate)
+        calendar = (startDate, endDate)
         super.init()
     }
     
     func numberOfMonths() -> Int {
         return Calendar.current.dateComponents(
             [.month],
-            from: period.startDate,
-            to: period.endDate).month! + 1
+            from: calendar.startDate,
+            to: calendar.endDate).month! + 1
+    }
+    
+    func date(withMonthOffsetFromToday offset: Int) -> Date {
+        let monthOffset = DateComponents(month: offset)
+        return Calendar.current.date(byAdding: monthOffset, to: calendar.startDate)!
     }
 }
 
@@ -53,13 +58,25 @@ extension CalendarViewModel: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath) -> UICollectionReusableView {
+        
         guard case UICollectionView.elementKindSectionHeader = kind,
             let view = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind, withReuseIdentifier:
                 CalendarHeaderView.identifier,
                 for: indexPath
             ) as? CalendarHeaderView else { return UICollectionReusableView() }
-        view.headerLabel.text = "하하호호"
+        
+        let sectionDate = date(withMonthOffsetFromToday: indexPath.section)
+        view.headerLabel.text = Self.yearAndMonthFormatter.string(from: sectionDate)
         return view
     }
+}
+
+extension CalendarViewModel {
+    static let yearAndMonthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        formatter.calendar = Calendar.current
+        return formatter
+    }()
 }
