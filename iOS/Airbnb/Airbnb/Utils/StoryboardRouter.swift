@@ -12,6 +12,7 @@ enum StoryboardRouter: String {
     case main = "Main"
     case filters = "Filter"
     case login = "Login"
+    case calendar = "Calendar"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: .main)

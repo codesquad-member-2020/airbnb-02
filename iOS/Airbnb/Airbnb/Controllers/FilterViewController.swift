@@ -8,28 +8,16 @@
 
 import UIKit
 
-enum FilterType {
-    case date, guests, price
-    
-    var title: String {
-        switch self {
-        case .date: return "체크인 — 체크아웃"
-        case .guests: return "인원"
-        case .price: return "가격"
-        }
-    }
-}
-
 final class FilterViewController: UIViewController {
-    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
-    var filterType: FilterType?
+    private var subViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
-        configureTitle()
+        displaySubViewController()
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -40,8 +28,10 @@ final class FilterViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }
     
-    private func configureTitle() {
-        filterTitle.text = filterType?.title
+    private func displaySubViewController() {
+        guard let viewController = subViewController else { return }
+        stackView.insertArrangedSubview(viewController.view, at: 1)
+        filterTitle.text = viewController.title
     }
 }
 
@@ -49,15 +39,15 @@ extension FilterViewController: Identifiable { }
 
 extension FilterViewController {
     static func instantiate(
-        from storyboard: StoryboardRouter,
+        from storyboard: StoryboardRouter = .filters,
         presentationStyle: UIModalPresentationStyle = .overCurrentContext,
         transitionStyle: UIModalTransitionStyle = .crossDissolve,
-        filterType: FilterType
+        subViewController: UIViewController?
     ) -> Self? {
         guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
         viewController.modalPresentationStyle = presentationStyle
         viewController.modalTransitionStyle = transitionStyle
-        viewController.filterType = filterType
+        viewController.subViewController = subViewController
         return viewController
     }
 }

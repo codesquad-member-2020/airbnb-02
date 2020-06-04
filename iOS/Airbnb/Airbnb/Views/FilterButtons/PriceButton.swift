@@ -11,6 +11,6 @@ import Foundation
 final class PriceButton: FilterButton {
     override func invokeAction(sender: FilterButton) {
         super.invokeAction(sender: sender)
-        action?(.price)
+        action?(nil)
     }
 }
