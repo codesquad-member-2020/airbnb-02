@@ -12,10 +12,13 @@ final class FilterViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
     
-    private var subViewController: UIViewController?
+    private var subViewController: FilterSubViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        subViewController?.delegate = self
+        
         configureBackgroundDim()
         displaySubViewController()
     }
@@ -42,12 +45,18 @@ extension FilterViewController {
         from storyboard: StoryboardRouter = .filters,
         presentationStyle: UIModalPresentationStyle = .overCurrentContext,
         transitionStyle: UIModalTransitionStyle = .crossDissolve,
-        subViewController: UIViewController?
+        subViewController: FilterSubViewController?
     ) -> Self? {
         guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
         viewController.modalPresentationStyle = presentationStyle
         viewController.modalTransitionStyle = transitionStyle
         viewController.subViewController = subViewController
         return viewController
+    }
+}
+
+extension FilterViewController: CalendarDelegate {
+    func maxPeriod(_ viewController: CalendarViewController) -> DateComponents {
+        return DateComponents()
     }
 }

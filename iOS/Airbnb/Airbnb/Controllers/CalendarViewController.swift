@@ -8,7 +8,11 @@
 
 import UIKit
 
-final class CalendarViewController: UIViewController {
+protocol CalendarDelegate: FilterSubViewControllerDelegate {
+    func maxPeriod(_ viewController: CalendarViewController) -> DateComponents
+}
+
+final class CalendarViewController: FilterSubViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel = CalendarViewModel()
@@ -21,6 +25,8 @@ final class CalendarViewController: UIViewController {
         
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
+        
+        guard let _ = delegate as? CalendarDelegate else { return }
     }
 }
 
