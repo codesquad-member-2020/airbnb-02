@@ -9,6 +9,7 @@
 import UIKit
 
 final class CalendarLayout: NSObject {
+    private var sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     private var cellSize: CGSize?
 }
 
@@ -21,6 +22,13 @@ extension CalendarLayout: UICollectionViewDelegateFlowLayout {
         let size = collectionView.frame.width / 7
         cellSize = CGSize(width: size, height: size)
         return cellSize!
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInset
     }
 }
 
@@ -35,7 +43,7 @@ extension CalendarLayout: UIScrollViewDelegate {
             let cellHeight = cellSize?.height else { return }
         
         let targetOffset = targetContentOffset.pointee.y
-        let totalHeight = layout.headerReferenceSize.height + cellHeight * 6
+        let totalHeight = layout.headerReferenceSize.height + cellHeight * 6 + sectionInset.bottom
         
         if scrollView.contentOffset.y > targetContentOffset.pointee.y {
             targetContentOffset.pointee.y = totalHeight * floor(targetOffset / totalHeight)
