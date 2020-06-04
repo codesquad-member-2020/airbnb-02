@@ -1,4 +1,4 @@
-package dev.codesquad.airbnb02.domain.room.entity;
+package dev.codesquad.airbnb02.domain.room.vo;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
