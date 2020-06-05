@@ -11,6 +11,8 @@ import UIKit
 final class PriceViewController: UIViewController {
     @IBOutlet weak var priceRange: UILabel!
     @IBOutlet weak var priceAvarage: UILabel!
+    @IBOutlet weak var graphView: GraphView!
+    @IBOutlet weak var priceRangeSlider: RangeSlider!
     
     var priceViewModel: PriceViewModel?
     var token: NotificationToken?
@@ -20,6 +22,7 @@ final class PriceViewController: UIViewController {
         configureTitle()
         configurePriceRange()
         configurePriceAvarage()
+        configureGraphView()
         configureObserver()
     }
     
@@ -37,11 +40,11 @@ final class PriceViewController: UIViewController {
     
     private func configureObserver() {
         token = RangeSlider.Notification.addObserver { [weak self] notification in
-            self?.updateMinMaxPrice(notification)
+            self?.updateText(notification)
         }
     }
     
-    private func updateMinMaxPrice(_ notification: Notification) {
+    private func updateText(_ notification: Notification) {
         guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
             let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
         
@@ -53,6 +56,16 @@ final class PriceViewController: UIViewController {
             minimumPercent: lowerValue,
             maximumPercent: upperValue
         )
+        
+        graphView.setNeedsDisplay()
+    }
+    
+    private func configureGraphView() {
+        graphView.rangeSlider = priceRangeSlider
+        priceViewModel?.repeatPrices { _, value in
+            graphView.data.append(CGFloat(integerLiteral: value))
+        }
+        graphView.data.append(contentsOf: [0, 0])
     }
 }
 

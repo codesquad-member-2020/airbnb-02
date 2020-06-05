@@ -33,6 +33,10 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDY-Di-mdo" customClass="GraphView" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="162" width="352" height="111"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-KW-2cm" customClass="RangeSlider" customModule="Airbnb" customModuleProvider="target">
                                 <rect key="frame" x="31" y="263" width="352" height="30"/>
                                 <constraints>
@@ -43,11 +47,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hkf-KW-2cm" firstAttribute="width" secondItem="M7Z-Ea-8RG" secondAttribute="width" multiplier="0.85" id="7sz-7s-16e"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="height" secondItem="hkf-KW-2cm" secondAttribute="height" multiplier="3.7" id="DvR-tI-cpz"/>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" id="FAx-VX-vAT"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="leading" secondItem="hkf-KW-2cm" secondAttribute="leading" id="Lri-Uj-VWQ"/>
                             <constraint firstItem="hkf-KW-2cm" firstAttribute="centerX" secondItem="M7Z-Ea-8RG" secondAttribute="centerX" id="MGh-8Z-UDW"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="width" secondItem="hkf-KW-2cm" secondAttribute="width" id="NxT-hQ-50B"/>
                             <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
                             <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="184" id="aBD-gd-SJU"/>
                             <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="bottom" secondItem="hkf-KW-2cm" secondAttribute="top" constant="10" id="iXh-u7-hTe"/>
                             <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="hkf-KW-2cm" secondAttribute="bottom" constant="20" id="nok-0W-Zjs"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
                             <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="20" id="s6A-Hr-Tba"/>
@@ -57,8 +65,10 @@
                     </view>
                     <size key="freeformSize" width="414" height="313"/>
                     <connections>
+                        <outlet property="graphView" destination="mDY-Di-mdo" id="5Du-t4-1N5"/>
                         <outlet property="priceAvarage" destination="xar-dI-jOD" id="6DR-21-tcn"/>
                         <outlet property="priceRange" destination="lUe-Dh-Zkq" id="fMX-wz-qJK"/>
+                        <outlet property="priceRangeSlider" destination="hkf-KW-2cm" id="bLJ-jW-tCn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywK-u4-mkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
