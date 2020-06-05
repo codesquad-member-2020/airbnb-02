@@ -23,20 +23,20 @@ public class BookingController {
   private final RoomService roomService;
 
   @PostMapping("/{roomId}")
-  public ResponseEntity createBooking(
+  public ResponseEntity<dev.codesquad.airbnb02.application.dto.BookingResponseDto> createBooking(
       @PathVariable Long roomId,
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
 
-    return new ResponseEntity(roomService.createBooking(roomId, checkin, checkout), HttpStatus.OK);
+    return new ResponseEntity<>(roomService.createBooking(roomId, checkin, checkout), HttpStatus.OK);
   }
 
   @DeleteMapping("/{roomId}")
-  public ResponseEntity removeBooking(
+  public ResponseEntity<dev.codesquad.airbnb02.application.dto.BookingResponseDto> removeBooking(
       @PathVariable Long roomId,
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
 
-    return new ResponseEntity(roomService.removeBooking(roomId, checkin, checkout), HttpStatus.OK);
+    return new ResponseEntity<>(roomService.removeBooking(roomId, checkin, checkout), HttpStatus.OK);
   }
 }

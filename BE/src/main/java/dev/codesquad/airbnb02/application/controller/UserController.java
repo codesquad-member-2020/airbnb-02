@@ -1,5 +1,7 @@
 package dev.codesquad.airbnb02.application.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +34,7 @@ public class UserController {
   }
 
   @GetMapping("/favorite/all")
-  public ResponseEntity viewBookmarkedRooms() {
+  public ResponseEntity<List<RoomResponseDto>> viewBookmarkedRooms() {
     Long userId = userService.findUserIdByToken();
     return ResponseEntity.ok(userService.getBookmarkedRooms(userId));
   }

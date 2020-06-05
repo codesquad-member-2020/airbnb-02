@@ -26,12 +26,15 @@ CREATE TABLE IF NOT EXISTS room
     review_rating DOUBLE       NOT NULL,
     review_count  INT          NOT NULL,
     location      VARCHAR(45)  NOT NULL,
+    point         geometry     NOT NULL,
     latitude      DOUBLE       NOT NULL,
     longitude     DOUBLE       NOT NULL,
     address       VARCHAR(45)  NOT NULL,
     host_id       INT          NOT NULL,
     CONSTRAINT room_has_host FOREIGN KEY (host_id) REFERENCES host (id)
 );
+
+CREATE SPATIAL INDEX `room-point` ON room (point);
 
 CREATE TABLE IF NOT EXISTS image
 (
