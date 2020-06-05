@@ -9,6 +9,10 @@
 import UIKit
 
 final class PriceViewController: UIViewController {
+    enum Notification: Observable {
+        static let update =  Foundation.Notification.Name("priceDidUpdate")
+    }
+    
     @IBOutlet weak var priceRange: UILabel!
     @IBOutlet weak var priceAvarage: UILabel!
     @IBOutlet weak var graphView: GraphView!
@@ -44,7 +48,7 @@ final class PriceViewController: UIViewController {
         }
     }
     
-    private func updateText(_ notification: Notification) {
+    private func updateText(_ notification: Foundation.Notification) {
         guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
             let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
         
@@ -66,6 +70,14 @@ final class PriceViewController: UIViewController {
             graphView.data.append(CGFloat(integerLiteral: value))
         }
         graphView.data.append(contentsOf: [0, 0])
+    }
+    
+    func notifyPriceMinMaxPrices() {
+        NotificationCenter.default.post(
+            name: Notification.update,
+            object: self,
+            userInfo: ["minimumPrice": 0, "maximumPrice": 1]
+        )
     }
 }
 

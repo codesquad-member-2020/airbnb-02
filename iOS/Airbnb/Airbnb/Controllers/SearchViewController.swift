@@ -21,6 +21,7 @@ final class SearchViewController: UIViewController {
     
     private var bnbsToken: NotificationToken?
     private var bnbToken: NotificationToken?
+    private var priceToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,12 @@ final class SearchViewController: UIViewController {
         bnbToken = BNBViewModel.Notification.addObserver { [weak self] notification in
             guard let bnbID = notification.userInfo?["bnbID"] as? Int else { return }
             self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
+        }
+        
+        priceToken = PriceViewController.Notification.addObserver { notification in
+            guard let minimumPrice = notification.userInfo?["minimumPrice"] as? Int,
+                let maximumPrice = notification.userInfo?["maximumPrice"] as? Int else { return }
+            
         }
     }
     

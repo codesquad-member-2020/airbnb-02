@@ -11,9 +11,9 @@ import UIKit
 final class FilterViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var filterTitle: UILabel!
-
+    
     private var subViewController: UIViewController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
@@ -27,6 +27,17 @@ final class FilterViewController: UIViewController {
     private func clearIfPrice() {
         guard let priceViewController = subViewController as? PriceViewController else { return }
         priceViewController.priceRangeSlider.resetValues()
+    }
+    
+    @IBAction func complete(_ sender: Any) {
+        dismiss(animated: true) { [weak self] in
+            self?.notifyIfPrice()
+        }
+    }
+    
+    private func notifyIfPrice() {
+        guard let priceViewController = subViewController as? PriceViewController else { return }
+        priceViewController.notifyPriceMinMaxPrices()
     }
     
     @IBAction func close(_ sender: UIButton) {
