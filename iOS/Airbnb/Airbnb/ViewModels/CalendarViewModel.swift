@@ -11,26 +11,34 @@ import UIKit
 final class CalendarViewModel: NSObject {
     typealias Key = (startDate: Date, endDate: Date)
     
-    private var calendar: Key
+    private var duration: Key
     
+    private var calendar = Calendar.current
     private var monthInfoCache = [Int: MonthInfo]()
     
     init(startDate: Date, endDate: Date) {
-        calendar = (startDate, endDate)
+        duration = (startDate, endDate)
         super.init()
     }
     
     func numberOfMonths() -> Int {
         return Calendar.current.dateComponents(
             [.month],
-            from: calendar.startDate,
-            to: calendar.endDate).month! + 1
+            from: duration.startDate,
+            to: duration.endDate).month! + 1
     }
     
     func cacheMonthInfo(of section: Int) {
-        let date = Calendar.current.date(byAdding: .month, value: section, to: calendar.startDate)!
-        let rangeOfDaysInMonth = Calendar.current.range(of: .day, in: .month, for: date)!
-        monthInfoCache[section] = MonthInfo(dateWitOffset: date, rangeOfDays: rangeOfDaysInMonth)
+        let date = calendar.date(byAdding: .month, value: section, to: duration.startDate)!
+        let rangeOfDaysInMonth = calendar.range(of: .day, in: .month, for: date)!
+        var firstDayOfMonth = calendar.dateComponents([.calendar, .year, .month, .day], from: date)
+        firstDayOfMonth.day = 1
+        let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!)
+        
+        monthInfoCache[section] = MonthInfo(
+            dateWitOffset: date,
+            rangeOfDays: rangeOfDaysInMonth,
+            startingIndex: weekdayOfFirstDay.weekday!)
     }
 }
 
@@ -89,6 +97,6 @@ extension CalendarViewModel {
     struct MonthInfo {
         let dateWitOffset: Date
         let rangeOfDays: Range<Int>
-//        let startingIndex: Int
+        let startingIndex: Int
     }
 }
