@@ -73,11 +73,21 @@ final class PriceViewController: UIViewController {
     }
     
     func notifyPriceMinMaxPrices() {
+        guard let minimumPrice = self.minimumPrice, let maximumPrice = self.maximumPrice else { return }
         NotificationCenter.default.post(
             name: Notification.update,
             object: self,
-            userInfo: ["minimumPrice": 0, "maximumPrice": 1]
+            userInfo: ["minimumPrice": minimumPrice, "maximumPrice": maximumPrice]
         )
+    }
+    
+    private var minimumPrice: Int? {
+        return priceViewModel?.price(minimumPercent: priceRangeSlider.lowerValue)
+    }
+    
+    private var maximumPrice: Int? {
+        
+        return priceViewModel?.price(maximumPercent: priceRangeSlider.upperValue)
     }
 }
 

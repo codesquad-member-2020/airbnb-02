@@ -20,6 +20,16 @@ final class PriceViewModel {
         self.prices = prices
     }
     
+    func price(minimumPercent: CGFloat) -> Int {
+        let firstIndex = self.firstIndex(minimumPercent: minimumPercent)
+        return prices[firstIndex].key
+    }
+    
+    func price(maximumPercent: CGFloat) -> Int {
+        let lastIndex = self.lastIndex(maximumPercent: maximumPercent)
+        return prices[lastIndex].key
+    }
+    
     func repeatPrices(handler: (Int, Int) -> ()) {
         prices.forEach { handler($0, $1) }
     }
