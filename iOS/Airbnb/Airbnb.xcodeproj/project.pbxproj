@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A1316772489D98800A7A490 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1316762489D98800A7A490 /* GraphView.swift */; };
+		5A131679248A1AB800A7A490 /* FilterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A131678248A1AB800A7A490 /* FilterRequest.swift */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		5A1316762489D98800A7A490 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		5A131678248A1AB800A7A490 /* FilterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRequest.swift; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
 				5A25EAEB247F88330038240F /* SearchTask.swift */,
+				5A131678248A1AB800A7A490 /* FilterRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */,
 				C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */,
 				5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */,
+				5A131679248A1AB800A7A490 /* FilterRequest.swift in Sources */,
 				5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */,
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,

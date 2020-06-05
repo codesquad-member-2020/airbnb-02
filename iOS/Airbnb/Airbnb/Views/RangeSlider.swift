@@ -84,8 +84,8 @@ final class RangeSlider: UIControl {
     }
     
     func resetValues() {
-        lowerValue = 0
-        upperValue = 1
+        lowerValue = minimumValue
+        upperValue = maximumValue
     }
     
     private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
