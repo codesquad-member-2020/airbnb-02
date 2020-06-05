@@ -8,19 +8,34 @@
 
 import UIKit
 
-final class CalendarViewController: UIViewController {
+protocol CalendarDelegate: FilterSubViewControllerDelegate {
+    func durationFromToday(_ viewController: CalendarViewController) -> DateComponents
+}
+
+final class CalendarViewController: FilterSubViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var viewModel = CalendarViewModel()
     private var layoutDelegate = CalendarLayout()
+    
+    private var viewModel: CalendarViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "체크인 — 체크아웃"
+
+        configureViewModel()
         
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
+    }
+    
+    private func configureViewModel() {
+        guard let delegate = delegate as? CalendarDelegate else { return }
+        let duration = delegate.durationFromToday(self)
+        let startDate = Date()
+        guard let endDate = Calendar.current.date(byAdding: duration, to: startDate) else { return }
+        viewModel = CalendarViewModel(startDate: startDate, endDate: endDate)
     }
 }
 

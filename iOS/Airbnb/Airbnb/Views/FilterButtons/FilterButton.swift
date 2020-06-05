@@ -30,7 +30,7 @@ class FilterButton: UIButton {
         didSet { layer.cornerRadius = cornerRadius }
     }
     
-    var action: ((UIViewController?) -> Void)?
+    var action: ((FilterSubViewController?) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
