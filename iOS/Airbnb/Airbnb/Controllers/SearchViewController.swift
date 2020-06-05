@@ -33,8 +33,8 @@ final class SearchViewController: UIViewController {
         fetchBNBs()
     }
     
-    private func fetchBNBs() {
-        bnbsUseCase.request(SearchRequest())
+    private func fetchBNBs(search: SearchRequest = SearchRequest()) {
+        bnbsUseCase.request(search)
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -56,10 +56,14 @@ final class SearchViewController: UIViewController {
             self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
         }
         
-        priceToken = PriceViewController.Notification.addObserver { notification in
+        priceToken = PriceViewController.Notification.addObserver { [weak self] notification in
             guard let minimumPrice = notification.userInfo?["minimumPrice"] as? Int,
                 let maximumPrice = notification.userInfo?["maximumPrice"] as? Int else { return }
             
+            let min = URLQueryItem(name: "price_min", value: String(minimumPrice))
+            let max = URLQueryItem(name: "price_max", value: String(maximumPrice))
+            let searchRequest = SearchRequest(path: Endpoints.filter, queryItems: [min, max])
+            self?.fetchBNBs(search: searchRequest)
         }
     }
     

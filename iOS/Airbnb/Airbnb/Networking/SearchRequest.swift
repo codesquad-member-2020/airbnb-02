@@ -9,7 +9,11 @@
 import Foundation
 
 struct SearchRequest: Request {
-    var path: String {
-        return Endpoints.main
+    var path: String
+    var queryItems: [URLQueryItem]?
+    
+    init(path: String = Endpoints.main, queryItems: [URLQueryItem]? = nil) {
+        self.path = path
+        self.queryItems = queryItems
     }
 }
