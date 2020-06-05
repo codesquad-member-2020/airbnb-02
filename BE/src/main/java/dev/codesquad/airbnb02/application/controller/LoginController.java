@@ -36,7 +36,7 @@ public class LoginController {
     public static final String OAUTH_URL_SERVER = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user:email";
 
     @GetMapping("/callback")
-    public ResponseEntity oauthCallback(@Param("code") String code, HttpServletResponse response) {
+    public ResponseEntity<HttpStatus> oauthCallback(@Param("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
         log.info("Github AccessToken, TokenType, Scope Data : {}", github);
         GithubUser githubUser = loginService.requestUserInfo(github.getAccessToken());
