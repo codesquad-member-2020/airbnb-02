@@ -13,6 +13,8 @@ final class CalendarViewModel: NSObject {
     
     private var calendar: Key
     
+    private var monthInfoCache = [Int: MonthInfo]()
+    
     init(startDate: Date, endDate: Date) {
         calendar = (startDate, endDate)
         super.init()
@@ -25,9 +27,10 @@ final class CalendarViewModel: NSObject {
             to: calendar.endDate).month! + 1
     }
     
-    func date(withMonthOffsetFromToday offset: Int) -> Date {
-        let monthOffset = DateComponents(month: offset)
-        return Calendar.current.date(byAdding: monthOffset, to: calendar.startDate)!
+    func cacheMonthInfo(of section: Int) {
+        let date = Calendar.current.date(byAdding: .month, value: section, to: calendar.startDate)!
+        let rangeOfDaysInMonth = Calendar.current.range(of: .day, in: .month, for: date)!
+        monthInfoCache[section] = MonthInfo(dateWitOffset: date, rangeOfDays: rangeOfDaysInMonth)
     }
 }
 
@@ -57,17 +60,18 @@ extension CalendarViewModel: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath) -> UICollectionReusableView {
-        
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
         guard case UICollectionView.elementKindSectionHeader = kind,
             let view = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind, withReuseIdentifier:
                 CalendarHeaderView.identifier,
                 for: indexPath
             ) as? CalendarHeaderView else { return UICollectionReusableView() }
-        
-        let sectionDate = date(withMonthOffsetFromToday: indexPath.section)
-        view.headerLabel.text = Self.yearAndMonthFormatter.string(from: sectionDate)
+        cacheMonthInfo(of: indexPath.section)
+        if let date = monthInfoCache[indexPath.section]?.dateWitOffset {
+            view.headerLabel.text = Self.yearAndMonthFormatter.string(from: date)
+        }
         return view
     }
 }
@@ -79,4 +83,12 @@ extension CalendarViewModel {
         formatter.calendar = Calendar.current
         return formatter
     }()
+}
+
+extension CalendarViewModel {
+    struct MonthInfo {
+        let dateWitOffset: Date
+        let rangeOfDays: Range<Int>
+//        let startingIndex: Int
+    }
 }
