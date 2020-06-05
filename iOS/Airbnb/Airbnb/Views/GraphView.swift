@@ -29,27 +29,6 @@ final class GraphView: UIView {
         UIColor(white: 0.5, alpha: 1).setFill()
         path.lineWidth = 1
         path.fill()
-
-        guard let backgroundPath = backgroundPath() else { return }
-        
-        UIColor(white: 0.5, alpha: 1).setFill()
-        backgroundPath.lineWidth = 1
-        backgroundPath.fill()
-    }
-    
-    private func backgroundPath() -> UIBezierPath? {
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: bounds.origin.x, y: bounds.height))
-        
-        guard let firstY = coordinateYFor(index: 0) else { return nil }
-        let firstPoint = CGPoint(x: bounds.origin.x, y: firstY - 0.2)
-        path.addLine(to: firstPoint)
-        
-        guard let lastY = coordinateYFor(index: data.count - 1) else { return nil }
-        path.addLine(to: CGPoint(x: bounds.width, y: lastY - 0.2))
-        
-        path.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
-        return path
     }
     
     private func quadCurvedPath() -> UIBezierPath? {
