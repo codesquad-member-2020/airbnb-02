@@ -9,9 +9,10 @@
 import UIKit
 
 final class CalendarLayout: NSObject {
-    private var sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
-    private var cellSize: CGSize?
-    private var startOffset: CGFloat?
+    private let sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+    private let headerHeight: CGFloat = 60
+    private var sectionHeight: CGFloat?
+    private var startSectionIndex: Int?
 }
 
 extension CalendarLayout: UICollectionViewDelegateFlowLayout {
@@ -21,39 +22,50 @@ extension CalendarLayout: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let size = collectionView.frame.width / 7
-        cellSize = CGSize(width: size, height: size)
-        return cellSize!
+        sectionHeight = sectionHeight(cellHeight: size)
+        return CGSize(width: size, height: size)
     }
     
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int) -> UIEdgeInsets {
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
         return sectionInset
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int
+    ) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: headerHeight)
+    }
+    
+    private func sectionHeight(cellHeight: CGFloat) -> CGFloat {
+        return headerHeight + cellHeight * 6 + sectionInset.top + sectionInset.bottom
     }
 }
 
 extension CalendarLayout: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        startOffset = scrollView.contentOffset.y
+        guard let sectionHeight = sectionHeight else { return }
+        startSectionIndex = Int((scrollView.contentOffset.y + 10) / sectionHeight)
     }
     
     func scrollViewWillEndDragging(
         _ scrollView: UIScrollView,
         withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-
-        guard let view = scrollView as? UICollectionView,
-            let layout = view.collectionViewLayout as? UICollectionViewFlowLayout,
-            let cellHeight = cellSize?.height,
-            let startOffset = startOffset else { return }
-        
-        let totalHeight = layout.headerReferenceSize.height + cellHeight * 6 + sectionInset.bottom
-        
-        if scrollView.contentOffset.y > targetContentOffset.pointee.y {
-            targetContentOffset.pointee.y = startOffset - totalHeight
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+    ) {
+        guard let startIndex = startSectionIndex, let sectionHeight = sectionHeight else { return }
+        var targetSectionIndex = startIndex
+        if velocity.y > 0 {
+            targetSectionIndex += 1
         } else {
-            targetContentOffset.pointee.y = startOffset + totalHeight
+            targetSectionIndex -= 1
         }
+        targetContentOffset.pointee.y = CGFloat(targetSectionIndex) * sectionHeight
+        scrollView.decelerationRate = .fast
     }
 }
