@@ -9,6 +9,8 @@
 import UIKit
 
 final class GraphView: UIView {
+    weak var rangeSlider: RangeSlider?
+    
     var data: [CGFloat] = [0, 0, 0] {
         didSet {
             setNeedsDisplay()
@@ -26,16 +28,28 @@ final class GraphView: UIView {
     override func draw(_ rect: CGRect) {
         guard let path = quadCurvedPath() else { return }
 
-        UIColor(white: 0.5, alpha: 1).setFill()
+        rangeSlider?.trackTintColor.setFill()
         path.lineWidth = 1
         path.fill()
     }
     
-    private func quadCurvedPath() -> UIBezierPath? {
+    private func firstIndex(minimumPercent: CGFloat) -> Int {
+        guard Int(minimumPercent * CGFloat(data.count)) > 0 else { return 0 }
+        return Int(minimumPercent * CGFloat(data.count))
+    }
+    
+    private func lastIndex(maximumPercent: CGFloat) -> Int {
+        guard Int(maximumPercent * CGFloat(data.count)) < data.count else { return data.count - 1 }
+        return Int(maximumPercent * CGFloat(data.count))
+    }
+    
+    private func quadCurvedPath(minimumPercent: CGFloat = 0, maximumPercent: CGFloat = 1) -> UIBezierPath? {
         let path = UIBezierPath()
         let step = bounds.width / CGFloat(data.count - 1)
         
-        guard let firstY = coordinateYFor(index: 0) else { return nil }
+        guard let rangeSlider = rangeSlider else { return nil }
+        let firstIndex = self.firstIndex(minimumPercent: rangeSlider.lowerValue)
+        guard let firstY = coordinateYFor(index: firstIndex) else { return nil }
         var firstPoint = CGPoint(x: bounds.origin.x, y: firstY)
         path.move(to: firstPoint)
         
@@ -47,8 +61,10 @@ final class GraphView: UIView {
         
         var oldControlPoint: CGPoint?
         
+        
+        let lastIndex = self.lastIndex(maximumPercent: rangeSlider.upperValue)
         guard 1 < data.count else { return nil }
-        for index in 1 ..< data.count {
+        for index in 1 ... lastIndex {
             guard let secondY = coordinateYFor(index: index) else { return nil }
             let secondPoint = CGPoint(x: step * CGFloat(index), y: secondY)
             var thirdPoint: CGPoint?

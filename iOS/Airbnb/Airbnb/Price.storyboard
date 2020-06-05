@@ -68,6 +68,7 @@
                         <outlet property="graphView" destination="mDY-Di-mdo" id="5Du-t4-1N5"/>
                         <outlet property="priceAvarage" destination="xar-dI-jOD" id="6DR-21-tcn"/>
                         <outlet property="priceRange" destination="lUe-Dh-Zkq" id="fMX-wz-qJK"/>
+                        <outlet property="priceRangeSlider" destination="hkf-KW-2cm" id="bLJ-jW-tCn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywK-u4-mkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

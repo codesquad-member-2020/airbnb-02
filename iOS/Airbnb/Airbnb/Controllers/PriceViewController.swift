@@ -12,6 +12,7 @@ final class PriceViewController: UIViewController {
     @IBOutlet weak var priceRange: UILabel!
     @IBOutlet weak var priceAvarage: UILabel!
     @IBOutlet weak var graphView: GraphView!
+    @IBOutlet weak var priceRangeSlider: RangeSlider!
     
     var priceViewModel: PriceViewModel?
     var token: NotificationToken?
@@ -58,6 +59,7 @@ final class PriceViewController: UIViewController {
     }
     
     private func configureGraphView() {
+        graphView.rangeSlider = priceRangeSlider
         priceViewModel?.repeatPrices { _, value in
             graphView.data.append(CGFloat(integerLiteral: value))
         }
