@@ -68,7 +68,7 @@ extension CalendarViewModel: UICollectionViewDataSource {
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
         let monthInfo = monthInfoCache[indexPath.section]!
         let day = indexPath.item - monthInfo.startingIndex + 1
-        if day > 0 { cell.dayLabel.text = "\(day)" }
+        if monthInfo.rangeOfDays.contains(day) { cell.dayLabel.text = "\(day)" }
         return cell
     }
     
