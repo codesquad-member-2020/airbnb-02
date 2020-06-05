@@ -20,6 +20,15 @@ final class FilterViewController: UIViewController {
         displaySubViewController()
     }
     
+    @IBAction func clear(_ sender: UIButton) {
+        clearIfPrice()
+    }
+    
+    private func clearIfPrice() {
+        guard let priceViewController = subViewController as? PriceViewController else { return }
+        priceViewController.priceRangeSlider.resetValues()
+    }
+    
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true)
     }
