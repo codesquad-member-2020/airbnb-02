@@ -11,6 +11,7 @@ import UIKit
 final class PriceViewController: UIViewController {
     @IBOutlet weak var priceRange: UILabel!
     @IBOutlet weak var priceAvarage: UILabel!
+    @IBOutlet weak var graphView: GraphView!
     
     var priceViewModel: PriceViewModel?
     var token: NotificationToken?
@@ -20,6 +21,7 @@ final class PriceViewController: UIViewController {
         configureTitle()
         configurePriceRange()
         configurePriceAvarage()
+        configureGraphView()
         configureObserver()
     }
     
@@ -53,6 +55,13 @@ final class PriceViewController: UIViewController {
             minimumPercent: lowerValue,
             maximumPercent: upperValue
         )
+    }
+    
+    private func configureGraphView() {
+        priceViewModel?.repeatPrices { _, value in
+            graphView.data.append(CGFloat(integerLiteral: value))
+        }
+        graphView.data.append(contentsOf: [0, 0, 0])
     }
 }
 

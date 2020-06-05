@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1316772489D98800A7A490 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1316762489D98800A7A490 /* GraphView.swift */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1316762489D98800A7A490 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				C2587BB42487899B00CCFE04 /* CalendarCell.swift */,
 				5A40000B2488F860001F1C63 /* RangeSlider.swift */,
 				5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */,
+				5A1316762489D98800A7A490 /* GraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
 				C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
+				5A1316772489D98800A7A490 /* GraphView.swift in Sources */,
 				C2587BB3248788FC00CCFE04 /* CalendarViewModel.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */,
