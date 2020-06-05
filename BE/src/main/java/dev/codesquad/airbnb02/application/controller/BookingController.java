@@ -1,5 +1,6 @@
 package dev.codesquad.airbnb02.application.controller;
 
+import dev.codesquad.airbnb02.application.dto.BookingResponseDto;
 import dev.codesquad.airbnb02.domain.room.business.RoomService;
 import java.time.LocalDate;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class BookingController {
   private final RoomService roomService;
 
   @PostMapping("/{roomId}")
-  public ResponseEntity<dev.codesquad.airbnb02.application.dto.BookingResponseDto> createBooking(
+  public ResponseEntity<BookingResponseDto> createBooking(
       @PathVariable Long roomId,
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
@@ -32,7 +33,7 @@ public class BookingController {
   }
 
   @DeleteMapping("/{roomId}")
-  public ResponseEntity<dev.codesquad.airbnb02.application.dto.BookingResponseDto> removeBooking(
+  public ResponseEntity<BookingResponseDto> removeBooking(
       @PathVariable Long roomId,
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout) {
