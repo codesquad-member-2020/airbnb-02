@@ -17,14 +17,16 @@ class CalendarViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.numberOfMonths(), 25)
     }
     
-    func testYearAndMonth_After3MonthOffset() {
+    func testMonthInfo_With2MonthOffset() {
         let viewModel = CalendarViewModel(
             startDate: DateStubs.startDate,
             endDate: DateStubs.endDateAfterOneYear)
-        let date = viewModel.date(withMonthOffsetFromToday: 3)
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
-        let expectedDateComponents = DateComponents(year: 2020, month: 9, day: 5)
-        XCTAssertEqual(dateComponents, expectedDateComponents)
+        let monthInfo = viewModel.monthInfo(withOffset: 2)
+        let expectedMonthInfo = CalendarViewModel.MonthInfo(
+            dateWithOffset: DateComponents(calendar: .current, year: 2020, month: 8, day: 5).date!,
+            rangeOfDays: (1..<32),
+            startingIndex: 7)
+        XCTAssertEqual(monthInfo, expectedMonthInfo)
     }
 }
 
