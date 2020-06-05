@@ -37,7 +37,7 @@ final class CalendarViewModel: NSObject {
         return MonthInfo(
             dateWithOffset: date,
             rangeOfDays: rangeOfDaysInMonth,
-            startingIndex: weekdayOfFirstDay.weekday!)
+            startingIndex: weekdayOfFirstDay.weekday! - 1)
     }
 }
 
@@ -61,6 +61,12 @@ extension CalendarViewModel: UICollectionViewDataSource {
             withReuseIdentifier: CalendarCell.identifier,
             for: indexPath
         ) as? CalendarCell else { return UICollectionViewCell() }
+        if monthInfoCache[indexPath.section] == nil {
+            monthInfoCache[indexPath.section] = monthInfo(withOffset: indexPath.section)
+        }
+        let monthInfo = monthInfoCache[indexPath.section]!
+        let day = indexPath.item - monthInfo.startingIndex + 1
+        if day > 0 { cell.dayLabel.text = "\(day)" }
         return cell
     }
     
@@ -75,10 +81,11 @@ extension CalendarViewModel: UICollectionViewDataSource {
                 CalendarHeaderView.identifier,
                 for: indexPath
             ) as? CalendarHeaderView else { return UICollectionReusableView() }
-        monthInfoCache[indexPath.section] = monthInfo(withOffset: indexPath.section)
-        if let date = monthInfoCache[indexPath.section]?.dateWithOffset {
-            view.headerLabel.text = Self.yearAndMonthFormatter.string(from: date)
+        if monthInfoCache[indexPath.section] == nil {
+            monthInfoCache[indexPath.section] = monthInfo(withOffset: indexPath.section)
         }
+        let date = monthInfoCache[indexPath.section]!.dateWithOffset
+        view.headerLabel.text = Self.yearAndMonthFormatter.string(from: date)
         return view
     }
 }

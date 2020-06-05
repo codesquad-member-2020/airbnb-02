@@ -9,7 +9,11 @@
 import UIKit
 
 class CalendarCell: UICollectionViewCell {
+    @IBOutlet weak var dayLabel: UILabel!
     
+    override func prepareForReuse() {
+        dayLabel.text = nil
+    }
 }
 
 extension CalendarCell: Identifiable { }

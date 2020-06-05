@@ -25,7 +25,7 @@ class CalendarViewModelTests: XCTestCase {
         let expectedMonthInfo = CalendarViewModel.MonthInfo(
             dateWithOffset: DateComponents(calendar: .current, year: 2020, month: 8, day: 5).date!,
             rangeOfDays: (1..<32),
-            startingIndex: 7)
+            startingIndex: 6)
         XCTAssertEqual(monthInfo, expectedMonthInfo)
     }
 }
