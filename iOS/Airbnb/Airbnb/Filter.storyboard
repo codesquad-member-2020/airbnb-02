@@ -60,6 +60,9 @@
                                                 <state key="normal" title="초기화">
                                                     <color key="titleColor" name="textGray"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clear:" destination="pnZ-xz-7cv" eventType="touchUpInside" id="4Vf-6g-KLE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbc-ME-4CB" customClass="CornerRoundedButton" customModule="Airbnb" customModuleProvider="target">
                                                 <rect key="frame" x="293" y="12" width="70" height="38"/>
@@ -77,6 +80,9 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="complete:" destination="pnZ-xz-7cv" eventType="touchUpInside" id="Wvi-bp-RCO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

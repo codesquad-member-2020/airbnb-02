@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Price View Controller-->
+        <scene sceneID="nno-JL-PgH">
+            <objects>
+                <viewController storyboardIdentifier="PriceViewController" id="5VO-OV-f3r" customClass="PriceViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHs-Ys-SJE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="313"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 범위" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-9d-d9d">
+                                <rect key="frame" x="16" y="44" width="74" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 범위 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-Dh-Zkq">
+                                <rect key="frame" x="16" y="88" width="99" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격 평균 레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xar-dI-jOD">
+                                <rect key="frame" x="16" y="113" width="86" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDY-Di-mdo" customClass="GraphView" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="162" width="352" height="111"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-KW-2cm" customClass="RangeSlider" customModule="Airbnb" customModuleProvider="target">
+                                <rect key="frame" x="31" y="263" width="352" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gs2-so-ZTA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hkf-KW-2cm" firstAttribute="width" secondItem="M7Z-Ea-8RG" secondAttribute="width" multiplier="0.85" id="7sz-7s-16e"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="height" secondItem="hkf-KW-2cm" secondAttribute="height" multiplier="3.7" id="DvR-tI-cpz"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="top" secondItem="M7Z-Ea-8RG" secondAttribute="top" id="FAx-VX-vAT"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="leading" secondItem="hkf-KW-2cm" secondAttribute="leading" id="Lri-Uj-VWQ"/>
+                            <constraint firstItem="hkf-KW-2cm" firstAttribute="centerX" secondItem="M7Z-Ea-8RG" secondAttribute="centerX" id="MGh-8Z-UDW"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="width" secondItem="hkf-KW-2cm" secondAttribute="width" id="NxT-hQ-50B"/>
+                            <constraint firstItem="hyQ-9d-d9d" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ObT-B9-zQC"/>
+                            <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="xar-dI-jOD" secondAttribute="bottom" constant="184" id="aBD-gd-SJU"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="ecV-l1-nvn"/>
+                            <constraint firstItem="mDY-Di-mdo" firstAttribute="bottom" secondItem="hkf-KW-2cm" secondAttribute="top" constant="10" id="iXh-u7-hTe"/>
+                            <constraint firstItem="M7Z-Ea-8RG" firstAttribute="bottom" secondItem="hkf-KW-2cm" secondAttribute="bottom" constant="20" id="nok-0W-Zjs"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="leading" secondItem="M7Z-Ea-8RG" secondAttribute="leading" constant="16" id="qDp-Yc-9qF"/>
+                            <constraint firstItem="lUe-Dh-Zkq" firstAttribute="top" secondItem="hyQ-9d-d9d" secondAttribute="bottom" constant="20" id="s6A-Hr-Tba"/>
+                            <constraint firstItem="xar-dI-jOD" firstAttribute="top" secondItem="lUe-Dh-Zkq" secondAttribute="bottom" constant="7" id="xh8-AV-TXz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M7Z-Ea-8RG"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="313"/>
+                    <connections>
+                        <outlet property="graphView" destination="mDY-Di-mdo" id="5Du-t4-1N5"/>
+                        <outlet property="priceAvarage" destination="xar-dI-jOD" id="6DR-21-tcn"/>
+                        <outlet property="priceRange" destination="lUe-Dh-Zkq" id="fMX-wz-qJK"/>
+                        <outlet property="priceRangeSlider" destination="hkf-KW-2cm" id="bLJ-jW-tCn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywK-u4-mkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268" y="63"/>
+        </scene>
+    </scenes>
+</document>

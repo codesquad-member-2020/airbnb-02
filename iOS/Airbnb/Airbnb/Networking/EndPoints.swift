@@ -11,6 +11,7 @@ import Foundation
 enum Endpoints {
     static let baseURL = "http://13.125.56.23/api"
     static let main = "\(baseURL)/all"
+    static let filter = "\(baseURL)/search"
     
     static let authURL = "https://github.com/login/oauth/authorize"
 }

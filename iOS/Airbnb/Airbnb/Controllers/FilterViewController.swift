@@ -23,6 +23,26 @@ final class FilterViewController: UIViewController {
         displaySubViewController()
     }
     
+    @IBAction func clear(_ sender: UIButton) {
+        clearIfPrice()
+    }
+    
+    private func clearIfPrice() {
+        guard let priceViewController = subViewController as? PriceViewController else { return }
+        priceViewController.priceRangeSlider.resetValues()
+    }
+    
+    @IBAction func complete(_ sender: Any) {
+        dismiss(animated: true) { [weak self] in
+            self?.notifyIfPrice()
+        }
+    }
+    
+    private func notifyIfPrice() {
+        guard let priceViewController = subViewController as? PriceViewController else { return }
+        priceViewController.notifyPriceMinMaxPrices()
+    }
+    
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true)
     }

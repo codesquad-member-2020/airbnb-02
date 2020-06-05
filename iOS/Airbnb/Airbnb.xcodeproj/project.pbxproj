@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1316772489D98800A7A490 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1316762489D98800A7A490 /* GraphView.swift */; };
+		5A131679248A1AB800A7A490 /* FilterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A131678248A1AB800A7A490 /* FilterRequest.swift */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -17,6 +19,11 @@
 		5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* BNBsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
+		5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000524879C35001F1C63 /* PriceViewController.swift */; };
+		5A40000824879F12001F1C63 /* Price.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40000724879F12001F1C63 /* Price.storyboard */; };
+		5A40000A2488D590001F1C63 /* PriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4000092488D590001F1C63 /* PriceViewModel.swift */; };
+		5A40000C2488F860001F1C63 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000B2488F860001F1C63 /* RangeSlider.swift */; };
+		5A40000E2488FA70001F1C63 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */; };
 		5A81411F247BCE900020ED80 /* BNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* BNB.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* SearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* SearchRequestTests.swift */; };
@@ -88,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1316762489D98800A7A490 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		5A131678248A1AB800A7A490 /* FilterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRequest.swift; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
@@ -97,6 +106,11 @@
 		5A25EAF1247F8B410038240F /* BNBsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
+		5A40000524879C35001F1C63 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
+		5A40000724879F12001F1C63 /* Price.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Price.storyboard; sourceTree = "<group>"; };
+		5A4000092488D590001F1C63 /* PriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewModel.swift; sourceTree = "<group>"; };
+		5A40000B2488F860001F1C63 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* BNBsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* BNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNB.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -240,6 +254,7 @@
 				5ADA864A2483D066000C06E9 /* Login.storyboard */,
 				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
 				C2587BA82486701800CCFE04 /* Calendar.storyboard */,
+				5A40000724879F12001F1C63 /* Price.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
@@ -276,6 +291,9 @@
 				5ADA864E2483E773000C06E9 /* LoginButton.swift */,
 				C2587BB42487899B00CCFE04 /* CalendarCell.swift */,
 				C203466224897A3900A16C40 /* CalendarHeaderView.swift */,
+				5A40000B2488F860001F1C63 /* RangeSlider.swift */,
+				5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */,
+				5A1316762489D98800A7A490 /* GraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +304,7 @@
 				C2B959C2247E549A003DC5D9 /* BNBViewModels.swift */,
 				5ADA864524838558000C06E9 /* BNBViewModel.swift */,
 				C2587BB2248788FC00CCFE04 /* CalendarViewModel.swift */,
+				5A4000092488D590001F1C63 /* PriceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -310,6 +329,7 @@
 				5ADA864C2483D09E000C06E9 /* LoginViewController.swift */,
 				5A40000024876EBC001F1C63 /* BNBTabBarController.swift */,
 				C2587BAB24867C3700CCFE04 /* CalendarViewController.swift */,
+				5A40000524879C35001F1C63 /* PriceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +346,7 @@
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
 				5A25EAEB247F88330038240F /* SearchTask.swift */,
+				5A131678248A1AB800A7A490 /* FilterRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -453,6 +474,7 @@
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
 				C2587BAA2486701800CCFE04 /* Calendar.storyboard in Resources */,
+				5A40000824879F12001F1C63 /* Price.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +501,7 @@
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */,
 				C2587BB52487899B00CCFE04 /* CalendarCell.swift in Sources */,
+				5A40000A2488D590001F1C63 /* PriceViewModel.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
 				C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */,
@@ -496,6 +519,7 @@
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
 				C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
+				5A1316772489D98800A7A490 /* GraphView.swift in Sources */,
 				C2587BB3248788FC00CCFE04 /* CalendarViewModel.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */,
@@ -512,9 +536,12 @@
 				5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */,
 				C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */,
 				5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */,
+				5A131679248A1AB800A7A490 /* FilterRequest.swift in Sources */,
 				5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */,
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
+				5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */,
+				5A40000E2488FA70001F1C63 /* RangeSliderTrackLayer.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
 				C203466324897A3900A16C40 /* CalendarHeaderView.swift in Sources */,
@@ -526,6 +553,7 @@
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
 				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
+				5A40000C2488F860001F1C63 /* RangeSlider.swift in Sources */,
 				5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

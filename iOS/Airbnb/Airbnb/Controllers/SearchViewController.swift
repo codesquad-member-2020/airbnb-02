@@ -21,6 +21,7 @@ final class SearchViewController: UIViewController {
     
     private var bnbsToken: NotificationToken?
     private var bnbToken: NotificationToken?
+    private var priceToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,8 @@ final class SearchViewController: UIViewController {
         fetchBNBs()
     }
     
-    private func fetchBNBs() {
-        bnbsUseCase.request(SearchRequest())
+    private func fetchBNBs(search: SearchRequest = SearchRequest()) {
+        bnbsUseCase.request(search)
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -54,6 +55,16 @@ final class SearchViewController: UIViewController {
             guard let bnbID = notification.userInfo?["bnbID"] as? Int else { return }
             self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
         }
+        
+        priceToken = PriceViewController.Notification.addObserver { [weak self] notification in
+            guard let minimumPrice = notification.userInfo?["minimumPrice"] as? Int,
+                let maximumPrice = notification.userInfo?["maximumPrice"] as? Int else { return }
+            
+            let min = URLQueryItem(name: "price_min", value: String(minimumPrice))
+            let max = URLQueryItem(name: "price_max", value: String(maximumPrice))
+            let searchRequest = SearchRequest(path: Endpoints.filter, queryItems: [min, max])
+            self?.fetchBNBs(search: searchRequest)
+        }
     }
     
     private func configureButtonActions() {
@@ -61,9 +72,25 @@ final class SearchViewController: UIViewController {
             button.action = { [weak self] viewController in
                 guard let filterViewController = FilterViewController
                     .instantiate(from: .filters, subViewController: viewController) else { return }
+                self?.insertPricesIf(viewController as? PriceViewController)
                 self?.present(filterViewController, animated: true)
             }
         }
+    }
+    
+    private func insertPricesIf(_ priceViewController: PriceViewController?) {
+        guard let priceViewController = priceViewController else { return }
+        
+        var prices = [Int: Int]()
+        bnbsViewModel.repeatViewModels {
+            let price = $0.bnb.price
+            if let count = prices[$0.bnb.price] {
+                prices.updateValue(count + 1, forKey: price)
+            } else {
+                prices.updateValue(1, forKey: price)
+            }
+        }
+        priceViewController.priceViewModel = PriceViewModel(prices: prices.sorted(by: <))
     }
     
     private func configureUseCase() {
