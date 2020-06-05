@@ -56,6 +56,8 @@ final class PriceViewController: UIViewController {
             minimumPercent: lowerValue,
             maximumPercent: upperValue
         )
+        
+        graphView.setNeedsDisplay()
     }
     
     private func configureGraphView() {
@@ -63,7 +65,7 @@ final class PriceViewController: UIViewController {
         priceViewModel?.repeatPrices { _, value in
             graphView.data.append(CGFloat(integerLiteral: value))
         }
-        graphView.data.append(contentsOf: [0, 0, 0])
+        graphView.data.append(contentsOf: [0, 0])
     }
 }
 
