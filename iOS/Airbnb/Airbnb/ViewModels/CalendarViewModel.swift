@@ -54,14 +54,16 @@ final class CalendarViewModel: NSObject {
     
     func monthInfo(withOffset offset: Int) -> MonthInfo {
         let date = calendar.date(byAdding: .month, value: offset, to: dates.start)!
-        let rangeOfDaysInMonth = calendar.range(of: .day, in: .month, for: date)!
         var firstDayOfMonth = calendar.dateComponents([.calendar, .year, .month, .day], from: date)
         firstDayOfMonth.day = 1
-        let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!)
+        let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!).weekday!
+        var daysInMonth = calendar.range(of: .day, in: .month, for: date)!.map { $0 }
+        daysInMonth.insert(contentsOf: (1..<weekdayOfFirstDay).map { _ in 0 }, at: 0)
+        daysInMonth.append(contentsOf: (0..<(42 - daysInMonth.count)).map { _ in 0 })
         return MonthInfo(
             dateWithOffset: date,
-            rangeOfDays: rangeOfDaysInMonth,
-            startingIndex: weekdayOfFirstDay.weekday! - 1)
+            startingIndex: weekdayOfFirstDay - 1,
+            days: daysInMonth)
     }
     
     private func cacheMonthInfo(of section: Int) {
@@ -90,9 +92,9 @@ extension CalendarViewModel: UICollectionViewDataSource {
             for: indexPath
         ) as? CalendarCell else { return UICollectionViewCell() }
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
-        let monthInfo = monthInfoCache[indexPath.section]!
-        let day = indexPath.item - monthInfo.startingIndex + 1
-        if monthInfo.rangeOfDays.contains(day) { cell.dayLabel.text = "\(day)" }
+        if let day = monthInfoCache[indexPath.section]?.days[indexPath.item], day != 0 {
+            cell.dayLabel.text = "\(day)"
+        }
         return cell
     }
     
@@ -126,7 +128,7 @@ extension CalendarViewModel {
 extension CalendarViewModel {
     struct MonthInfo: Equatable {
         let dateWithOffset: Date
-        let rangeOfDays: Range<Int>
         let startingIndex: Int
+        let days: [Int]
     }
 }
