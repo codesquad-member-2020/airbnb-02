@@ -8,28 +8,46 @@
 
 import UIKit
 
-final class CalendarViewModel: NSObject {
-    typealias Key = (startDate: Date, endDate: Date)
+struct CalendarDates {
+    let start: Date
+    let end: Date
+    var selected = [DateComponents]()
     
-    private var duration: Key
+    init(startDate: Date, endDate: Date) {
+        start = startDate
+        end = endDate
+    }
+    
+    mutating func updateSelected(date: DateComponents) {
+        if selected.count > 1 {
+            selected.removeFirst()
+        }
+        selected.append(date)
+    }
+}
+
+final class CalendarViewModel: NSObject {
+    typealias Key = CalendarDates
+    
+    private var dates: Key
     
     private var calendar = Calendar.current
     private var monthInfoCache = [Int: MonthInfo]()
     
     init(startDate: Date, endDate: Date) {
-        duration = (startDate, endDate)
+        dates = CalendarDates(startDate: startDate, endDate: endDate)
         super.init()
     }
     
     func numberOfMonths() -> Int {
         return Calendar.current.dateComponents(
             [.month],
-            from: duration.startDate,
-            to: duration.endDate).month! + 1
+            from: dates.start,
+            to: dates.end).month! + 1
     }
     
     func monthInfo(withOffset offset: Int) -> MonthInfo {
-        let date = calendar.date(byAdding: .month, value: offset, to: duration.startDate)!
+        let date = calendar.date(byAdding: .month, value: offset, to: dates.start)!
         let rangeOfDaysInMonth = calendar.range(of: .day, in: .month, for: date)!
         var firstDayOfMonth = calendar.dateComponents([.calendar, .year, .month, .day], from: date)
         firstDayOfMonth.day = 1
