@@ -18,6 +18,7 @@ final class CalendarViewController: FilterSubViewController {
     private var layoutDelegate = CalendarLayout()
     
     private var viewModel: CalendarViewModel?
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ final class CalendarViewController: FilterSubViewController {
         title = "체크인 — 체크아웃"
 
         configureViewModel()
+        configureObserver()
         
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
@@ -36,6 +38,12 @@ final class CalendarViewController: FilterSubViewController {
         let startDate = Date()
         guard let endDate = Calendar.current.date(byAdding: duration, to: startDate) else { return }
         viewModel = CalendarViewModel(startDate: startDate, endDate: endDate)
+    }
+    
+    private func configureObserver() {
+        token = CalendarViewModel.Notification.addObserver { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
 }
 

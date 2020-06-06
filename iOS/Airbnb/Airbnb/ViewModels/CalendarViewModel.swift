@@ -29,7 +29,13 @@ struct CalendarDates {
 final class CalendarViewModel: NSObject {
     typealias Key = CalendarDates
     
-    private var dates: Key
+    enum Notification: Observable {
+        static let update = Foundation.Notification.Name("calendarDidUpdate")
+    }
+    
+    private var dates: Key {
+        didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
+    }
     
     private var calendar = Calendar.current
     private var monthInfoCache = [Int: MonthInfo]()
