@@ -48,7 +48,8 @@ final class CalendarViewController: FilterSubViewController {
     }
     
     private func configureDelegate() {
-        layoutDelegate.didSelectItem = { indexPath in
+        layoutDelegate.didSelectItem = { [weak self] indexPath in
+            self?.viewModel?.update(selectedIndexPath: indexPath)
         }
     }
 }

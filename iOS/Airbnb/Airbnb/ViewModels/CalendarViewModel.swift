@@ -61,10 +61,14 @@ final class CalendarViewModel: NSObject {
         var daysInMonth = calendar.range(of: .day, in: .month, for: date)!.map { $0 }
         daysInMonth.insert(contentsOf: (1..<weekdayOfFirstDay).map { _ in 0 }, at: 0)
         daysInMonth.append(contentsOf: (0..<(42 - daysInMonth.count)).map { _ in 0 })
-        return MonthInfo(
-            yearAndMonth: yearAndMonth,
-            startingIndex: weekdayOfFirstDay - 1,
-            days: daysInMonth)
+        return MonthInfo(yearAndMonth: yearAndMonth, days: daysInMonth)
+    }
+    
+    func update(selectedIndexPath: IndexPath) {
+        guard let monthInfo = monthInfoCache[selectedIndexPath.section] else { return }
+        var selectedDate = monthInfo.yearAndMonth
+        selectedDate.day = monthInfo.days[selectedIndexPath.item]
+        dates.updateSelected(date: selectedDate)
     }
     
     private func cacheMonthInfo(of section: Int) {
@@ -129,7 +133,6 @@ extension CalendarViewModel {
 extension CalendarViewModel {
     struct MonthInfo: Equatable {
         let yearAndMonth: DateComponents
-        let startingIndex: Int
         let days: [Int]
     }
 }
