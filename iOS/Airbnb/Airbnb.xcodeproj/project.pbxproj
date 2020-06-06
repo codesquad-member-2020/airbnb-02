@@ -40,7 +40,7 @@
 		C203465F24892F4700A16C40 /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C203465E24892F4700A16C40 /* FilterSubViewController.swift */; };
 		C2034661248957AD00A16C40 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2034660248957AD00A16C40 /* CalendarViewModelTests.swift */; };
 		C203466324897A3900A16C40 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C203466224897A3900A16C40 /* CalendarHeaderView.swift */; };
-		C20C5B8924879E2800DED737 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C5B8824879E2800DED737 /* CalendarLayout.swift */; };
+		C20C5B8924879E2800DED737 /* CalendarLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C5B8824879E2800DED737 /* CalendarLayoutDelegate.swift */; };
 		C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219C664247D72C4006E3388 /* FavoriteButton.swift */; };
 		C21EB27F248556BC00B3658E /* BNBsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A814119247BCDE80020ED80 /* BNBsTestData.json */; };
 		C2205D20247EAEA9008D3FBC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2205D1E247EAEA9008D3FBC /* Request.swift */; };
@@ -121,7 +121,7 @@
 		C203465E24892F4700A16C40 /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
 		C2034660248957AD00A16C40 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
 		C203466224897A3900A16C40 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
-		C20C5B8824879E2800DED737 /* CalendarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
+		C20C5B8824879E2800DED737 /* CalendarLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLayoutDelegate.swift; sourceTree = "<group>"; };
 		C219C664247D72C4006E3388 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		C2205D1E247EAEA9008D3FBC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Airbnb/Networking/Request.swift; sourceTree = SOURCE_ROOT; };
 		C2205D1F247EAEA9008D3FBC /* SearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRequest.swift; path = Airbnb/Networking/SearchRequest.swift; sourceTree = SOURCE_ROOT; };
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */,
-				C20C5B8824879E2800DED737 /* CalendarLayout.swift */,
+				C20C5B8824879E2800DED737 /* CalendarLayoutDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 				C2587BB3248788FC00CCFE04 /* CalendarViewModel.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* BNBsUseCase.swift in Sources */,
-				C20C5B8924879E2800DED737 /* CalendarLayout.swift in Sources */,
+				C20C5B8924879E2800DED737 /* CalendarLayoutDelegate.swift in Sources */,
 				5A25EAEC247F88330038240F /* SearchTask.swift in Sources */,
 				C2205D21247EAEA9008D3FBC /* SearchRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,

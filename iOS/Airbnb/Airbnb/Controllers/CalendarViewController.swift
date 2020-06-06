@@ -15,7 +15,7 @@ protocol CalendarDelegate: FilterSubViewControllerDelegate {
 final class CalendarViewController: FilterSubViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var layoutDelegate = CalendarLayout()
+    private var layoutDelegate = CalendarLayoutDelegate()
     
     private var viewModel: CalendarViewModel?
     private var token: NotificationToken?
@@ -27,6 +27,7 @@ final class CalendarViewController: FilterSubViewController {
 
         configureViewModel()
         configureObserver()
+        configureDelegate()
         
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
@@ -43,6 +44,11 @@ final class CalendarViewController: FilterSubViewController {
     private func configureObserver() {
         token = CalendarViewModel.Notification.addObserver { [weak self] _ in
             self?.collectionView.reloadData()
+        }
+    }
+    
+    private func configureDelegate() {
+        layoutDelegate.didSelectItem = { indexPath in
         }
     }
 }
