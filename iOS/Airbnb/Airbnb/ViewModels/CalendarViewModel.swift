@@ -54,14 +54,15 @@ final class CalendarViewModel: NSObject {
     
     func monthInfo(withOffset offset: Int) -> MonthInfo {
         let date = calendar.date(byAdding: .month, value: offset, to: dates.start)!
-        var firstDayOfMonth = calendar.dateComponents([.calendar, .year, .month, .day], from: date)
+        let yearAndMonth = calendar.dateComponents([.calendar, .year, .month], from: date)
+        var firstDayOfMonth = yearAndMonth
         firstDayOfMonth.day = 1
         let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!).weekday!
         var daysInMonth = calendar.range(of: .day, in: .month, for: date)!.map { $0 }
         daysInMonth.insert(contentsOf: (1..<weekdayOfFirstDay).map { _ in 0 }, at: 0)
         daysInMonth.append(contentsOf: (0..<(42 - daysInMonth.count)).map { _ in 0 })
         return MonthInfo(
-            dateWithOffset: date,
+            yearAndMonth: yearAndMonth,
             startingIndex: weekdayOfFirstDay - 1,
             days: daysInMonth)
     }
@@ -110,7 +111,7 @@ extension CalendarViewModel: UICollectionViewDataSource {
                 for: indexPath
             ) as? CalendarHeaderView else { return UICollectionReusableView() }
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
-        let date = monthInfoCache[indexPath.section]!.dateWithOffset
+        let date = monthInfoCache[indexPath.section]!.yearAndMonth.date!
         view.headerLabel.text = Self.yearAndMonthFormatter.string(from: date)
         return view
     }
@@ -127,7 +128,7 @@ extension CalendarViewModel {
 
 extension CalendarViewModel {
     struct MonthInfo: Equatable {
-        let dateWithOffset: Date
+        let yearAndMonth: DateComponents
         let startingIndex: Int
         let days: [Int]
     }
