@@ -98,9 +98,12 @@
                                                     <rect key="frame" x="22.5" y="0.0" width="22.5" height="45"/>
                                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQu-vg-2Mg">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQu-vg-2Mg" customClass="RoundView" customModule="Airbnb" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                                     <color key="backgroundColor" name="completionBlack"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -121,7 +124,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="blackRoundView" destination="oQu-vg-2Mg" id="yc7-fg-oKN"/>
                                             <outlet property="dayLabel" destination="2Ds-DY-aPy" id="qA4-QG-eMB"/>
+                                            <outlet property="leftGrayView" destination="CmZ-gK-72b" id="4Fj-wx-XfO"/>
+                                            <outlet property="rightGrayView" destination="HPx-vi-uGq" id="6wa-KZ-Rv9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
