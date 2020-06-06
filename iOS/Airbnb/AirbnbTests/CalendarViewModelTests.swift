@@ -22,10 +22,14 @@ class CalendarViewModelTests: XCTestCase {
             startDate: DateStubs.startDate,
             endDate: DateStubs.endDateAfterOneYear)
         let monthInfo = viewModel.monthInfo(withOffset: 2)
+        
+        var expectedDays = (1..<32).map { $0 }
+        expectedDays.insert(contentsOf: [0, 0, 0, 0, 0, 0], at: 0)
+        expectedDays.append(contentsOf: [0, 0, 0, 0, 0])
         let expectedMonthInfo = CalendarViewModel.MonthInfo(
             dateWithOffset: DateComponents(calendar: .current, year: 2020, month: 8, day: 5).date!,
-            rangeOfDays: (1..<32),
-            startingIndex: 6)
+            startingIndex: 6,
+            days: expectedDays)
         XCTAssertEqual(monthInfo, expectedMonthInfo)
     }
 }
