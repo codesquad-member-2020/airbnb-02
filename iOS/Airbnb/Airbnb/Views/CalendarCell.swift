@@ -24,16 +24,18 @@ class CalendarCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         dayLabel.text = nil
-        setAllViewsHidden()
+        resetCell()
     }
     
     private func changeState(to state: State) {
-        setAllViewsHidden()
+        resetCell()
         switch state {
         case .startSelected:
+            dayLabel.textColor = .white
             blackRoundView.isHidden = false
             rightGrayView.isHidden = false
         case .endSelected:
+            dayLabel.textColor = .white
             blackRoundView.isHidden = false
             leftGrayView.isHidden = false
         case .staying:
@@ -43,7 +45,8 @@ class CalendarCell: UICollectionViewCell {
         }
     }
     
-    private func setAllViewsHidden() {
+    private func resetCell() {
+        dayLabel.textColor = .black
         leftGrayView.isHidden = true
         rightGrayView.isHidden = true
         blackRoundView.isHidden = true
