@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A1316772489D98800A7A490 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1316762489D98800A7A490 /* GraphView.swift */; };
 		5A131679248A1AB800A7A490 /* FilterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A131678248A1AB800A7A490 /* FilterRequest.swift */; };
+		5A13167F248CBA3D00A7A490 /* BNBsSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13167E248CBA3D00A7A490 /* BNBsSuccessMock.swift */; };
+		5A131683248CBC7400A7A490 /* BNBsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A131682248CBC7400A7A490 /* BNBsData.json */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -97,6 +99,8 @@
 /* Begin PBXFileReference section */
 		5A1316762489D98800A7A490 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		5A131678248A1AB800A7A490 /* FilterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRequest.swift; sourceTree = "<group>"; };
+		5A13167E248CBA3D00A7A490 /* BNBsSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsSuccessMock.swift; sourceTree = "<group>"; };
+		5A131682248CBC7400A7A490 /* BNBsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BNBsData.json; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
@@ -194,6 +198,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A13167D248CBA2B00A7A490 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5A13167E248CBA3D00A7A490 /* BNBsSuccessMock.swift */,
+				5A131682248CBC7400A7A490 /* BNBsData.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		5A81411D247BCE630020ED80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +350,7 @@
 		C22A527E2473A26F0055A478 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5A13167D248CBA2B00A7A490 /* Mocks */,
 				5ADA00DB247E4F3500E30D6C /* EndPoints.swift */,
 				5ADA86542484F788000C06E9 /* AuthKeys.swift */,
 				C2205D1E247EAEA9008D3FBC /* Request.swift */,
@@ -473,6 +487,7 @@
 				5ADA864B2483D066000C06E9 /* Login.storyboard in Resources */,
 				C22A52612473A1AB0055A478 /* Assets.xcassets in Resources */,
 				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
+				5A131683248CBC7400A7A490 /* BNBsData.json in Resources */,
 				C2587BAA2486701800CCFE04 /* Calendar.storyboard in Resources */,
 				5A40000824879F12001F1C63 /* Price.storyboard in Resources */,
 				C22A525F2473A1A80055A478 /* Main.storyboard in Resources */,
@@ -540,6 +555,7 @@
 				5ADA864F2483E773000C06E9 /* LoginButton.swift in Sources */,
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
+				5A13167F248CBA3D00A7A490 /* BNBsSuccessMock.swift in Sources */,
 				5A40000624879C35001F1C63 /* PriceViewController.swift in Sources */,
 				5A40000E2488FA70001F1C63 /* RangeSliderTrackLayer.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,

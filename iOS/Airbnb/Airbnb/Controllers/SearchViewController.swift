@@ -16,7 +16,7 @@ final class SearchViewController: UIViewController {
     
     private let bnbsViewModel = BNBViewModels()
     private let layoutDelegate = BNBsLayout()
-    private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
+    private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: BNBsSuccessMock()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
     private var bnbsToken: NotificationToken?
