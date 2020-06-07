@@ -1,0 +1,29 @@
+{
+   "id":11,
+   "title":"신반포자이",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":127.008259,
+      "longitude":37.510876,
+      "address":"서울특별시 서초구 잠원동 160 신반포자이"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/665e5131-39ac-4b56-9559-65c8a6dd32ba.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/640a2f8f-2604-44de-a706-078f94d225b6.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/18935716/e7db279c_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/55868006/a7f0224e_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Taek",
+   "superhost":true,
+   "totalGuest":9,
+   "bedroom":9,
+   "bed":3,
+   "bath":2,
+   "review":{
+      "rating":3.29,
+      "count":400
+   },
+   "price":1350000
+}

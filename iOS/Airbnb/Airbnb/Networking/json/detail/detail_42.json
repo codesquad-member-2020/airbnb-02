@@ -1,0 +1,29 @@
+{
+    "id": 42,
+    "title": "저렴하고 아늑한 싱글침대_복층공용 (절대 개인실이 아님/혼성)_구로디지털단지역에서 2분_1",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.899144,
+        "longitude": 37.5294916,
+        "address": "서울특별시 영등포구 당산동4가 32-46"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/6fbc7197-fef1-4b2b-a510-a05eaec41ad6.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/617b1349-ce4c-4a5c-992a-5cdb73aadd4e.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/65028753/cf942252_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/48181636-9d3e-4245-8e20-9f850a7fe09f.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "yagom",
+    "superhost": false,
+    "totalGuest": 9,
+    "bedroom": 9,
+    "bed": 3,
+    "bath": 3,
+    "review": {
+        "rating": 4.23,
+        "count": 600
+    },
+    "price": 1320000
+}

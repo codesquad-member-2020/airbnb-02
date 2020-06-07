@@ -1,0 +1,29 @@
+{
+   "id":1,
+   "title":"한남더힐1차",
+   "type":"아파트",
+   "locale":{
+      "location":"용산구",
+      "latitude":127.007289,
+      "longitude":37.5361039,
+      "address":"서울특별시 용산구 한남동 810 한남더힐"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/9d2459d5-ca82-4ccf-b025-193d49e6fc9e.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/3726439/e4e357b6_original.jpg?aki_policy=large",
+      "https://a0.muscache.com/im/pictures/22669419/57c49249_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/2dd17a35-5d52-4aa3-8de1-d7d040a0bd5e.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"hoi",
+   "superhost":true,
+   "totalGuest":4,
+   "bedroom":6,
+   "bed":5,
+   "bath":5,
+   "review":{
+      "rating":4.37,
+      "count":300
+   },
+   "price":1500000
+}

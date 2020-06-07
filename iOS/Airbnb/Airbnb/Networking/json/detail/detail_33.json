@@ -1,0 +1,29 @@
+{
+    "id": 33,
+    "title": "Welcome to SingilROOOOM",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.91003,
+        "longitude": 37.5085073,
+        "address": "서울특별시 영등포구 신길동 226-52"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/6960717/6ad8ccb7_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/d360a8c2-d2c1-4a21-ad0a-a09a6a38edfb.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/b2de49b7-f651-40a1-9552-d7c0829230b8.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/61a99d3f-a7fb-46cc-866b-079e0e4013b5.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Taek",
+    "superhost": true,
+    "totalGuest": 7,
+    "bedroom": 7,
+    "bed": 5,
+    "bath": 5,
+    "review": {
+        "rating": 3.29,
+        "count": 300
+    },
+    "price": 1390000
+}

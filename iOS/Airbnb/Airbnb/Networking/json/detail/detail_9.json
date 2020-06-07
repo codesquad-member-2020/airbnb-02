@@ -1,0 +1,29 @@
+{
+   "id":9,
+   "title":"반포힐스테이트",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":126.996746,
+      "longitude":37.5010822,
+      "address":"서울시 서초구 신반포로16길 15-20"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/3bb1ba3f-c230-438b-b83d-a844b341b7f2.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/79f580d5-6dc6-4998-a900-bc4fb6f64b80.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/8f998b61-f52a-465c-9c99-8505a13324bd.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/47564bae-e7fc-48ff-956d-9ce3d2dbfdb0.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"JK",
+   "superhost":false,
+   "totalGuest":5,
+   "bedroom":5,
+   "bed":8,
+   "bath":8,
+   "review":{
+      "rating":4.37,
+      "count":400
+   },
+   "price":1360000
+}

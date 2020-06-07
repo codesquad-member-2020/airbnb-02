@@ -1,0 +1,29 @@
+{
+    "id": 40,
+    "title": "R1/Girls only/No man/safe/clean/3min to Metro1./",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.920861,
+        "longitude": 37.5127769,
+        "address": "서울특별시 영등포구 대림동 778-9"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/e6ffb84e-b386-4b48-9b00-7d7e65ca1584.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/50028440/69c3cba3_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/29930609/14ae0630_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/02d53187-1bb1-4502-8707-12669067b836.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Dan",
+    "superhost": false,
+    "totalGuest": 9,
+    "bedroom": 9,
+    "bed": 4,
+    "bath": 3,
+    "review": {
+        "rating": 3.78,
+        "count": 400
+    },
+    "price": 1390000
+}

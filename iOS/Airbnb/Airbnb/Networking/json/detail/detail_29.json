@@ -1,0 +1,29 @@
+{
+    "id": 29,
+    "title": "백현동 판교푸르지오그랑블",
+    "type": "아파트",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.910458,
+        "longitude": 37.5198512,
+        "address": "서울특별시 영등포구 영등포동2가 213"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/42406933/7f25f69b_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/106184339/373343c2_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/e844121d-6a56-4435-8fc7-a8e08d8d28a6.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/18404155/acc9590a_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "hoi",
+    "superhost": true,
+    "totalGuest": 6,
+    "bedroom": 3,
+    "bed": 8,
+    "bath": 8,
+    "review": {
+        "rating": 3.78,
+        "count": 200
+    },
+    "price": 1500000
+}

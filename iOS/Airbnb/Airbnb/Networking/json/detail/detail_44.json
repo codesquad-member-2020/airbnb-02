@@ -1,0 +1,29 @@
+{
+    "id": 44,
+    "title": "Stravely - Friendly Clean & Comfort house!",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.901243,
+        "longitude": 37.5336019,
+        "address": "서울특별시 영등포구 당산동5가 15 외2필지"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/853d4e1a-7f1b-4c62-93e3-45f4d01cbbbe.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/c802abc7-1033-4834-aafd-994c13eb788b.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/87937968/e01d4aec_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/31278262/b7a473a8_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Olaf",
+    "superhost": true,
+    "totalGuest": 3,
+    "bedroom": 3,
+    "bed": 3,
+    "bath": 3,
+    "review": {
+        "rating": 3.29,
+        "count": 400
+    },
+    "price": 1390000
+}

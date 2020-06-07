@@ -1,0 +1,29 @@
+{
+    "id": 30,
+    "title": "정자동 분당파크뷰",
+    "type": "아파트",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.900423,
+        "longitude": 37.4872268,
+        "address": "서울특별시 영등포구 대림동 1095-35"
+    },
+    "images": [
+        "https://a1.muscache.com/im/pictures/27672761/5e988c1a_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/26896082/9ec8f6d9_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/eb97919e-e0ec-4c07-94e9-1fefb61b77fe.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/14236185/f3ec817d_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Crong",
+    "superhost": true,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 7,
+    "bath": 7,
+    "review": {
+        "rating": 4.89,
+        "count": 100
+    },
+    "price": 1450000
+}

@@ -1,0 +1,29 @@
+{
+    "id": 47,
+    "title": "Private terrace! 3mins from AREX station.",
+    "type": "단독주택",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.040648,
+        "longitude": 37.5023822,
+        "address": "서울시 강남구 역삼동 677-25 큰길타워빌딩"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/37236160/37dba892_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/4b1c3628-de3e-4422-b9f1-3fc88bdf4d11.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/0305eca8-b117-43c9-8cc0-fd59f593277d.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/f53faaf0-7bf1-4ff0-a9c4-f94ab5eff86a.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Honux",
+    "superhost": false,
+    "totalGuest": 9,
+    "bedroom": 9,
+    "bed": 5,
+    "bath": 5,
+    "review": {
+        "rating": 4.23,
+        "count": 200
+    },
+    "price": 1370000
+}

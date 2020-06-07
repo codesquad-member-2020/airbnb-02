@@ -1,0 +1,29 @@
+{
+   "id":15,
+   "title":"신반포2",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":127.000048,
+      "longitude":37.5096508,
+      "address":"서울특별시 서초구 잠원동 73 신반포2지구아파트"
+   },
+   "images":[
+      "https://a1.muscache.com/im/pictures/76605535/e486b51a_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/10017956/38f38d0e_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/0ac177ed-02b9-42f7-b1a8-2eab5d546b96.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/99477788/edb8712a_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Henry",
+   "superhost":true,
+   "totalGuest":5,
+   "bedroom":6,
+   "bed":4,
+   "bath":4,
+   "review":{
+      "rating":4.78,
+      "count":300
+   },
+   "price":1380000
+}

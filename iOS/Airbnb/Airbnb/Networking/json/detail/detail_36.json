@@ -1,0 +1,29 @@
+{
+    "id": 36,
+    "title": "3#좋은복층 코로나 걱정마세요 영등포역 타임스퀘어 corona Don't worry",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.895007,
+        "longitude": 37.5265597,
+        "address": "서울특별시 영등포구 당산동3가 396-13"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/961682cd-6b44-4e2c-add3-5824f85605da.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/95872487/417fef7e_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/78655251/03f768cc_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/48064268/0794ff1c_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Jason",
+    "superhost": true,
+    "totalGuest": 9,
+    "bedroom": 9,
+    "bed": 2,
+    "bath": 7,
+    "review": {
+        "rating": 4.89,
+        "count": 300
+    },
+    "price": 1380000
+}

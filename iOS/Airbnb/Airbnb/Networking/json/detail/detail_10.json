@@ -1,0 +1,29 @@
+{
+   "id":10,
+   "title":"한양5",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":127.042054,
+      "longitude":37.5289252,
+      "address":"서울시 강남구 압구정로 401"
+   },
+   "images":[
+      "https://a0.muscache.com/im/pictures/93159365/7f701328_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/28382218/03ffe38b_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/108022507/74c51d08_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/35378478/30b4c865_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Eille",
+   "superhost":false,
+   "totalGuest":2,
+   "bedroom":9,
+   "bed":8,
+   "bath":8,
+   "review":{
+      "rating":4.65,
+      "count":400
+   },
+   "price":1380000
+}

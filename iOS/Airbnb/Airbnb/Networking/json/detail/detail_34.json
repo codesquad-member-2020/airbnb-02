@@ -1,0 +1,29 @@
+{
+    "id": 34,
+    "title": "대림동 단독주택",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.900872,
+        "longitude": 37.4892094,
+        "address": "서울특별시 영등포구 대림동 1025-58"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/32409712/09cbfa76_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/62908774/783c26a0_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/508984/678a928d_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/9cee336f-d0b3-44c9-aafc-97cbbf85cbf4.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "David",
+    "superhost": false,
+    "totalGuest": 7,
+    "bedroom": 9,
+    "bed": 7,
+    "bath": 7,
+    "review": {
+        "rating": 4.78,
+        "count": 200
+    },
+    "price": 1420000
+}

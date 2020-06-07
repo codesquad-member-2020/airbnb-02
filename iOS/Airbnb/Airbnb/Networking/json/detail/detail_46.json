@@ -1,0 +1,29 @@
+{
+    "id": 46,
+    "title": "풀옵션 독립 원룸",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.898769,
+        "longitude": 37.5062095,
+        "address": "서울특별시 영등포구 도림동 250-10"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/59806499/1304529d_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/08f29b67-7bc8-4e4a-9c4c-adab0a07ae3f.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/07be647a-15c6-4f5f-a6b5-a80a9a184554.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/53174554/6e4c580c_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "won",
+    "superhost": false,
+    "totalGuest": 4,
+    "bedroom": 4,
+    "bed": 2,
+    "bath": 2,
+    "review": {
+        "rating": 3.56,
+        "count": 600
+    },
+    "price": 1350000
+}

@@ -1,0 +1,29 @@
+{
+   "id":17,
+   "title":"반포써밋",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":127.017679,
+      "longitude":37.5012974,
+      "address":"서울특별시 서초구 반포동 1342 반포써밋"
+   },
+   "images":[
+      "https://a0.muscache.com/im/pictures/46108641/4d455757_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/36551170/c9193c85_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/6a12d950-048a-4fe9-af8f-8901f87b4c16.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/50883570/6c4d7d29_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Henry",
+   "superhost":true,
+   "totalGuest":5,
+   "bedroom":5,
+   "bed":9,
+   "bath":9,
+   "review":{
+      "rating":3.78,
+      "count":300
+   },
+   "price":1323000
+}

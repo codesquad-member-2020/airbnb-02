@@ -1,0 +1,29 @@
+{
+   "id":6,
+   "title":"갤러리아포레2차",
+   "type":"아파트",
+   "locale":{
+      "location":"성동구",
+      "latitude":127.042459,
+      "longitude":37.5457646,
+      "address":"서울시 성동구 서울숲2길 32-14"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/bda55784-efc5-4b49-8475-6582680740e7.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/f6d37ac5-1511-4a0b-93e1-07c4d7804706.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/0a40cb6a-2a4c-4a25-bbf4-1efac6e6748b.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/a21c4126-aafd-4127-9c29-b2b09eef16b4.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"David",
+   "superhost":false,
+   "totalGuest":4,
+   "bedroom":4,
+   "bed":9,
+   "bath":6,
+   "review":{
+      "rating":4.98,
+      "count":100
+   },
+   "price":1420000
+}
