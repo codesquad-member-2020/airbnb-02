@@ -26,11 +26,11 @@ public class RoomController {
 
   private final RoomService roomService;
 
-  @GetMapping("/main")
+  @GetMapping("/search")
   public ResponseEntity<List<RoomResponseDto>> viewFilteredRooms(
       @RequestParam(value = "checkin", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkin,
       @RequestParam(value = "checkout", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate checkout,
-      @RequestParam(value = "adults", required = false) Integer adults,
+      @RequestParam(value = "adults", required = false, defaultValue = "1") Integer adults,
       @RequestParam(value = "price_min", required = false, defaultValue = "0") Integer priceMin,
       @RequestParam(value = "price_max", required = false) Integer priceMax,
       @RequestParam(value = "location", required = false) String location) {
@@ -40,8 +40,7 @@ public class RoomController {
         HttpStatus.OK);
   }
 
-  @GetMapping(value = "/main", params = {"!checkin", "!checkout", "!adults", "!price_min", "!price_max",
-      "!location"})
+  @GetMapping("/all")
   public ResponseEntity<List<RoomResponseDto>> viewAllRooms() {
     return new ResponseEntity<>(roomService.findAll(), HttpStatus.OK);
   }
