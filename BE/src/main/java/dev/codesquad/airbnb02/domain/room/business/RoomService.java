@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,19 +21,15 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class RoomService {
 
 	private final RoomRepository roomRepository;
 	private final UserService userService;
 
-	public RoomService(RoomRepository roomRepository, UserService userService) {
-		this.roomRepository = roomRepository;
-		this.userService = userService;
-	}
-
 	public List<RoomResponseDto> findAll() {
-		Long userId = 1L;
+		Long userId = userService.findUserIdByToken();
 		return roomRepository.findAll().stream()
 			.map(room -> RoomResponseDto.create(room, isUserBookmarkedRoom(room.getId(), userId)))
 			.collect(Collectors.toList());
@@ -40,8 +37,7 @@ public class RoomService {
 
 	public List<RoomResponseDto> findFilteredBy(String location, Integer priceMin, Integer priceMax,
 		LocalDate checkin, LocalDate checkout) {
-
-		Long userId = 1L;
+		Long userId = userService.findUserIdByToken();
 		return roomRepository.findAll().stream()
 			.filter(room -> room.isValidLocation(location))
 			.filter(room -> room.isValidPrice(priceMin, priceMax))
@@ -52,7 +48,7 @@ public class RoomService {
 
 	public RoomDetailResponseDto findDetailByRoomId(Long roomId) {
 		Room room = findRoom(roomId);
-		Long userId = 1L;
+		Long userId = userService.findUserIdByToken();
 		boolean favorite = isUserBookmarkedRoom(roomId, userId);
 		return RoomDetailResponseDto.create(room, favorite);
 	}
@@ -64,7 +60,7 @@ public class RoomService {
 
 	@Transactional
 	public BookingResponseDto createBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
-		Long userId = 2L;
+		Long userId = userService.findUserIdByToken();
 		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
 		if (!room.isValidDate(checkin, checkout)) {
@@ -77,7 +73,7 @@ public class RoomService {
 
 	@Transactional
 	public BookingResponseDto removeBooking(Long roomId, LocalDate checkin, LocalDate checkout) {
-		Long userId = 2L;
+		Long userId = userService.findUserIdByToken();
 		User user = userService.findUser(userId);
 		Room room = findRoom(roomId);
 		room.removeBookings(checkin, checkout, user);
@@ -85,7 +81,7 @@ public class RoomService {
 		return BookingResponseDto.create(user, room);
 	}
 
-	private Room findRoom(Long roomId) {
+	public Room findRoom(Long roomId) {
 		return roomRepository.findById(roomId).orElseThrow(() -> new NotFoundDataException("해당 숙소를 찾을 수 없습니다."));
 	}
 }

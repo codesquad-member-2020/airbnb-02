@@ -1,12 +1,15 @@
 package dev.codesquad.airbnb02.domain.room.entity;
 
 import dev.codesquad.airbnb02.common.exception.BookingNotAllowedException;
+import dev.codesquad.airbnb02.domain.room.vo.Image;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -73,7 +76,8 @@ public class Room {
   @Embedded
   private Locale locale;
 
-  @OneToMany(mappedBy = "room")
+  @ElementCollection
+  @CollectionTable(name = "image", joinColumns = @JoinColumn(name = "room_id"))
   private List<Image> images = new ArrayList<>();
 
   @NotNull
