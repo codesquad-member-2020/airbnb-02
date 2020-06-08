@@ -66,7 +66,7 @@ final class CalendarViewModel: NSObject {
         return .normal
     }
     
-    private func cacheMonthInfo(of section: Int) {
+    func cacheMonthInfo(of section: Int) {
         monthInfoCache[section] = monthInfo(withOffset: section)
     }
 }
