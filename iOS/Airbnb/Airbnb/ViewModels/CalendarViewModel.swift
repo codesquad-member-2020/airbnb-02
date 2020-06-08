@@ -59,6 +59,7 @@ final class CalendarViewModel: NSObject {
     }
     
     func determineState(with date: DateComponents) -> CalendarCell.State {
+        if dates.isDaySelected(date) { return .selected }
         if dates.isDayStartSelected(date) { return .startSelected }
         if dates.isDayEndSelected(date) { return .endSelected }
         if dates.isDayStaying(date) { return .staying }
@@ -132,12 +133,5 @@ extension CalendarViewModel {
     struct MonthInfo: Equatable {
         let yearAndMonth: DateComponents
         let days: [Int]
-    }
-}
-
-extension Comparable {
-    func range(to number: Self) -> ClosedRange<Self> {
-        if self > number { return number...self }
-        return self...number
     }
 }
