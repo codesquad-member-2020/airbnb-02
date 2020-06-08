@@ -27,14 +27,13 @@ class CalendarViewModelTests: XCTestCase {
         expectedDays.insert(contentsOf: [0, 0, 0, 0, 0, 0], at: 0)
         expectedDays.append(contentsOf: [0, 0, 0, 0, 0])
         let expectedMonthInfo = CalendarViewModel.MonthInfo(
-            dateWithOffset: DateComponents(calendar: .current, year: 2020, month: 8, day: 5).date!,
-            startingIndex: 6,
+            yearAndMonth: DateComponents(calendar: .current, year: 2020, month: 8),
             days: expectedDays)
         XCTAssertEqual(monthInfo, expectedMonthInfo)
     }
 }
 
-struct DateStubs {
+private struct DateStubs {
     static let calendar = Calendar.current
     static let oneYear = DateComponents(year: 1)
     static let twoYears = DateComponents(year: 2)
