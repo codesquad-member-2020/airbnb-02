@@ -1,5 +1,5 @@
 //
-//  CalendarLayout.swift
+//  CalendarLayoutDelegate.swift
 //  Airbnb
 //
 //  Created by Chaewan Park on 2020/06/03.
@@ -8,14 +8,22 @@
 
 import UIKit
 
-final class CalendarLayout: NSObject {
+final class CalendarLayoutDelegate: NSObject {
     private let sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     private let headerHeight: CGFloat = 60
     private var sectionHeight: CGFloat?
     private var startSectionIndex: Int?
+    
+    var didSelectItem: ((IndexPath) -> Void)?
 }
 
-extension CalendarLayout: UICollectionViewDelegateFlowLayout {
+extension CalendarLayoutDelegate: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectItem?(indexPath)
+    }
+}
+
+extension CalendarLayoutDelegate: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -47,7 +55,7 @@ extension CalendarLayout: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CalendarLayout: UIScrollViewDelegate {
+extension CalendarLayoutDelegate: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         guard let sectionHeight = sectionHeight else { return }
         startSectionIndex = Int((scrollView.contentOffset.y + 10) / sectionHeight)

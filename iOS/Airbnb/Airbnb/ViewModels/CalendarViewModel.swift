@@ -9,38 +9,72 @@
 import UIKit
 
 final class CalendarViewModel: NSObject {
-    typealias Key = (startDate: Date, endDate: Date)
+    typealias Key = CalendarDates
     
-    private var duration: Key
+    enum Notification: Observable {
+        static let update = Foundation.Notification.Name("calendarDidUpdate")
+    }
+    
+    private var dates: Key {
+        didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
+    }
     
     private var calendar = Calendar.current
     private var monthInfoCache = [Int: MonthInfo]()
     
+    var checkInDate: Date? {
+        return dates.stay.checkIn
+    }
+    
+    var checkOutDate: Date? {
+        return dates.stay.checkOut
+    }
+    
     init(startDate: Date, endDate: Date) {
-        duration = (startDate, endDate)
+        dates = CalendarDates(startDate: startDate, endDate: endDate)
         super.init()
     }
     
     func numberOfMonths() -> Int {
         return Calendar.current.dateComponents(
             [.month],
-            from: duration.startDate,
-            to: duration.endDate).month! + 1
+            from: dates.start,
+            to: dates.end).month! + 1
     }
     
     func monthInfo(withOffset offset: Int) -> MonthInfo {
-        let date = calendar.date(byAdding: .month, value: offset, to: duration.startDate)!
-        let rangeOfDaysInMonth = calendar.range(of: .day, in: .month, for: date)!
-        var firstDayOfMonth = calendar.dateComponents([.calendar, .year, .month, .day], from: date)
+        let date = calendar.date(byAdding: .month, value: offset, to: dates.start)!
+        let yearAndMonth = calendar.dateComponents([.calendar, .year, .month], from: date)
+        var firstDayOfMonth = yearAndMonth
         firstDayOfMonth.day = 1
-        let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!)
-        return MonthInfo(
-            dateWithOffset: date,
-            rangeOfDays: rangeOfDaysInMonth,
-            startingIndex: weekdayOfFirstDay.weekday! - 1)
+        let weekdayOfFirstDay = calendar.dateComponents([.weekday], from: firstDayOfMonth.date!).weekday!
+        var daysInMonth = calendar.range(of: .day, in: .month, for: date)!.map { $0 }
+        daysInMonth.insert(contentsOf: (1..<weekdayOfFirstDay).map { _ in 0 }, at: 0)
+        daysInMonth.append(contentsOf: (0..<(42 - daysInMonth.count)).map { _ in 0 })
+        return MonthInfo(yearAndMonth: yearAndMonth, days: daysInMonth)
     }
     
-    private func cacheMonthInfo(of section: Int) {
+    func update(selectedIndexPath: IndexPath) {
+        guard let selectedDate = dateComponents(fromIndexPath: selectedIndexPath) else { return }
+        dates.updateSelectedDate(selectedDate)
+    }
+    
+    func dateComponents(fromIndexPath indexPath: IndexPath) -> DateComponents? {
+        guard let monthInfo = monthInfoCache[indexPath.section] else { return nil }
+        var date = monthInfo.yearAndMonth
+        date.day = monthInfo.days[indexPath.item]
+        return date
+    }
+    
+    func determineState(with date: DateComponents) -> CalendarCell.State {
+        if dates.isDaySelected(date) { return .selected }
+        if dates.isDayStartSelected(date) { return .startSelected }
+        if dates.isDayEndSelected(date) { return .endSelected }
+        if dates.isDayStaying(date) { return .staying }
+        return .normal
+    }
+    
+    func cacheMonthInfo(of section: Int) {
         monthInfoCache[section] = monthInfo(withOffset: section)
     }
 }
@@ -65,10 +99,14 @@ extension CalendarViewModel: UICollectionViewDataSource {
             withReuseIdentifier: CalendarCell.identifier,
             for: indexPath
         ) as? CalendarCell else { return UICollectionViewCell() }
+        
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
-        let monthInfo = monthInfoCache[indexPath.section]!
-        let day = indexPath.item - monthInfo.startingIndex + 1
-        if monthInfo.rangeOfDays.contains(day) { cell.dayLabel.text = "\(day)" }
+        guard let day = monthInfoCache[indexPath.section]?.days[indexPath.item], day != 0 else { return cell }
+        cell.dayLabel.text = "\(day)"
+        
+        guard let date = dateComponents(fromIndexPath: indexPath) else { return cell }
+        cell.state = determineState(with: date)
+        
         return cell
     }
     
@@ -84,7 +122,7 @@ extension CalendarViewModel: UICollectionViewDataSource {
                 for: indexPath
             ) as? CalendarHeaderView else { return UICollectionReusableView() }
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
-        let date = monthInfoCache[indexPath.section]!.dateWithOffset
+        let date = monthInfoCache[indexPath.section]!.yearAndMonth.date!
         view.headerLabel.text = Self.yearAndMonthFormatter.string(from: date)
         return view
     }
@@ -101,8 +139,7 @@ extension CalendarViewModel {
 
 extension CalendarViewModel {
     struct MonthInfo: Equatable {
-        let dateWithOffset: Date
-        let rangeOfDays: Range<Int>
-        let startingIndex: Int
+        let yearAndMonth: DateComponents
+        let days: [Int]
     }
 }

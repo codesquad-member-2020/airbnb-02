@@ -22,15 +22,43 @@ class CalendarViewModelTests: XCTestCase {
             startDate: DateStubs.startDate,
             endDate: DateStubs.endDateAfterOneYear)
         let monthInfo = viewModel.monthInfo(withOffset: 2)
+        
+        var expectedDays = (1..<32).map { $0 }
+        expectedDays.insert(contentsOf: [0, 0, 0, 0, 0, 0], at: 0)
+        expectedDays.append(contentsOf: [0, 0, 0, 0, 0])
         let expectedMonthInfo = CalendarViewModel.MonthInfo(
-            dateWithOffset: DateComponents(calendar: .current, year: 2020, month: 8, day: 5).date!,
-            rangeOfDays: (1..<32),
-            startingIndex: 6)
+            yearAndMonth: DateComponents(calendar: .current, year: 2020, month: 8),
+            days: expectedDays)
         XCTAssertEqual(monthInfo, expectedMonthInfo)
+    }
+    
+    func testConvertingToDateComponents() {
+        let viewModel = CalendarViewModel(
+            startDate: DateStubs.startDate,
+            endDate: DateStubs.endDateAfterOneYear)
+        viewModel.cacheMonthInfo(of: 2)
+        let dateComponents = viewModel.dateComponents(fromIndexPath: IndexPath(item: 9, section: 2))
+        let expectedDateComponents = DateComponents(calendar: .current, year: 2020, month: 8, day: 4)
+        XCTAssertEqual(dateComponents, expectedDateComponents)
+    }
+    
+    func testUpdatingSelectedDates() {
+        let exp = expectation(description: "Observer has been called")
+        let viewModel = CalendarViewModel(
+            startDate: DateStubs.startDate,
+            endDate: DateStubs.endDateAfterOneYear)
+        viewModel.cacheMonthInfo(of: 2)
+        var token: NotificationToken? = CalendarViewModel.Notification.addObserver { _ in
+            exp.fulfill()
+        }
+        let dummy = IndexPath(item: 9, section: 2)
+        viewModel.update(selectedIndexPath: dummy)
+        waitForExpectations(timeout: 1)
+        token = nil
     }
 }
 
-struct DateStubs {
+private struct DateStubs {
     static let calendar = Calendar.current
     static let oneYear = DateComponents(year: 1)
     static let twoYears = DateComponents(year: 2)

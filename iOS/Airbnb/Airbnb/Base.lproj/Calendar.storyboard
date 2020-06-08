@@ -84,6 +84,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmZ-gK-72b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="22.5" height="45"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPx-vi-uGq">
+                                                    <rect key="frame" x="22.5" y="0.0" width="22.5" height="45"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQu-vg-2Mg" customClass="RoundView" customModule="Airbnb" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                    <color key="backgroundColor" name="completionBlack"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-DY-aPy">
                                                     <rect key="frame" x="22.5" y="22.5" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -92,12 +107,27 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oQu-vg-2Mg" secondAttribute="trailing" id="Bvr-7g-kFo"/>
+                                                <constraint firstItem="CmZ-gK-72b" firstAttribute="width" secondItem="IWp-zh-6Aq" secondAttribute="width" multiplier="0.5" id="E56-Qq-kds"/>
                                                 <constraint firstItem="2Ds-DY-aPy" firstAttribute="centerX" secondItem="IWp-zh-6Aq" secondAttribute="centerX" id="EdM-Qa-1k3"/>
+                                                <constraint firstAttribute="trailing" secondItem="HPx-vi-uGq" secondAttribute="trailing" id="Ist-5p-JhK"/>
+                                                <constraint firstItem="oQu-vg-2Mg" firstAttribute="leading" secondItem="IWp-zh-6Aq" secondAttribute="leading" id="QNz-l2-V3T"/>
+                                                <constraint firstItem="oQu-vg-2Mg" firstAttribute="top" secondItem="IWp-zh-6Aq" secondAttribute="top" id="RkY-ke-6O7"/>
+                                                <constraint firstItem="HPx-vi-uGq" firstAttribute="width" secondItem="IWp-zh-6Aq" secondAttribute="width" multiplier="0.5" id="Xih-ew-GHm"/>
+                                                <constraint firstAttribute="bottom" secondItem="HPx-vi-uGq" secondAttribute="bottom" id="aa6-U4-0nt"/>
+                                                <constraint firstItem="CmZ-gK-72b" firstAttribute="leading" secondItem="IWp-zh-6Aq" secondAttribute="leading" id="af3-bu-j5T"/>
+                                                <constraint firstAttribute="bottom" secondItem="CmZ-gK-72b" secondAttribute="bottom" id="c5I-ov-reS"/>
+                                                <constraint firstItem="HPx-vi-uGq" firstAttribute="top" secondItem="IWp-zh-6Aq" secondAttribute="top" id="cEk-6c-wgD"/>
+                                                <constraint firstItem="CmZ-gK-72b" firstAttribute="top" secondItem="IWp-zh-6Aq" secondAttribute="top" id="eku-Wt-ZyG"/>
                                                 <constraint firstItem="2Ds-DY-aPy" firstAttribute="centerY" secondItem="IWp-zh-6Aq" secondAttribute="centerY" id="fe7-PK-lFb"/>
+                                                <constraint firstAttribute="bottom" secondItem="oQu-vg-2Mg" secondAttribute="bottom" id="z3m-5b-4q2"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="blackRoundView" destination="oQu-vg-2Mg" id="yc7-fg-oKN"/>
                                             <outlet property="dayLabel" destination="2Ds-DY-aPy" id="qA4-QG-eMB"/>
+                                            <outlet property="leftGrayView" destination="CmZ-gK-72b" id="4Fj-wx-XfO"/>
+                                            <outlet property="rightGrayView" destination="HPx-vi-uGq" id="6wa-KZ-Rv9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -146,6 +176,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="completionBlack">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="textGray">
             <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
