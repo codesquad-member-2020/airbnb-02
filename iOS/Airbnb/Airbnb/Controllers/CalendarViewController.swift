@@ -10,6 +10,7 @@ import UIKit
 
 protocol CalendarDelegate: FilterSubViewControllerDelegate {
     func durationFromToday(_ viewController: CalendarViewController) -> DateComponents
+    func stayDatesDidChange(_ viewController: CalendarViewController, from checkIn: Date?, to checkOut: Date?)
 }
 
 final class CalendarViewController: FilterSubViewController {
@@ -42,8 +43,12 @@ final class CalendarViewController: FilterSubViewController {
     }
     
     private func configureObserver() {
-        token = CalendarViewModel.Notification.addObserver { [weak self] _ in
-            self?.collectionView.reloadData()
+        token = CalendarViewModel.Notification.addObserver { [weak self] notification in
+            guard let self = self,
+                let delegate = self.delegate as? CalendarDelegate,
+                let object = notification.object as? CalendarViewModel else { return }
+            self.collectionView.reloadData()
+            delegate.stayDatesDidChange(self, from: object.checkInDate, to: object.checkOutDate)
         }
     }
     

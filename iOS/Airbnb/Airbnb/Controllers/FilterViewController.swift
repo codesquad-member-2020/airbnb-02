@@ -59,4 +59,31 @@ extension FilterViewController: CalendarDelegate {
     func durationFromToday(_ viewController: CalendarViewController) -> DateComponents {
         return DateComponents(year: 1)
     }
+    
+    func stayDatesDidChange(
+        _ viewController: CalendarViewController,
+        from checkIn: Date?,
+        to checkOut: Date?
+    ) {
+        filterTitle.text = "\(stringOrCheckIn(from: checkIn)) — \(stringOrCheckOut(from: checkOut))"
+    }
+}
+
+private extension FilterViewController {
+    private func stringOrCheckIn(from date: Date?) -> String {
+        guard let date = date else { return "체크인" }
+        return Self.monthAndDayFormatter.string(from: date)
+    }
+    
+    private func stringOrCheckOut(from date: Date?) -> String {
+        guard let date = date else { return "체크아웃" }
+        return Self.monthAndDayFormatter.string(from: date)
+    }
+    
+    static let monthAndDayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        formatter.calendar = Calendar.current
+        return formatter
+    }()
 }

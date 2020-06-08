@@ -22,6 +22,14 @@ final class CalendarViewModel: NSObject {
     private var calendar = Calendar.current
     private var monthInfoCache = [Int: MonthInfo]()
     
+    var checkInDate: Date? {
+        return dates.stay.checkIn
+    }
+    
+    var checkOutDate: Date? {
+        return dates.stay.checkOut
+    }
+    
     init(startDate: Date, endDate: Date) {
         dates = CalendarDates(startDate: startDate, endDate: endDate)
         super.init()
