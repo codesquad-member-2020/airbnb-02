@@ -54,6 +54,7 @@
 		C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22A527F2473AAB10055A478 /* BookmarkViewController.swift */; };
 		C2392758248BE50D000470BC /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2392757248BE50D000470BC /* RoundView.swift */; };
 		C2392789248DEABA000470BC /* CalendarDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2392788248DEABA000470BC /* CalendarDates.swift */; };
+		C239278D248E6298000470BC /* StayDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C239278C248E6298000470BC /* StayDates.swift */; };
 		C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE0247C146B0019588B /* NibLoadable.swift */; };
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
 		C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* StoryboardRouter.swift */; };
@@ -140,6 +141,7 @@
 		C22A527F2473AAB10055A478 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C2392757248BE50D000470BC /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		C2392788248DEABA000470BC /* CalendarDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDates.swift; sourceTree = "<group>"; };
+		C239278C248E6298000470BC /* StayDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDates.swift; sourceTree = "<group>"; };
 		C2553CE0247C146B0019588B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C2553CE8247C23E50019588B /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				5A81411E247BCE900020ED80 /* BNB.swift */,
 				C2392788248DEABA000470BC /* CalendarDates.swift */,
+				C239278C248E6298000470BC /* StayDates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				5ADA864D2483D09E000C06E9 /* LoginViewController.swift in Sources */,
 				C22A52582473A1A80055A478 /* AppDelegate.swift in Sources */,
 				C2B959C3247E549A003DC5D9 /* BNBViewModels.swift in Sources */,
+				C239278D248E6298000470BC /* StayDates.swift in Sources */,
 				C2B959C9247E5C3A003DC5D9 /* NotificationToken.swift in Sources */,
 				C203466324897A3900A16C40 /* CalendarHeaderView.swift in Sources */,
 				C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */,
