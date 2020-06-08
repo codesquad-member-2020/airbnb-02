@@ -18,11 +18,28 @@ struct CalendarDates {
         end = endDate
     }
     
-    mutating func updateSelected(date: DateComponents) {
+    mutating func updateSelectedDate(_ newDate: DateComponents) {
         if selected.count > 1 {
             selected.removeFirst()
         }
-        selected.append(date)
+        selected.append(newDate)
+    }
+    
+    func isDayStartSelected(_ day: DateComponents) -> Bool {
+        return selected.first == day
+    }
+    
+    func isDayEndSelected(_ day: DateComponents) -> Bool {
+        return selected.last == day
+    }
+    
+    func isDayStaying(_ day: DateComponents) -> Bool {
+        if selected.count != 2 { return false }
+        guard let startDate = selected.first?.date,
+            let endDate = selected.last?.date,
+            let currentDate = day.date else { return false }
+        if startDate.range(to: endDate).contains(currentDate) { return true }
+        return false
     }
 }
 
@@ -65,10 +82,22 @@ final class CalendarViewModel: NSObject {
     }
     
     func update(selectedIndexPath: IndexPath) {
-        guard let monthInfo = monthInfoCache[selectedIndexPath.section] else { return }
-        var selectedDate = monthInfo.yearAndMonth
-        selectedDate.day = monthInfo.days[selectedIndexPath.item]
-        dates.updateSelected(date: selectedDate)
+        guard let selectedDate = dateComponents(fromIndexPath: selectedIndexPath) else { return }
+        dates.updateSelectedDate(selectedDate)
+    }
+    
+    func dateComponents(fromIndexPath indexPath: IndexPath) -> DateComponents? {
+        guard let monthInfo = monthInfoCache[indexPath.section] else { return nil }
+        var date = monthInfo.yearAndMonth
+        date.day = monthInfo.days[indexPath.item]
+        return date
+    }
+    
+    func determineState(with date: DateComponents) -> CalendarCell.State {
+        if dates.isDayStartSelected(date) { return .startSelected }
+        if dates.isDayEndSelected(date) { return .endSelected }
+        if dates.isDayStaying(date) { return .staying }
+        return .normal
     }
     
     private func cacheMonthInfo(of section: Int) {
@@ -96,10 +125,14 @@ extension CalendarViewModel: UICollectionViewDataSource {
             withReuseIdentifier: CalendarCell.identifier,
             for: indexPath
         ) as? CalendarCell else { return UICollectionViewCell() }
+        
         if monthInfoCache[indexPath.section] == nil { cacheMonthInfo(of: indexPath.section) }
-        if let day = monthInfoCache[indexPath.section]?.days[indexPath.item], day != 0 {
-            cell.dayLabel.text = "\(day)"
-        }
+        guard let day = monthInfoCache[indexPath.section]?.days[indexPath.item], day != 0 else { return cell }
+        cell.dayLabel.text = "\(day)"
+        
+        guard let date = dateComponents(fromIndexPath: indexPath) else { return cell }
+        cell.state = determineState(with: date)
+        
         return cell
     }
     
@@ -134,5 +167,12 @@ extension CalendarViewModel {
     struct MonthInfo: Equatable {
         let yearAndMonth: DateComponents
         let days: [Int]
+    }
+}
+
+extension Comparable {
+    func range(to number: Self) -> ClosedRange<Self> {
+        if self > number { return number...self }
+        return self...number
     }
 }
