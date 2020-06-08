@@ -10,7 +10,7 @@ import UIKit
 
 class CalendarCell: UICollectionViewCell {
     enum State {
-        case startSelected, endSelected, staying, normal
+        case selected, startSelected, endSelected, staying, normal
     }
     
     @IBOutlet weak var dayLabel: UILabel!
@@ -30,6 +30,9 @@ class CalendarCell: UICollectionViewCell {
     private func changeState(to state: State) {
         resetCell()
         switch state {
+        case .selected:
+            dayLabel.textColor = .white
+            blackRoundView.isHidden = false
         case .startSelected:
             dayLabel.textColor = .white
             blackRoundView.isHidden = false
