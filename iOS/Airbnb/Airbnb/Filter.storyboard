@@ -104,6 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="filterTitle" destination="9HF-vb-Dfs" id="MrY-xf-mMN"/>
+                        <outlet property="stackView" destination="rBj-BF-8nX" id="EXe-CY-JBJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqU-c8-8p5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

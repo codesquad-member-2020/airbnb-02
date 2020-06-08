@@ -4,6 +4,8 @@
 
 > 팀원: Jason, Heidi
 
+<p align="center"><img width=300 src="demo.gif"></p>
+
 ## Task 목록
 
 [스프레드시트 링크][spreadsheet]
@@ -54,6 +56,30 @@
 
 ![result2](result2.png)
 
+### 로그인 기능 구현
+
+> [PR #129 [iOS] 로그인 기능을 구현][pr129]
+
+* [Jason] 로그인 화면 구성 [Issue][issue103] [PR][pr105]
+* [Jason] GitHub OAuth인증 및 JWT 토큰 저장 기능 구현 [Issue][issue104] [PR][pr112]
+* [Jason] 조건에 따라 로그인 화면 띄우는 기능 구현 [Issue][issue113] [PR][pr127]
+
+**실행 결과**
+
+![result3](https://user-images.githubusercontent.com/38216027/83595180-31f76700-a59c-11ea-987f-fd7df9c56bed.gif)
+
+### 날짜 선택 기능 구현
+
+> [PR #158 [iOS] 숙박 기간 선택 기능 구현][pr158]
+
+* [Heidi] 캘린더 VC 프로토타입 구성 및 Filter VC와 연동 [Issue][issue130] [PR][pr134]
+* [Heidi] 달력에 년, 월, 일 데이터 표시 [Issue][issue142] [PR][pr152]
+* [Heidi] 숙박일 선택 기능 구현 [Issue][issue153] [PR][pr157]
+
+**실행 결과**
+
+<p align="center"><img width=300 src="calendar.gif"></p>
+
 
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1mEWSSgX4h4rGINgtG6D2y6Qk0B0QxjHbdrxlQimck3Y/edit?usp=sharing
 
@@ -82,7 +108,13 @@
 [issue83]: https://github.com/codesquad-member-2020/airbnb-02/issues/83
 [issue86]: https://github.com/codesquad-member-2020/airbnb-02/issues/86
 [issue97]: https://github.com/codesquad-member-2020/airbnb-02/issues/97
+[issue103]: https://github.com/codesquad-member-2020/airbnb-02/issues/103
+[issue104]: https://github.com/codesquad-member-2020/airbnb-02/issues/104
 [issue107]: https://github.com/codesquad-member-2020/airbnb-02/issues/107
+[issue113]: https://github.com/codesquad-member-2020/airbnb-02/issues/113
+[issue130]: https://github.com/codesquad-member-2020/airbnb-02/issues/130
+[issue142]: https://github.com/codesquad-member-2020/airbnb-02/issues/142
+[issue153]: https://github.com/codesquad-member-2020/airbnb-02/issues/153
 
 [pr4]: https://github.com/codesquad-member-2020/airbnb-02/pull/4
 [pr12]: https://github.com/codesquad-member-2020/airbnb-02/pull/12
@@ -110,8 +142,16 @@
 [pr87]: https://github.com/codesquad-member-2020/airbnb-02/pull/87
 [pr93]: https://github.com/codesquad-member-2020/airbnb-02/pull/93
 [pr100]: https://github.com/codesquad-member-2020/airbnb-02/pull/100
+[pr105]: https://github.com/codesquad-member-2020/airbnb-02/pull/105
+[pr112]: https://github.com/codesquad-member-2020/airbnb-02/pull/112
 [pr118]: https://github.com/codesquad-member-2020/airbnb-02/pull/118
 [pr119]: https://github.com/codesquad-member-2020/airbnb-02/pull/119
+[pr127]: https://github.com/codesquad-member-2020/airbnb-02/pull/127
+[pr129]: https://github.com/codesquad-member-2020/airbnb-02/pull/129
+[pr134]: https://github.com/codesquad-member-2020/airbnb-02/pull/134
+[pr152]: https://github.com/codesquad-member-2020/airbnb-02/pull/152
+[pr157]: https://github.com/codesquad-member-2020/airbnb-02/pull/157
+[pr158]: https://github.com/codesquad-member-2020/airbnb-02/pull/158
 
 
 
