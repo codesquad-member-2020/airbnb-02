@@ -71,7 +71,7 @@ final class RoomViewController: UIViewController {
     
     private func configureImageUseCase(_ rooms: [Room]) {
         rooms.forEach {
-            $0.images.forEach { urlString in
+            $0.repeatImages { urlString in
                 guard let url = URL(string: urlString) else { return }
                 guard !ImageCache.fileExists(
                     lastPathComponent: url.lastPathComponent

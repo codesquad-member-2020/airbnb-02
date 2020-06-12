@@ -45,15 +45,19 @@ extension RoomViewModels: UICollectionViewDataSource {
         
         let room = roomViewModels[indexPath.row].room
         cell.configure(with: room)
+        insertImages(cell, with: room)
         
+        return cell
+    }
+    
+    private func insertImages(_ cell: RoomCell, with room: Room) {
         var index = 0
-        room.images.forEach { urlString in
+        room.repeatImages { urlString in
             guard let url = URL(string: urlString) else { return }
             guard let image = ImageCache.read(lastPathComponent: url.lastPathComponent) else { return }
             
             cell.imagePagingView.insert(at: index, image: image)
             index += 1
         }
-        return cell
     }
 }

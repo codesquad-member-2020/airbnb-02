@@ -19,6 +19,10 @@ struct Room: Codable {
     let favorite: Bool
     let review: Review
     let superhost: Bool
+    
+    func repeatImages(handler: (String) -> ()) {
+        images.forEach { handler($0) }
+    }
 }
 
 struct Coordinate: Codable {
