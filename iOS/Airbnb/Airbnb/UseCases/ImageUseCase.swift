@@ -15,6 +15,7 @@ final class ImageUseCase {
     
     private let networkDispatcher: NetworkDispatcher
     private let urlsQueue = DispatchQueue(label: "urls.serial.queue")
+    private let semaphore = DispatchSemaphore(value: 10)
     
     init(networkDispatcher: NetworkDispatcher) {
         self.networkDispatcher = networkDispatcher
@@ -22,12 +23,15 @@ final class ImageUseCase {
     
     func request(imageURL: URL) {
         urlsQueue.async { [weak self] in
+            self?.semaphore.wait()
             self?.downloadImage(imageURL: imageURL)
         }
     }
     
     private func downloadImage(imageURL: URL) {
-        networkDispatcher.download(url: imageURL) { tempURL, urlResponse, error in
+        networkDispatcher.download(url: imageURL) { [weak self] tempURL, urlResponse, error in
+            defer { self?.semaphore.signal() }
+            
             guard let tempURL = tempURL else { return }
             guard let destinaionURL = ImageCache.suggestedDownloadDestination(
                 lastPathComponent: imageURL.lastPathComponent
