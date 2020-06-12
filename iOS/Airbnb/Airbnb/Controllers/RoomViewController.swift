@@ -28,11 +28,6 @@ final class RoomViewController: UIViewController {
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
-        fetchRooms()
-    }
-    
-    private func fetchRooms() {
-        roomsUseCase.request(RoomsRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -66,7 +61,7 @@ final class RoomViewController: UIViewController {
     }
     
     private func configureUseCase() {
-        roomsUseCase.updateNotify { [weak self] rooms in
+        roomsUseCase.request(RoomsRequest()) { [weak self] rooms in
             guard let rooms = rooms else { return }
             
             self?.roomViewModels.update(rooms: rooms)
@@ -89,19 +84,19 @@ final class RoomViewController: UIViewController {
 
 extension RoomViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
-           _ collectionView: UICollectionView,
-           layout collectionViewLayout: UICollectionViewLayout,
-           sizeForItemAt indexPath: IndexPath
-       ) -> CGSize {
-           return CGSize(width: collectionView.frame.width, height: 250)
-       }
-       
-       func collectionView(
-           _ collectionView: UICollectionView,
-           layout collectionViewLayout: UICollectionViewLayout,
-           minimumLineSpacingForSectionAt section: Int
-       )-> CGFloat {
-           return 30
-       }
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 250)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    )-> CGFloat {
+        return 30
+    }
 }
 

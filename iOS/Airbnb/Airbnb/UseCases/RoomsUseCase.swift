@@ -10,27 +10,21 @@ import Foundation
 
 final class RoomsUseCase {
     private let roomsTask: RoomsTask
-    private var handler: ([Room]?) -> ()
     private let requestQueue = DispatchQueue(label: "roomsRequest.serial.queue")
     
-    init(roomsTask: RoomsTask, handler: @escaping ([Room]?) -> () = { _ in }) {
+    init(roomsTask: RoomsTask) {
         self.roomsTask = roomsTask
-        self.handler = handler
     }
     
-    func updateNotify(handler: @escaping ([Room]?) -> ()) {
-        self.handler = handler
-    }
-    
-    func request(_ request: RoomsRequest) {
+    func request(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
         requestQueue.async { [weak self] in
-            self?.requestRooms(request)
+            self?.requestRooms(request, completionHandler: completionHandler)
         }
     }
     
-    private func requestRooms(_ request: RoomsRequest) {
-        roomsTask.perform(request) { [weak self] rooms in
-            self?.handler(rooms)
+    private func requestRooms(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
+        roomsTask.perform(request) { rooms in
+            completionHandler(rooms)
         }
     }
 }
