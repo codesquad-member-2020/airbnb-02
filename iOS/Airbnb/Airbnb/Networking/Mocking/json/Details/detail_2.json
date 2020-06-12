@@ -1,0 +1,29 @@
+{
+   "id":2,
+   "title":"아크로리버파크",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":126.993127,
+      "longitude":37.5048842,
+      "address":"서울특별시 서초구 반포동 2-12 아크로리버파크"
+   },
+   "images":[
+      "https://a0.muscache.com/im/pictures/17730638/4f5395df_original.jpg?aki_policy=large",
+      "https://a0.muscache.com/im/pictures/85280363/8de50183_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/2d71c98a-5073-43de-9e6d-c1558f4a640d.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/70939206/12d1f063_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Crong",
+   "superhost":true,
+   "totalGuest":5,
+   "bedroom":5,
+   "bed":4,
+   "bath":4,
+   "review":{
+      "rating":4.98,
+      "count":300
+   },
+   "price":1450000
+}

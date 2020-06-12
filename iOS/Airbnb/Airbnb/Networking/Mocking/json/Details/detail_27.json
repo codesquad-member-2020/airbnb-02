@@ -1,0 +1,29 @@
+{
+    "id": 27,
+    "title": "롯데캐슬골드",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.100592,
+        "longitude": 37.5144115,
+        "address": "서울특별시 송파구 신천동 7-18"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/9c5647cf-0465-4c8c-afbb-c2d9c6bae700.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/64368381/64276b02_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/596a45a6-2b3c-4786-9340-c6f56f62c553.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/0d5a27a7-fbd3-493e-bf8f-fc2e3350b7b5.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Ragdoll",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 8,
+    "bed": 3,
+    "bath": 3,
+    "review": {
+        "rating": 4.78,
+        "count": 300
+    },
+    "price": 1470000
+}

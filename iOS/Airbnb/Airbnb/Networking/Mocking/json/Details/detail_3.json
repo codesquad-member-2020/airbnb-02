@@ -1,0 +1,29 @@
+{
+   "id":3,
+   "title":"한양81동한개동",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":127.041738,
+      "longitude":37.5299524,
+      "address":"서울시 강남구 압구정로 403"
+   },
+   "images":[
+      "https://a1.muscache.com/im/pictures/16041990/1a737313_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/89680687/aa93f8c6_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/10017042/6894aaff_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/95301278/65fdb41e_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Honux",
+   "superhost":false,
+   "totalGuest":4,
+   "bedroom":4,
+   "bed":4,
+   "bath":4,
+   "review":{
+      "rating":4.34,
+      "count":400
+   },
+   "price":1470000
+}

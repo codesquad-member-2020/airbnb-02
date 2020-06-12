@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class SearchTask: NetworkTask {
-    typealias Input = SearchRequest
-    typealias Output = [BNB]
+final class RoomsTask: NetworkTask {
+    typealias Input = RoomsRequest
+    typealias Output = [Room]
 
     private let networkDispatcher: NetworkDispatcher
 
@@ -18,10 +18,10 @@ final class SearchTask: NetworkTask {
         self.networkDispatcher = networkDispatcher
     }
 
-    func perform(_ request: SearchRequest, completionHandler: @escaping ([BNB]?) -> ()) {
+    func perform(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
         networkDispatcher.execute(request: request) { data, urlResponse, error in
             guard let data = data else { return }
-            let bnbs = try? JSONDecoder().decode([BNB].self, from: data)
+            let bnbs = try? JSONDecoder().decode([Room].self, from: data)
             completionHandler(bnbs)
         }
     }

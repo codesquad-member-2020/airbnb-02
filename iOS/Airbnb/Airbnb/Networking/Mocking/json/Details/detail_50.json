@@ -1,0 +1,29 @@
+{
+    "id": 50,
+    "title": "내집처럼 편안한 주거공간",
+    "type": "단독주택",
+    "locale": {
+        "location": "중구",
+        "latitude": 126.973541,
+        "longitude": 37.5594546,
+        "address": "서울시 중구 봉래동1가 5-36"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/a59160ae-f50b-4a12-a9b4-db35b4dadca8.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/52898578/441030a7_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/72230850/77e857cd_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/4d7f3eeb-46ca-4700-9f97-93edb2771118.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Jason",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 8,
+    "bed": 3,
+    "bath": 3,
+    "review": {
+        "rating": 3.78,
+        "count": 400
+    },
+    "price": 1490000
+}

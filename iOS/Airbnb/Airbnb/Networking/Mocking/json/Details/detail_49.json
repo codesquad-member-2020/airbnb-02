@@ -1,0 +1,29 @@
+{
+    "id": 49,
+    "title": "[Sindorim station] ❤️Reasonable price for 2people❤️",
+    "type": "단독주택",
+    "locale": {
+        "location": "구로구",
+        "latitude": 126.888191,
+        "longitude": 37.5081099,
+        "address": "서울시 구로구 신도림동 692 디큐브시티"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/6f87f6d3-f78a-44ab-8ffb-2a3553f2ef73.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/2502b3d9-78bf-40d0-a897-ff992b697e8f.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/fdfc4604-506b-49e4-84ed-f62105feb802.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/2d910ae6-91e8-4940-a731-9e6783e4c4b1.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "JK",
+    "superhost": false,
+    "totalGuest": 9,
+    "bedroom": 9,
+    "bed": 6,
+    "bath": 4,
+    "review": {
+        "rating": 4.89,
+        "count": 400
+    },
+    "price": 1470000
+}

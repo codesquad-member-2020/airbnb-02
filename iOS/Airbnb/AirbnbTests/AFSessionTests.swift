@@ -27,7 +27,7 @@ final class AFSessionTests: XCTestCase {
         let expectation = XCTestExpectation(description: "네트워크 응답 받음")
         defer { wait(for: [expectation], timeout: 1) }
         
-        afSession.execute(request: SearchRequest()) { data, response, error in
+        afSession.execute(request: RoomsRequest()) { data, response, error in
             defer { expectation.fulfill() }
             XCTAssertNotNil(data)
             XCTAssertNil(error)

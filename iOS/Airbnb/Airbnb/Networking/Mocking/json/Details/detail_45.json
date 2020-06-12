@@ -1,0 +1,29 @@
+{
+    "id": 45,
+    "title": "트라이앵글 하우스 - 보드게임이 가능한 편안하고 즐거운 하우스!",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.904341,
+        "longitude": 37.5001324,
+        "address": "서울특별시 영등포구 신길동 420-9"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/d73536b0-20e3-4409-b9ce-d78b863e0b62.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/d8307c01-c1c6-40e2-b022-cdde12adf341.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/9626eb1f-bbf0-4a58-8b32-435fd6180220.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/cd544a2d-51ae-446f-9b01-528035cd0af8.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Henry",
+    "superhost": true,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 9,
+    "bath": 9,
+    "review": {
+        "rating": 4.34,
+        "count": 200
+    },
+    "price": 1323000
+}

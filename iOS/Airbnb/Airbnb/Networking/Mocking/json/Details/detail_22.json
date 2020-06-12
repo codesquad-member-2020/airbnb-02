@@ -1,0 +1,29 @@
+{
+    "id": 22,
+    "title": "개포주공1단지",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.070854,
+        "longitude": 37.4891236,
+        "address": "서울특별시 강남구 개포동 185 주공아파트"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/e9aa6da4-3204-49e3-8c83-6f0ffc44e868.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/100790220/e0bf62dd_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/0c3c4041-3753-4370-a3fa-6b47a8df438c.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/16201013/24102af3_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Jason",
+    "superhost": true,
+    "totalGuest": 4,
+    "bedroom": 4,
+    "bed": 6,
+    "bath": 9,
+    "review": {
+        "rating": 4.89,
+        "count": 200
+    },
+    "price": 1490000
+}

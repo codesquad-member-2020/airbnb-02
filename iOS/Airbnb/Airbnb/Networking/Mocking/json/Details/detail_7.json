@@ -1,0 +1,29 @@
+{
+   "id":7,
+   "title":"구반포자이",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":127.015599,
+      "longitude":37.5067127,
+      "address":"서울시 서초구 신반포로 270"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/cb235ed0-66b6-4e23-8b32-9ef6bf35e9fb.jpg?aki_policy=large",
+      "https://a0.muscache.com/im/pictures/10459153/f057ec7e_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/e9534b6e-66d5-47f0-ba58-cc4b1f4921a8.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/3caadad8-d70a-46fa-ab9c-abb69211b0de.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Solar",
+   "superhost":false,
+   "totalGuest":3,
+   "bedroom":3,
+   "bed":9,
+   "bath":9,
+   "review":{
+      "rating":4.98,
+      "count":300
+   },
+   "price":1430000
+}

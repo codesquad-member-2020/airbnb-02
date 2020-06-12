@@ -1,0 +1,29 @@
+{
+   "id":8,
+   "title":"삼성서초가든스위트",
+   "type":"아파트",
+   "locale":{
+      "location":"서초구",
+      "latitude":127.026226,
+      "longitude":37.494115,
+      "address":"서울시 서초구 서운로 122"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/7b6456f7-5439-4ad1-beeb-0921ac8f701f.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/085498dc-6389-4594-9169-e5135e8b90cc.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/a162e1dd-2167-43c7-8a83-6a7a9c88e111.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/c4a03580-1f85-4387-ab05-014bbdaa85ce.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Jason",
+   "superhost":true,
+   "totalGuest":3,
+   "bedroom":3,
+   "bed":3,
+   "bath":2,
+   "review":{
+      "rating":3.29,
+      "count":100
+   },
+   "price":1380000
+}

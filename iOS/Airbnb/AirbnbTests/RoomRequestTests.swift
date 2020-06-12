@@ -19,9 +19,9 @@ private struct FakeRequest: Request {
     }
 }
 
-final class SearchRequestTests: XCTestCase {
+final class RoomRequestTests: XCTestCase {
     func testSearchRequest_isCorrect() {
-        let request = SearchRequest()
+        let request = RoomsRequest()
         XCTAssertEqual(request.path, Endpoints.main)
         XCTAssertEqual(request.method, HTTPMethod.get)
     }

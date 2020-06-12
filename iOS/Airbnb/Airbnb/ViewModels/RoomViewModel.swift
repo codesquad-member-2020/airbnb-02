@@ -8,33 +8,33 @@
 
 import Foundation
 
-final class BNBViewModel {
+final class RoomViewModel {
     enum Notification: Observable {
-        static let update = Foundation.Notification.Name("bnbDidUpdate")
+        static let update = Foundation.Notification.Name("roomDidUpdate")
     }
     
-    typealias Key = BNB
+    typealias Key = Room
     
-    var bnb: Key
+    var room: Key
     private var imageToken: NotificationToken?
     
-    init(bnb: BNB) {
-        self.bnb = bnb
+    init(room: Room) {
+        self.room = room
         configureObserver()
     }
     
     private func configureObserver() {
         imageToken = ImageUseCase.Notification.addObserver{ [weak self] notification in
             guard let imageURL = notification.userInfo?["imageURL"] as? URL,
-                let bnbID = self?.bnb.id else { return }
+                let roomID = self?.room.id else { return }
             
-            self?.bnb.images.forEach {
+            self?.room.images.forEach {
                 guard imageURL == URL(string: $0) else { return }
                 
                 NotificationCenter.default.post(
                     name: Notification.update,
                     object: self,
-                    userInfo: ["bnbID": bnbID]
+                    userInfo: ["roomID": roomID]
                 )
             }
         }
