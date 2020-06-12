@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Room: Codable {
+struct Room: Codable, Equatable {
     let id: Int
     let title: String
     let type: String
@@ -25,20 +25,12 @@ struct Room: Codable {
     }
 }
 
-struct Coordinate: Codable {
+struct Coordinate: Codable, Equatable {
     let latitude: Double
     let longitude: Double
 }
 
-struct Review: Codable {
+struct Review: Codable, Equatable {
     let rating: Double
     let count: Int
 }
-
-extension Room: Equatable { }
-
-extension Coordinate: Equatable { }
-
-extension Review: Equatable { }
-
-
