@@ -68,6 +68,7 @@
 		5A67174824936FFD0075B510 /* detail_19.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171624936FFD0075B510 /* detail_19.json */; };
 		5A67174924936FFD0075B510 /* detail_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171724936FFD0075B510 /* detail_1.json */; };
 		5A67174A24936FFD0075B510 /* detail_6.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171824936FFD0075B510 /* detail_6.json */; };
+		5A7B71F3249375F0009BA750 /* RoomsSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */; };
 		5A81411F247BCE900020ED80 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* Room.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */; };
@@ -191,6 +192,7 @@
 		5A67171624936FFD0075B510 /* detail_19.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_19.json; sourceTree = "<group>"; };
 		5A67171724936FFD0075B510 /* detail_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_1.json; sourceTree = "<group>"; };
 		5A67171824936FFD0075B510 /* detail_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_6.json; sourceTree = "<group>"; };
+		5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsSuccessMock.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* RoomsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6716E124936E0E0075B510 /* json */,
+				5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */,
 			);
 			path = Mocking;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
+				5A7B71F3249375F0009BA750 /* RoomsSuccessMock.swift in Sources */,
 				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
 				C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */,
 				C2B959C5247E584E003DC5D9 /* RoomCell.swift in Sources */,

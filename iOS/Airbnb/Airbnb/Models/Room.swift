@@ -13,6 +13,7 @@ struct Room: Codable {
     let title: String
     let type: String
     let location: String
+    let coordinate: Coordinate
     let images: [String]
     let price: Int
     let favorite: Bool
@@ -20,11 +21,20 @@ struct Room: Codable {
     let superhost: Bool
 }
 
+struct Coordinate: Codable {
+    let latitude: Double
+    let longitude: Double
+}
+
 struct Review: Codable {
     let rating: Double
     let count: Int
 }
 
+extension Room: Equatable { }
+
+extension Coordinate: Equatable { }
+
 extension Review: Equatable { }
 
-extension Room: Equatable { }
+

@@ -16,7 +16,7 @@ final class RoomViewController: UIViewController {
     
     private let roomViewModels = RoomViewModels()
     private let layoutDelegate = BNBsLayout()
-    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: AFSession()))
+    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessMock()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
     private var roomsToken: NotificationToken?
