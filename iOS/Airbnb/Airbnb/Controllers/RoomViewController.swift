@@ -10,17 +10,17 @@ import UIKit
 
 import Alamofire
 
-final class SearchViewController: UIViewController {
+final class RoomViewController: UIViewController {
     @IBOutlet var filterButtons: [FilterButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let bnbsViewModel = BNBViewModels()
+    private let roomViewModels = RoomViewModels()
     private let layoutDelegate = BNBsLayout()
-    private let bnbsUseCase = BNBsUseCase(bnbsTask: SearchTask(networkDispatcher: AFSession()))
+    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: AFSession()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
-    private var bnbsToken: NotificationToken?
-    private var bnbToken: NotificationToken?
+    private var roomsToken: NotificationToken?
+    private var roomToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,11 @@ final class SearchViewController: UIViewController {
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
-        fetchBNBs()
+        fetchRooms()
     }
     
-    private func fetchBNBs() {
-        bnbsUseCase.request(SearchRequest())
+    private func fetchRooms() {
+        roomsUseCase.request(RoomsRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -41,18 +41,18 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        collectionView.dataSource = bnbsViewModel
+        collectionView.dataSource = roomViewModels
         collectionView.delegate = layoutDelegate
     }
     
     private func configureObservers() {
-        bnbsToken = BNBViewModels.Notification.addObserver { [weak self] _ in
+        roomsToken = RoomViewModels.Notification.addObserver { [weak self] _ in
             self?.collectionView.reloadData()
         }
         
-        bnbToken = BNBViewModel.Notification.addObserver { [weak self] notification in
-            guard let bnbID = notification.userInfo?["bnbID"] as? Int else { return }
-            self?.collectionView.reloadItems(at: [IndexPath(row: bnbID - 1, section: 0)])
+        roomToken = RoomViewModel.Notification.addObserver { [weak self] notification in
+            guard let roomID = notification.userInfo?["roomID"] as? Int else { return }
+            self?.collectionView.reloadItems(at: [IndexPath(row: roomID - 1, section: 0)])
         }
     }
     
@@ -67,16 +67,16 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureUseCase() {
-        bnbsUseCase.updateNotify { [weak self] bnbs in
-            guard let bnbs = bnbs else { return }
+        roomsUseCase.updateNotify { [weak self] rooms in
+            guard let rooms = rooms else { return }
             
-            self?.bnbsViewModel.update(bnbs: bnbs)
-            self?.configureImageUseCase(bnbs)
+            self?.roomViewModels.update(rooms: rooms)
+            self?.configureImageUseCase(rooms)
         }
     }
     
-    private func configureImageUseCase(_ bnbs: [BNB]) {
-        bnbs.forEach {
+    private func configureImageUseCase(_ rooms: [Room]) {
+        rooms.forEach {
             $0.images.forEach { urlString in
                 guard let url = URL(string: urlString) else { return }
                 guard !ImageCache.fileExists(

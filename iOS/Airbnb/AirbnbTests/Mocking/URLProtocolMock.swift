@@ -11,7 +11,7 @@ import Foundation
 
 final class URLProtocolMock: URLProtocol {
     static let testURLs = [
-        SearchRequest().urlRequest()!: bnbsTestData
+        RoomsRequest().urlRequest()!: bnbsTestData
     ]
     
     override class func canInit(with request: URLRequest) -> Bool {
@@ -39,5 +39,5 @@ final class URLProtocolMock: URLProtocol {
 }
 
 extension URLProtocolMock {
-    static let bnbsTestData = Data.readJSON(of: Bundle(for: URLProtocolMock.self), for: "BNBsTestData")!
+    static let bnbsTestData = Data.readJSON(of: Bundle(for: URLProtocolMock.self), for: "RoomsTestData")!
 }

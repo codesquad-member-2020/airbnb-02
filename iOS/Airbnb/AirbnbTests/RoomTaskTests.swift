@@ -9,14 +9,14 @@
 import XCTest
 @testable import Airbnb
 
-final class SearchTaskTests: XCTestCase {
+final class RoomTaskTests: XCTestCase {
     func testPerform_DecodingSeccess() {
         let expectation = XCTestExpectation(description: "디코딩 성공")
         defer { wait(for: [expectation], timeout: 1) }
         
-        SearchTask(networkDispatcher: NetworkDispatcherValidStub()).perform(SearchRequest()) {
+        RoomsTask(networkDispatcher: NetworkDispatcherValidStub()).perform(RoomsRequest()) {
             guard let bnbs = $0 else { return }
-            XCTAssertEqual(bnbs, [BNB()])
+            XCTAssertEqual(bnbs, [Room()])
             expectation.fulfill()
         }
     }
@@ -25,7 +25,7 @@ final class SearchTaskTests: XCTestCase {
         let expectation = XCTestExpectation(description: "디코딩 실패")
         defer { wait(for: [expectation], timeout: 1) }
         
-        SearchTask(networkDispatcher: NetworkDispatcherInvalidStub()).perform(SearchRequest()) {
+        RoomsTask(networkDispatcher: NetworkDispatcherInvalidStub()).perform(RoomsRequest()) {
             XCTAssertNil($0)
             expectation.fulfill()
         }
@@ -34,7 +34,7 @@ final class SearchTaskTests: XCTestCase {
 
 final class NetworkDispatcherValidStub: NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneBNBTestData")!
+        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneRoomTestData")!
         completionHandler(data, HTTPURLResponse(), nil)
     }
     
@@ -43,14 +43,14 @@ final class NetworkDispatcherValidStub: NetworkDispatcher {
 
 final class NetworkDispatcherInvalidStub: NetworkDispatcher {
     func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneInvalidBNBTestData")!
+        let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneInvalidRoomTestData")!
         completionHandler(data, HTTPURLResponse(), nil)
     }
     
     func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
 }
 
-private extension BNB {
+private extension Room {
     init() {
         self.init(
             id: 1,

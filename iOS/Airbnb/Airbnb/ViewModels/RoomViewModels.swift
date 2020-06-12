@@ -8,30 +8,30 @@
 
 import UIKit
 
-final class BNBViewModels: NSObject {
+final class RoomViewModels: NSObject {
     enum Notification: Observable {
-        static let update = Foundation.Notification.Name("bnbsDidUpdate")
+        static let update = Foundation.Notification.Name("roomsDidUpdate")
     }
     
-    private var bnbViewModels: [BNBViewModel] {
+    private var roomViewModels: [RoomViewModel] {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
     }
     
-    init(with bnbs: [BNB] = []) {
-        self.bnbViewModels = bnbs.map { BNBViewModel(bnb: $0) }
+    init(with rooms: [Room] = []) {
+        self.roomViewModels = rooms.map { RoomViewModel(room: $0) }
     }
     
-    func update(bnbs: [BNB]) {
-        self.bnbViewModels = bnbs.map { BNBViewModel(bnb: $0) }
+    func update(rooms: [Room]) {
+        self.roomViewModels = rooms.map { RoomViewModel(room: $0) }
     }
 }
 
-extension BNBViewModels: UICollectionViewDataSource {
+extension RoomViewModels: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return bnbViewModels.count
+        return roomViewModels.count
     }
     
     func collectionView(
@@ -39,15 +39,15 @@ extension BNBViewModels: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: BNBCell.identifier,
-            for: indexPath) as? BNBCell
+            withReuseIdentifier: RoomCell.identifier,
+            for: indexPath) as? RoomCell
             else { return UICollectionViewCell() }
         
-        let bnb = bnbViewModels[indexPath.row].bnb
-        cell.configure(with: bnb)
+        let room = roomViewModels[indexPath.row].room
+        cell.configure(with: room)
         
         var index = 0
-        bnb.images.forEach { urlString in
+        room.images.forEach { urlString in
             guard let url = URL(string: urlString) else { return }
             guard let image = ImageCache.read(lastPathComponent: url.lastPathComponent) else { return }
             

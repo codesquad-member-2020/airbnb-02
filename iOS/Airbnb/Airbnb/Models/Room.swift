@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BNB: Codable {
+struct Room: Codable {
     let id: Int
     let title: String
     let type: String
@@ -27,4 +27,4 @@ struct Review: Codable {
 
 extension Review: Equatable { }
 
-extension BNB: Equatable { }
+extension Room: Equatable { }

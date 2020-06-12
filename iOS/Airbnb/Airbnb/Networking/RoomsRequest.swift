@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SearchRequest: Request {
+struct RoomsRequest: Request {
     var path: String {
         return Endpoints.main
     }

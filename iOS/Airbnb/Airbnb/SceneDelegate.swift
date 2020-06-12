@@ -29,7 +29,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func presentLoginViewController(_ tabBarController: BNBTabBarController) {
-        guard let searchViewController = tabBarController.children.first as? SearchViewController,
+        guard let searchViewController = tabBarController.children.first as? RoomViewController,
             let loginViewController = LoginViewController.instantiate(from: .login) else { return }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.nanoseconds(1)) {
