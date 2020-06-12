@@ -13,12 +13,12 @@ final class ImageUseCase {
         static let update = Foundation.Notification.Name("imageDidDownload")
     }
     private let imageCache = ImageCache()
-    private let networkDispatcher: NetworkDispatcher
+    private let networkDownloader: NetworkDownloader
     private let urlsQueue = DispatchQueue(label: "urls.serial.queue")
     private let semaphore = DispatchSemaphore(value: 10)
     
-    init(networkDispatcher: NetworkDispatcher) {
-        self.networkDispatcher = networkDispatcher
+    init(networkDownloader: NetworkDownloader) {
+        self.networkDownloader = networkDownloader
     }
     
     func request(imageURL: URL) {
@@ -29,7 +29,7 @@ final class ImageUseCase {
     }
     
     private func downloadImage(imageURL: URL) {
-        networkDispatcher.download(url: imageURL) { [weak self] tempURL, urlResponse, error in
+        networkDownloader.download(url: imageURL) { [weak self] tempURL, urlResponse, error in
             defer { self?.semaphore.signal() }
             
             guard let tempURL = tempURL else { return }

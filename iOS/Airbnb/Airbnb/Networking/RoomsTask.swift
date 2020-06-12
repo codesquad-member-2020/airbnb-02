@@ -12,14 +12,14 @@ final class RoomsTask: NetworkTask {
     typealias Input = RoomsRequest
     typealias Output = [Room]
 
-    private let networkDispatcher: NetworkDispatcher
+    private let networkExecutor: NetworkDispatcher
 
-    init(networkDispatcher: NetworkDispatcher) {
-        self.networkDispatcher = networkDispatcher
+    init(networkExecutor: NetworkDispatcher) {
+        self.networkExecutor = networkExecutor
     }
 
     func perform(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
-        networkDispatcher.execute(request: request) { data, urlResponse, error in
+        networkExecutor.execute(request: request) { data, urlResponse, error in
             guard let data = data else { return }
             let rooms = try? JSONDecoder().decode([Room].self, from: data)
             completionHandler(rooms)

@@ -10,7 +10,7 @@ import Foundation
 
 import Alamofire
 
-final class AFSession: NetworkDispatcher {
+final class AFSession: NetworkDispatcher, NetworkDownloader {
     private let session: Session
     
     init(with session: Session = .default) {

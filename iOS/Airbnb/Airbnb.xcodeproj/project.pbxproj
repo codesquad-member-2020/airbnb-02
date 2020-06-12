@@ -16,6 +16,7 @@
 		5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */; };
 		5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* RoomsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
+		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
 		5A67171924936FFD0075B510 /* detail_26.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E724936FFB0075B510 /* detail_26.json */; };
@@ -139,6 +140,7 @@
 		5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTaskTests.swift; sourceTree = "<group>"; };
 		5A25EAF1247F8B410038240F /* RoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
 		5A6716E724936FFB0075B510 /* detail_26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_26.json; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				C2205D1E247EAEA9008D3FBC /* Request.swift */,
 				C2205D1F247EAEA9008D3FBC /* RoomsRequest.swift */,
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
+				5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */,
 				5A8760212480D22E00E7FBC3 /* AFSession.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
@@ -696,6 +699,7 @@
 				C2205D21247EAEA9008D3FBC /* RoomsRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* RoomViewController.swift in Sources */,
+				5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */,
 				C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */,
 				5AD06346247A50D4000BF31B /* Shadow.swift in Sources */,
 				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
