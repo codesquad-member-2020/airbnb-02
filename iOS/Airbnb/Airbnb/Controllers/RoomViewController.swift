@@ -17,6 +17,7 @@ final class RoomViewController: UIViewController {
     private let roomViewModels = RoomViewModels()
     private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: AFSession()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
+    private let imageCache = ImageCache()
     
     private var roomsToken: NotificationToken?
     private var roomToken: NotificationToken?
@@ -73,9 +74,8 @@ final class RoomViewController: UIViewController {
         rooms.forEach {
             $0.repeatImages { urlString in
                 guard let url = URL(string: urlString) else { return }
-                guard !ImageCache.fileExists(
-                    lastPathComponent: url.lastPathComponent
-                    ) else { return }
+                guard !imageCache.fileExists(path: url.lastPathComponent) else { return }
+                
                 imageUseCase.request(imageURL: url)
             }
         }

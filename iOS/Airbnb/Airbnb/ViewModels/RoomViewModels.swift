@@ -12,6 +12,7 @@ final class RoomViewModels: NSObject {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("roomsDidUpdate")
     }
+    private let imageCache = ImageCache()
     
     private var roomViewModels: [RoomViewModel] {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
@@ -54,7 +55,7 @@ extension RoomViewModels: UICollectionViewDataSource {
         var index = 0
         room.repeatImages { urlString in
             guard let url = URL(string: urlString) else { return }
-            guard let image = ImageCache.read(lastPathComponent: url.lastPathComponent) else { return }
+            guard let image = imageCache.read(path: url.lastPathComponent) else { return }
             
             cell.imagePagingView.insert(at: index, image: image)
             index += 1

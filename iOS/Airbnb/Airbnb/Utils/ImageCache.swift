@@ -9,15 +9,17 @@
 import UIKit
 
 struct ImageCache {
-    static func read(
-        for directory: FileManager.SearchPathDirectory = .cachesDirectory,
-        in domain: FileManager.SearchPathDomainMask = .userDomainMask,
-        lastPathComponent: String
-    ) -> UIImage? {
-        guard let destinationURL = suggestedDownloadDestination(
-        for: directory,
-        in: domain,
-        lastPathComponent: lastPathComponent) else { return nil }
+    private let directory: FileManager.SearchPathDirectory
+    private let domain: FileManager.SearchPathDomainMask
+    
+    init(directory: FileManager.SearchPathDirectory = .cachesDirectory,
+         domain: FileManager.SearchPathDomainMask = .userDomainMask) {
+        self.directory = directory
+        self.domain = domain
+    }
+    
+    func read(path: String) -> UIImage? {
+        guard let destinationURL = downloadDestination(path: path) else { return nil }
         
         if let data = try? Data(contentsOf: destinationURL) {
             return UIImage(data: data)!
@@ -27,29 +29,18 @@ struct ImageCache {
         }
     }
     
-    static func suggestedDownloadDestination(
-        for directory: FileManager.SearchPathDirectory = .cachesDirectory,
-        in domain: FileManager.SearchPathDomainMask = .userDomainMask,
-        lastPathComponent: String
-    ) -> URL? {
+    func downloadDestination(path: String) -> URL? {
         guard let destinaionURL = try? FileManager.default.url(
             for: directory,
             in: domain,
             appropriateFor: nil,
             create: false)
-            .appendingPathComponent(lastPathComponent) else { return nil }
+            .appendingPathComponent(path) else { return nil }
         return destinaionURL
     }
     
-    static func fileExists(
-        for directory: FileManager.SearchPathDirectory = .cachesDirectory,
-        in domain: FileManager.SearchPathDomainMask = .userDomainMask,
-        lastPathComponent: String
-    ) -> Bool {
-        guard let destinationURL = suggestedDownloadDestination(
-            for: directory,
-            in: domain,
-            lastPathComponent: lastPathComponent) else { return false }
+    func fileExists(path: String) -> Bool {
+        guard let destinationURL = downloadDestination(path: path) else { return false }
         return FileManager.default.fileExists(atPath: destinationURL.path)
     }
 }

@@ -12,7 +12,7 @@ final class ImageUseCase {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("imageDidDownload")
     }
-    
+    private let imageCache = ImageCache()
     private let networkDispatcher: NetworkDispatcher
     private let urlsQueue = DispatchQueue(label: "urls.serial.queue")
     private let semaphore = DispatchSemaphore(value: 10)
@@ -33,8 +33,8 @@ final class ImageUseCase {
             defer { self?.semaphore.signal() }
             
             guard let tempURL = tempURL else { return }
-            guard let destinaionURL = ImageCache.suggestedDownloadDestination(
-                lastPathComponent: imageURL.lastPathComponent
+            guard let destinaionURL = self?.imageCache.downloadDestination(
+                path: imageURL.lastPathComponent
                 ) else { return }
             
             try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
