@@ -1,0 +1,29 @@
+{
+    "id": 35,
+    "title": "#2#역 도보 2분# #깨끗 깔끔 힐링 숙소# 합리적 금액# 친절 호스트#",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.905652,
+        "longitude": 37.5098012,
+        "address": "서울특별시 영등포구 도림동 114-2"
+    },
+    "images": [
+        "https://a1.muscache.com/im/pictures/105270917/a89a19b5_original.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/55922923/efadb68a_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/95da73ee-c245-4d7d-ad79-964b6c9c9311.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/d03f85ad-5ab7-44cd-957b-db7817a12f95.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Solar",
+    "superhost": false,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 6,
+    "bath": 6,
+    "review": {
+        "rating": 4.89,
+        "count": 300
+    },
+    "price": 1430000
+}

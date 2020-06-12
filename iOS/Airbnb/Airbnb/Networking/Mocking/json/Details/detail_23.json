@@ -1,0 +1,29 @@
+{
+    "id": 23,
+    "title": "래미안블레스티지",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.062605,
+        "longitude": 37.4813345,
+        "address": "서울특별시 강남구 개포동 1280 래미안블레스티지"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/6d3df73a-5eb0-4d89-ad80-18bbd1a293f4.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/58541064/80563fb9_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/b0213828-5dbd-4bc2-ad90-e5e842d4a900.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/2d9da087-0ff0-4edc-9d56-b83286ac60f7.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "하이디",
+    "superhost": false,
+    "totalGuest": 3,
+    "bedroom": 3,
+    "bed": 7,
+    "bath": 8,
+    "review": {
+        "rating": 4.34,
+        "count": 400
+    },
+    "price": 1420000
+}

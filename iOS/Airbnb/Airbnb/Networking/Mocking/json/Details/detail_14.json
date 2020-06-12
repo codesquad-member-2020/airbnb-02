@@ -1,0 +1,29 @@
+{
+   "id":14,
+   "title":"동부센트레빌2",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":126.987744,
+      "longitude":37.497937,
+      "address":"서울특별시 서초구 방배동 3275 동부센트레빌아파트"
+   },
+   "images":[
+      "https://a1.muscache.com/im/pictures/45161871/98290ce1_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/88c50462-d385-485b-9037-45eb052e2bcd.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/c5bae38a-7242-495a-b6f1-0686f96b740d.jpg?aki_policy=large",
+      "https://a0.muscache.com/im/pictures/73881345/1094d0f5_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"yagom",
+   "superhost":false,
+   "totalGuest":8,
+   "bedroom":8,
+   "bed":4,
+   "bath":4,
+   "review":{
+      "rating":4.78,
+      "count":600
+   },
+   "price":1320000
+}

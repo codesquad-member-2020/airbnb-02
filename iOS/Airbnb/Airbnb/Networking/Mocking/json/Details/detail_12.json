@@ -1,0 +1,29 @@
+{
+   "id":12,
+   "title":"갤러리아포레3차",
+   "type":"아파트",
+   "locale":{
+      "location":"성동구",
+      "latitude":127.042889,
+      "longitude":37.5456654,
+      "address":"서울특별시 성동구 성수동1가 685-696 갤러리아 포레"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/38116640/70660666_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/df820899-bd61-4041-9bdc-b8e8c2d609fa.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/ad16917f-e740-4c72-883c-b7b30276b3b8.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/82793337/3123189f_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Dan",
+   "superhost":false,
+   "totalGuest":6,
+   "bedroom":6,
+   "bed":2,
+   "bath":9,
+   "review":{
+      "rating":4.89,
+      "count":100
+   },
+   "price":1390000
+}

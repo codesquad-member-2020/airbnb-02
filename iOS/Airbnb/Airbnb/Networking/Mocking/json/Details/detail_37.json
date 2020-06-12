@@ -1,0 +1,29 @@
+{
+    "id": 37,
+    "title": "1min to the subway #OPEN SALE#FREE portable WiFi#",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.899245,
+        "longitude": 37.5218692,
+        "address": "서울특별시 영등포구 당산동1가 144"
+    },
+    "images": [
+        "https://a1.muscache.com/im/pictures/79634148/a2c0c0f3_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/65bc5e56-820e-4e3b-9d06-a556ee781fb1.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/4ebf1bb6-5400-4dc0-a880-edb0da2a6b71.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/27e2f037-dd25-4be8-8a43-608d1c343bb4.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "JK",
+    "superhost": false,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 6,
+    "bath": 6,
+    "review": {
+        "rating": 3.78,
+        "count": 400
+    },
+    "price": 1360000
+}

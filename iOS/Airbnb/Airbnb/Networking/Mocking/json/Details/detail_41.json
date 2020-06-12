@@ -1,0 +1,29 @@
+{
+    "id": 41,
+    "title": "[New Open] / EXIT3￫5min Shindorim / Charming hous",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.894893,
+        "longitude": 37.5274336,
+        "address": "서울특별시 영등포구 당산동3가 395-42"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/a872c1dd-a80a-4672-a55f-decc8ef98d23.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/24838024/b60c080b_original.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/4153748/d7b1d374_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/0c436496-7cce-4949-9934-b298d588b5c7.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Dion",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 3,
+    "bed": 9,
+    "bath": 9,
+    "review": {
+        "rating": 4.78,
+        "count": 200
+    },
+    "price": 1340000
+}

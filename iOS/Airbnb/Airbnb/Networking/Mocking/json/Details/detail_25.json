@@ -1,0 +1,29 @@
+{
+    "id": 25,
+    "title": "선경1차1동",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.06232,
+        "longitude": 37.492408,
+        "address": "서울시 강남구 삼성로 151"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/784e66df-ce7c-435b-ae35-c016d52b3354.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/39eb02b0-35b8-48ce-af76-a36d178956d0.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/101335837/87c8d774_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/8c300bcf-ab63-4de2-b1e0-cb2c22849574.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "yagom",
+    "superhost": false,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 4,
+    "bath": 4,
+    "review": {
+        "rating": 3.29,
+        "count": 200
+    },
+    "price": 1460000
+}

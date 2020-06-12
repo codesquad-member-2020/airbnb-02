@@ -1,0 +1,29 @@
+{
+    "id": 26,
+    "title": "코드스쿼드",
+    "type": "사무실",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.033406,
+        "longitude": 37.4908426,
+        "address": "서울특별시 강남구 역삼동 836-24"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/7864ffce-b94d-48f4-82a8-a3b5a8b1b2c3.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/47793675/5065e764_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/e1b627b0-0759-45a4-9b9d-adcb88548653.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/81798774/af2b76b2_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Crong",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 8,
+    "bed": 2,
+    "bath": 2,
+    "review": {
+        "rating": 4.89,
+        "count": 200
+    },
+    "price": 1990000
+}

@@ -1,0 +1,29 @@
+{
+    "id": 28,
+    "title": "시그니엘",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.104765,
+        "longitude": 37.513579,
+        "address": "서울특별시 송파구 잠실6동 올림픽로 300"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/3cef9e2e-25a6-49c5-aa86-c705c5c7cc67.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/c13e5ae7-7b09-42e3-b16f-331795400a93.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/131ac432-b2ad-4979-8ac0-0728b9d54fcb.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/108021213/850e1d73_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "won",
+    "superhost": false,
+    "totalGuest": 5,
+    "bedroom": 4,
+    "bed": 3,
+    "bath": 3,
+    "review": {
+        "rating": 4.89,
+        "count": 200
+    },
+    "price": 2000000
+}

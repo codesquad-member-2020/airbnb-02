@@ -1,0 +1,29 @@
+{
+   "id":18,
+   "title":"타워팰리스3",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":127.052807,
+      "longitude":37.4871596,
+      "address":"서울특별시 강남구 도곡동 467-29 타워팰리스"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/3535194d-e069-457b-836a-14dbe9d72faa.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/921b1478-649c-4545-81b2-8424541f1609.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/93234024/527f3507_original.jpg?aki_policy=large",
+      "https://a0.muscache.com/im/pictures/84962128/7fa8f819_original.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"won",
+   "superhost":false,
+   "totalGuest":6,
+   "bedroom":6,
+   "bed":9,
+   "bath":9,
+   "review":{
+      "rating":4.98,
+      "count":300
+   },
+   "price":1350000
+}

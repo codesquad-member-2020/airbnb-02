@@ -1,0 +1,29 @@
+{
+    "id": 21,
+    "title": "도곡렉슬",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.05349,
+        "longitude": 37.4943043,
+        "address": "서울특별시 강남구 도곡동 527-6 도곡렉슬아파트"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/76107274/473c3401_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/739817de-d8bf-49a3-9989-1bc9cdc626ce.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/97965534/0f616241_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/99791185/129820ae_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "JK",
+    "superhost": false,
+    "totalGuest": 3,
+    "bedroom": 3,
+    "bed": 8,
+    "bath": 8,
+    "review": {
+        "rating": 3.56,
+        "count": 300
+    },
+    "price": 1470000
+}

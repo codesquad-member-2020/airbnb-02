@@ -1,0 +1,29 @@
+{
+    "id": 43,
+    "title": "CCC House 도심속힐링하우스2 (Cozy Comfort Clean)",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.901907,
+        "longitude": 37.5021306,
+        "address": "서울특별시 영등포구 신길동 388-24"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/3a9ab559-4903-4c04-8ed6-fe96c10217d1.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/65168372/2248298d_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/c7598f78-6b95-422a-b4a4-489fe806804e.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/42671192/d68d2e28_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Henry",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 8,
+    "bed": 7,
+    "bath": 7,
+    "review": {
+        "rating": 4.89,
+        "count": 400
+    },
+    "price": 1380000
+}

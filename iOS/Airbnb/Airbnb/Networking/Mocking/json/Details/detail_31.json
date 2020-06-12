@@ -1,0 +1,29 @@
+{
+    "id": 31,
+    "title": "삼평동 봇들마을9단지(금호어울림)",
+    "type": "아파트",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.916239,
+        "longitude": 37.498718,
+        "address": "서울특별시 영등포구 신길동 4074"
+    },
+    "images": [
+        "https://a1.muscache.com/im/pictures/75408520/62270578_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/59111085/0466629b_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/38558327/774b1be0_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/51843961/1720f017_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Honux",
+    "superhost": false,
+    "totalGuest": 6,
+    "bedroom": 6,
+    "bed": 3,
+    "bath": 8,
+    "review": {
+        "rating": 4.23,
+        "count": 300
+    },
+    "price": 1470000
+}

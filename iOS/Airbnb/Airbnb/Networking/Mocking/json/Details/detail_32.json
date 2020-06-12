@@ -1,0 +1,29 @@
+{
+    "id": 32,
+    "title": "♥NEW OPEN♥ Natural House STN 2min.",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.904792,
+        "longitude": 37.4920508,
+        "address": "서울특별시 영등포구 대림동 875-3"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/85565522/ae859fe6_original.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/98083145/a82930bb_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/0520b624-86ea-4443-9a29-1d2777e4705a.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/68509119/4dc12529_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Hamill",
+    "superhost": true,
+    "totalGuest": 4,
+    "bedroom": 4,
+    "bed": 4,
+    "bath": 4,
+    "review": {
+        "rating": 4.37,
+        "count": 300
+    },
+    "price": 1380000
+}

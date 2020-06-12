@@ -1,0 +1,29 @@
+{
+    "id": 39,
+    "title": "[NEW OPEN] 1min to metro&mart. ♥Cozy&Nice View",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.920861,
+        "longitude": 37.5127769,
+        "address": "서울특별시 영등포구 신길동 95-128 외1필지"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/ff29c88e-1573-4af6-abe9-62e9041bfbf1.jpg?aki_policy=large",
+        "https://a0.muscache.com/im/pictures/66666032/03d05897_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/c9b75adc-de72-403b-81f7-038326f9656b.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/b3a7721f-316a-4353-88ab-d0941097b5db.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Taek",
+    "superhost": true,
+    "totalGuest": 8,
+    "bedroom": 8,
+    "bed": 5,
+    "bath": 5,
+    "review": {
+        "rating": 4.98,
+        "count": 100
+    },
+    "price": 1350000
+}

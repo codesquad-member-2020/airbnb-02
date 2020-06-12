@@ -1,0 +1,29 @@
+{
+    "id": 38,
+    "title": "♥Sunny house_Private duplex/loft with high ceiling",
+    "type": "단독주택",
+    "locale": {
+        "location": "영등포구",
+        "latitude": 126.898036,
+        "longitude": 37.5042807,
+        "address": "서울특별시 영등포구 대림동 604-63"
+    },
+    "images": [
+        "https://a0.muscache.com/im/pictures/83144936/c7b49324_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/79971105/aa345f99_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/69419fb8-1a6c-4037-8107-88277e1a68e7.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/e09b5ed3-64d9-4280-b55e-2ccb8096a020.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Eille",
+    "superhost": false,
+    "totalGuest": 5,
+    "bedroom": 5,
+    "bed": 6,
+    "bath": 6,
+    "review": {
+        "rating": 4.89,
+        "count": 200
+    },
+    "price": 1380000
+}

@@ -1,0 +1,29 @@
+{
+    "id": 48,
+    "title": "Comfortable and trustworthy place like your home",
+    "type": "단독주택",
+    "locale": {
+        "location": "노원구",
+        "latitude": 127.059641,
+        "longitude": 37.6537495,
+        "address": "서울시 노원구 노해로 464 한화생명노원빌딩 1~2층"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/2f58a92d-a8f6-439c-a3c9-0cf4d74f87cd.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/97becbd8-98b4-486c-b0d6-3def15ee77a2.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/9f912fe9-e617-4fd5-ac98-020a65dc8cdb.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/75529948/91735074_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "Sigrid Jin",
+    "superhost": false,
+    "totalGuest": 7,
+    "bedroom": 7,
+    "bed": 6,
+    "bath": 6,
+    "review": {
+        "rating": 4.98,
+        "count": 200
+    },
+    "price": 1460000
+}

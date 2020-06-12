@@ -1,0 +1,30 @@
+{
+    "id": 24,
+    "title": "개포주공1단지",
+    "type": "아파트",
+    "locale": {
+        "location": "강남구",
+        "latitude": 127.055561,
+        "longitude": 37.4806802,
+        "address": "서울특별시 강남구 개포동 660-3"
+    },
+    "images": [
+        "https://a2.muscache.com/im/pictures/22d8a386-1a4a-402b-af26-c1d927d53359.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/663f766d-5a7d-4f9e-82c5-1899bd093c9d.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/b420af20-0651-4498-9e03-8c0e1ca9fd24.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/57517779/789f2403_original.jpg?aki_policy=large"
+    ],
+    "favorite": false,
+    "host": "하이디",
+    "superhost": false,
+    "totalGuest": 8,
+    "bedroom": 3,
+    "bed": 8,
+    "bath": 8,
+    "review": {
+        "rating": 3.56,
+        "count": 300
+    },
+    "price": 1480000
+}
+

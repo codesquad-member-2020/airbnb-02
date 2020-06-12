@@ -1,0 +1,29 @@
+{
+    "id":20,
+    "title":"아델하우스",
+    "type":"아파트",
+    "locale":{
+        "location":"강남구",
+        "latitude":127.05242,
+        "longitude":37.51701,
+        "address":"서울특별시 강남구 삼성동 64-5 아델하우스"
+    },
+    "images":[
+        "https://a0.muscache.com/im/pictures/70750214/4bca6029_original.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/107590726/25c5240b_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/a542fd6e-4796-4307-a864-0a39bf6e7beb.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/47e200af-d152-4e36-a040-309f26766c56.jpg?aki_policy=large"
+    ],
+    "favorite":false,
+    "host":"Sigrid Jin",
+    "superhost":false,
+    "totalGuest":9,
+    "bedroom":9,
+    "bed":7,
+    "bath":7,
+    "review":{
+        "rating":4.98,
+        "count":400
+    },
+    "price":1460000
+}

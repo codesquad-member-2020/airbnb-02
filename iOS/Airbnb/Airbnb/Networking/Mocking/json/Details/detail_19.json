@@ -1,0 +1,29 @@
+{
+    "id":19,
+    "title":"개포우성2",
+    "type":"아파트",
+    "locale":{
+        "location":"강남구",
+        "latitude":127.060916,
+        "longitude":37.4902823,
+        "address":"서울특별시 강남구 대치동 503 개포1-2차 우성아파트"
+    },
+    "images":[
+        "https://a2.muscache.com/im/pictures/57324c7b-fda9-4789-860e-a9953dab668c.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/f9f26cd9-1966-408d-ad31-8a3ce7135b60.jpg?aki_policy=large",
+        "https://a1.muscache.com/im/pictures/103072319/e8a87640_original.jpg?aki_policy=large",
+        "https://a2.muscache.com/im/pictures/ab07b905-226e-4c06-967a-c9f36b6a5a06.jpg?aki_policy=large"
+    ],
+    "favorite":false,
+    "host":"Honux",
+    "superhost":false,
+    "totalGuest":3,
+    "bedroom":3,
+    "bed":8,
+    "bath":8,
+    "review":{
+        "rating":3.78,
+        "count":400
+    },
+    "price":1370000
+}

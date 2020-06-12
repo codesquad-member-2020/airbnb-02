@@ -1,0 +1,29 @@
+{
+   "id":5,
+   "title":"신현대12차",
+   "type":"아파트",
+   "locale":{
+      "location":"강남구",
+      "latitude":127.024461,
+      "longitude":37.5262089,
+      "address":"서울시 강남구 압구정로 151"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/10886815/3941d527_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/86832250/f774e788_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/79970647/b0781404_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/33ac053c-a60e-4f73-ab93-c6ee23aea101.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Taek",
+   "superhost":true,
+   "totalGuest":6,
+   "bedroom":6,
+   "bed":5,
+   "bath":5,
+   "review":{
+      "rating":3.78,
+      "count":100
+   },
+   "price":1390000
+}

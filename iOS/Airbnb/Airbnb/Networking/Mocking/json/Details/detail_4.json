@@ -1,0 +1,29 @@
+{
+   "id":4,
+   "title":"갤러리아포레1차",
+   "type":"아파트",
+   "locale":{
+      "location":"성동구",
+      "latitude":127.042889,
+      "longitude":37.5456654,
+      "address":"서울특별시 성동구 성수동1가 685-696 갤러리아 포레"
+   },
+   "images":[
+      "https://a2.muscache.com/im/pictures/dd81f4ad-5b9a-4280-827d-4b45afbb5245.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/11273049/78f70061_original.jpg?aki_policy=large",
+      "https://a1.muscache.com/im/pictures/10349365/46e42289_original.jpg?aki_policy=large",
+      "https://a2.muscache.com/im/pictures/d8433af0-fc71-4e85-bead-32a30de635f4.jpg?aki_policy=large"
+   ],
+   "favorite":false,
+   "host":"Hamill",
+   "superhost":true,
+   "totalGuest":9,
+   "bedroom":2,
+   "bed":6,
+   "bath":6,
+   "review":{
+      "rating":4.37,
+      "count":400
+   },
+   "price":1380000
+}
