@@ -15,7 +15,6 @@ final class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let roomViewModels = RoomViewModels()
-    private let layoutDelegate = BNBsLayout()
     private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessMock()))
     private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
     
@@ -42,7 +41,7 @@ final class RoomViewController: UIViewController {
     
     private func configureCollectionView() {
         collectionView.dataSource = roomViewModels
-        collectionView.delegate = layoutDelegate
+        collectionView.delegate = self
     }
     
     private func configureObservers() {
@@ -87,3 +86,22 @@ final class RoomViewController: UIViewController {
         }
     }
 }
+
+extension RoomViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+           _ collectionView: UICollectionView,
+           layout collectionViewLayout: UICollectionViewLayout,
+           sizeForItemAt indexPath: IndexPath
+       ) -> CGSize {
+           return CGSize(width: collectionView.frame.width, height: 250)
+       }
+       
+       func collectionView(
+           _ collectionView: UICollectionView,
+           layout collectionViewLayout: UICollectionViewLayout,
+           minimumLineSpacingForSectionAt section: Int
+       )-> CGFloat {
+           return 30
+       }
+}
+

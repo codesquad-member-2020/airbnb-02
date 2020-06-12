@@ -11,7 +11,7 @@ import Foundation
 final class RoomsUseCase {
     private let roomsTask: RoomsTask
     private var handler: ([Room]?) -> ()
-    private let requestQueue = DispatchQueue(label: "bnbsRequest.serial.queue")
+    private let requestQueue = DispatchQueue(label: "roomsRequest.serial.queue")
     
     init(roomsTask: RoomsTask, handler: @escaping ([Room]?) -> () = { _ in }) {
         self.roomsTask = roomsTask
@@ -24,11 +24,11 @@ final class RoomsUseCase {
     
     func request(_ request: RoomsRequest) {
         requestQueue.async { [weak self] in
-            self?.requestBNBs(request)
+            self?.requestRooms(request)
         }
     }
     
-    private func requestBNBs(_ request: RoomsRequest) {
+    private func requestRooms(_ request: RoomsRequest) {
         roomsTask.perform(request) { [weak self] rooms in
             self?.handler(rooms)
         }

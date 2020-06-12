@@ -15,8 +15,8 @@ final class RoomTaskTests: XCTestCase {
         defer { wait(for: [expectation], timeout: 1) }
         
         RoomsTask(networkDispatcher: NetworkDispatcherValidStub()).perform(RoomsRequest()) {
-            guard let bnbs = $0 else { return }
-            XCTAssertEqual(bnbs, [Room()])
+            guard let rooms = $0 else { return }
+            XCTAssertEqual(rooms, [Room()])
             expectation.fulfill()
         }
     }
@@ -54,13 +54,14 @@ private extension Room {
     init() {
         self.init(
             id: 1,
-            title: "해운대 펜트하우스 더탑플로어",
-            type: "Entire apartment",
-            location: "부산",
+            title: "한남더힐1차",
+            type: "아파트",
+            location: "용산구",
+            coordinate: Coordinate(latitude: 127.007289, longitude: 37.5361039),
             images: [],
-            price: 50000,
+            price: 1500000,
             favorite: false,
-            review: Review(rating: 4.83, count: 200),
+            review: Review(rating: 4.37, count: 300),
             superhost: true
         )
     }

@@ -104,7 +104,6 @@
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
 		C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* StoryboardRouter.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
-		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
 		C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A617432484D52F00A8E88B /* URLProtocolMock.swift */; };
 		C2A6174924851AFA00A8E88B /* OneRoomTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A6174824851AFA00A8E88B /* OneRoomTestData.json */; };
@@ -232,7 +231,6 @@
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C2553CE8247C23E50019588B /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
-		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
 		C2A617432484D52F00A8E88B /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		C2A6174824851AFA00A8E88B /* OneRoomTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OneRoomTestData.json; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 				5A8409772476518800D84413 /* Utils */,
 				C22A52792473A21E0055A478 /* Views */,
 				C22A527A2473A2350055A478 /* ViewModels */,
-				C29787F0247FB97D00EA9D01 /* Delegates */,
 				C22A527D2473A2620055A478 /* Controllers */,
 				C22A527B2473A2440055A478 /* UseCases */,
 				5A81411D247BCE630020ED80 /* Models */,
@@ -485,14 +482,6 @@
 				5A25EAEB247F88330038240F /* RoomsTask.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		C29787F0247FB97D00EA9D01 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		C2A617422484D51800A8E88B /* Mocking */ = {
@@ -700,7 +689,6 @@
 				5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */,
 				5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
-				C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */,

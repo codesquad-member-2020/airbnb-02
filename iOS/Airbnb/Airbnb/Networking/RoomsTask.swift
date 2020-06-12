@@ -21,8 +21,8 @@ final class RoomsTask: NetworkTask {
     func perform(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
         networkDispatcher.execute(request: request) { data, urlResponse, error in
             guard let data = data else { return }
-            let bnbs = try? JSONDecoder().decode([Room].self, from: data)
-            completionHandler(bnbs)
+            let rooms = try? JSONDecoder().decode([Room].self, from: data)
+            completionHandler(rooms)
         }
     }
 }
