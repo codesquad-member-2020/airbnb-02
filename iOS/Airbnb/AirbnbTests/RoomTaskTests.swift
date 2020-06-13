@@ -10,7 +10,7 @@ import XCTest
 @testable import Airbnb
 
 final class RoomTaskTests: XCTestCase {
-    func testPerform_DecodingSeccess() {
+    func testPerform_디코딩_성공() {
         let expectation = XCTestExpectation(description: "디코딩 성공")
         defer { wait(for: [expectation], timeout: 1) }
         
@@ -20,7 +20,7 @@ final class RoomTaskTests: XCTestCase {
         }
     }
     
-    func testPerform_DecodingFailure() {
+    func testPerform_잘못된_데이터로_인한_디코딩_실패() {
         let expectation = XCTestExpectation(description: "디코딩 실패")
         defer { wait(for: [expectation], timeout: 1) }
         
