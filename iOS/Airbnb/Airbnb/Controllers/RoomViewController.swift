@@ -62,21 +62,19 @@ final class RoomViewController: UIViewController {
             guard let rooms = rooms else { return }
             
             self?.roomViewModels.update(rooms: rooms)
-            self?.configureRoomImageUseCase(rooms)
+            rooms.forEach { self?.configureRoomImageUseCase($0) }
         }
     }
     
-    private func configureRoomImageUseCase(_ rooms: [Room]) {
-        rooms.forEach { room in
-            room.repeatImages { urlString in
-                guard let url = URL(string: urlString) else { return }
-                guard !imageCache.fileExists(path: url.lastPathComponent) else { return }
+    private func configureRoomImageUseCase(_ room: Room) {
+        room.repeatImages { urlString in
+            guard let url = URL(string: urlString) else { return }
+            guard !imageCache.fileExists(path: url.lastPathComponent) else { return }
+            
+            roomImageUseCase.download(roomID: room.id, imageURL: url) { [weak self] id in
+                guard let id = id else { return }
                 
-                roomImageUseCase.request(roomID: room.id, imageURL: url) { [weak self] id in
-                    guard let id = id else { return }
-                    
-                    self?.collectionView.reloadItems(at: [IndexPath(row: id - 1, section: 0)])
-                }
+                self?.collectionView.reloadItems(at: [IndexPath(row: id - 1, section: 0)])
             }
         }
     }

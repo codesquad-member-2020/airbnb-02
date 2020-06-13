@@ -21,7 +21,7 @@ final class RoomImageUseCase {
         self.networkDownloader = networkDownloader
     }
     
-    func request(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
+    func download(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
         urlsQueue.async { [weak self] in
             self?.semaphore.wait()
             self?.downloadImage(roomID: roomID, imageURL: imageURL, completionHandler: completionHandler)
