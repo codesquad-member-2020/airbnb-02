@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RoomsSuccessMock: NetworkDispatcher {
+struct RoomsSuccessStub: NetworkDispatcher {
     func execute(
         request: Request,
         completionHandler: @escaping (Data?, URLResponse?) -> (),
@@ -16,9 +16,5 @@ struct RoomsSuccessMock: NetworkDispatcher {
     ) throws {
         guard let jsonData = Data.readJSON(for: "RoomsData") else { return }
         completionHandler(jsonData, nil)
-    }
-    
-    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) {
-        
     }
 }
