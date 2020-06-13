@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ImageUseCase {
+final class RoomImageUseCase {
     enum Notification: Observable {
         static let update = Foundation.Notification.Name("imageDidDownload")
     }
@@ -21,14 +21,14 @@ final class ImageUseCase {
         self.networkDownloader = networkDownloader
     }
     
-    func request(imageURL: URL) {
+    func request(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
         urlsQueue.async { [weak self] in
             self?.semaphore.wait()
-            self?.downloadImage(imageURL: imageURL)
+            self?.downloadImage(roomID: roomID, imageURL: imageURL, completionHandler: completionHandler)
         }
     }
     
-    private func downloadImage(imageURL: URL) {
+    private func downloadImage(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
         networkDownloader.download(url: imageURL) { [weak self] tempURL, urlResponse, error in
             defer { self?.semaphore.signal() }
             
@@ -38,11 +38,7 @@ final class ImageUseCase {
                 ) else { return }
             
             try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
-            NotificationCenter.default.post(
-                name: Notification.update,
-                object: self,
-                userInfo: ["imageURL": imageURL]
-            )
+            completionHandler(roomID)
         }
     }
 }

@@ -15,17 +15,16 @@ final class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let roomViewModels = RoomViewModels()
-    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: AF))
-    private let imageUseCase = ImageUseCase(networkDownloader: AF)
+    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessMock()))
+    private let roomImageUseCase = RoomImageUseCase(networkDownloader: AF)
     private let imageCache = ImageCache()
     
     private var roomsToken: NotificationToken?
-    private var roomToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureObservers()
+        configureObserver()
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
@@ -40,14 +39,11 @@ final class RoomViewController: UIViewController {
         collectionView.delegate = self
     }
     
-    private func configureObservers() {
+    private func configureObserver() {
         roomsToken = RoomViewModels.Notification.addObserver { [weak self] _ in
-            self?.collectionView.reloadData()
-        }
-        
-        roomToken = RoomViewModel.Notification.addObserver { [weak self] notification in
-            guard let roomID = notification.userInfo?["roomID"] as? Int else { return }
-            self?.collectionView.reloadItems(at: [IndexPath(row: roomID - 1, section: 0)])
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
     }
     
@@ -66,17 +62,21 @@ final class RoomViewController: UIViewController {
             guard let rooms = rooms else { return }
             
             self?.roomViewModels.update(rooms: rooms)
-            self?.configureImageUseCase(rooms)
+            self?.configureRoomImageUseCase(rooms)
         }
     }
     
-    private func configureImageUseCase(_ rooms: [Room]) {
-        rooms.forEach {
-            $0.repeatImages { urlString in
+    private func configureRoomImageUseCase(_ rooms: [Room]) {
+        rooms.forEach { room in
+            room.repeatImages { urlString in
                 guard let url = URL(string: urlString) else { return }
                 guard !imageCache.fileExists(path: url.lastPathComponent) else { return }
                 
-                imageUseCase.request(imageURL: url)
+                roomImageUseCase.request(roomID: room.id, imageURL: url) { [weak self] id in
+                    guard let id = id else { return }
+                    
+                    self?.collectionView.reloadItems(at: [IndexPath(row: id - 1, section: 0)])
+                }
             }
         }
     }

@@ -74,7 +74,7 @@
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
-		5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */; };
+		5A87601C247FC96A00E7FBC3 /* RoomImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */; };
 		5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601F2480B08600E7FBC3 /* ImageCache.swift */; };
 		5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* SessionExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
@@ -199,7 +199,7 @@
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequestTests.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
+		5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImageUseCase.swift; sourceTree = "<group>"; };
 		5A87601F2480B08600E7FBC3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5A8760212480D22E00E7FBC3 /* SessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -451,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				5A25EAF1247F8B410038240F /* RoomsUseCase.swift */,
-				5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */,
+				5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -689,7 +689,7 @@
 				5ADA864624838558000C06E9 /* RoomViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
-				5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */,
+				5A87601C247FC96A00E7FBC3 /* RoomImageUseCase.swift in Sources */,
 				5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
