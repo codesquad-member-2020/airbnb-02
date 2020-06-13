@@ -29,16 +29,24 @@ final class RoomImageUseCase {
     }
     
     private func downloadImage(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
-        networkDownloader.download(url: imageURL) { [weak self] tempURL, urlResponse, error in
-            defer { self?.semaphore.signal() }
-            
-            guard let tempURL = tempURL else { return }
-            guard let destinaionURL = self?.imageCache.downloadDestination(
-                path: imageURL.lastPathComponent
-                ) else { return }
-            
-            try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
-            completionHandler(roomID)
-        }
+        networkDownloader.download(
+            url: imageURL,
+            completionHandler: { [weak self] tempURL, urlResponse in
+                defer { self?.semaphore.signal() }
+                
+                guard let tempURL = tempURL else { return }
+                guard let destinaionURL = self?.imageCache.downloadDestination(
+                    path: imageURL.lastPathComponent
+                    ) else { return }
+                
+                try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
+                completionHandler(roomID)
+            },
+            failureHandler: { urlResponse, error in
+                guard let error = error else { return }
+                
+                print(error.localizedDescription)
+                completionHandler(nil)
+        })
     }
 }

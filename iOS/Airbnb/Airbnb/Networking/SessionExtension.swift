@@ -28,13 +28,17 @@ extension Session: NetworkDispatcher, NetworkDownloader {
         }
     }
     
-    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) {
+    func download(
+        url: URL,
+        completionHandler: @escaping (URL?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) {
         self.download(url).validate().response { afDownloadResponse in
             switch afDownloadResponse.result {
             case .success(let tempURL):
-                completionHandler(tempURL, afDownloadResponse.response, nil)
+                completionHandler(tempURL, afDownloadResponse.response)
             case .failure(let error):
-                completionHandler(nil, afDownloadResponse.response, error)
+                failureHandler(afDownloadResponse.response, error)
             }
         }
     }

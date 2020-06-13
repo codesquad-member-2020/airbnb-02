@@ -9,5 +9,9 @@
 import Foundation
 
 protocol NetworkDownloader {
-    func download(url: URL, completionHandler: @escaping (URL? , URLResponse?, Error?) -> ())
+    func download(
+        url: URL,
+        completionHandler: @escaping (URL?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) 
 }
