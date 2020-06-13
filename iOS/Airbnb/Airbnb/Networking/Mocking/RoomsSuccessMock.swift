@@ -9,9 +9,13 @@
 import Foundation
 
 struct RoomsSuccessMock: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(
+        request: Request,
+        completionHandler: @escaping (Data?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
         guard let jsonData = Data.readJSON(for: "RoomsData") else { return }
-        completionHandler(jsonData, nil, nil)
+        completionHandler(jsonData, nil)
     }
     
     func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) {

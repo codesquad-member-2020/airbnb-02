@@ -21,12 +21,16 @@ final class SessionTests: XCTestCase {
         let expectation = XCTestExpectation(description: "네트워크 응답 받음")
         defer { wait(for: [expectation], timeout: 1) }
         
-        sessionMock.execute(request: RoomsRequest()) { data, response, error in
-            defer { expectation.fulfill() }
-            XCTAssertNotNil(data)
-            XCTAssertNil(error)
-            let httpResponse = response as! HTTPURLResponse
-            XCTAssertEqual(httpResponse.statusCode, 200)
-        }
+        try? sessionMock.execute(
+            request: RoomsRequest(),
+            completionHandler: { data, response in
+                defer { expectation.fulfill() }
+                
+                XCTAssertNotNil(data)
+                let httpResponse = response as! HTTPURLResponse
+                XCTAssertEqual(httpResponse.statusCode, 200)
+        }, failureHandler: { response, error in
+            
+        })
     }
 }

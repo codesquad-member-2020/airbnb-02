@@ -14,7 +14,7 @@ final class RoomTaskTests: XCTestCase {
         let expectation = XCTestExpectation(description: "디코딩 성공")
         defer { wait(for: [expectation], timeout: 1) }
         
-        RoomsTask(networkExecutor: NetworkDispatcherValidStub()).perform(RoomsRequest()) {
+        RoomsTask(networkDispatcher: NetworkDispatcherValidStub()).perform(RoomsRequest()) {
             guard let rooms = $0 else { return }
             XCTAssertEqual(rooms, [Room()])
             expectation.fulfill()
@@ -25,7 +25,7 @@ final class RoomTaskTests: XCTestCase {
         let expectation = XCTestExpectation(description: "디코딩 실패")
         defer { wait(for: [expectation], timeout: 1) }
         
-        RoomsTask(networkExecutor: NetworkDispatcherInvalidStub()).perform(RoomsRequest()) {
+        RoomsTask(networkDispatcher: NetworkDispatcherInvalidStub()).perform(RoomsRequest()) {
             XCTAssertNil($0)
             expectation.fulfill()
         }
@@ -33,16 +33,23 @@ final class RoomTaskTests: XCTestCase {
 }
 
 final class NetworkDispatcherValidStub: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(request: Request,
+                 completionHandler: @escaping (Data?, URLResponse?) -> (),
+                 failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
         let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneRoomTestData")!
-        completionHandler(data, HTTPURLResponse(), nil)
+        completionHandler(data, HTTPURLResponse())
     }
 }
 
 final class NetworkDispatcherInvalidStub: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(
+        request: Request,
+        completionHandler: @escaping (Data?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
         let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneInvalidRoomTestData")!
-        completionHandler(data, HTTPURLResponse(), nil)
+        completionHandler(data, HTTPURLResponse())
     }
 }
 

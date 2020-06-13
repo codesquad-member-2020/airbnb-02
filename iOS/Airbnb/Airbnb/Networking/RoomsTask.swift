@@ -11,18 +11,30 @@ import Foundation
 final class RoomsTask: NetworkTask {
     typealias Input = RoomsRequest
     typealias Output = [Room]
-
+    
     private let networkDispatcher: NetworkDispatcher
-
+    
     init(networkDispatcher: NetworkDispatcher) {
         self.networkDispatcher = networkDispatcher
     }
-
+    
     func perform(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
-        networkDispatcher.execute(request: request) { data, urlResponse, error in
-            guard let data = data else { return }
-            let rooms = try? JSONDecoder().decode([Room].self, from: data)
-            completionHandler(rooms)
-        }
+        try? networkDispatcher.execute(
+            request: request,
+            completionHandler: { [weak self] data, urlResponse in
+                guard let data = data else { return }
+                
+                completionHandler(self?.decodeRooms(with: data))
+        },
+            failureHandler: { urlResponse, error in
+                guard let error = error else { return }
+                
+                print(error.localizedDescription)
+                completionHandler(nil)
+        })
+    }
+    
+    private func decodeRooms(with data: Data) -> [Room]? {
+        return try? JSONDecoder().decode([Room].self, from: data)
     }
 }

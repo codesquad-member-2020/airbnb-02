@@ -11,13 +11,20 @@ import Foundation
 import Alamofire
 
 extension Session: NetworkDispatcher, NetworkDownloader {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        guard let urlRequest = request.urlRequest() else {
-            completionHandler(nil, nil, NetworkErrorCase.invalidURL)
-            return
-        }
+    func execute(
+        request: Request,
+        completionHandler: @escaping (Data?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
+        guard let urlRequest = request.urlRequest() else { throw NetworkErrorCase.invalidURL }
+        
         self.request(urlRequest).validate().response { afDataResponse in
-            completionHandler(afDataResponse.data, afDataResponse.response, afDataResponse.error)
+            switch afDataResponse.result {
+            case .success(let data):
+                completionHandler(data, afDataResponse.response)
+            case .failure(let error):
+                failureHandler(afDataResponse.response, error)
+            }
         }
     }
     

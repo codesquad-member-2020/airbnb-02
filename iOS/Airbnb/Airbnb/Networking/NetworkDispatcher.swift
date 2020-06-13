@@ -14,6 +14,10 @@ enum NetworkErrorCase: Error {
 }
 
 protocol NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ())
+    func execute(
+        request: Request,
+        completionHandler: @escaping (Data?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws
 }
 
