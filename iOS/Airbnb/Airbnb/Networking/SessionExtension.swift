@@ -16,7 +16,7 @@ extension Session: NetworkDispatcher, NetworkDownloader {
         completionHandler: @escaping (Data?, URLResponse?) -> (),
         failureHandler: @escaping (URLResponse?, Error?) -> ()
     ) throws {
-        guard let urlRequest = request.urlRequest() else { throw NetworkErrorCase.invalidURL }
+        guard let urlRequest = request.urlRequest() else { throw NetworkErrorCase.invalidURLString }
         
         self.request(urlRequest).validate().response { afDataResponse in
             switch afDataResponse.result {

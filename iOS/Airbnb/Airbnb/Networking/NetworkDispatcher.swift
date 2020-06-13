@@ -9,7 +9,7 @@
 import Foundation
 
 enum NetworkErrorCase: Error {
-    case invalidURL
+    case invalidURLString
     case notFound
 }
 
