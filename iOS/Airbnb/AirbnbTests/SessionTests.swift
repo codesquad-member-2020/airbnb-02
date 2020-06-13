@@ -10,24 +10,18 @@ import XCTest
 @testable import Airbnb
 @testable import Alamofire
 
-final class AFSessionTests: XCTestCase {
-    static let sessionMock: Session = {
+final class SessionTests: XCTestCase {
+    private let sessionMock: Session = {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolMock.self]
         return Session(configuration: configuration)
     }()
     
-    private var afSession: AFSession!
-    
-    override func setUp() {
-        afSession = AFSession(with: AFSessionTests.sessionMock)
-    }
-    
     func testExecuteSuccess() {
         let expectation = XCTestExpectation(description: "네트워크 응답 받음")
         defer { wait(for: [expectation], timeout: 1) }
         
-        afSession.execute(request: RoomsRequest()) { data, response, error in
+        sessionMock.execute(request: RoomsRequest()) { data, response, error in
             defer { expectation.fulfill() }
             XCTAssertNotNil(data)
             XCTAssertNil(error)

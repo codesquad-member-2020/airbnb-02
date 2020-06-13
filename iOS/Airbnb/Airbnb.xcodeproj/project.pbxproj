@@ -10,7 +10,7 @@
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
-		5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* AFSessionTests.swift */; };
+		5A25EAE8247F853B0038240F /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* SessionTests.swift */; };
 		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
 		5A25EAEC247F88330038240F /* RoomsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* RoomsTask.swift */; };
 		5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */; };
@@ -76,7 +76,7 @@
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
 		5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */; };
 		5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601F2480B08600E7FBC3 /* ImageCache.swift */; };
-		5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* AFSession.swift */; };
+		5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* SessionExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
@@ -134,7 +134,7 @@
 /* Begin PBXFileReference section */
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
-		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
+		5A25EAE7247F853B0038240F /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		5A25EAEB247F88330038240F /* RoomsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTask.swift; sourceTree = "<group>"; };
 		5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTaskTests.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
 		5A87601F2480B08600E7FBC3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		5A8760212480D22E00E7FBC3 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
+		5A8760212480D22E00E7FBC3 /* SessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
@@ -412,7 +412,7 @@
 			children = (
 				C2A617422484D51800A8E88B /* Mocking */,
 				5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */,
-				5A25EAE7247F853B0038240F /* AFSessionTests.swift */,
+				5A25EAE7247F853B0038240F /* SessionTests.swift */,
 				5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
 			);
@@ -479,7 +479,7 @@
 				C2205D1F247EAEA9008D3FBC /* RoomsRequest.swift */,
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
 				5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */,
-				5A8760212480D22E00E7FBC3 /* AFSession.swift */,
+				5A8760212480D22E00E7FBC3 /* SessionExtension.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
 				5A25EAEB247F88330038240F /* RoomsTask.swift */,
@@ -719,7 +719,7 @@
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
 				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
-				5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */,
+				5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */,
+				5A25EAE8247F853B0038240F /* SessionTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */,
 				C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */,
