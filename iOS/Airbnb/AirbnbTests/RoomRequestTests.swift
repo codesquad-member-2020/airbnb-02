@@ -16,10 +16,10 @@ final class RoomRequestTests: XCTestCase {
         XCTAssertEqual(request.method, HTTPMethod.get)
     }
     
-    func testRoomRequestSuccess_with_validQuery() {
+    func testRoomRequestSuccess_with_validQuery() throws {
         let request = RoomRequestValidQueryStub()
-        let urlRequest = try! XCTUnwrap(request.urlRequest())
-        let url = try! XCTUnwrap(urlRequest.url)
+        let urlRequest = try XCTUnwrap(request.urlRequest())
+        let url = try XCTUnwrap(urlRequest.url)
         XCTAssertEqual(
             url.absoluteString,
             "https://test/request?checkin=2020-05-21&checkout=2020-05-22&adults=2&baby=1"
