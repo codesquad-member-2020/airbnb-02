@@ -67,11 +67,10 @@ final class RoomViewController: UIViewController {
     }
     
     private func configureRoomImageUseCase(_ room: Room) {
-        room.repeatImages { urlString in
-            guard let url = URL(string: urlString) else { return }
-            guard !imageCache.fileExists(path: url.lastPathComponent) else { return }
+        room.repeatImages { imageURL, _ in
+            guard !imageCache.fileExists(path: imageURL.lastPathComponent) else { return }
             
-            roomImageUseCase.download(roomID: room.id, imageURL: url) { [weak self] id in
+            roomImageUseCase.download(roomID: room.id, imageURL: imageURL) { [weak self] id in
                 guard let id = id else { return }
                 
                 self?.collectionView.reloadItems(at: [IndexPath(row: id - 1, section: 0)])

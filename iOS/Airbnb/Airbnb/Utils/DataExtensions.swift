@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum DataError: Error {
+    case notFound
+}
+
 extension Data {
     static func readJSON(of bundle: Bundle = .main, for name: String) -> Data? {
         guard let url = bundle.url(

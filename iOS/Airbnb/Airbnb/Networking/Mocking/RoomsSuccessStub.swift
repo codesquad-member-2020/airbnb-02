@@ -14,7 +14,10 @@ struct RoomsSuccessStub: NetworkDispatcher {
         completionHandler: @escaping (Data?, URLResponse?) -> (),
         failureHandler: @escaping (URLResponse?, Error?) -> ()
     ) throws {
-        guard let jsonData = Data.readJSON(for: "RoomsData") else { return }
+        guard let jsonData = Data.readJSON(for: "RoomsData") else {
+            failureHandler(nil, DataError.notFound)
+            return
+        }
         completionHandler(jsonData, nil)
     }
 }

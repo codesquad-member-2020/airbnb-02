@@ -52,13 +52,10 @@ extension RoomViewModels: UICollectionViewDataSource {
     }
     
     private func insertImages(_ cell: RoomCell, with room: Room) {
-        var index = 0
-        room.repeatImages { urlString in
-            guard let url = URL(string: urlString) else { return }
-            guard let image = imageCache.read(path: url.lastPathComponent) else { return }
+        room.repeatImages { imageURL, index in
+            guard let image = imageCache.read(path: imageURL.lastPathComponent) else { return }
             
             cell.imagePagingView.insert(at: index, image: image)
-            index += 1
         }
     }
 }

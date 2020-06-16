@@ -20,8 +20,14 @@ struct Room: Codable {
     let review: Review
     let superhost: Bool
     
-    func repeatImages(handler: (String) -> ()) {
-        images.forEach { handler($0) }
+    func repeatImages(handler: (URL, Int) -> ()) {
+        var index = 0
+        images.forEach { urlString in
+            if let url = URL(string: urlString) {
+                handler(url, index)
+            }
+            index += 1
+        }
     }
 }
 
