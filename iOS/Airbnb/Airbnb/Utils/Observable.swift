@@ -15,7 +15,7 @@ protocol Observable {
 extension Observable {
     static func addObserver(
         object obj: Any? = nil,
-        queue: OperationQueue? = .main,
+        queue: OperationQueue? = nil,
         using block: @escaping (Notification) -> Void
     ) -> NotificationToken {
         let token = NotificationCenter.default

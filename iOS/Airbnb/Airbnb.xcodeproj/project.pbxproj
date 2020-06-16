@@ -10,12 +10,14 @@
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
-		5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* AFSessionTests.swift */; };
+		5A25EAE8247F853B0038240F /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE7247F853B0038240F /* SessionTests.swift */; };
 		5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE9247F880D0038240F /* NetworkTask.swift */; };
 		5A25EAEC247F88330038240F /* RoomsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEB247F88330038240F /* RoomsTask.swift */; };
 		5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */; };
 		5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* RoomsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
+		5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F124988CD700A16D90 /* URLExtension.swift */; };
+		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
 		5A67171924936FFD0075B510 /* detail_26.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E724936FFB0075B510 /* detail_26.json */; };
@@ -68,14 +70,14 @@
 		5A67174824936FFD0075B510 /* detail_19.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171624936FFD0075B510 /* detail_19.json */; };
 		5A67174924936FFD0075B510 /* detail_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171724936FFD0075B510 /* detail_1.json */; };
 		5A67174A24936FFD0075B510 /* detail_6.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A67171824936FFD0075B510 /* detail_6.json */; };
-		5A7B71F3249375F0009BA750 /* RoomsSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */; };
+		5A7B71F3249375F0009BA750 /* RoomsSuccessStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B71F2249375F0009BA750 /* RoomsSuccessStub.swift */; };
 		5A81411F247BCE900020ED80 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81411E247BCE900020ED80 /* Room.swift */; };
 		5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A814123247BD3CD0020ED80 /* DataExtensions.swift */; };
 		5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */; };
 		5A840979247651A200D84413 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A840978247651A200D84413 /* UIColorExtension.swift */; };
-		5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */; };
+		5A87601C247FC96A00E7FBC3 /* RoomImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */; };
 		5A8760202480B08600E7FBC3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87601F2480B08600E7FBC3 /* ImageCache.swift */; };
-		5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* AFSession.swift */; };
+		5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8760212480D22E00E7FBC3 /* SessionExtension.swift */; };
 		5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */; };
 		5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */; };
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
@@ -104,9 +106,7 @@
 		C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE6247C1CC40019588B /* FilterViewController.swift */; };
 		C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2553CE8247C23E50019588B /* StoryboardRouter.swift */; };
 		C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C8C247640DB002E7F42 /* FilterButton.swift */; };
-		C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */; };
 		C29787F6247FF3B500EA9D01 /* ReviewCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */; };
-		C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A617432484D52F00A8E88B /* URLProtocolMock.swift */; };
 		C2A6174924851AFA00A8E88B /* OneRoomTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A6174824851AFA00A8E88B /* OneRoomTestData.json */; };
 		C2A6174B24851C8900A8E88B /* OneInvalidRoomTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A6174A24851C8900A8E88B /* OneInvalidRoomTestData.json */; };
 		C2B959C3247E549A003DC5D9 /* RoomViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B959C2247E549A003DC5D9 /* RoomViewModels.swift */; };
@@ -134,12 +134,14 @@
 /* Begin PBXFileReference section */
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
-		5A25EAE7247F853B0038240F /* AFSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionTests.swift; sourceTree = "<group>"; };
+		5A25EAE7247F853B0038240F /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		5A25EAE9247F880D0038240F /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		5A25EAEB247F88330038240F /* RoomsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTask.swift; sourceTree = "<group>"; };
 		5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTaskTests.swift; sourceTree = "<group>"; };
 		5A25EAF1247F8B410038240F /* RoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		5A3490F124988CD700A16D90 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
 		5A6716E724936FFB0075B510 /* detail_26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_26.json; sourceTree = "<group>"; };
@@ -192,15 +194,15 @@
 		5A67171624936FFD0075B510 /* detail_19.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_19.json; sourceTree = "<group>"; };
 		5A67171724936FFD0075B510 /* detail_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_1.json; sourceTree = "<group>"; };
 		5A67171824936FFD0075B510 /* detail_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_6.json; sourceTree = "<group>"; };
-		5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsSuccessMock.swift; sourceTree = "<group>"; };
+		5A7B71F2249375F0009BA750 /* RoomsSuccessStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsSuccessStub.swift; sourceTree = "<group>"; };
 		5A814119247BCDE80020ED80 /* RoomsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsTestData.json; sourceTree = "<group>"; };
 		5A81411E247BCE900020ED80 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5A814123247BD3CD0020ED80 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequestTests.swift; sourceTree = "<group>"; };
 		5A840978247651A200D84413 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
+		5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImageUseCase.swift; sourceTree = "<group>"; };
 		5A87601F2480B08600E7FBC3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		5A8760212480D22E00E7FBC3 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
+		5A8760212480D22E00E7FBC3 /* SessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExtension.swift; sourceTree = "<group>"; };
 		5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5A89D247247775F10046629B /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
@@ -232,9 +234,7 @@
 		C2553CE6247C1CC40019588B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C2553CE8247C23E50019588B /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
 		C26F0C8C247640DB002E7F42 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
-		C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBsLayout.swift; sourceTree = "<group>"; };
 		C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCountLabel.swift; sourceTree = "<group>"; };
-		C2A617432484D52F00A8E88B /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		C2A6174824851AFA00A8E88B /* OneRoomTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OneRoomTestData.json; sourceTree = "<group>"; };
 		C2A6174A24851C8900A8E88B /* OneInvalidRoomTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OneInvalidRoomTestData.json; sourceTree = "<group>"; };
 		C2B959C2247E549A003DC5D9 /* RoomViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModels.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6716E124936E0E0075B510 /* json */,
-				5A7B71F2249375F0009BA750 /* RoomsSuccessMock.swift */,
+				5A7B71F2249375F0009BA750 /* RoomsSuccessStub.swift */,
 			);
 			path = Mocking;
 			sourceTree = "<group>";
@@ -363,6 +363,7 @@
 				C2B959C6247E5C25003DC5D9 /* Observable.swift */,
 				C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */,
 				5A87601F2480B08600E7FBC3 /* ImageCache.swift */,
+				5A3490F124988CD700A16D90 /* URLExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -391,7 +392,6 @@
 				5A8409772476518800D84413 /* Utils */,
 				C22A52792473A21E0055A478 /* Views */,
 				C22A527A2473A2350055A478 /* ViewModels */,
-				C29787F0247FB97D00EA9D01 /* Delegates */,
 				C22A527D2473A2620055A478 /* Controllers */,
 				C22A527B2473A2440055A478 /* UseCases */,
 				5A81411D247BCE630020ED80 /* Models */,
@@ -413,7 +413,7 @@
 			children = (
 				C2A617422484D51800A8E88B /* Mocking */,
 				5A81412F247BF2BE0020ED80 /* RoomRequestTests.swift */,
-				5A25EAE7247F853B0038240F /* AFSessionTests.swift */,
+				5A25EAE7247F853B0038240F /* SessionTests.swift */,
 				5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
 			);
@@ -452,7 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				5A25EAF1247F8B410038240F /* RoomsUseCase.swift */,
-				5A87601B247FC96A00E7FBC3 /* ImageUseCase.swift */,
+				5A87601B247FC96A00E7FBC3 /* RoomImageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -479,7 +479,8 @@
 				C2205D1E247EAEA9008D3FBC /* Request.swift */,
 				C2205D1F247EAEA9008D3FBC /* RoomsRequest.swift */,
 				5A25EAE5247F84910038240F /* NetworkDispatcher.swift */,
-				5A8760212480D22E00E7FBC3 /* AFSession.swift */,
+				5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */,
+				5A8760212480D22E00E7FBC3 /* SessionExtension.swift */,
 				5A25EAE9247F880D0038240F /* NetworkTask.swift */,
 				5A1D486C24864CF9006F129F /* AuthRequest.swift */,
 				5A25EAEB247F88330038240F /* RoomsTask.swift */,
@@ -487,18 +488,9 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		C29787F0247FB97D00EA9D01 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				C29787F1247FB9BB00EA9D01 /* BNBsLayout.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
 		C2A617422484D51800A8E88B /* Mocking */ = {
 			isa = PBXGroup;
 			children = (
-				C2A617432484D52F00A8E88B /* URLProtocolMock.swift */,
 				C2A6174A24851C8900A8E88B /* OneInvalidRoomTestData.json */,
 				C2A6174824851AFA00A8E88B /* OneRoomTestData.json */,
 				5A814119247BCDE80020ED80 /* RoomsTestData.json */,
@@ -685,8 +677,9 @@
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
 				5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
-				5A7B71F3249375F0009BA750 /* RoomsSuccessMock.swift in Sources */,
+				5A7B71F3249375F0009BA750 /* RoomsSuccessStub.swift in Sources */,
 				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
+				5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */,
 				C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */,
 				C2B959C5247E584E003DC5D9 /* RoomCell.swift in Sources */,
 				C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */,
@@ -697,10 +690,9 @@
 				5ADA864624838558000C06E9 /* RoomViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,
 				C22A52802473AAB10055A478 /* BookmarkViewController.swift in Sources */,
-				5A87601C247FC96A00E7FBC3 /* ImageUseCase.swift in Sources */,
+				5A87601C247FC96A00E7FBC3 /* RoomImageUseCase.swift in Sources */,
 				5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */,
 				5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */,
-				C29787F2247FB9BB00EA9D01 /* BNBsLayout.swift in Sources */,
 				C2553CE1247C146B0019588B /* NibLoadable.swift in Sources */,
 				5A25EAEA247F880D0038240F /* NetworkTask.swift in Sources */,
 				5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */,
@@ -708,6 +700,7 @@
 				C2205D21247EAEA9008D3FBC /* RoomsRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
 				C22A525C2473A1A80055A478 /* RoomViewController.swift in Sources */,
+				5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */,
 				C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */,
 				5AD06346247A50D4000BF31B /* Shadow.swift in Sources */,
 				C2DB831224766900007034AC /* PriceButton.swift in Sources */,
@@ -727,7 +720,7 @@
 				5ADA86552484F788000C06E9 /* AuthKeys.swift in Sources */,
 				5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */,
 				C219C665247D72C4006E3388 /* FavoriteButton.swift in Sources */,
-				5A8760222480D22E00E7FBC3 /* AFSession.swift in Sources */,
+				5A8760222480D22E00E7FBC3 /* SessionExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,10 +728,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A25EAE8247F853B0038240F /* AFSessionTests.swift in Sources */,
+				5A25EAE8247F853B0038240F /* SessionTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */,
-				C2A617442484D52F00A8E88B /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

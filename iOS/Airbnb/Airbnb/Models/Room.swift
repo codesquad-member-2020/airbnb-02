@@ -19,6 +19,16 @@ struct Room: Codable {
     let favorite: Bool
     let review: Review
     let superhost: Bool
+    
+    func repeatImages(handler: (URL, Int) -> ()) {
+        var index = 0
+        images.forEach { urlString in
+            if let url = URL(string: urlString) {
+                handler(url, index)
+            }
+            index += 1
+        }
+    }
 }
 
 struct Coordinate: Codable {
@@ -30,11 +40,3 @@ struct Review: Codable {
     let rating: Double
     let count: Int
 }
-
-extension Room: Equatable { }
-
-extension Coordinate: Equatable { }
-
-extension Review: Equatable { }
-
-

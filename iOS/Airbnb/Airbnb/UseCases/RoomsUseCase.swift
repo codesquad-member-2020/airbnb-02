@@ -10,27 +10,24 @@ import Foundation
 
 final class RoomsUseCase {
     private let roomsTask: RoomsTask
-    private var handler: ([Room]?) -> ()
-    private let requestQueue = DispatchQueue(label: "bnbsRequest.serial.queue")
+    private let requestQueue = DispatchQueue(label: "roomsRequest.serial.queue")
+    private let semaphore = DispatchSemaphore(value: 10)
     
-    init(roomsTask: RoomsTask, handler: @escaping ([Room]?) -> () = { _ in }) {
+    init(roomsTask: RoomsTask) {
         self.roomsTask = roomsTask
-        self.handler = handler
     }
     
-    func updateNotify(handler: @escaping ([Room]?) -> ()) {
-        self.handler = handler
-    }
-    
-    func request(_ request: RoomsRequest) {
+    func request(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
         requestQueue.async { [weak self] in
-            self?.requestBNBs(request)
+            self?.semaphore.wait()
+            self?.requestRooms(request, completionHandler: completionHandler)
         }
     }
     
-    private func requestBNBs(_ request: RoomsRequest) {
+    private func requestRooms(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
         roomsTask.perform(request) { [weak self] rooms in
-            self?.handler(rooms)
+            defer { self?.semaphore.signal() }
+            completionHandler(rooms)
         }
     }
 }

@@ -10,18 +10,17 @@ import XCTest
 @testable import Airbnb
 
 final class RoomTaskTests: XCTestCase {
-    func testPerform_DecodingSeccess() {
+    func testPerform_디코딩_성공() {
         let expectation = XCTestExpectation(description: "디코딩 성공")
         defer { wait(for: [expectation], timeout: 1) }
         
         RoomsTask(networkDispatcher: NetworkDispatcherValidStub()).perform(RoomsRequest()) {
-            guard let bnbs = $0 else { return }
-            XCTAssertEqual(bnbs, [Room()])
+            XCTAssertNotNil($0)
             expectation.fulfill()
         }
     }
     
-    func testPerform_DecodingFailure() {
+    func testPerform_잘못된_데이터로_인한_디코딩_실패() {
         let expectation = XCTestExpectation(description: "디코딩 실패")
         defer { wait(for: [expectation], timeout: 1) }
         
@@ -33,35 +32,22 @@ final class RoomTaskTests: XCTestCase {
 }
 
 final class NetworkDispatcherValidStub: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(request: Request,
+                 completionHandler: @escaping (Data?, URLResponse?) -> (),
+                 failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
         let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneRoomTestData")!
-        completionHandler(data, HTTPURLResponse(), nil)
+        completionHandler(data, HTTPURLResponse())
     }
-    
-    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
 }
 
 final class NetworkDispatcherInvalidStub: NetworkDispatcher {
-    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func execute(
+        request: Request,
+        completionHandler: @escaping (Data?, URLResponse?) -> (),
+        failureHandler: @escaping (URLResponse?, Error?) -> ()
+    ) throws {
         let data = Data.readJSON(of: Bundle(for: type(of: self)), for: "OneInvalidRoomTestData")!
-        completionHandler(data, HTTPURLResponse(), nil)
-    }
-    
-    func download(url: URL, completionHandler: @escaping (URL?, URLResponse?, Error?) -> ()) { }
-}
-
-private extension Room {
-    init() {
-        self.init(
-            id: 1,
-            title: "해운대 펜트하우스 더탑플로어",
-            type: "Entire apartment",
-            location: "부산",
-            images: [],
-            price: 50000,
-            favorite: false,
-            review: Review(rating: 4.83, count: 200),
-            superhost: true
-        )
+        completionHandler(data, HTTPURLResponse())
     }
 }

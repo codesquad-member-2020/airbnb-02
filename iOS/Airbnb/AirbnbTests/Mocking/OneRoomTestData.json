@@ -1,16 +1,21 @@
 [
-    {
-        "id": 1,
-        "title": "해운대 펜트하우스 더탑플로어",
-        "type": "Entire apartment",
-        "location": "부산",
-        "images": [],
-        "price": 50000,
-        "favorite": false,
-        "review": {
-            "rating": 4.83,
-            "count": 200
-        },
-        "superhost": true
-    }
+      {
+         "id": 1,
+         "title": "한남더힐1차",
+         "type": "아파트",
+         "location": "용산구",
+         "coordinate": {
+             "latitude": 127.007289,
+             "longitude": 37.5361039
+         },
+         "images": [],
+         "price": 1500000,
+         "favorite": false,
+         "review": {
+             "rating": 4.37,
+             "count": 300
+         },
+         "superhost": true
+     }
 ]
+

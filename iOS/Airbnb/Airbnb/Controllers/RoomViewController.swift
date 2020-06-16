@@ -15,25 +15,19 @@ final class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let roomViewModels = RoomViewModels()
-    private let layoutDelegate = BNBsLayout()
-    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessMock()))
-    private let imageUseCase = ImageUseCase(networkDispatcher: AFSession())
+    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessStub()))
+    private let roomImageUseCase = RoomImageUseCase(networkDownloader: AF)
+    private let imageCache = ImageCache()
     
     private var roomsToken: NotificationToken?
-    private var roomToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureObservers()
+        configureObserver()
         configureButtonActions()
         configureCollectionView()
         configureUseCase()
-        fetchRooms()
-    }
-    
-    private func fetchRooms() {
-        roomsUseCase.request(RoomsRequest())
     }
     
     @IBAction func toggleFavorite(_ sender: FavoriteButton) {
@@ -42,17 +36,14 @@ final class RoomViewController: UIViewController {
     
     private func configureCollectionView() {
         collectionView.dataSource = roomViewModels
-        collectionView.delegate = layoutDelegate
+        collectionView.delegate = self
     }
     
-    private func configureObservers() {
+    private func configureObserver() {
         roomsToken = RoomViewModels.Notification.addObserver { [weak self] _ in
-            self?.collectionView.reloadData()
-        }
-        
-        roomToken = RoomViewModel.Notification.addObserver { [weak self] notification in
-            guard let roomID = notification.userInfo?["roomID"] as? Int else { return }
-            self?.collectionView.reloadItems(at: [IndexPath(row: roomID - 1, section: 0)])
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
     }
     
@@ -67,23 +58,42 @@ final class RoomViewController: UIViewController {
     }
     
     private func configureUseCase() {
-        roomsUseCase.updateNotify { [weak self] rooms in
+        roomsUseCase.request(RoomsRequest()) { [weak self] rooms in
             guard let rooms = rooms else { return }
             
             self?.roomViewModels.update(rooms: rooms)
-            self?.configureImageUseCase(rooms)
+            rooms.forEach { self?.configureRoomImageUseCase($0) }
         }
     }
     
-    private func configureImageUseCase(_ rooms: [Room]) {
-        rooms.forEach {
-            $0.images.forEach { urlString in
-                guard let url = URL(string: urlString) else { return }
-                guard !ImageCache.fileExists(
-                    lastPathComponent: url.lastPathComponent
-                    ) else { return }
-                imageUseCase.request(imageURL: url)
+    private func configureRoomImageUseCase(_ room: Room) {
+        room.repeatImages { imageURL, _ in
+            guard !imageCache.fileExists(url: imageURL) else { return }
+            
+            roomImageUseCase.download(roomID: room.id, imageURL: imageURL) { [weak self] id in
+                guard let id = id else { return }
+                
+                self?.collectionView.reloadItems(at: [IndexPath(row: id - 1, section: 0)])
             }
         }
     }
 }
+
+extension RoomViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 250)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    )-> CGFloat {
+        return 30
+    }
+}
+
