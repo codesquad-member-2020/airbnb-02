@@ -11,29 +11,11 @@ import XCTest
 @testable import Alamofire
 
 final class SessionTests: XCTestCase {
-    private var urlSessionConfiguration: URLSessionConfiguration!
-    private var session: Session!
-    
-    override func setUp() {
-        setUpURLSessionConfiguration()
-        setUpSession(configuration: urlSessionConfiguration)
-    }
-    
-    private func setUpURLSessionConfiguration() {
-        urlSessionConfiguration = URLSessionConfiguration.ephemeral
-        urlSessionConfiguration.protocolClasses = [URLProtocolMock.self]
-    }
-    
-    private func setUpSession(configuration: URLSessionConfiguration) {
-        session = Session(configuration: urlSessionConfiguration)
-    }
-    
-    override func tearDown() {
-        urlSessionConfiguration = nil
-        session = nil
-    }
-    
-    func testExecuteSuccess() {
+    func testExecute_success() {
+        let urlSessionConfiguration = URLSessionConfiguration.ephemeral
+        urlSessionConfiguration.protocolClasses = [URLProtocolSuccessStub.self]
+        let session = Session(configuration: urlSessionConfiguration)
+        
         let expectation = XCTestExpectation(description: "네트워크 응답 받음")
         defer { wait(for: [expectation], timeout: 1) }
         
@@ -49,16 +31,25 @@ final class SessionTests: XCTestCase {
             
         })
     }
+    
+    func testExecute_failure_by_invalidURL() throws {
+        do {
+            try AF.execute(
+                request: RequestInvalidURLStub(),
+                completionHandler: { _, _ in },
+                failureHandler: { _, _ in })
+        } catch {
+            let networkErrorCase = try XCTUnwrap(error as? NetworkErrorCase)
+            XCTAssertEqual(networkErrorCase, NetworkErrorCase.invalidURLString)
+        }
+    }
 }
 
-final class URLSessionConfigurationMock: URLSessionConfiguration { }
-
-final class URLProtocolMock: URLProtocol {
+final class URLProtocolSuccessStub: URLProtocol {
     static let testURLs = [
-        RoomsRequest().urlRequest()!: bnbsTestData
+        RoomsRequest().urlRequest()!: bnbsTestSuccessData
     ]
-    static let bnbsTestData = Data.readJSON(of: Bundle(for: URLProtocolMock.self), for: "RoomsTestData")!
-    
+    static let bnbsTestSuccessData = Data.readJSON(of: Bundle(for: URLProtocolSuccessStub.self), for: "RoomsTestData")!
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -69,7 +60,7 @@ final class URLProtocolMock: URLProtocol {
     }
     
     override func startLoading() {
-        if let data = URLProtocolMock.testURLs[request] {
+        if let data = URLProtocolSuccessStub.testURLs[request] {
             let response = HTTPURLResponse(
                 url: request.url!,
                 statusCode: 200,
@@ -82,4 +73,10 @@ final class URLProtocolMock: URLProtocol {
     }
     
     override func stopLoading() { }
+}
+
+final class RequestInvalidURLStub: Airbnb.Request {
+    var path: String {
+        return "부적합URL"
+    }
 }
