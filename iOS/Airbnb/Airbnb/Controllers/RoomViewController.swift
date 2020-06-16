@@ -68,7 +68,7 @@ final class RoomViewController: UIViewController {
     
     private func configureRoomImageUseCase(_ room: Room) {
         room.repeatImages { imageURL, _ in
-            guard !imageCache.fileExists(path: imageURL.lastPathComponent) else { return }
+            guard !imageCache.fileExists(url: imageURL) else { return }
             
             roomImageUseCase.download(roomID: room.id, imageURL: imageURL) { [weak self] id in
                 guard let id = id else { return }

@@ -16,6 +16,7 @@
 		5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */; };
 		5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* RoomsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
+		5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F124988CD700A16D90 /* URLExtension.swift */; };
 		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
@@ -140,6 +141,7 @@
 		5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTaskTests.swift; sourceTree = "<group>"; };
 		5A25EAF1247F8B410038240F /* RoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		5A3490F124988CD700A16D90 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				C2B959C6247E5C25003DC5D9 /* Observable.swift */,
 				C2B959C8247E5C3A003DC5D9 /* NotificationToken.swift */,
 				5A87601F2480B08600E7FBC3 /* ImageCache.swift */,
+				5A3490F124988CD700A16D90 /* URLExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				5A7B71F3249375F0009BA750 /* RoomsSuccessStub.swift in Sources */,
 				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
+				5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */,
 				C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */,
 				C2B959C5247E584E003DC5D9 /* RoomCell.swift in Sources */,
 				C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */,

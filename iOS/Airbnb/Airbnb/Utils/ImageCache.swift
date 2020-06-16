@@ -18,8 +18,8 @@ struct ImageCache {
         self.domain = domain
     }
     
-    func read(path: String) -> UIImage? {
-        guard let destinationURL = downloadDestination(path: path) else { return nil }
+    func read(url: URL) -> UIImage? {
+        guard let destinationURL = downloadDestination(url: url) else { return nil }
         
         if let data = try? Data(contentsOf: destinationURL) {
             return UIImage(data: data)!
@@ -29,18 +29,18 @@ struct ImageCache {
         }
     }
     
-    func downloadDestination(path: String) -> URL? {
+    func downloadDestination(url: URL) -> URL? {
         guard let destinaionURL = try? FileManager.default.url(
             for: directory,
             in: domain,
             appropriateFor: nil,
             create: false)
-            .appendingPathComponent(path) else { return nil }
+            .appendingPathComponent(url.underscorePath) else { return nil }
         return destinaionURL
     }
     
-    func fileExists(path: String) -> Bool {
-        guard let destinationURL = downloadDestination(path: path) else { return false }
+    func fileExists(url: URL) -> Bool {
+        guard let destinationURL = downloadDestination(url: url) else { return false }
         return FileManager.default.fileExists(atPath: destinationURL.path)
     }
 }

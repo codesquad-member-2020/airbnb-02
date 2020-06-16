@@ -36,7 +36,7 @@ final class RoomImageUseCase {
                 
                 guard let tempURL = tempURL else { return }
                 guard let destinaionURL = self?.imageCache.downloadDestination(
-                    path: imageURL.lastPathComponent
+                    url: imageURL
                     ) else { return }
                 
                 try? FileManager.default.moveItem(at: tempURL, to: destinaionURL)
