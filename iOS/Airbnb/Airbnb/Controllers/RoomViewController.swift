@@ -49,22 +49,40 @@ final class RoomViewController: UIViewController {
     
     private func configureButtonActions() {
         filterButtons.forEach { button in
-            button.action = { [weak self] filterType in
-                guard let self = self else { return }
-                self.present(self.filterViewController(type: filterType), animated: true)
+            presentFilterViewController(by: button)
+        }
+    }
+    
+    private func presentFilterViewController(by button: FilterButton) {
+        button.action = { [weak self] filterType in
+            guard let self = self else { return }
+            switch filterType {
+            case .date:
+                self.present(self.calendarViewController(), animated: true)
+            case .price:
+                self.present(self.priceViewController(), animated: true)
             }
         }
     }
     
-    private func filterViewController(type: FilterType) -> FilterViewController {
-        guard let filterViewController = FilterViewController.instantiate(
+    private func calendarViewController() -> CalendarViewController {
+        guard let calendarViewController = CalendarViewController.instantiate(
             from: nil,
             presentationStyle: .overCurrentContext,
             transitionStyle: .crossDissolve
-            ) else { return FilterViewController() }
+            ) else { return CalendarViewController() }
         
-        filterViewController.filterType = type
-        return filterViewController
+        return calendarViewController
+    }
+    
+    private func priceViewController() -> PriceViewController {
+        guard let priceViewController = PriceViewController.instantiate(
+            from: nil,
+            presentationStyle: .overCurrentContext,
+            transitionStyle: .crossDissolve
+            ) else { return PriceViewController() }
+        
+        return priceViewController
     }
     
     private func configureUseCase() {
@@ -106,4 +124,3 @@ extension RoomViewController: UICollectionViewDelegateFlowLayout {
         return 30
     }
 }
-

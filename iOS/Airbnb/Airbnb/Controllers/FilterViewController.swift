@@ -9,23 +9,15 @@
 import UIKit
 
 enum FilterType {
-    case date, guests, price
-    
-    var title: String {
-        switch self {
-        case .date: return "체크인 — 체크아웃"
-        case .guests: return "인원"
-        case .price: return "가격"
-        }
-    }
+    case date, price
 }
 
-final class FilterViewController: UIViewController {
+class FilterViewController: UIViewController {
     private let headerView = FilterHeaderView()
     private let footerView = FilterFooterView()
     private let stackView = UIStackView()
     
-    var filterType: FilterType?
+    var filterTitle: String? { return nil }
     
     deinit {
         headerView.closeButton.removeTarget(self, action: #selector(close), for: .touchUpInside)
@@ -75,7 +67,7 @@ final class FilterViewController: UIViewController {
     }
     
     private func configureTitle() {
-        headerView.titleLabel.text = filterType?.title
+        headerView.titleLabel.text = filterTitle
     }
     
     private func configureCloseButton() {
@@ -90,4 +82,3 @@ final class FilterViewController: UIViewController {
 extension FilterViewController: Identifiable { }
 
 extension FilterViewController: Instantiatable { }
-

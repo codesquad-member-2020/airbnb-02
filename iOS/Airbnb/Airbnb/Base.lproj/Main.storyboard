@@ -34,7 +34,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-6l-Zaj">
-                                <rect key="frame" x="24" y="110" width="214" height="38"/>
+                                <rect key="frame" x="24" y="110" width="140" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giF-a2-P29" customClass="DateButton" customModule="Airbnb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="38"/>
@@ -57,29 +57,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pa-D1-Ja1" customClass="GuestsButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="74" y="0.0" width="66" height="38"/>
-                                        <state key="normal" title="인원"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="horizontalInset">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" name="textGray"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="verticalInset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="19"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glN-kW-FnV" customClass="PriceButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="148" y="0.0" width="66" height="38"/>
+                                        <rect key="frame" x="74" y="0.0" width="66" height="38"/>
                                         <state key="normal" title="가격"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="horizontalInset">
@@ -294,7 +273,6 @@
                     <connections>
                         <outlet property="collectionView" destination="cNL-Dt-uNR" id="O44-vB-IeH"/>
                         <outletCollection property="filterButtons" destination="giF-a2-P29" collectionClass="NSMutableArray" id="mHD-d1-9QF"/>
-                        <outletCollection property="filterButtons" destination="5pa-D1-Ja1" collectionClass="NSMutableArray" id="vhU-e6-XwL"/>
                         <outletCollection property="filterButtons" destination="glN-kW-FnV" collectionClass="NSMutableArray" id="cdL-OL-H9W"/>
                     </connections>
                 </viewController>
