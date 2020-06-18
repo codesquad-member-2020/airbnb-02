@@ -21,27 +21,15 @@ enum FilterType {
 }
 
 final class FilterViewController: UIViewController {
-    
-    @IBOutlet weak var filterTitle: UILabel!
-    
     var filterType: FilterType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
-        configureTitle()
-    }
-    
-    @IBAction func close(_ sender: UIButton) {
-        dismiss(animated: true)
     }
     
     private func configureBackgroundDim() {
         view.backgroundColor = UIColor(white: 0, alpha: 0.4)
-    }
-    
-    private func configureTitle() {
-        filterTitle.text = filterType?.title
     }
 }
 

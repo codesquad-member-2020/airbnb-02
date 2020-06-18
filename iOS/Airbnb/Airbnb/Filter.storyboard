@@ -32,9 +32,6 @@
                                                 <state key="normal" image="close">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="close:" destination="pnZ-xz-7cv" eventType="touchUpInside" id="teq-uT-QUz"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필터 타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HF-vb-Dfs">
                                                 <rect key="frame" x="150" y="20.5" width="73.5" height="19.5"/>
@@ -103,9 +100,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0yy-D1-f9d"/>
                     </view>
-                    <connections>
-                        <outlet property="filterTitle" destination="9HF-vb-Dfs" id="MrY-xf-mMN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqU-c8-8p5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
