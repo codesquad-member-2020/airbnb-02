@@ -19,6 +19,7 @@
 		5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F124988CD700A16D90 /* URLExtension.swift */; };
 		5A3490F8249B367800A16D90 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F7249B367800A16D90 /* FilterHeaderView.swift */; };
 		5A3490FA249B394000A16D90 /* FilterFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F9249B394000A16D90 /* FilterFooterView.swift */; };
+		5A3490FC249B5B1500A16D90 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490FB249B5B1500A16D90 /* Instantiatable.swift */; };
 		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
@@ -118,7 +119,6 @@
 		C2DB830E247668A7007034AC /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830D247668A7007034AC /* DateButton.swift */; };
 		C2DB8310247668C6007034AC /* GuestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB830F247668C6007034AC /* GuestsButton.swift */; };
 		C2DB831224766900007034AC /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB831124766900007034AC /* PriceButton.swift */; };
-		C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4EE62247BCDA700671D53 /* Filter.storyboard */; };
 		C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54882247C378C001B400C /* CornerRoundedButton.swift */; };
 		C2E54887247D3A47001B400C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E54886247D3A47001B400C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
@@ -145,6 +145,7 @@
 		5A3490F124988CD700A16D90 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		5A3490F7249B367800A16D90 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		5A3490F9249B394000A16D90 /* FilterFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFooterView.swift; sourceTree = "<group>"; };
+		5A3490FB249B5B1500A16D90 /* Instantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		C2DB830D247668A7007034AC /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		C2DB830F247668C6007034AC /* GuestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsButton.swift; sourceTree = "<group>"; };
 		C2DB831124766900007034AC /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
-		C2E4EE62247BCDA700671D53 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		C2E54882247C378C001B400C /* CornerRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedButton.swift; sourceTree = "<group>"; };
 		C2E54886247D3A47001B400C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,7 +405,6 @@
 				C22A525D2473A1A80055A478 /* Main.storyboard */,
 				C22A52622473A1AB0055A478 /* LaunchScreen.storyboard */,
 				5ADA864A2483D066000C06E9 /* Login.storyboard */,
-				C2E4EE62247BCDA700671D53 /* Filter.storyboard */,
 				C22A52652473A1AB0055A478 /* Info.plist */,
 				C22A52602473A1AB0055A478 /* Assets.xcassets */,
 			);
@@ -466,6 +465,7 @@
 		C22A527D2473A2620055A478 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5A3490FB249B5B1500A16D90 /* Instantiatable.swift */,
 				C22A525B2473A1A80055A478 /* RoomViewController.swift */,
 				C22A527F2473AAB10055A478 /* BookmarkViewController.swift */,
 				5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */,
@@ -644,7 +644,6 @@
 				5A67174124936FFD0075B510 /* detail_28.json in Resources */,
 				5A67172524936FFD0075B510 /* detail_40.json in Resources */,
 				5A67172724936FFD0075B510 /* detail_41.json in Resources */,
-				C2E4EE63247BCDA700671D53 /* Filter.storyboard in Resources */,
 				5A67171A24936FFD0075B510 /* detail_23.json in Resources */,
 				5A67173E24936FFD0075B510 /* detail_37.json in Resources */,
 				5A67174924936FFD0075B510 /* detail_1.json in Resources */,
@@ -694,6 +693,7 @@
 				C2205D20247EAEA9008D3FBC /* Request.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A81411F247BCE900020ED80 /* Room.swift in Sources */,
+				5A3490FC249B5B1500A16D90 /* Instantiatable.swift in Sources */,
 				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
 				5ADA864624838558000C06E9 /* RoomViewModel.swift in Sources */,
 				5A88E8F82473C59800DA79F1 /* ReservationViewController.swift in Sources */,

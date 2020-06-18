@@ -89,17 +89,5 @@ final class FilterViewController: UIViewController {
 
 extension FilterViewController: Identifiable { }
 
-extension FilterViewController {
-    static func instantiate(
-        from storyboard: StoryboardRouter,
-        presentationStyle: UIModalPresentationStyle = .overCurrentContext,
-        transitionStyle: UIModalTransitionStyle = .crossDissolve,
-        filterType: FilterType
-    ) -> Self? {
-        guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
-        viewController.modalPresentationStyle = presentationStyle
-        viewController.modalTransitionStyle = transitionStyle
-        viewController.filterType = filterType
-        return viewController
-    }
-}
+extension FilterViewController: Instantiatable { }
+

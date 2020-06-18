@@ -48,14 +48,4 @@ extension LoginViewController: ASWebAuthenticationPresentationContextProviding {
 }
 
 extension LoginViewController: Identifiable { }
-
-extension LoginViewController {
-    static func instantiate(
-        from storyboard: StoryboardRouter,
-        presentationStyle: UIModalPresentationStyle = .fullScreen
-    ) -> Self? {
-        guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
-        viewController.modalPresentationStyle = presentationStyle
-        return viewController
-    }
-}
+extension LoginViewController: Instantiatable { }

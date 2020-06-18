@@ -15,7 +15,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        guard let bnbTabBarController = BNBTabBarController.instantiate(from: .main) else { return }
+        guard let bnbTabBarController = BNBTabBarController.instantiate(
+            from: .main,
+            presentationStyle: nil,
+            transitionStyle: nil
+            ) else { return }
+        
         window?.rootViewController = bnbTabBarController
         window?.makeKeyAndVisible()
         
@@ -30,7 +35,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func presentLoginViewController(_ tabBarController: BNBTabBarController) {
         guard let searchViewController = tabBarController.children.first as? RoomViewController,
-            let loginViewController = LoginViewController.instantiate(from: .login) else { return }
+            let loginViewController = LoginViewController.instantiate(
+                from: .login,
+                presentationStyle: .fullScreen,
+                transitionStyle: nil
+            ) else { return }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.nanoseconds(1)) {
             searchViewController.present(loginViewController, animated: true)

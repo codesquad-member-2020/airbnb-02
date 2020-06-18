@@ -50,11 +50,21 @@ final class RoomViewController: UIViewController {
     private func configureButtonActions() {
         filterButtons.forEach { button in
             button.action = { [weak self] filterType in
-                guard let filterViewController = FilterViewController
-                    .instantiate(from: .filters, filterType: filterType) else { return }
-                self?.present(filterViewController, animated: true)
+                guard let self = self else { return }
+                self.present(self.filterViewController(type: filterType), animated: true)
             }
         }
+    }
+    
+    private func filterViewController(type: FilterType) -> FilterViewController {
+        guard let filterViewController = FilterViewController.instantiate(
+            from: nil,
+            presentationStyle: .overCurrentContext,
+            transitionStyle: .crossDissolve
+            ) else { return FilterViewController() }
+        
+        filterViewController.filterType = type
+        return filterViewController
     }
     
     private func configureUseCase() {
