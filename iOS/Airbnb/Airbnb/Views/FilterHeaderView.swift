@@ -14,20 +14,24 @@ final class FilterHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureViewConstraints()
+        configureView()
         configureCloseButton()
         configureTitleLabel()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureViewConstraints()
+        configureView()
         configureCloseButton()
         configureTitleLabel()
     }
     
+    private func configureView() {
+        backgroundColor = .white
+        configureViewConstraints()
+    }
+    
     private func configureViewConstraints() {
-        translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     

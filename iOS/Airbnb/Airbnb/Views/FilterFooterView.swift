@@ -27,7 +27,11 @@ final class FilterFooterView: UIView {
     }
     
     private func configureView() {
-        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .white
+        configureViewConstraints()
+    }
+    
+    private func configureViewConstraints() {
         heightAnchor.constraint(equalToConstant: 60).isActive =  true
     }
     
@@ -68,5 +72,7 @@ final class FilterFooterView: UIView {
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         searchButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        searchButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        searchButton.heightAnchor.constraint(equalToConstant: 38).isActive = true
     }
 }
