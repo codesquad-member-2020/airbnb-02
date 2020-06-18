@@ -28,6 +28,7 @@
                                                     <constraint firstAttribute="height" constant="25" id="fJh-eK-PgW"/>
                                                     <constraint firstAttribute="width" constant="25" id="hOp-N7-B72"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" image="close">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
@@ -63,7 +64,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbc-ME-4CB" customClass="CornerRoundedButton" customModule="Airbnb" customModuleProvider="target">
                                                 <rect key="frame" x="293" y="12" width="70" height="38"/>
-                                                <color key="backgroundColor" name="completionBlack"/>
+                                                <color key="backgroundColor" name="searchBlack"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="ZGa-4V-Hgv"/>
                                                     <constraint firstAttribute="width" constant="70" id="bdO-cb-JXr"/>
@@ -113,7 +114,7 @@
     </scenes>
     <resources>
         <image name="close" width="33.333332061767578" height="33.333332061767578"/>
-        <namedColor name="completionBlack">
+        <namedColor name="searchBlack">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textGray">

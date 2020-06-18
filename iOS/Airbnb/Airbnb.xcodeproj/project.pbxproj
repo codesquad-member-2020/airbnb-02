@@ -17,6 +17,8 @@
 		5A25EAF2247F8B410038240F /* RoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAF1247F8B410038240F /* RoomsUseCase.swift */; };
 		5A33640F2476A39600324367 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33640E2476A39600324367 /* Identifiable.swift */; };
 		5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F124988CD700A16D90 /* URLExtension.swift */; };
+		5A3490F8249B367800A16D90 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F7249B367800A16D90 /* FilterHeaderView.swift */; };
+		5A3490FA249B394000A16D90 /* FilterFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F9249B394000A16D90 /* FilterFooterView.swift */; };
 		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
@@ -141,6 +143,8 @@
 		5A25EAF1247F8B410038240F /* RoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCase.swift; sourceTree = "<group>"; };
 		5A33640E2476A39600324367 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		5A3490F124988CD700A16D90 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		5A3490F7249B367800A16D90 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
+		5A3490F9249B394000A16D90 /* FilterFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFooterView.swift; sourceTree = "<group>"; };
 		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 				C2B959C4247E584E003DC5D9 /* RoomCell.swift */,
 				C29787F5247FF3B500EA9D01 /* ReviewCountLabel.swift */,
 				5ADA864E2483E773000C06E9 /* LoginButton.swift */,
+				5A3490F7249B367800A16D90 /* FilterHeaderView.swift */,
+				5A3490F9249B394000A16D90 /* FilterFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -673,8 +679,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2553CE7247C1CC40019588B /* FilterViewController.swift in Sources */,
+				5A3490F8249B367800A16D90 /* FilterHeaderView.swift in Sources */,
 				5A33640F2476A39600324367 /* Identifiable.swift in Sources */,
 				C26F0C8D247640DB002E7F42 /* FilterButton.swift in Sources */,
+				5A3490FA249B394000A16D90 /* FilterFooterView.swift in Sources */,
 				5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */,
 				5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */,
 				5A7B71F3249375F0009BA750 /* RoomsSuccessStub.swift in Sources */,
