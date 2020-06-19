@@ -77,4 +77,3 @@ class FilterViewController: UIViewController {
 
 extension FilterViewController: Identifiable { }
 
-extension FilterViewController: Instantiatable { }

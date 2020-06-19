@@ -58,31 +58,28 @@ final class RoomViewController: UIViewController {
             guard let self = self else { return }
             switch filterType {
             case .date:
-                self.present(self.calendarViewController(), animated: true)
+                self.present(
+                    self.filterViewController(type: CalendarViewController.self),
+                    animated: true
+                )
             case .price:
-                self.present(self.priceViewController(), animated: true)
+                self.present(
+                    self.filterViewController(type: PriceViewController.self),
+                    animated: true
+                )
             }
         }
     }
     
-    private func calendarViewController() -> CalendarViewController {
-        guard let calendarViewController = CalendarViewController.instantiate(
+    private func filterViewController<T: FilterViewController>(type: T.Type) -> T {
+        guard let filterViewController = VCInstantiator().instantiate(
+            type: T.self,
             from: nil,
             presentationStyle: .overCurrentContext,
             transitionStyle: .crossDissolve
-            ) else { return CalendarViewController() }
+            ) else { return T() }
         
-        return calendarViewController
-    }
-    
-    private func priceViewController() -> PriceViewController {
-        guard let priceViewController = PriceViewController.instantiate(
-            from: nil,
-            presentationStyle: .overCurrentContext,
-            transitionStyle: .crossDissolve
-            ) else { return PriceViewController() }
-        
-        return priceViewController
+        return filterViewController
     }
     
     private func configureUseCase() {

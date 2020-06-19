@@ -19,9 +19,9 @@
 		5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F124988CD700A16D90 /* URLExtension.swift */; };
 		5A3490F8249B367800A16D90 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F7249B367800A16D90 /* FilterHeaderView.swift */; };
 		5A3490FA249B394000A16D90 /* FilterFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490F9249B394000A16D90 /* FilterFooterView.swift */; };
-		5A3490FC249B5B1500A16D90 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490FB249B5B1500A16D90 /* Instantiatable.swift */; };
 		5A3490FE249B7E6000A16D90 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490FD249B7E6000A16D90 /* CalendarViewController.swift */; };
 		5A349100249B802600A16D90 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3490FF249B802600A16D90 /* PriceViewController.swift */; };
+		5A34911F249CCDB500A16D90 /* VCInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34911E249CCDB500A16D90 /* VCInstantiator.swift */; };
 		5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */; };
 		5A40000124876EBC001F1C63 /* BNBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40000024876EBC001F1C63 /* BNBTabBarController.swift */; };
 		5A6716E524936E4F0075B510 /* RoomsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6716E424936E4F0075B510 /* RoomsData.json */; };
@@ -146,9 +146,9 @@
 		5A3490F124988CD700A16D90 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		5A3490F7249B367800A16D90 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		5A3490F9249B394000A16D90 /* FilterFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFooterView.swift; sourceTree = "<group>"; };
-		5A3490FB249B5B1500A16D90 /* Instantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		5A3490FD249B7E6000A16D90 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5A3490FF249B802600A16D90 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
+		5A34911E249CCDB500A16D90 /* VCInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInstantiator.swift; sourceTree = "<group>"; };
 		5A35D1932493CFB20038AD6F /* NetworkDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloader.swift; sourceTree = "<group>"; };
 		5A40000024876EBC001F1C63 /* BNBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNBTabBarController.swift; sourceTree = "<group>"; };
 		5A6716E424936E4F0075B510 /* RoomsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoomsData.json; sourceTree = "<group>"; };
@@ -467,7 +467,6 @@
 		C22A527D2473A2620055A478 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A3490FB249B5B1500A16D90 /* Instantiatable.swift */,
 				C22A525B2473A1A80055A478 /* RoomViewController.swift */,
 				C22A527F2473AAB10055A478 /* BookmarkViewController.swift */,
 				5A88E8F72473C59800DA79F1 /* ReservationViewController.swift */,
@@ -476,6 +475,7 @@
 				5A40000024876EBC001F1C63 /* BNBTabBarController.swift */,
 				5A3490FD249B7E6000A16D90 /* CalendarViewController.swift */,
 				5A3490FF249B802600A16D90 /* PriceViewController.swift */,
+				5A34911E249CCDB500A16D90 /* VCInstantiator.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -691,13 +691,13 @@
 				5A7B71F3249375F0009BA750 /* RoomsSuccessStub.swift in Sources */,
 				C2E54887247D3A47001B400C /* RoundButton.swift in Sources */,
 				5A3490F224988CD700A16D90 /* URLExtension.swift in Sources */,
+				5A34911F249CCDB500A16D90 /* VCInstantiator.swift in Sources */,
 				C2E54883247C378C001B400C /* CornerRoundedButton.swift in Sources */,
 				C2B959C5247E584E003DC5D9 /* RoomCell.swift in Sources */,
 				C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */,
 				C2205D20247EAEA9008D3FBC /* Request.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
 				5A81411F247BCE900020ED80 /* Room.swift in Sources */,
-				5A3490FC249B5B1500A16D90 /* Instantiatable.swift in Sources */,
 				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
 				5ADA864624838558000C06E9 /* RoomViewModel.swift in Sources */,
 				5A349100249B802600A16D90 /* PriceViewController.swift in Sources */,

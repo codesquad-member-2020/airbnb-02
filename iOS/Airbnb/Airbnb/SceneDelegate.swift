@@ -15,7 +15,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        guard let bnbTabBarController = BNBTabBarController.instantiate(
+        guard let bnbTabBarController = VCInstantiator().instantiate(
+            type: BNBTabBarController.self,
             from: .main,
             presentationStyle: nil,
             transitionStyle: nil
@@ -35,7 +36,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func presentLoginViewController(_ tabBarController: BNBTabBarController) {
         guard let searchViewController = tabBarController.children.first as? RoomViewController,
-            let loginViewController = LoginViewController.instantiate(
+            let loginViewController = VCInstantiator().instantiate(
+                type: LoginViewController.self,
                 from: .login,
                 presentationStyle: .fullScreen,
                 transitionStyle: nil

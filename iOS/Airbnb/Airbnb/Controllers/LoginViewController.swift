@@ -48,4 +48,4 @@ extension LoginViewController: ASWebAuthenticationPresentationContextProviding {
 }
 
 extension LoginViewController: Identifiable { }
-extension LoginViewController: Instantiatable { }
+

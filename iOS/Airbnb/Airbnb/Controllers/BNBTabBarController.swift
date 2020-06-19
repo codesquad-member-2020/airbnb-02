@@ -15,5 +15,4 @@ final class BNBTabBarController: UITabBarController {
 }
 
 extension BNBTabBarController: Identifiable { }
-extension BNBTabBarController: Instantiatable { }
 
