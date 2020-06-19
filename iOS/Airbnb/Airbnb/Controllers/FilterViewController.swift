@@ -19,10 +19,6 @@ class FilterViewController: UIViewController {
     
     var filterTitle: String? { return nil }
     
-    deinit {
-        headerView.closeButton.removeTarget(self, action: #selector(close), for: .touchUpInside)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundDim()
