@@ -72,7 +72,7 @@ final class RoomViewController: UIViewController {
     }
     
     private func filterViewController<T: FilterViewController>(type: T.Type) -> T {
-        guard let filterViewController = VCInstantiator().instantiate(
+        guard let filterViewController = ViewControllerInstantiator().instantiate(
             type: T.self,
             from: nil,
             presentationStyle: .overCurrentContext,

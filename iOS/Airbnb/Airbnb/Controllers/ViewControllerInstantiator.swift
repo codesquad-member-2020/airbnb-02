@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct VCInstantiator {
+struct ViewControllerInstantiator {
     func instantiate<T: UIViewController> (
         type: T.Type,
         from storyboard: StoryboardRouter?,
