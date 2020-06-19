@@ -41,7 +41,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 transitionStyle: nil
             ) else { return }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.nanoseconds(1)) {
+        DispatchQueue.main.async {
             searchViewController.present(loginViewController, animated: true)
         }
     }
