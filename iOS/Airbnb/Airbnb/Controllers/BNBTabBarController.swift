@@ -16,8 +16,3 @@ final class BNBTabBarController: UITabBarController {
 
 extension BNBTabBarController: Identifiable { }
 
-extension BNBTabBarController {
-    static func instantiate(from storyboard: StoryboardRouter) -> Self? {
-          return storyboard.load(viewControllerType: self)
-      }
-}

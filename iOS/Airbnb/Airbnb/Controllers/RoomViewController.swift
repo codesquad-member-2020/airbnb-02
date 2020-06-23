@@ -49,12 +49,37 @@ final class RoomViewController: UIViewController {
     
     private func configureButtonActions() {
         filterButtons.forEach { button in
-            button.action = { [weak self] filterType in
-                guard let filterViewController = FilterViewController
-                    .instantiate(from: .filters, filterType: filterType) else { return }
-                self?.present(filterViewController, animated: true)
+            presentFilterViewController(by: button)
+        }
+    }
+    
+    private func presentFilterViewController(by button: FilterButton) {
+        button.action = { [weak self] filterType in
+            guard let self = self else { return }
+            switch filterType {
+            case .date:
+                self.present(
+                    self.filterViewController(type: CalendarViewController.self),
+                    animated: true
+                )
+            case .price:
+                self.present(
+                    self.filterViewController(type: PriceViewController.self),
+                    animated: true
+                )
             }
         }
+    }
+    
+    private func filterViewController<T: FilterViewController>(type: T.Type) -> T {
+        guard let filterViewController = ViewControllerInstantiator().instantiate(
+            type: T.self,
+            from: nil,
+            presentationStyle: .overCurrentContext,
+            transitionStyle: .crossDissolve
+            ) else { return T() }
+        
+        return filterViewController
     }
     
     private func configureUseCase() {
@@ -96,4 +121,3 @@ extension RoomViewController: UICollectionViewDelegateFlowLayout {
         return 30
     }
 }
-
