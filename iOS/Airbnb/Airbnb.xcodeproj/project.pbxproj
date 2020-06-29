@@ -88,6 +88,7 @@
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
 		5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B324755C30001FC509 /* BadgeLabel.swift */; };
 		5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2BB24757859001FC509 /* SearchTextField.swift */; };
+		5AB9081B24AA07FC00E36106 /* GraphViewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB9081A24AA07FC00E36106 /* GraphViewLayer.swift */; };
 		5AD06346247A50D4000BF31B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06345247A50D4000BF31B /* Shadow.swift */; };
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
@@ -228,6 +229,7 @@
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2B324755C30001FC509 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeLabel.swift; path = Airbnb/Views/BadgeLabel.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2BB24757859001FC509 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		5AB9081A24AA07FC00E36106 /* GraphViewLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewLayer.swift; sourceTree = "<group>"; };
 		5AD06345247A50D4000BF31B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		5AD06347247A5BB2000BF31B /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		5ADA00DB247E4F3500E30D6C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				5A40000B2488F860001F1C63 /* RangeSlider.swift */,
 				5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */,
 				5A1316762489D98800A7A490 /* GraphView.swift */,
+				5AB9081A24AA07FC00E36106 /* GraphViewLayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				C203466324897A3900A16C40 /* CalendarHeaderView.swift in Sources */,
 				C2587BAC24867C3700CCFE04 /* CalendarViewController.swift in Sources */,
 				C22A525A2473A1A80055A478 /* SceneDelegate.swift in Sources */,
+				5AB9081B24AA07FC00E36106 /* GraphViewLayer.swift in Sources */,
 				5A89D248247775F10046629B /* UIEdgeInsetsExtension.swift in Sources */,
 				C2DB830E247668A7007034AC /* DateButton.swift in Sources */,
 				C203465F24892F4700A16C40 /* FilterSubViewController.swift in Sources */,

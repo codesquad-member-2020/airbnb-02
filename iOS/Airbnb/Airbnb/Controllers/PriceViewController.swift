@@ -69,7 +69,6 @@ final class PriceViewController: FilterSubViewController {
         priceViewModel?.repeatPrices { _, value in
             graphView.data.append(CGFloat(integerLiteral: value))
         }
-        graphView.data.append(contentsOf: [0, 0])
     }
     
     func notifyPriceMinMaxPrices() {
