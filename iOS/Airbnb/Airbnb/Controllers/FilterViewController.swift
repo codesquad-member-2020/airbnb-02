@@ -73,6 +73,11 @@ class FilterViewController: UIViewController {
     @objc private func close() {
         dismiss(animated: true)
     }
+    
+    func add(contentView: UIView) {
+        let contentIndex = 1
+        stackView.insertArrangedSubview(contentView, at: contentIndex)
+    }
 }
 
 extension FilterViewController: Identifiable { }

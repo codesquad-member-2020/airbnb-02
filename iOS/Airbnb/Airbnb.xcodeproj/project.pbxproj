@@ -88,6 +88,8 @@
 		5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89D24B2477AD9D0046629B /* ImagePagingView.swift */; };
 		5A8DB2B424755C30001FC509 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2B324755C30001FC509 /* BadgeLabel.swift */; };
 		5A8DB2BC24757859001FC509 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DB2BB24757859001FC509 /* SearchTextField.swift */; };
+		5AB9081E24AAF85F00E36106 /* PriceContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB9081D24AAF85F00E36106 /* PriceContentView.xib */; };
+		5AB9082024AAF87100E36106 /* PriceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB9081F24AAF87100E36106 /* PriceContentView.swift */; };
 		5AD06346247A50D4000BF31B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06345247A50D4000BF31B /* Shadow.swift */; };
 		5AD06348247A5BB2000BF31B /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD06347247A5BB2000BF31B /* MapButton.swift */; };
 		5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA00DB247E4F3500E30D6C /* EndPoints.swift */; };
@@ -216,6 +218,8 @@
 		5A89D24B2477AD9D0046629B /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingView.swift; path = Airbnb/Views/ImagePagingView.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2B324755C30001FC509 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeLabel.swift; path = Airbnb/Views/BadgeLabel.swift; sourceTree = SOURCE_ROOT; };
 		5A8DB2BB24757859001FC509 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		5AB9081D24AAF85F00E36106 /* PriceContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceContentView.xib; sourceTree = "<group>"; };
+		5AB9081F24AAF87100E36106 /* PriceContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceContentView.swift; sourceTree = "<group>"; };
 		5AD06345247A50D4000BF31B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		5AD06347247A5BB2000BF31B /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		5ADA00DB247E4F3500E30D6C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 				5ADA864E2483E773000C06E9 /* LoginButton.swift */,
 				5A3490F7249B367800A16D90 /* FilterHeaderView.swift */,
 				5A3490F9249B394000A16D90 /* FilterFooterView.swift */,
+				5AB9081D24AAF85F00E36106 /* PriceContentView.xib */,
+				5AB9081F24AAF87100E36106 /* PriceContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 				5A67173424936FFD0075B510 /* detail_8.json in Resources */,
 				5A67174424936FFD0075B510 /* detail_24.json in Resources */,
 				5A67173F24936FFD0075B510 /* detail_30.json in Resources */,
+				5AB9081E24AAF85F00E36106 /* PriceContentView.xib in Resources */,
 				5A67174024936FFD0075B510 /* detail_14.json in Resources */,
 				5A67174324936FFD0075B510 /* detail_20.json in Resources */,
 				5A67174224936FFD0075B510 /* detail_35.json in Resources */,
@@ -712,6 +719,7 @@
 				5A25EAEC247F88330038240F /* RoomsTask.swift in Sources */,
 				C2205D21247EAEA9008D3FBC /* RoomsRequest.swift in Sources */,
 				5ADA00DC247E4F3500E30D6C /* EndPoints.swift in Sources */,
+				5AB9082024AAF87100E36106 /* PriceContentView.swift in Sources */,
 				C22A525C2473A1A80055A478 /* RoomViewController.swift in Sources */,
 				5A35D1942493CFB20038AD6F /* NetworkDownloader.swift in Sources */,
 				C2553CE9247C23E50019588B /* StoryboardRouter.swift in Sources */,
