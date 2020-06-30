@@ -49,22 +49,23 @@ final class RoomViewController: UIViewController {
     
     private func configureButtonActions() {
         filterButtons.forEach { button in
-            presentFilterViewController(by: button)
+            button.action = { [weak self] filterType in
+                guard let self = self else { return }
+                
+                self.presentFilterViewController(by: filterType)
+            }
         }
     }
     
-    private func presentFilterViewController(by button: FilterButton) {
-        button.action = { [weak self] filterType in
-            guard let self = self else { return }
-            switch filterType {
-            case .date:
-                self.present(
-                    self.filterViewController(type: CalendarViewController.self),
-                    animated: true
-                )
-            case .price:
-                self.present(self.priceViewController(),animated: true)
-            }
+    private func presentFilterViewController(by filterType: FilterType) {
+        switch filterType {
+        case .date:
+            self.present(
+                self.filterViewController(type: CalendarViewController.self),
+                animated: true
+            )
+        case .price:
+            self.present(self.priceViewController(),animated: true)
         }
     }
     
@@ -81,11 +82,11 @@ final class RoomViewController: UIViewController {
     
     private func priceViewController() -> PriceViewController {
         let priceViewController = self.filterViewController(type: PriceViewController.self)
-        insertPrice(priceViewController: priceViewController)
+        insertPrice(to: priceViewController)
         return priceViewController
     }
     
-    private func insertPrice(priceViewController: PriceViewController) {
+    private func insertPrice(to priceViewController: PriceViewController) {
         var prices = [Int: Int]()
         roomViewModels.repeatViewModels {
             let price = $0.room.price
