@@ -87,6 +87,11 @@ final class RoomViewController: UIViewController {
     }
     
     private func insertPrice(to priceViewController: PriceViewController) {
+        let prices = makePrices()
+        priceViewController.configurePriceViewModel(prices: prices.sorted(by: <))
+    }
+    
+    private func makePrices() -> [Int: Int] {
         var prices = [Int: Int]()
         roomViewModels.repeatViewModels {
             let price = $0.room.price
@@ -96,7 +101,7 @@ final class RoomViewController: UIViewController {
                 prices.updateValue(1, forKey: price)
             }
         }
-        priceViewController.configurePriceViewModel(prices: prices.sorted(by: <))
+        return prices
     }
     
     private func configureUseCase() {
