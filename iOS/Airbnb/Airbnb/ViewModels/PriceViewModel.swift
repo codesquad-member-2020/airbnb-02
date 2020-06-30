@@ -31,9 +31,9 @@ final class PriceViewModel {
     }
     
     func priceAvarageText(minimumPercent: CGFloat = 0, maximumPercent: CGFloat = 1) -> String? {
-        guard let avarage = generateAverage(minimumPercent: minimumPercent, maximumPercent: maximumPercent), let avaragePrice = formatter.string(
-            from: avarage as NSNumber
-            ) else { return nil }
+        guard let avarage = generateAverage(minimumPercent: minimumPercent,
+                                            maximumPercent: maximumPercent),
+            let avaragePrice = formatter.string(from: avarage as NSNumber) else { return nil }
         
         return  "일박 평균 가격은 \(avaragePrice)원"
     }

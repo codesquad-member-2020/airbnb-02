@@ -141,7 +141,11 @@ final class RangeSlider: UIControl {
         upperThumbImageView.isHighlighted = false
     }
     
-    private func boundValue(_ value: CGFloat, toLowerValue lowerValue: CGFloat, upperValue: CGFloat) -> CGFloat {
+    private func boundValue(
+        _ value: CGFloat,
+        toLowerValue lowerValue: CGFloat,
+        upperValue: CGFloat
+    ) -> CGFloat {
         return min(max(value, lowerValue), upperValue)
     }
 }

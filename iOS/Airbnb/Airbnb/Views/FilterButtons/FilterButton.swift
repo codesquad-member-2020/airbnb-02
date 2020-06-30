@@ -47,7 +47,10 @@ class FilterButton: UIButton {
     }
     
     private func configureInsets() {
-        contentEdgeInsets = UIEdgeInsets(horizontalInset: horizontalInset, verticalInset: verticalInset)
+        contentEdgeInsets = UIEdgeInsets(
+            horizontalInset: horizontalInset,
+            verticalInset: verticalInset
+        )
     }
     
     private func configureColor() {

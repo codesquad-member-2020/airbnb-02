@@ -15,7 +15,9 @@ final class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let roomViewModels = RoomViewModels()
-    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessStub()))
+    private let roomsUseCase = RoomsUseCase(
+        roomsTask: RoomsTask(networkDispatcher: RoomsSuccessStub())
+    )
     private let roomImageUseCase = RoomImageUseCase(networkDownloader: AF)
     private let imageCache = ImageCache()
     

@@ -70,7 +70,10 @@ final class FilterFooterView: UIView {
         addSubview(searchButton)
         
         searchButton.translatesAutoresizingMaskIntoConstraints = false
-        searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        searchButton.trailingAnchor.constraint(
+            equalTo: trailingAnchor,
+            constant: -10
+        ).isActive = true
         searchButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         searchButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         searchButton.heightAnchor.constraint(equalToConstant: 38).isActive = true
