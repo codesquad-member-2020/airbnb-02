@@ -63,10 +63,7 @@ final class RoomViewController: UIViewController {
                     animated: true
                 )
             case .price:
-                self.present(
-                    self.filterViewController(type: PriceViewController.self),
-                    animated: true
-                )
+                self.present(self.priceViewController(),animated: true)
             }
         }
     }
@@ -80,6 +77,25 @@ final class RoomViewController: UIViewController {
             ) else { return T() }
         
         return filterViewController
+    }
+    
+    private func priceViewController() -> PriceViewController {
+        let priceViewController = self.filterViewController(type: PriceViewController.self)
+        insertPrice(priceViewController: priceViewController)
+        return priceViewController
+    }
+    
+    private func insertPrice(priceViewController: PriceViewController) {
+        var prices = [Int: Int]()
+        roomViewModels.repeatViewModels {
+            let price = $0.room.price
+            if let count = prices[$0.room.price] {
+                prices.updateValue(count + 1, forKey: price)
+            } else {
+                prices.updateValue(1, forKey: price)
+            }
+        }
+        priceViewController.configurePriceViewModel(prices: prices.sorted(by: <))
     }
     
     private func configureUseCase() {

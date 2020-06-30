@@ -62,4 +62,8 @@ final class PriceViewController: FilterViewController {
             maximumPercent: upperValue
         )
     }
+    
+    func configurePriceViewModel(prices: [(key: Int, value: Int)]) {
+        priceViewModel = PriceViewModel(prices: prices)
+    }
 }

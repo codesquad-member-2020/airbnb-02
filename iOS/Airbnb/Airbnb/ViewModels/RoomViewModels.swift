@@ -25,6 +25,10 @@ final class RoomViewModels: NSObject {
     func update(rooms: [Room]) {
         self.roomViewModels = rooms.map { RoomViewModel(room: $0) }
     }
+    
+    func repeatViewModels(handler: (RoomViewModel) -> Void) {
+        roomViewModels.forEach { handler($0) }
+    }
 }
 
 extension RoomViewModels: UICollectionViewDataSource {
