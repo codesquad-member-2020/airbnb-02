@@ -20,4 +20,3 @@ protocol NetworkDispatcher {
         failureHandler: @escaping (URLResponse?, Error?) -> ()
     ) throws
 }
-
