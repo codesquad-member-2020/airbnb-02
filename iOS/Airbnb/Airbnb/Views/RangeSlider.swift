@@ -106,7 +106,9 @@ final class RangeSlider: UIControl {
         lowerValue = minimumValue
         upperValue = maximumValue
     }
-    
+}
+
+extension RangeSlider {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
         
