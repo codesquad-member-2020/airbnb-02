@@ -44,7 +44,7 @@ final class PriceViewModel {
             from: avarage as NSNumber
             ) else { return nil }
         
-        return  "일박 평균 가격은 \(avaragePrice)원"
+        return "일박 평균 가격은 \(avaragePrice)원"
     }
     
     private func generateAverage(minimumPercent: CGFloat, maximumPercent: CGFloat) -> Int? {
@@ -64,8 +64,9 @@ final class PriceViewModel {
     }
     
     private func index(percent: CGFloat) -> Int {
-        guard Int(percent * CGFloat(prices.count)) > 0 else { return 0 }
-        guard Int(percent * CGFloat(prices.count)) < prices.count else { return prices.count - 1 }
+        guard percent > 0 else { return 0 }
+        guard percent < 1 else { return prices.count - 1 }
+        
         return Int(percent * CGFloat(prices.count))
     }
 }
