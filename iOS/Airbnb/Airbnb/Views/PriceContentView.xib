@@ -61,8 +61,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="graphView" destination="A2s-2v-h4D" id="g2d-FQ-Ibc"/>
                 <outlet property="priceAverage" destination="fpG-vc-O4u" id="2fr-M5-BI7"/>
                 <outlet property="priceRange" destination="Lyc-Tw-UB6" id="Y2d-7r-cdg"/>
+                <outlet property="priceRangeSlider" destination="Szw-sT-SPm" id="ltJ-fo-lEE"/>
             </connections>
             <point key="canvasLocation" x="139" y="145"/>
         </view>

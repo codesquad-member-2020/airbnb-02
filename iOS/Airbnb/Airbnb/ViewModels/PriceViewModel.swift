@@ -20,6 +20,10 @@ final class PriceViewModel {
         self.prices = prices
     }
     
+    func repeatPrices(handler: (Int, Int) -> ()) {
+        prices.forEach { handler($0, $1) }
+    }
+    
     func priceRangeText(minimumPercent: CGFloat = 0, maximumPercent: CGFloat = 1) -> String? {
         guard let minPrice = formatter.string(from:
             prices[firstIndex(minimumPercent: minimumPercent)].key as NSNumber),

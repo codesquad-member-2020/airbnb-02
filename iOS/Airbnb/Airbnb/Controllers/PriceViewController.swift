@@ -18,6 +18,7 @@ final class PriceViewController: FilterViewController {
         configureContentView()
         configurePriceRange()
         configurePriceAvarage()
+        configureGraphView()
         configureObserver()
     }
     
@@ -37,6 +38,13 @@ final class PriceViewController: FilterViewController {
     
     private func configurePriceRange() {
         contentView.priceRange.text = priceViewModel?.priceRangeText()
+    }
+    
+    private func configureGraphView() {
+        contentView.graphView.rangeSlider = contentView.priceRangeSlider
+        priceViewModel?.repeatPrices { _, value in
+            contentView.graphView.append(data: CGFloat(value))
+        }
     }
     
     private func configurePriceAvarage() {
