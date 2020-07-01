@@ -102,6 +102,11 @@ final class RangeSlider: UIControl {
         CATransaction.commit()
     }
     
+    func clear() {
+        lowerValue = minimumValue
+        upperValue = maximumValue
+    }
+    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
         
