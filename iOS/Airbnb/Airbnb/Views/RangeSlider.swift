@@ -13,11 +13,7 @@ final class RangeSlider: UIControl {
         static let update = Foundation.Notification.Name("valueDidUpdate")
     }
     
-    let trackTintColor = UIColor(white: 0.9, alpha: 1)
-    let trackHighlightTintColor = UIColor(white: 0.5, alpha: 1)
-    let minimumValue: CGFloat = 0
-    let maximumValue: CGFloat = 1
-    var lowerValue: CGFloat = 0 {
+    private(set) var lowerValue: CGFloat = 0 {
         didSet {
             updateLayerFrames()
             NotificationCenter.default.post(
@@ -27,7 +23,7 @@ final class RangeSlider: UIControl {
             )
         }
     }
-    var upperValue: CGFloat = 1 {
+    private(set) var upperValue: CGFloat = 1 {
         didSet {
             updateLayerFrames()
             NotificationCenter.default.post(
@@ -44,11 +40,21 @@ final class RangeSlider: UIControl {
         }
     }
     
+    private let minimumValue: CGFloat = 0
+    private let maximumValue: CGFloat = 1
     private let trackLayer = RangeSliderTrackLayer()
     private let lowerThumbImageView = UIImageView()
     private let upperThumbImageView = UIImageView()
     private let thumbImage = UIImage(systemName: "circle.fill")!
     private var previousLocation = CGPoint()
+    
+    var trackTintColor: UIColor {
+        return UIColor(white: 0.9, alpha: 1)
+    }
+    
+    var trackHighlightTintColor: UIColor {
+        return UIColor(white: 0.5, alpha: 1)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
