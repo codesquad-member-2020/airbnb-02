@@ -11,11 +11,25 @@ import UIKit
 final class GraphView: UIView {
     weak var rangeSlider: RangeSlider?
     var priceData = [CGFloat]()
+    private let graphViewLayer = GraphViewLayer()
     
     override func draw(_ rect: CGRect) {
-    
-    }
+        guard let path = curvedPath() else { return }
         
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        configureGraphViewLayer(mask: mask)
+    }
+    
+    private func configureGraphViewLayer(mask: CAShapeLayer) {
+        layer.addSublayer(graphViewLayer)
+        
+        graphViewLayer.rangeSlider = rangeSlider
+        graphViewLayer.mask = mask
+        graphViewLayer.frame = bounds
+        graphViewLayer.setNeedsDisplay()
+    }
+    
     private func curvedPath() -> UIBezierPath? {
         let path = UIBezierPath()
         let step = bounds.width / CGFloat(priceData.count - 1)

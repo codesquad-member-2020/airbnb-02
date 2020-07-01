@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A11BE3D24AC691F00EC499E /* PriceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE3C24AC691F00EC499E /* PriceViewModelTests.swift */; };
 		5A11BE4124AC7A7E00EC499E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE4024AC7A7E00EC499E /* GraphView.swift */; };
+		5A11BE4324AC842E00EC499E /* GraphViewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE4224AC842E00EC499E /* GraphViewLayer.swift */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -144,6 +145,7 @@
 /* Begin PBXFileReference section */
 		5A11BE3C24AC691F00EC499E /* PriceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewModelTests.swift; sourceTree = "<group>"; };
 		5A11BE4024AC7A7E00EC499E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		5A11BE4224AC842E00EC499E /* GraphViewLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewLayer.swift; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				5A40000B2488F860001F1C63 /* RangeSlider.swift */,
 				5A40000D2488FA70001F1C63 /* RangeSliderTrackLayer.swift */,
 				5A11BE4024AC7A7E00EC499E /* GraphView.swift */,
+				5A11BE4224AC842E00EC499E /* GraphViewLayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				C2B959C7247E5C25003DC5D9 /* Observable.swift in Sources */,
 				C2205D20247EAEA9008D3FBC /* Request.swift in Sources */,
 				5A89D24C2477AD9D0046629B /* ImagePagingView.swift in Sources */,
+				5A11BE4324AC842E00EC499E /* GraphViewLayer.swift in Sources */,
 				5A81411F247BCE900020ED80 /* Room.swift in Sources */,
 				5A814124247BD3CD0020ED80 /* DataExtensions.swift in Sources */,
 				5ADA864624838558000C06E9 /* RoomViewModel.swift in Sources */,

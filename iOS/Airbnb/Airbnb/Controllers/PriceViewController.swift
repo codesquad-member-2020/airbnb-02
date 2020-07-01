@@ -53,6 +53,7 @@ final class PriceViewController: FilterViewController {
     
     private func configureObserver() {
         token = RangeSlider.Notification.addObserver { [weak self] notification in
+            self?.contentView.graphView.setNeedsDisplay()
             self?.updateText(notification)
         }
     }
