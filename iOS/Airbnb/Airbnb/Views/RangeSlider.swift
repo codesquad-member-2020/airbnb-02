@@ -112,7 +112,9 @@ final class RangeSlider: UIControl {
         
         CATransaction.commit()
     }
-    
+}
+
+extension RangeSlider {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
         
