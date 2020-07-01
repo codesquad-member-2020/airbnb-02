@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A11BE3D24AC691F00EC499E /* PriceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE3C24AC691F00EC499E /* PriceViewModelTests.swift */; };
 		5A1D486D24864CF9006F129F /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D486C24864CF9006F129F /* AuthRequest.swift */; };
 		5A25EAE4247F84160038240F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A25EAE3247F84160038240F /* Alamofire */; };
 		5A25EAE6247F84910038240F /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EAE5247F84910038240F /* NetworkDispatcher.swift */; };
@@ -140,6 +141,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A11BE3C24AC691F00EC499E /* PriceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewModelTests.swift; sourceTree = "<group>"; };
 		5A1D486C24864CF9006F129F /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5A25EAE5247F84910038240F /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5A25EAE7247F853B0038240F /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				5A25EAE7247F853B0038240F /* SessionTests.swift */,
 				5A25EAEF247F88BD0038240F /* RoomTaskTests.swift */,
 				C22A52702473A1AB0055A478 /* Info.plist */,
+				5A11BE3C24AC691F00EC499E /* PriceViewModelTests.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 			files = (
 				5A25EAE8247F853B0038240F /* SessionTests.swift in Sources */,
 				5A25EAF0247F88BD0038240F /* RoomTaskTests.swift in Sources */,
+				5A11BE3D24AC691F00EC499E /* PriceViewModelTests.swift in Sources */,
 				5A814130247BF2BE0020ED80 /* RoomRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
