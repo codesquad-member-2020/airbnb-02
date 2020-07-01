@@ -25,6 +25,7 @@ class FilterViewController: UIViewController {
         configureInnerViews()
         configureTitle()
         configureCloseButton()
+        configureClearButton()
     }
     
     private func configureBackgroundDim() {
@@ -81,6 +82,12 @@ class FilterViewController: UIViewController {
         let contentIndex = 1
         stackView.insertArrangedSubview(contentView, at: contentIndex)
     }
+    
+    func configureClearButton() {
+        footerView.clearButton.addTarget(self, action: #selector(clear), for: .touchUpInside)
+    }
+    
+    @objc func clear() { }
 }
 
 extension FilterViewController: Identifiable { }

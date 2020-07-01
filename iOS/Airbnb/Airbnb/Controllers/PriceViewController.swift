@@ -26,6 +26,10 @@ final class PriceViewController: FilterViewController {
         return "가격"
     }
     
+    override func clear() {
+        contentView.priceRangeSlider.clear()
+    }
+    
     private func configureContentView() {
         guard let contentView = PriceContentView.loadViewFromNib(
             bundle: Bundle.main,

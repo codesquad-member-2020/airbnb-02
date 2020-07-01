@@ -9,7 +9,7 @@
 import UIKit
 
 final class FilterFooterView: UIView {
-    let resetButton = UIButton()
+    let clearButton = UIButton()
     let searchButton = UIButton()
     
     override init(frame: CGRect) {
@@ -41,17 +41,17 @@ final class FilterFooterView: UIView {
     }
     
     private func configureResetButtonTitleLabel() {
-        resetButton.setTitle("초기화", for: .normal)
-        resetButton.setTitleColor(.textGray, for: .normal)
-        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        clearButton.setTitle("초기화", for: .normal)
+        clearButton.setTitleColor(.textGray, for: .normal)
+        clearButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     private func configureResetButtonConstraints() {
-        addSubview(resetButton)
+        addSubview(clearButton)
         
-        resetButton.translatesAutoresizingMaskIntoConstraints = false
-        resetButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
-        resetButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
+        clearButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
     }
     
     private func configureSearchButton() {
