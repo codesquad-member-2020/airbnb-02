@@ -31,9 +31,11 @@
                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2s-2v-h4D" customClass="GraphView" customModule="Airbnb" customModuleProvider="target">
+                    <rect key="frame" x="31" y="162" width="352" height="111"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szw-sT-SPm" customClass="RangeSlider" customModule="Airbnb" customModuleProvider="target">
                     <rect key="frame" x="31" y="263" width="352" height="30"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="T53-Zh-dx3"/>
                     </constraints>
@@ -42,21 +44,27 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="t5D-DR-bGW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4d7-us-7JO"/>
+                <constraint firstItem="A2s-2v-h4D" firstAttribute="width" secondItem="Szw-sT-SPm" secondAttribute="width" id="5tj-3G-65I"/>
                 <constraint firstItem="Szw-sT-SPm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8Rj-TS-LiM"/>
                 <constraint firstItem="fpG-vc-O4u" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ja5-bG-iVu"/>
                 <constraint firstItem="Lyc-Tw-UB6" firstAttribute="top" secondItem="t5D-DR-bGW" secondAttribute="bottom" constant="20" id="Ovc-xZ-Ut0"/>
+                <constraint firstItem="A2s-2v-h4D" firstAttribute="leading" secondItem="Szw-sT-SPm" secondAttribute="leading" id="SNb-6c-n1d"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fpG-vc-O4u" secondAttribute="bottom" constant="184" id="XIg-TQ-IBj"/>
                 <constraint firstItem="Lyc-Tw-UB6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="k9X-UV-n1K"/>
+                <constraint firstItem="A2s-2v-h4D" firstAttribute="height" secondItem="Szw-sT-SPm" secondAttribute="height" multiplier="3.7" id="mVl-aj-Qt1"/>
                 <constraint firstItem="fpG-vc-O4u" firstAttribute="top" secondItem="Lyc-Tw-UB6" secondAttribute="bottom" constant="7" id="rFH-NV-WZM"/>
                 <constraint firstItem="Szw-sT-SPm" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.85" id="tvd-oM-C7z"/>
+                <constraint firstItem="A2s-2v-h4D" firstAttribute="bottom" secondItem="Szw-sT-SPm" secondAttribute="top" constant="10" id="wQb-Qz-GDc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Szw-sT-SPm" secondAttribute="bottom" constant="20" id="wX7-v7-cgc"/>
                 <constraint firstItem="t5D-DR-bGW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yJp-tR-WrS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="graphView" destination="A2s-2v-h4D" id="g2d-FQ-Ibc"/>
                 <outlet property="priceAverage" destination="fpG-vc-O4u" id="2fr-M5-BI7"/>
                 <outlet property="priceRange" destination="Lyc-Tw-UB6" id="Y2d-7r-cdg"/>
+                <outlet property="priceRangeSlider" destination="Szw-sT-SPm" id="ltJ-fo-lEE"/>
             </connections>
             <point key="canvasLocation" x="139" y="145"/>
         </view>
