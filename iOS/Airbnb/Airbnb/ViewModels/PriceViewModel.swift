@@ -24,6 +24,11 @@ final class PriceViewModel {
         prices.forEach { handler($0, $1) }
     }
     
+    func price(percent: CGFloat) -> Int {
+        let index = self.index(percent: percent)
+        return prices[index].key
+    }
+    
     func priceRangeText(minimumPercent: CGFloat = 0, maximumPercent: CGFloat = 1) -> String? {
         let firstIndex = index(percent: minimumPercent)
         let lastIndex = index(percent: maximumPercent)
