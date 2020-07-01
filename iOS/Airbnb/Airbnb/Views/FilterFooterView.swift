@@ -10,7 +10,7 @@ import UIKit
 
 final class FilterFooterView: UIView {
     let clearButton = UIButton()
-    let searchButton = UIButton()
+    let completeButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,27 +55,27 @@ final class FilterFooterView: UIView {
     }
     
     private func configureSearchButton() {
-        searchButton.backgroundColor = UIColor.searchBlack
+        completeButton.backgroundColor = UIColor.searchBlack
         configureSearchButtonTitleLabel()
         configureSearchButtonConstraints()
     }
     
     private func configureSearchButtonTitleLabel() {
-        searchButton.setTitle("완료", for: .normal)
-        searchButton.setTitleColor(.white, for: .normal)
-        searchButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        completeButton.setTitle("완료", for: .normal)
+        completeButton.setTitleColor(.white, for: .normal)
+        completeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
     }
     
     private func configureSearchButtonConstraints() {
-        addSubview(searchButton)
+        addSubview(completeButton)
         
-        searchButton.translatesAutoresizingMaskIntoConstraints = false
-        searchButton.trailingAnchor.constraint(
+        completeButton.translatesAutoresizingMaskIntoConstraints = false
+        completeButton.trailingAnchor.constraint(
             equalTo: trailingAnchor,
             constant: -10
         ).isActive = true
-        searchButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-        searchButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        searchButton.heightAnchor.constraint(equalToConstant: 38).isActive = true
+        completeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        completeButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        completeButton.heightAnchor.constraint(equalToConstant: 38).isActive = true
     }
 }
