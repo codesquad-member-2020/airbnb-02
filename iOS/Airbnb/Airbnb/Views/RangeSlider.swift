@@ -79,15 +79,6 @@ final class RangeSlider: UIControl {
         addSubview(imageView)
     }
     
-    func positionForValue(_ value: CGFloat) -> CGFloat {
-        return bounds.width * value
-    }
-    
-    private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
-        let x = positionForValue(value) - thumbImage.size.width / 2.0
-        return CGPoint(x: x, y: (bounds.height - thumbImage.size.height) / 2.0)
-    }
-    
     private func updateLayerFrames() {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
@@ -102,9 +93,18 @@ final class RangeSlider: UIControl {
         CATransaction.commit()
     }
     
+    private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
+        let x = positionForValue(value) - thumbImage.size.width / 2.0
+        return CGPoint(x: x, y: (bounds.height - thumbImage.size.height) / 2.0)
+    }
+    
     func clear() {
         lowerValue = minimumValue
         upperValue = maximumValue
+    }
+    
+    func positionForValue(_ value: CGFloat) -> CGFloat {
+        return bounds.width * value
     }
 }
 
