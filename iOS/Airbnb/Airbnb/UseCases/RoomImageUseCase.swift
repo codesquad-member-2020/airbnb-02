@@ -24,11 +24,19 @@ final class RoomImageUseCase {
     func download(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
         urlsQueue.async { [weak self] in
             self?.semaphore.wait()
-            self?.downloadImage(roomID: roomID, imageURL: imageURL, completionHandler: completionHandler)
+            self?.downloadImage(
+                roomID: roomID,
+                imageURL: imageURL,
+                completionHandler: completionHandler
+            )
         }
     }
     
-    private func downloadImage(roomID: Int, imageURL: URL, completionHandler: @escaping (Int?) -> ()) {
+    private func downloadImage(
+        roomID: Int,
+        imageURL: URL,
+        completionHandler: @escaping (Int?) -> ()
+    ) {
         networkDownloader.download(
             url: imageURL,
             completionHandler: { [weak self] tempURL, urlResponse in

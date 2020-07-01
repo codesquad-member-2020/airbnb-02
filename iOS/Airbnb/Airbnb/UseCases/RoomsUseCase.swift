@@ -22,7 +22,10 @@ final class RoomsUseCase {
         }
     }
     
-    private func requestRooms(_ request: RoomsRequest, completionHandler: @escaping ([Room]?) -> ()) {
+    private func requestRooms(
+        _ request: RoomsRequest,
+        completionHandler: @escaping ([Room]?) -> ()
+    ) {
         roomsTask.perform(request) { rooms in
             completionHandler(rooms)
         }

@@ -49,7 +49,10 @@ class FilterViewController: UIViewController {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = view.safeAreaLayoutGuide
-        stackView.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.9).isActive = true
+        stackView.widthAnchor.constraint(
+            equalTo: safeArea.widthAnchor,
+            multiplier: 0.9
+        ).isActive = true
         stackView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
     }

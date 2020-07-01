@@ -11,9 +11,8 @@ import UIKit
 protocol NibLoadable: Identifiable where Self: UIView { }
 
 extension NibLoadable {
-    func loadViewFromNib() -> Self? {
-        let bundle = Bundle(for: type(of: self))
+    static func loadViewFromNib(bundle: Bundle, withOwner ownerOrNil: Any?) -> Self? {
         let nib = UINib(nibName: Self.identifier, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as? Self
+        return nib.instantiate(withOwner: ownerOrNil, options: nil).first as? Self
     }
 }

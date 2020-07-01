@@ -49,7 +49,10 @@ final class URLProtocolSuccessStub: URLProtocol {
     static let testURLs = [
         RoomsRequest().urlRequest()!: bnbsTestSuccessData
     ]
-    static let bnbsTestSuccessData = Data.readJSON(of: Bundle(for: URLProtocolSuccessStub.self), for: "RoomsTestData")!
+    static let bnbsTestSuccessData = Data.readJSON(
+        of: Bundle(for: URLProtocolSuccessStub.self),
+        for: "RoomsTestData"
+        )!
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true

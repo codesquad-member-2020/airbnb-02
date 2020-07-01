@@ -15,7 +15,9 @@ final class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let roomViewModels = RoomViewModels()
-    private let roomsUseCase = RoomsUseCase(roomsTask: RoomsTask(networkDispatcher: RoomsSuccessStub()))
+    private let roomsUseCase = RoomsUseCase(
+        roomsTask: RoomsTask(networkDispatcher: RoomsSuccessStub())
+    )
     private let roomImageUseCase = RoomImageUseCase(networkDownloader: AF)
     private let imageCache = ImageCache()
     
@@ -49,25 +51,23 @@ final class RoomViewController: UIViewController {
     
     private func configureButtonActions() {
         filterButtons.forEach { button in
-            presentFilterViewController(by: button)
+            button.action = { [weak self] filterType in
+                guard let self = self else { return }
+                
+                self.presentFilterViewController(by: filterType)
+            }
         }
     }
     
-    private func presentFilterViewController(by button: FilterButton) {
-        button.action = { [weak self] filterType in
-            guard let self = self else { return }
-            switch filterType {
-            case .date:
-                self.present(
-                    self.filterViewController(type: CalendarViewController.self),
-                    animated: true
-                )
-            case .price:
-                self.present(
-                    self.filterViewController(type: PriceViewController.self),
-                    animated: true
-                )
-            }
+    private func presentFilterViewController(by filterType: FilterType) {
+        switch filterType {
+        case .date:
+            self.present(
+                self.filterViewController(type: CalendarViewController.self),
+                animated: true
+            )
+        case .price:
+            self.present(self.priceViewController(),animated: true)
         }
     }
     
@@ -80,6 +80,30 @@ final class RoomViewController: UIViewController {
             ) else { return T() }
         
         return filterViewController
+    }
+    
+    private func priceViewController() -> PriceViewController {
+        let priceViewController = self.filterViewController(type: PriceViewController.self)
+        insertPrice(to: priceViewController)
+        return priceViewController
+    }
+    
+    private func insertPrice(to priceViewController: PriceViewController) {
+        let prices = makePrices()
+        priceViewController.configurePriceViewModel(prices: prices.sorted(by: <))
+    }
+    
+    private func makePrices() -> [Int: Int] {
+        var prices = [Int: Int]()
+        roomViewModels.repeatViewModels {
+            let price = $0.room.price
+            if let count = prices[$0.room.price] {
+                prices.updateValue(count + 1, forKey: price)
+            } else {
+                prices.updateValue(1, forKey: price)
+            }
+        }
+        return prices
     }
     
     private func configureUseCase() {
