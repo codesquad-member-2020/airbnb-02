@@ -22,6 +22,7 @@ final class RoomViewController: UIViewController {
     private let imageCache = ImageCache()
     
     private var roomsToken: NotificationToken?
+    private var priceToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,12 @@ final class RoomViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
+        }
+        priceToken = PriceViewController.Notification.addObserver { [weak self] notification in
+            guard let minimumPrice = notification.userInfo?["minimumPrice"] as? Int,
+            let maximumPrice = notification.userInfo?["maximumPrice"] as? Int else { return }
+            
+            self?.roomViewModels.configurePrices(minimumPrice: minimumPrice, maximumPrice: maximumPrice)
         }
     }
     

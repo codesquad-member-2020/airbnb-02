@@ -9,6 +9,10 @@
 import UIKit
 
 final class PriceViewController: FilterViewController {
+    enum Notification: Observable {
+        static let update =  Foundation.Notification.Name("priceDidUpdate")
+    }
+    
     private var contentView: PriceContentView!
     private var priceViewModel: PriceViewModel?
     private var token: NotificationToken?
@@ -20,14 +24,6 @@ final class PriceViewController: FilterViewController {
         configurePriceAvarage()
         configureGraphView()
         configureObserver()
-    }
-    
-    override var filterTitle: String? {
-        return "가격"
-    }
-    
-    override func clear() {
-        contentView.priceRangeSlider.clear()
     }
     
     private func configureContentView() {
@@ -62,7 +58,7 @@ final class PriceViewController: FilterViewController {
         }
     }
     
-    private func updateText(_ notification: Notification) {
+    private func updateText(_ notification: Foundation.Notification) {
         guard let lowerValue = notification.userInfo?["lowerValue"] as? CGFloat,
             let upperValue = notification.userInfo?["upperValue"] as? CGFloat else { return }
         
@@ -74,6 +70,37 @@ final class PriceViewController: FilterViewController {
             minimumPercent: lowerValue,
             maximumPercent: upperValue
         )
+    }
+    
+    override var filterTitle: String? {
+        return "가격"
+    }
+    
+    override func clear() {
+        contentView.priceRangeSlider.clear()
+    }
+    
+    override func complete() {
+        notifyMinMaxPrice()
+        super.complete()
+    }
+    
+    private func notifyMinMaxPrice() {
+        guard let minimumPrice = minimumPrice, let maximumPrice = maximumPrice else { return }
+        
+        NotificationCenter.default.post(
+            name: Notification.update,
+            object: self,
+            userInfo: ["minimumPrice": minimumPrice, "maximumPrice": maximumPrice]
+        )
+    }
+    
+    private var minimumPrice: Int? {
+        return priceViewModel?.price(percent: contentView.priceRangeSlider.lowerValue)
+    }
+    
+    private var maximumPrice: Int? {
+        return priceViewModel?.price(percent: contentView.priceRangeSlider.upperValue)
     }
     
     func configurePriceViewModel(prices: [(key: Int, value: Int)]) {

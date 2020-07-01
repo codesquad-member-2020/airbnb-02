@@ -13,6 +13,9 @@ final class RoomViewModels: NSObject {
         static let update = Foundation.Notification.Name("roomsDidUpdate")
     }
     private let imageCache = ImageCache()
+    private var prices: (minimumPrice: Int, maximumPrice: Int)? = nil {
+        didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
+    }
     
     private var roomViewModels: [RoomViewModel] {
         didSet { NotificationCenter.default.post(name: Notification.update, object: self) }
@@ -22,12 +25,32 @@ final class RoomViewModels: NSObject {
         self.roomViewModels = rooms.map { RoomViewModel(room: $0) }
     }
     
+    private var filteredRoomViewModels: [RoomViewModel] {
+        if prices == nil {
+            return roomViewModels
+        }
+        return roomViewModelsByPrice()
+    }
+    
+    private func roomViewModelsByPrice() -> [RoomViewModel] {
+        guard let prices = prices else { return roomViewModels }
+         
+         return roomViewModels.filter {
+             prices.minimumPrice <= $0.room.price &&
+             prices.maximumPrice >= $0.room.price
+         }
+    }
+    
     func update(rooms: [Room]) {
         self.roomViewModels = rooms.map { RoomViewModel(room: $0) }
     }
     
     func repeatViewModels(handler: (RoomViewModel) -> Void) {
         roomViewModels.forEach { handler($0) }
+    }
+    
+    func configurePrices(minimumPrice: Int, maximumPrice: Int) {
+        prices = (minimumPrice, maximumPrice)
     }
 }
 
@@ -36,7 +59,7 @@ extension RoomViewModels: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return roomViewModels.count
+        return filteredRoomViewModels.count
     }
     
     func collectionView(
@@ -48,7 +71,7 @@ extension RoomViewModels: UICollectionViewDataSource {
             for: indexPath) as? RoomCell
             else { return UICollectionViewCell() }
         
-        let room = roomViewModels[indexPath.row].room
+        let room = filteredRoomViewModels[indexPath.row].room
         cell.configure(with: room)
         insertImages(cell, with: room)
         
