@@ -52,7 +52,58 @@
 
 **실행 결과**
 
-![result2](result2.png)
+> 메인 화면  
+
+![airbnb_search](https://user-images.githubusercontent.com/38216027/87530001-bc1e0980-c6ca-11ea-8011-b157cca354fb.gif)
+
+> 슬라이드 
+
+![airbnb_slide](https://user-images.githubusercontent.com/38216027/87528949-3c436f80-c6c9-11ea-8443-c04367290144.gif)
+
+> 이미지 다운로드 후 업데이트 
+
+![airbnb_image_update](https://user-images.githubusercontent.com/38216027/87529357-dc00fd80-c6c9-11ea-940a-a4adf89f3c0c.gif)
+
+
+
+### 로그인 기능 구현
+
+> [PR #129 [iOS] 로그인 기능을 구현][pr129]
+
+* [Jason] 로그인 화면 구성 [Issue][issue103] [PR][pr105]
+* [Jason] GitHub OAuth인증 및 JWT 토큰 저장 기능 구현 [Issue][issue104] [PR][pr112]
+* [Jason] 조건에 따라 로그인 화면 띄우는 기능 구현 [Issue][issue113] [PR][pr127]
+
+
+**실행 결과**
+
+![login](https://user-images.githubusercontent.com/38216027/87535171-05be2280-c6d2-11ea-93bc-a19675b7e198.gif)
+
+### 가격 선택 기능 구현
+
+> 숙박 가격 선택 기능 구현
+
+* [Jason] 가격 화면 텍스트 부분 구현 [Issue][issue132] [PR][pr165]
+* [Jason] 가격 화면의 커스텀 슬라이더 구현 [Issue][issue137] [PR][pr166]
+* [Jason] 가격 화면 그래프 구현 [Issue][issue144] [PR][pr167]
+* [Jason] 가격 화면 초기화 기능 구현 [Issue][issue146] [PR][pr168]
+* [Jason] 가격 완료 버튼 기능 구현 [Issue][issue148] [PR][pr169]
+
+
+
+**실행 결과**
+
+> 가격 화면
+
+![price](https://user-images.githubusercontent.com/38216027/87530646-92b1ad80-c6cb-11ea-8a98-563e1ce0cccf.gif)
+
+> 가격 초기화 
+
+![price_clear](https://user-images.githubusercontent.com/38216027/87530953-fd62e900-c6cb-11ea-8de8-a7f27fe17ff4.gif)
+
+> 가격을 기준으로 필터 
+
+![price_complete](https://user-images.githubusercontent.com/38216027/87531819-394a7e00-c6cd-11ea-8109-48457192fbf3.gif)
 
 
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1mEWSSgX4h4rGINgtG6D2y6Qk0B0QxjHbdrxlQimck3Y/edit?usp=sharing
@@ -83,6 +134,14 @@
 [issue86]: https://github.com/codesquad-member-2020/airbnb-02/issues/86
 [issue97]: https://github.com/codesquad-member-2020/airbnb-02/issues/97
 [issue107]: https://github.com/codesquad-member-2020/airbnb-02/issues/107
+[issue103]: https://github.com/codesquad-member-2020/airbnb-02/issues/103
+[issue104]: https://github.com/codesquad-member-2020/airbnb-02/issues/104
+[issue113]: https://github.com/codesquad-member-2020/airbnb-02/issues/113
+[issue132]: https://github.com/codesquad-member-2020/airbnb-02/issues/132
+[issue137]: https://github.com/codesquad-member-2020/airbnb-02/issues/137
+[issue144]: https://github.com/codesquad-member-2020/airbnb-02/issues/144
+[issue146]: https://github.com/codesquad-member-2020/airbnb-02/issues/146
+[issue148]: https://github.com/codesquad-member-2020/airbnb-02/issues/148
 
 [pr4]: https://github.com/codesquad-member-2020/airbnb-02/pull/4
 [pr12]: https://github.com/codesquad-member-2020/airbnb-02/pull/12
@@ -110,8 +169,14 @@
 [pr87]: https://github.com/codesquad-member-2020/airbnb-02/pull/87
 [pr93]: https://github.com/codesquad-member-2020/airbnb-02/pull/93
 [pr100]: https://github.com/codesquad-member-2020/airbnb-02/pull/100
+[pr105]: https://github.com/codesquad-member-2020/airbnb-02/pull/105
+[pr112]: https://github.com/codesquad-member-2020/airbnb-02/pull/112
 [pr118]: https://github.com/codesquad-member-2020/airbnb-02/pull/118
 [pr119]: https://github.com/codesquad-member-2020/airbnb-02/pull/119
-
-
-
+[pr127]: https://github.com/codesquad-member-2020/airbnb-02/pull/127
+[pr129]: https://github.com/codesquad-member-2020/airbnb-02/pull/129
+[pr165]: https://github.com/codesquad-member-2020/airbnb-02/pull/165
+[pr166]: https://github.com/codesquad-member-2020/airbnb-02/pull/166
+[pr167]: https://github.com/codesquad-member-2020/airbnb-02/pull/167
+[pr168]: https://github.com/codesquad-member-2020/airbnb-02/pull/168
+[pr169]: https://github.com/codesquad-member-2020/airbnb-02/pull/169
