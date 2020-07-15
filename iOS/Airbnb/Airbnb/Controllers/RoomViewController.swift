@@ -152,3 +152,9 @@ extension RoomViewController: UICollectionViewDelegateFlowLayout {
         return 30
     }
 }
+
+extension RoomViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+}
