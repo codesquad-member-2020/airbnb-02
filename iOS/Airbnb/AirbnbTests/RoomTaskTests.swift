@@ -29,6 +29,30 @@ final class RoomTaskTests: XCTestCase {
             expectation.fulfill()
         }
     }
+    
+    func test_request_properties() {
+        //given
+        let spy = NetworkDispatcherSpy()
+        
+        //when
+        RoomsTask(networkDispatcher: spy).perform(RoomsRequest()) {  _ in
+            
+        }
+        
+        //then
+        XCTAssertEqual(spy.method, .get)
+        XCTAssertEqual(spy.path, Endpoints.main)
+    }
+}
+
+final class NetworkDispatcherSpy: NetworkDispatcher {
+    var path: String?
+    var method: HTTPMethod?
+    
+    func execute(request: Request, completionHandler: @escaping (Data?, URLResponse?) -> (), failureHandler: @escaping (URLResponse?, Error?) -> ()) throws {
+        path = request.path
+        method = request.method
+    }
 }
 
 final class NetworkDispatcherValidStub: NetworkDispatcher {
